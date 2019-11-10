@@ -18,14 +18,15 @@
           href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
           integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
           crossorigin="anonymous">
+    <!--
+    <script type="text/javascript" src="{{ url_for('static', filename='chess.js') }}"></script>
+    -->
 </head>
 <body>
 <div class="navbar">
     <div class="navbar-inner">
         <a class="brand" href="#">Chess</a>
     </div>
-</div>
-<div id="main" class="container">
 </div>
 
 <button id="btn1" class="btn">Get messages</button>
@@ -34,31 +35,23 @@
 <div id="myBoard" style="width: 40%"></div>
 <button id="showPositionBtn">Show position in console</button>
 
-
-<script type="text/javascript">
-    getURI = 'http://localhost:5000/api/test';
+<script>
     postURI = 'http://localhost:5000/api/post';
 
-    var snapback;
+    /* Global variable to define whether move or not */
+    var snapBack;
 
-    //ChessBoard
     var chessConfig = {
         draggable: true,
         position: 'start',
-        //not working
-        //onMoveEnd: onMoveEnd
-        //triggered when moving out the board
-        //onSnapbackEnd: onSnapbackEnd
-        //triggered even on hover
-        //onDragMove: onDragMove
-        //todo implement onDrop
         onDrop: onDrop,
-        //Prevent from moving black pieces
+        /* Prevent from moving black pieces */
         onDragStart: onDragStart
     };
 
-    var board = Chessboard('myBoard', chessConfig);
-    $(window).resize(board.resize);
+    var board = Chessboard("myBoard", chessConfig);
+    //$(window).resize(board.resize);
+    $('#showPositionBtn').on('click', clickShowPositionBtn);
 
     function clickShowPositionBtn () {
         console.log('Current position as an Object:');
@@ -75,41 +68,7 @@
         }
     }
 
-    function onMoveEnd (oldPos, newPos) {
-        console.log('Move animation complete:');
-        console.log('Old position: ' + Chessboard.objToFen(oldPos));
-        console.log('New position: ' + Chessboard.objToFen(newPos));
-        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-    }
-
-    function onSnapbackEnd (piece, square, position, orientation) {
-        console.log('Piece: ' + piece);
-        console.log('Square: ' + square);
-        console.log('Position: ' + Chessboard.objToFen(position));
-        console.log('Orientation: ' + orientation);
-        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-    }
-
-    function onDragMove (newLocation, oldLocation, source,
-                         piece, position, orientation) {
-        console.log('New location: ' + newLocation);
-        console.log('Old location: ' + oldLocation);
-        console.log('Source: ' + source);
-        console.log('Piece: ' + piece);
-        console.log('Position: ' + Chessboard.objToFen(position));
-        console.log('Orientation: ' + orientation);
-        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-    }
-
     function onDrop (source, target, piece, newPos, oldPos, orientation) {
-        // console.log('Source: ' + source);
-        // console.log('Target: ' + target);
-        // console.log('Piece: ' + piece);
-        // console.log('New position: ' + Chessboard.objToFen(newPos));
-        // console.log('Old position: ' + Chessboard.objToFen(oldPos));
-        // console.log('Orientation: ' + orientation);
-        // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-        //return snapback if False
         var jsonToSend = {
             "source": source,
             "target": target
@@ -119,103 +78,16 @@
             type: "POST",
             url: postURI,
             data: jsonToSend,
-            success: function(result) {
-                snapback = (result.legalMove === false);
+            success: function (result) {
+                snapBack = (result.legalMove === false);
             },
-            error: function(result) {
-                alert('error');
+            error: function (result) {
+                alert("error:" + result);
             }
         });
-        if(snapback) return 'snapback';
+        if (snapBack) return 'snapback';
     }
-
-    $('#showPositionBtn').on('click', clickShowPositionBtn);
-
-
-
-
-
-
-
-
-
-    //Get data from server - working
-    // $(document).ready(function(){
-    //     $("btn1").click(function(){
-    //         $.get(getURI, function(data, status){
-    //             //alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
-    //             document.getElementById("main").innerHTML = JSON.stringify(data);
-    //         });
-    //     });
-    // });
-
-    // todo uncomment here
-    $("button").click(function() {
-        // $.ajax({
-        //     type: "POST",
-        //     url: postURI,
-        //     data: JSON.parse('{"from":"G5", "to":"G6"}'
-        //         ),
-        //     success: function(result) {
-        //         alert("Data: " + JSON.stringify(result) + "\nStatus: " + status);
-        //     },
-        //     error: function(result) {
-        //         alert('error');
-        //     }
-        // });
-       //  var source = "G5";
-       //  var target = "G6";
-       // // alert("Data: " + JSON.stringify(source) + "\nStatus: " + target);
-       //  var json_ ={
-       //      "source":source,
-       //      "target":target
-       //  };
-       //  //var f = JSON.parse('{"from":' + source + ',"to":' + target + "}");
-       //  alert(JSON.stringify(json_));
-        // $.ajax({
-        //     type: "POST",
-        //     url: postURI,
-        //     data: JSON.parse('{"from":' + source + ',"to":' + target + "}"
-        //     ),
-        //     success: function(result) {
-        //         alert("Data: " + JSON.stringify(result) + "\nStatus: " + status);
-        //     },
-        //     error: function(result) {
-        //         alert('error');
-        //     }
-        // });
-    });
-
-    /*
-    function TasksViewModel() {
-        var self = this;
-
-
-        self.ajax = function(uri, method, data) {
-            var request = {
-                url: uri,
-                type: method,
-                contentType: "application/json",
-                accepts: "application/json",
-                cache: false,
-                dataType: 'json',
-                data: JSON.stringify(data),
-                error: function(jqXHR) {
-                    console.log("ajax error " + jqXHR.status);
-                }
-            };
-            return $.ajax(request);
-        }
-
-        var msg = {"figure": "cos",
-                    "position":"cos"}
-
-        self.post(self.postURI, 'POST', msg);
-    }
-
-     */
-
-
 </script>
+
 </body>
 </html>

@@ -2,22 +2,8 @@
 from flask import Flask, jsonify, request, make_response, abort, render_template, send_file
 
 app = Flask(__name__)
-# logger = logging.getLogger(__name__)
 
-msgs_from_cpp = [
-    {
-        'valid': False,
-        'message': "Forbidden move"
-    },
-    {
-        'valid': True,
-        'message': "F3"
-    }
-]
-
-msgs_from_js = []
-
-
+# todo change path to index.html
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -31,19 +17,11 @@ def get_image(piece):
     return send_file(filename, mimetype='image/png')
 
 
-# todo chyba niepotrzebne
-# @app.route('/api/test', methods=['GET'])
-# def send_msgs():
-#     return jsonify({'messages' : msgs_from_js})
-
-
 @app.route('/api/post', methods=['POST'])
 def receive_msg():
     # todo obsluga bledow
     # if not request.json:
     #    abort(400)
-    # msg = None
-    msg = request.get_json()
     json_dict = request.form.to_dict()
     source = json_dict.get("source")
     target = json_dict.get("target")
@@ -51,8 +29,7 @@ def receive_msg():
 
     # Cpp function here as return if move valid or not
 
-    # return jsonify({'valid': True}), 201
-    return jsonify({'legalMove': False})
+    return jsonify({'legalMove': False}), 201
 
 '''
 @app.route('/todo/api/v1.0/tasks/<int:task_id>', methods=['PUT'])
