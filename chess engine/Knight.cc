@@ -1,1 +1,3 @@
-#include "lib/Kinght.h"
+#include "lib/Knight.h"
+
+

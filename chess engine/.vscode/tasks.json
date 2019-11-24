@@ -1,0 +1,42 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++.exe build active file",
+            "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+            "args": [
+                "${workspaceFolder}/main.cc",
+                "${workspaceFolder}/Bishop.cc",
+                "${workspaceFolder}/Board.cc",
+                "${workspaceFolder}/King.cc",
+                "${workspaceFolder}/Knight.cc",
+                "${workspaceFolder}/Pawn.cc",
+                "${workspaceFolder}/Piece.cc",
+                "${workspaceFolder}/Queen.cc",
+                "${workspaceFolder}/Rook.cc",
+                "${workspaceFolder}/Square.cc",
+                "-o",
+                "program",
+                "${workspaceFolder}/main.o",
+                "${workspaceFolder}/Bishop.o",
+                "${workspaceFolder}/Board.o",
+                "${workspaceFolder}/King.o",
+                "${workspaceFolder}/Knight.o",
+                "${workspaceFolder}/Pawn.o",
+                "${workspaceFolder}/Piece.o",
+                "${workspaceFolder}/Queen.o",
+                "${workspaceFolder}/Rook.o",
+                "${workspaceFolder}/Square.o",
+            ],
+            "options": {
+                "cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0"
+}

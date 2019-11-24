@@ -1,5 +1,13 @@
+#ifndef BOARD
+#define BOARD
 #include "Piece.h"
-#include <vector>
+#include "Bishop.h"
+#include "Rook.h"
+#include "Knight.h"
+#include "King.h"
+#include "Queen.h"
+#include "Pawn.h"
+#include "Empty_square.h"
 
 
 enum Column {
@@ -13,33 +21,26 @@ enum Column {
     H = 8
 };
 
-class Square{
-private:
-    Piece piece;
-    int   column;
-    int   row;
-
-public:
-    Piece(int column, int row, Piece piece);
-
-    void setPiece();
-    void setColumn(int column);
-    void setRow(int row);
-
-    Piece getPiece();
-    int   getRow();
-    int   getColumn();
+std::vector <std::vector <std::string>> const INITIAL_BOARD = {
+{"BR","BN","BB","BQ","BK","BB","BN","BR"},
+{"BP","BP","BP","BP","BP","BP","BP","BP"},
+{"NN","NN","NN","NN","NN","NN","NN","NN"},
+{"NN","NN","NN","NN","NN","NN","NN","NN"},
+{"NN","NN","NN","NN","NN","NN","NN","NN"},
+{"NN","NN","NN","NN","NN","NN","NN","NN"},
+{"WP","WP","WP","WP","WP","WP","WP","WP"},
+{"WR","WN","WB","WQ","WK","WB","WN","WR"}
 };
 
 
 class Board{
 private:
-    std::vector <std::vector <Square>> board;
+    std::vector <std::vector <Piece *>> board;
     int x;
     int y;
 public:
     Board();
-    void updateSquare(int column, int row, Piece piece);
-
-
+    void updateSquare(int, int, Piece *);
+    std::vector <std::vector <Piece *>> getBoard();
 };
+#endif

@@ -1,17 +1,24 @@
+#ifndef KING
+#define KING
 #include "Piece.h"
 
-public class King extends Piece{
+
+class King : public Piece{
 private:
-    private boolean moved = false;
-    private boolean castled = false;
-    private boolean checked = false;
+    bool moved = false;
+    bool castled = false;
+    bool checked = false;
 
 public:
-    boolean setMoved();
-    boolean setCastled();
-    boolean setChecked();
+    King(int column, int row, PieceColor color) :
+    Piece (column, row, color){};
+    
+    bool getMoved();
+    bool getCastled();
+    bool getChecked();
 
-    void setMoved(boolean moved);
-    void setCastled(boolean castled);
-    void setChecked(boolean checked);
-}
+    void setMoved(bool moved);
+    void setCastled(bool castled);
+    void setChecked(bool checked);
+};
+#endif

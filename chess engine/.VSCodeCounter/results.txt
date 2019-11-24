@@ -1,0 +1,46 @@
+Date : 2019-11-24 23:29:56
+Directory : d:\studia\ZPR\ZPR\chess engine
+Total : 21 files,  313 codes, 17 comments, 102 blanks, all 432 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         21 |        313 |         17 |        102 |        432 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                              | files      | code       | comment    | blank      | total      |
++---------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                 |         21 |        313 |         17 |        102 |        432 |
+| lib                                               |         10 |        173 |          5 |         49 |        227 |
++---------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                          | language | code       | comment    | blank      | total      |
++---------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\studia\ZPR\ZPR\chess engine\Bishop.cc          | C++      |          1 |          0 |          2 |          3 |
+| d:\studia\ZPR\ZPR\chess engine\Board.cc           | C++      |         32 |          0 |         10 |         42 |
+| d:\studia\ZPR\ZPR\chess engine\Empty_square.cc    | C++      |          1 |          0 |          0 |          1 |
+| d:\studia\ZPR\ZPR\chess engine\King.cc            | C++      |         19 |          0 |          6 |         25 |
+| d:\studia\ZPR\ZPR\chess engine\Knight.cc          | C++      |          1 |          0 |          3 |          4 |
+| d:\studia\ZPR\ZPR\chess engine\Pawn.cc            | C++      |          4 |         12 |          2 |         18 |
+| d:\studia\ZPR\ZPR\chess engine\Piece.cc           | C++      |         42 |          0 |         12 |         54 |
+| d:\studia\ZPR\ZPR\chess engine\Queen.cc           | C++      |          1 |          0 |          2 |          3 |
+| d:\studia\ZPR\ZPR\chess engine\Rook.cc            | C++      |          7 |          0 |          3 |         10 |
+| d:\studia\ZPR\ZPR\chess engine\Square.cc          | C++      |         22 |          0 |         10 |         32 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Bishop.h       | C++      |          9 |          0 |          4 |         13 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Board.h        | C++      |         41 |          0 |          6 |         47 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Empty_square.h | C++      |          9 |          0 |          2 |         11 |
+| d:\studia\ZPR\ZPR\chess engine\lib\King.h         | C++      |         19 |          0 |          6 |         25 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Knight.h       | C++      |          9 |          0 |          4 |         13 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Pawn.h         | C++      |         12 |          0 |          4 |         16 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Piece.h        | C++      |         34 |          5 |         11 |         50 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Queen.h        | C++      |          9 |          0 |          3 |         12 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Rook.h         | C++      |         13 |          0 |          5 |         18 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Square.h       | C++      |         18 |          0 |          4 |         22 |
+| d:\studia\ZPR\ZPR\chess engine\main.cc            | C++      |         10 |          0 |          3 |         13 |
+| Total                                             |          |        313 |         17 |        102 |        432 |
++---------------------------------------------------+----------+------------+------------+------------+------------+

@@ -1,10 +1,17 @@
+#ifndef ROOK
+#define ROOK
 #include "Piece.h"
 
-class Rook extends Piece{
+
+class Rook : public Piece{
 private:
-    private boolean moved = false;
+    bool moved = false;
 
 public:
-    boolean getMoved();
-    void setMoved(boolean);
+    Rook(int column, int row, PieceColor color) :
+    Piece (column, row, color){};
+    
+    bool getMoved();
+    void setMoved(bool);
 };
+#endif

@@ -1,19 +1,21 @@
+#ifndef SQUARE
+#define SQUARE
 #include "Piece.h"
 
-public class Square{
+class Square{
 private:
-    private Piece piece;
-    private int   column;
-    private int   row;
+    Piece * piece{};
+    int   column;
+    int   row;
 
 public:
-    Square(Piece);
-
-    void setPiece(Piece);
+    Square(Piece *);
+    void setPiece(Piece *);
     void setColumn(int);
     void setRow(int);
 
-    Piece getPiece();
+    Piece * getPiece();
     int   getRow();
     int   getColumn();
 };
+#endif

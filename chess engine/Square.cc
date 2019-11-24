@@ -1,31 +1,31 @@
 #include "lib/Square.h"
 
-Square::Square(Piece piece){
-    this.piece = piece;
+Square::Square(Piece * piece){
+    this->piece = piece;
 
 }
 
-	public Piece getPiece() {
-		return this.piece;
+	Piece * Square::getPiece() {
+		return this->piece;
 	}
 
-	public void setPiece(Piece piece) {
-		this.piece = piece;
+	void Square::setPiece(Piece * piece) {
+		this->piece = piece;
 	}
 
-	public int getColumn() {
-		return this.column;
+	int Square::getColumn() {
+		return this->column;
 	}
 
-	public void setColumn(int column) {
-		this.column = column;
+	void Square::setColumn(int column) {
+		this->column = column;
 	}
 
-	public int getRow() {
-		return this.Row;
+	int Square::getRow() {
+		return this->row;
 	}
 
-	public void setRow(int row) {
-		this.row = row;
+	void Square::setRow(int row) {
+		this->row = row;
 	}
 

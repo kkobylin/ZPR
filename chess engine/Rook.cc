@@ -1,9 +1,9 @@
 #include "lib/Rook.h"
 
-boolean Rook::getMoved(){
-    return this.moved;
+bool Rook::getMoved(){
+    return this->moved;
 }
 
-void Rook::setMoved(boolean moved){
-    this.moved = moved;
+void Rook::setMoved(bool moved){
+    this->moved = moved;
 }

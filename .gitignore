@@ -1,3 +1,7 @@
 venv/
 .idea
 .idea/*
+.[oa]
+.exe
+testoutput
+.pbd
