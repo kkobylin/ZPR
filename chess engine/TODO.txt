@@ -1,0 +1,2 @@
+poprawić biblioteki (dublowane w paru miejscach niepotrzebnie)
+wprowadzić klasy wirtualne

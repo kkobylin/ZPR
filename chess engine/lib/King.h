@@ -1,6 +1,7 @@
 #ifndef KING
 #define KING
 #include "Piece.h"
+#include "Board.h"
 
 
 class King : public Piece{
@@ -12,6 +13,7 @@ private:
 public:
     King(int column, int row, PieceColor color) :
     Piece (column, row, color){};
+    void move(Position, Board) override;
     
     bool getMoved();
     bool getCastled();

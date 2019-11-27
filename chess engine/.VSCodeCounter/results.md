@@ -1,22 +1,22 @@
 # Summary
 
-Date : 2019-11-24 23:29:56
+Date : 2019-11-27 03:17:33
 
 Directory d:\studia\ZPR\ZPR\chess engine
 
-Total : 21 files,  313 codes, 17 comments, 102 blanks, all 432 lines
+Total : 21 files,  429 codes, 16 comments, 128 blanks, all 573 lines
 
 [details](details.md)
 
 ## Languages
 | language | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| C++ | 21 | 313 | 17 | 102 | 432 |
+| C++ | 21 | 429 | 16 | 128 | 573 |
 
 ## Directories
 | path | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| . | 21 | 313 | 17 | 102 | 432 |
-| lib | 10 | 173 | 5 | 49 | 227 |
+| . | 21 | 429 | 16 | 128 | 573 |
+| lib | 10 | 218 | 6 | 54 | 278 |
 
 [details](details.md)

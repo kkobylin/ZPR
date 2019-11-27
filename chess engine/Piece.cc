@@ -1,5 +1,7 @@
 #include "lib/Piece.h"
 
+class Board;
+
 void Piece::setColor(PieceColor color){
     this->color = color;
 }
@@ -45,9 +47,46 @@ PieceColor Piece::getColor(){
     return this->color;
 }
 
-
 Piece::Piece(int column, int row, PieceColor color){
     this->column = column;
     this->row    = row;
     this->color  = color;
+    this->position.column = column;
+    this->position.row = row;
 }
+
+Piece::Piece(int column, int row, bool occupied){
+    this->column = column;
+    this->row    = row;
+    this->position.column = column;
+    this->position.row = row;
+    this->occupied  = occupied;
+}
+
+bool Piece::getOccupied(){
+    return this->occupied;
+}
+
+void Piece::setOccupied(bool occupied){
+    this->occupied = occupied;
+}
+
+void Piece::setPosition(Position position){
+    this->position = position;
+}
+
+Position Piece::getPosition(){
+    return this->position;
+}
+
+bool Piece::getMoved(){
+    return this->moved;
+}
+
+void Piece::setMoves(std::vector<Position> possible_move){
+    this->moves = possible_move;
+}
+std::vector<Position> Piece::getMoves(){
+    return this->moves;
+}
+//void Piece::move(Position position, Board board){};

@@ -9,6 +9,8 @@
 #include "Pawn.h"
 #include "Empty_square.h"
 
+typedef std::vector <std::vector <Piece *>> board_type;
+
 
 enum Column {
     A = 1,

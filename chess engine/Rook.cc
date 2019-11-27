@@ -7,3 +7,5 @@ bool Rook::getMoved(){
 void Rook::setMoved(bool moved){
     this->moved = moved;
 }
+
+void Rook::move(Position position, Board board){}
