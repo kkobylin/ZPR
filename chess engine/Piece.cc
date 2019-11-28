@@ -55,12 +55,30 @@ Piece::Piece(int column, int row, PieceColor color){
     this->position.row = row;
 }
 
+Piece::Piece(int column, int row, PieceColor color, std::string figureName){
+    this->column = column;
+    this->row    = row;
+    this->color  = color;
+    this->position.column = column;
+    this->position.row = row;
+    this->figureName = figureName;
+}
+
 Piece::Piece(int column, int row, bool occupied){
     this->column = column;
     this->row    = row;
     this->position.column = column;
     this->position.row = row;
     this->occupied  = occupied;
+}
+
+Piece::Piece(int column, int row, bool occupied, std::string figureName){
+    this->column = column;
+    this->row    = row;
+    this->position.column = column;
+    this->position.row = row;
+    this->occupied  = occupied;
+    this->figureName = figureName;
 }
 
 bool Piece::getOccupied(){
@@ -90,3 +108,11 @@ std::vector<Position> Piece::getMoves(){
     return this->moves;
 }
 //void Piece::move(Position position, Board board){};
+
+void Piece::setFigureName(std::string figureName){
+    this->figureName = figureName;
+}
+
+std::string Piece::getFigureName(){
+    return this->figureName;
+}

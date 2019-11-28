@@ -6,8 +6,9 @@
 
 class Queen : public Piece{
 public:
-    Queen(int column, int row, PieceColor color) :
-    Piece (column, row, color){};
+    Queen(int column, int row, PieceColor color, std::string figureName) :
+    Piece (column, row, color, figureName){};
     void move(Position, Board) override;
+    void setPossibleMove(Board) override;
 };
 #endif

@@ -24,14 +24,15 @@ enum Column {
 };
 
 std::vector <std::vector <std::string>> const INITIAL_BOARD = {
-{"BR","BN","BB","BQ","BK","BB","BN","BR"},
-{"BP","BP","BP","BP","BP","BP","BP","BP"},
-{"NN","NN","NN","NN","NN","NN","NN","NN"},
-{"NN","NN","NN","NN","NN","NN","NN","NN"},
-{"NN","NN","NN","NN","NN","NN","NN","NN"},
-{"NN","NN","NN","NN","NN","NN","NN","NN"},
+{"WR","WN","WB","WQ","WK","WB","WN","WR"},
 {"WP","WP","WP","WP","WP","WP","WP","WP"},
-{"WR","WN","WB","WQ","WK","WB","WN","WR"}
+{"NN","NN","NN","NN","NN","NN","NN","NN"},
+{"NN","NN","NN","NN","NN","NN","NN","NN"},
+{"NN","NN","NN","NN","NN","NN","NN","NN"},
+{"NN","NN","NN","NN","NN","NN","NN","NN"},
+{"BP","BP","BP","BP","BP","BP","BP","BP"},
+{"BR","BN","BB","BQ","BK","BB","BN","BR"}
+
 };
 
 

@@ -1,46 +1,46 @@
-Date : 2019-11-27 03:17:33
+Date : 2019-11-28 00:58:56
 Directory : d:\studia\ZPR\ZPR\chess engine
-Total : 21 files,  429 codes, 16 comments, 128 blanks, all 573 lines
+Total : 21 files,  725 codes, 36 comments, 255 blanks, all 1016 lines
 
 Languages
 +----------+------------+------------+------------+------------+------------+
 | language | files      | code       | comment    | blank      | total      |
 +----------+------------+------------+------------+------------+------------+
-| C++      |         21 |        429 |         16 |        128 |        573 |
+| C++      |         21 |        725 |         36 |        255 |      1,016 |
 +----------+------------+------------+------------+------------+------------+
 
 Directories
 +---------------------------------------------------+------------+------------+------------+------------+------------+
 | path                                              | files      | code       | comment    | blank      | total      |
 +---------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                 |         21 |        429 |         16 |        128 |        573 |
-| lib                                               |         10 |        218 |          6 |         54 |        278 |
+| .                                                 |         21 |        725 |         36 |        255 |      1,016 |
+| lib                                               |         10 |        227 |          6 |         56 |        289 |
 +---------------------------------------------------+------------+------------+------------+------------+------------+
 
 Files
 +---------------------------------------------------+----------+------------+------------+------------+------------+
 | filename                                          | language | code       | comment    | blank      | total      |
 +---------------------------------------------------+----------+------------+------------+------------+------------+
-| d:\studia\ZPR\ZPR\chess engine\Bishop.cc          | C++      |          2 |          0 |          1 |          3 |
-| d:\studia\ZPR\ZPR\chess engine\Board.cc           | C++      |         33 |          0 |         11 |         44 |
-| d:\studia\ZPR\ZPR\chess engine\Empty_square.cc    | C++      |          2 |          0 |          1 |          3 |
-| d:\studia\ZPR\ZPR\chess engine\King.cc            | C++      |         20 |          0 |          6 |         26 |
-| d:\studia\ZPR\ZPR\chess engine\Knight.cc          | C++      |          2 |          0 |          2 |          4 |
-| d:\studia\ZPR\ZPR\chess engine\Pawn.cc            | C++      |         35 |          9 |         14 |         58 |
-| d:\studia\ZPR\ZPR\chess engine\Piece.cc           | C++      |         73 |          1 |         18 |         92 |
-| d:\studia\ZPR\ZPR\chess engine\Queen.cc           | C++      |          2 |          0 |          1 |          3 |
-| d:\studia\ZPR\ZPR\chess engine\Rook.cc            | C++      |          8 |          0 |          3 |         11 |
+| d:\studia\ZPR\ZPR\chess engine\Bishop.cc          | C++      |         68 |          4 |         32 |        104 |
+| d:\studia\ZPR\ZPR\chess engine\Board.cc           | C++      |         31 |          0 |         14 |         45 |
+| d:\studia\ZPR\ZPR\chess engine\Empty_square.cc    | C++      |          3 |          0 |          1 |          4 |
+| d:\studia\ZPR\ZPR\chess engine\King.cc            | C++      |         21 |          0 |          6 |         27 |
+| d:\studia\ZPR\ZPR\chess engine\Knight.cc          | C++      |          3 |          0 |          2 |          5 |
+| d:\studia\ZPR\ZPR\chess engine\Pawn.cc            | C++      |         55 |         12 |         21 |         88 |
+| d:\studia\ZPR\ZPR\chess engine\Piece.cc           | C++      |         95 |          1 |         22 |        118 |
+| d:\studia\ZPR\ZPR\chess engine\Queen.cc           | C++      |        120 |          8 |         53 |        181 |
+| d:\studia\ZPR\ZPR\chess engine\Rook.cc            | C++      |         69 |          4 |         31 |        104 |
 | d:\studia\ZPR\ZPR\chess engine\Square.cc          | C++      |         22 |          0 |         10 |         32 |
-| d:\studia\ZPR\ZPR\chess engine\lib\Bishop.h       | C++      |         11 |          0 |          4 |         15 |
-| d:\studia\ZPR\ZPR\chess engine\lib\Board.h        | C++      |         42 |          0 |          7 |         49 |
-| d:\studia\ZPR\ZPR\chess engine\lib\Empty_square.h | C++      |         11 |          0 |          2 |         13 |
-| d:\studia\ZPR\ZPR\chess engine\lib\King.h         | C++      |         21 |          0 |          6 |         27 |
-| d:\studia\ZPR\ZPR\chess engine\lib\Knight.h       | C++      |         11 |          0 |          4 |         15 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Bishop.h       | C++      |         12 |          0 |          4 |         16 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Board.h        | C++      |         42 |          0 |          8 |         50 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Empty_square.h | C++      |         12 |          0 |          2 |         14 |
+| d:\studia\ZPR\ZPR\chess engine\lib\King.h         | C++      |         22 |          0 |          6 |         28 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Knight.h       | C++      |         12 |          0 |          4 |         16 |
 | d:\studia\ZPR\ZPR\chess engine\lib\Pawn.h         | C++      |         17 |          0 |          5 |         22 |
-| d:\studia\ZPR\ZPR\chess engine\lib\Piece.h        | C++      |         61 |          6 |         14 |         81 |
-| d:\studia\ZPR\ZPR\chess engine\lib\Queen.h        | C++      |         11 |          0 |          3 |         14 |
-| d:\studia\ZPR\ZPR\chess engine\lib\Rook.h         | C++      |         15 |          0 |          5 |         20 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Piece.h        | C++      |         64 |          6 |         15 |         85 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Queen.h        | C++      |         12 |          0 |          3 |         15 |
+| d:\studia\ZPR\ZPR\chess engine\lib\Rook.h         | C++      |         16 |          0 |          5 |         21 |
 | d:\studia\ZPR\ZPR\chess engine\lib\Square.h       | C++      |         18 |          0 |          4 |         22 |
-| d:\studia\ZPR\ZPR\chess engine\main.cc            | C++      |         12 |          0 |          7 |         19 |
-| Total                                             |          |        429 |         16 |        128 |        573 |
+| d:\studia\ZPR\ZPR\chess engine\main.cc            | C++      |         11 |          1 |          7 |         19 |
+| Total                                             |          |        725 |         36 |        255 |      1,016 |
 +---------------------------------------------------+----------+------------+------------+------------+------------+

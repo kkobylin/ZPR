@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <string>
+#include <iostream>
 //#include "Board.h"
 
 class Board;
@@ -17,14 +18,8 @@ struct Position{
     int column = -1;
     int row = -1;
 
-    bool operator==(Position pos1){
-        return pos1.column == column &&
-               pos1.row    == row;
-    }
-    bool operator!=(Position pos1){
-        return pos1.column != column ||
-               pos1.row    != row;
-    }
+    bool operator==(Position pos1){ return pos1.column == column && pos1.row == row;}
+    bool operator!=(Position pos1){ return pos1.column != column || pos1.row != row;}
 };
 
 
@@ -36,22 +31,26 @@ const int COLUMN_MAX = 8;
 
 class Piece{
 private:
-    PieceColor       color;
-    Position         position;
-    int              column;
-    int              row;
-    bool             killed;
-    bool             occupied = true;
-    bool             moved = false;
+    std::string           figureName;
+    PieceColor            color = BLACK;
+    Position              position;
+    int                   column;
+    int                   row;
+    bool                  killed;
+    bool                  occupied = true;
+    bool                  moved = false;
     std::vector<Position> moves;
 
 
 public:
     Piece(int, int, PieceColor);
     Piece(int, int, bool occupied);
+    Piece(int, int, bool occupied, std::string);
+    Piece(int, int, PieceColor, std::string);
 
     Piece(Position, PieceColor);
     Piece(Position, bool occupied);
+    Piece(Position, PieceColor, std::string){}; // todo
     //virtual Piece* clone() const = 0;
 
     //bool    color(); cos nie tak
@@ -64,7 +63,9 @@ public:
     void setMoved();
     void setOccupied(bool);
     void setMoves(std::vector<Position>);
+    void setFigureName(std::string);
     virtual void move(Position, Board) = 0;
+    virtual void setPossibleMove(Board) = 0;
 
     PieceColor            getColor();
     int                   getColumn();
@@ -74,7 +75,10 @@ public:
     bool                  getMoved();
     bool                  getOccupied();
     std::vector<Position> getMoves();
-    //virtual std::vector<int> getPossibleMove(Board); zaimplementować w 
+    std::string           getFigureName();
+
+    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row << c.color << c.figureName << std::endl;};
+    //virtual std::vector<int> setPossibleMove(Board); zaimplementować w 
     //virtual void             updatePossibleNextMove(); klasach
 
 };

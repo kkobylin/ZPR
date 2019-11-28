@@ -6,9 +6,10 @@
 
 class Knight : public Piece{
     public:
-    Knight(int column, int row, PieceColor color) : 
-    Piece(column, row, color){};
+    Knight(int column, int row, PieceColor color, std::string figureName) :
+    Piece (column, row, color, figureName){};
     void move(Position, Board) override;
+    void setPossibleMove(Board) override;
 
 };
 #endif

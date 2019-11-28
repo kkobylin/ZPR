@@ -9,3 +9,96 @@ void Rook::setMoved(bool moved){
 }
 
 void Rook::move(Position position, Board board){}
+void Rook::setPossibleMove(Board board){    int column_current = this->getColumn();
+    int row_current    = this->getRow();
+    int color          = this->getColor();
+    std::vector<std::vector <Piece *>> board_current = board.getBoard();
+    std::vector<Position> possiblePosition; //Create buffer for computed possible positions
+    Position position;
+
+    int direction_of_move = this->getColor();
+
+    //forward
+
+    int i = 1; // iterator for moves. In every 
+
+    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0)){
+        
+        Piece * piece = board_current[column_current][row_current + i * direction_of_move];
+
+        position.column = column_current;
+        position.row    = row_current + i * direction_of_move;
+
+        possiblePosition.push_back(position);
+
+        i++;
+
+        if (piece->getOccupied()){
+            if(piece->getColor() == direction_of_move)
+                possiblePosition.pop_back();
+            break;
+        }
+    }
+
+
+    // backward 
+    i = 1;
+    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0)){
+        
+        Piece * piece = board_current[column_current][row_current + i * direction_of_move];
+
+        position.column = column_current;
+        position.row    = row_current + i * direction_of_move;
+
+        possiblePosition.push_back(position);
+
+        i++;
+
+        if (piece->getOccupied()){
+            if(piece->getColor() == direction_of_move)
+                possiblePosition.pop_back();
+            break;
+        }
+    }
+    // left
+    i = 1;
+    while (!(column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
+        
+        Piece * piece = board_current[column_current - i * direction_of_move][row_current];
+
+        position.column = column_current - i * direction_of_move;
+        position.row    = row_current;
+
+        possiblePosition.push_back(position);
+
+        i++;
+
+        if (piece->getOccupied()){
+            if(piece->getColor() == direction_of_move)
+                possiblePosition.pop_back();
+            break;
+        }
+    }
+    // right
+    i = 1;
+    while (!(column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){
+        
+        Piece * piece = board_current[column_current + i * direction_of_move][row_current];
+
+        position.column = column_current + i * direction_of_move;
+        position.row    = row_current;
+
+        possiblePosition.push_back(position);
+
+        i++;
+
+        if (piece->getOccupied()){
+            if(piece->getColor() == direction_of_move)
+                possiblePosition.pop_back();
+            break;
+        }
+    }
+
+
+    this->setMoves(possiblePosition);
+}

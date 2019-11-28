@@ -24,3 +24,4 @@ void King::setChecked(bool checked){
         this->checked = checked;
 }
 void King::move(Position position, Board board){}
+void King::setPossibleMove(Board board){}

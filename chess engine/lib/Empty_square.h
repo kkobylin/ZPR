@@ -5,8 +5,9 @@
 
 class Empty : public Piece{
 public:
-    Empty(int column, int row, bool occupied) :
-    Piece (column, row, occupied) {};    
+    Empty(int column, int row,bool occupied, std::string figureName) :
+    Piece (column, row, occupied, figureName){};
     void move(Position, Board) override;
+    void setPossibleMove(Board) override;
 };
 #endif

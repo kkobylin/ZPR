@@ -11,9 +11,10 @@ private:
     bool checked = false;
 
 public:
-    King(int column, int row, PieceColor color) :
-    Piece (column, row, color){};
+    King(int column, int row, PieceColor color, std::string figureName) :
+    Piece (column, row, color, figureName){};
     void move(Position, Board) override;
+    void setPossibleMove(Board) override;
     
     bool getMoved();
     bool getCastled();
