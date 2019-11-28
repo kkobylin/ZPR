@@ -1,10 +1,10 @@
 # Details
 
-Date : 2019-11-28 00:58:56
+Date : 2019-11-28 01:19:34
 
 Directory d:\studia\ZPR\ZPR\chess engine
 
-Total : 21 files,  725 codes, 36 comments, 255 blanks, all 1016 lines
+Total : 21 files,  915 codes, 53 comments, 375 blanks, all 1343 lines
 
 [summary](results.md)
 
@@ -14,8 +14,8 @@ Total : 21 files,  725 codes, 36 comments, 255 blanks, all 1016 lines
 | [Bishop.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/Bishop.cc) | C++ | 68 | 4 | 32 | 104 |
 | [Board.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/Board.cc) | C++ | 31 | 0 | 14 | 45 |
 | [Empty_square.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/Empty_square.cc) | C++ | 3 | 0 | 1 | 4 |
-| [King.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/King.cc) | C++ | 21 | 0 | 6 | 27 |
-| [Knight.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/Knight.cc) | C++ | 3 | 0 | 2 | 5 |
+| [King.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/King.cc) | C++ | 114 | 9 | 67 | 190 |
+| [Knight.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/Knight.cc) | C++ | 100 | 8 | 61 | 169 |
 | [Pawn.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/Pawn.cc) | C++ | 55 | 12 | 21 | 88 |
 | [Piece.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/Piece.cc) | C++ | 95 | 1 | 22 | 118 |
 | [Queen.cc](file:///d%3A/studia/ZPR/ZPR/chess%20engine/Queen.cc) | C++ | 120 | 8 | 53 | 181 |
