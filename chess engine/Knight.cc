@@ -11,6 +11,9 @@ void Knight::setPossibleMove(Board board){
 
     int direction_of_move = this->getColor();
 
+    //Following ifs checks wheter possible next move doesn't exceed board, if not adds it to vector of possible move,
+    //than checks is square is occupied, if it is and it's the same color it deletes last element
+
     // forward left
 
 

@@ -1,10 +1,11 @@
 #include "lib/Bishop.h"
 
-void Bishop::move(Position position, Board board){}
+void Bishop::move(Position position, Board board){} // todo
 
 
 
 void Bishop::setPossibleMove(Board board){
+    
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
@@ -14,9 +15,13 @@ void Bishop::setPossibleMove(Board board){
 
     int direction_of_move = this->getColor();
 
-    // left forward
+    //Following loops checks wheter possible next move doesn't exceed board, if not adds it to vector of possible move,
+    //than checks is square is occupied, if it is and it's the same color it deletes last element and breaks loop
 
-    int i = 1; // iterator for moves. In every 
+    // check how far can bishop move in direction: left forward
+
+    int i = 1; // iterator for next moves
+
 
     while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0 || 
              column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
@@ -38,7 +43,7 @@ void Bishop::setPossibleMove(Board board){
     }
 
 
-    // right forward
+    // check how far can bishop move in direction: right forward
     i = 1;
     while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0 || 
              column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){
@@ -58,7 +63,7 @@ void Bishop::setPossibleMove(Board board){
             break;
         }
     }
-    // left backward
+    // check how far can bishop move in direction: left backward
     i = 1;
     while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0 || 
              column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
@@ -78,7 +83,7 @@ void Bishop::setPossibleMove(Board board){
             break;
         }
     }
-    // right backward
+    // check how far can bishop move in direction: right backward
     i = 1;
     while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0 || 
              column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){

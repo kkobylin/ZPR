@@ -38,13 +38,14 @@ void Pawn::setPossibleMove(Board board){
 
     int direction_of_move = this->getColor();
 
-    //sprawdzenie możliwości ruchu
+    //check if pawn can move forward
     if(!board_current[column_current][row_current + 1 * direction_of_move]->getOccupied()){
         position.column = column_current;
         position.row    = row_current + 1 * direction_of_move;
 
         possiblePosition.push_back(position);
     }
+    //check if pawn can move 2 squares ahead
     if(!this->getMoved())
         if(!board_current[column_current][row_current + 2 * direction_of_move]->getOccupied()){
             position.column = column_current;
@@ -79,9 +80,6 @@ void Pawn::setPossibleMove(Board board){
             }       
         }
     }
-    
-
-    //sprawdzenie możliwości bicia w prawo
 
     this->setMoves(possiblePosition);
 
