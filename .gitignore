@@ -1,7 +1,7 @@
 venv/
-.idea
-.idea/*
-.[oa]
-.exe
-testoutput
-.pbd
+**/.idea
+**/.idea/*
+**/.[oa]
+**/.exe
+**/testoutput
+**/.pbd

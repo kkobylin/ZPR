@@ -1,20 +1,21 @@
 #ifndef SQUARE
 #define SQUARE
 #include "Piece.h"
+#include <memory>
 
 class Square{
 private:
-    Piece * piece{};
+    std::shared_ptr<Piece> piece{};
     int   column;
     int   row;
 
 public:
-    Square(Piece *);
-    void setPiece(Piece *);
+    Square(std::shared_ptr<Piece>);
+    void setPiece(std::shared_ptr<Piece>);
     void setColumn(int);
     void setRow(int);
 
-    Piece * getPiece();
+    std::shared_ptr<Piece> getPiece();
     int   getRow();
     int   getColumn();
 };

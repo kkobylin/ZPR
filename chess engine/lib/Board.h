@@ -8,8 +8,9 @@
 #include "Queen.h"
 #include "Pawn.h"
 #include "Empty_square.h"
+#include <memory>
 
-typedef std::vector <std::vector <Piece *>> board_type;
+typedef std::vector <std::vector <std::shared_ptr<Piece>>> board_type;
 
 
 enum Column {
@@ -38,12 +39,12 @@ std::vector <std::vector <std::string>> const INITIAL_BOARD = {
 
 class Board{
 private:
-    std::vector <std::vector <Piece *>> board;
+    std::vector <std::vector <std::shared_ptr<Piece>>> board;
     int x;
     int y;
 public:
     Board();
-    void updateSquare(int, int, Piece *);
-    std::vector <std::vector <Piece *>> getBoard();
+    void updateSquare(int, int, std::shared_ptr<Piece>);
+    std::vector <std::vector <std::shared_ptr<Piece>>> getBoard();
 };
 #endif

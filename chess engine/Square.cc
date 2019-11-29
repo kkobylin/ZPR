@@ -1,15 +1,16 @@
 #include "lib/Square.h"
+#include <memory>
 
-Square::Square(Piece * piece){
+Square::Square(std::shared_ptr<Piece> piece){
     this->piece = piece;
 
 }
 
-	Piece * Square::getPiece() {
+	std::shared_ptr<Piece> Square::getPiece() {
 		return this->piece;
 	}
 
-	void Square::setPiece(Piece * piece) {
+	void Square::setPiece(std::shared_ptr<Piece> piece) {
 		this->piece = piece;
 	}
 

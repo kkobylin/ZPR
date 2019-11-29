@@ -9,7 +9,7 @@ void Bishop::setPossibleMove(Board board){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
-    std::vector<std::vector <Piece *>> board_current = board.getBoard();
+    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board.getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
 
@@ -26,7 +26,7 @@ void Bishop::setPossibleMove(Board board){
     while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0 || 
              column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
         
-        Piece * piece = board_current[column_current - i * direction_of_move][row_current + i * direction_of_move];
+        std::shared_ptr<Piece> piece = board_current[column_current - i * direction_of_move][row_current + i * direction_of_move];
 
         position.column = column_current - i * direction_of_move;
         position.row    = row_current + i * direction_of_move;
@@ -48,7 +48,7 @@ void Bishop::setPossibleMove(Board board){
     while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0 || 
              column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){
         
-        Piece * piece = board_current[column_current + i * direction_of_move][row_current + i * direction_of_move];
+        std::shared_ptr<Piece> piece = board_current[column_current + i * direction_of_move][row_current + i * direction_of_move];
 
         position.column = column_current + i * direction_of_move;
         position.row    = row_current + i * direction_of_move;
@@ -68,7 +68,7 @@ void Bishop::setPossibleMove(Board board){
     while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0 || 
              column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
         
-        Piece * piece = board_current[column_current - i * direction_of_move][row_current - i * direction_of_move];
+        std::shared_ptr<Piece> piece = board_current[column_current - i * direction_of_move][row_current - i * direction_of_move];
 
         position.column = column_current - i * direction_of_move;
         position.row    = row_current - i * direction_of_move;
@@ -88,7 +88,7 @@ void Bishop::setPossibleMove(Board board){
     while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0 || 
              column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){
         
-        Piece * piece = board_current[column_current + i * direction_of_move][row_current - i * direction_of_move];
+        std::shared_ptr<Piece> piece = board_current[column_current + i * direction_of_move][row_current - i * direction_of_move];
 
         position.column = column_current + i * direction_of_move;
         position.row    = row_current - i * direction_of_move;
