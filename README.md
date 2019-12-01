@@ -56,7 +56,7 @@ BOOST_PYTHON_MODULE(hello)
 }
 ```
 
-```g++ -std=c++11 hellopy.cpp -I/usr/include/python3.6 -I/Desktop/Boost/ -lboost_python3  -o hello.so -shared -fPIC```
+```g++ -std=c++11 hellopy.cpp -I/usr/include/python3.6 -I/Desktop/Boost/boost_1_60_0/ -lboost_python3  -o hello.so -shared -fPIC```
 
 
 ```python3```
