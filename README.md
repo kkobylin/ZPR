@@ -6,7 +6,7 @@
 
 
 ###Installation:
-'''sudo add-apt-repository universe'''
+```sudo add-apt-repository universe```
 '''sudo apt-get update\n'''
 '''sudo apt-get install libboost-all-dev'''
 '''sudo apt-get install gcc (not sure)'''
