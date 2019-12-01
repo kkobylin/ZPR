@@ -1,64 +1,56 @@
-import socket
-import pickle
-import json
-import select
+#!flask/bin/python
+from flask import Flask, jsonify, request, make_response, abort, render_template, send_file
 
-IP = "127.0.0.1"
-PORT = 8080
+app = Flask(__name__)
 
-JS_msg = {
-    "Figure": "Pawn",
-    "Position": "F5"
-}
-
-json_msg = json.dumps(JS_msg)
-HEADER_SIZE = 10
-
-# create the socket
-# AF_INET == ipv4
-# SOCK_STREAM == TCP
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_socket.bind((IP, PORT))
-# queue
-server_socket.listen(5)
-
-# List of sockets for select.select()
-sockets_list = [server_socket]
+# todo change path to index.html
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
-def receive_message(client_socket):
-    try:
-        message_header = client_socket.recv(HEADER_SIZE)
-
-        if not len(message_header):
-            return False
-
-        message_length = int(message_header.decode('utf-8').strip())
-        return {'header': message_header, 'data': client_socket.recv(message_length)}
-    except:
-        return False
+# Uri from chessboard_js library
+# todo change url for Linux also
+@app.route('/img/chesspieces/wikipedia/<piece>.png', methods=['GET'])
+def get_image(piece):
+    filename = 'templates\\img\\chesspieces\\wikipedia\\' + piece + '.png'
+    return send_file(filename, mimetype='image/png')
 
 
-while True:
-    read_sockets, _, _ = select.select(sockets_list, [], [])
+@app.route('/api/post', methods=['POST'])
+def receive_msg():
+    # todo obsluga bledow
+    # if not request.json:
+    #    abort(400)
+    json_dict = request.form.to_dict()
+    source = json_dict.get("source")
+    target = json_dict.get("target")
+    app.logger.info("Getting message from + %s + to + %s", source, target)
 
-    for notified_socket in read_sockets:
-        if notified_socket == server_socket:
-            # Accept new connection
-            client_socket, client_address = server_socket.accept()
-            print(f"Connection from {client_address} has been established.")
-            sockets_list.append(client_socket)
-        else:
-            # Receive message
-            message = receive_message(notified_socket)
+    # Cpp function here as return if move valid or not
 
-            if message is False:
-                print('Closed connection from: {}'.format(notified_socket))
-                sockets_list.remove(notified_socket)
-                continue
+    return jsonify({'legalMove': False}), 201
 
-            # todo cpp functions here with message
-            print(message)
-            msg = pickle.dumps(json_msg)
-            msg = bytes(f"{len(msg):<{HEADER_SIZE}}", 'utf-8')+msg
-            notified_socket.send(msg)
+'''
+@app.route('/todo/api/v1.0/tasks/<int:task_id>', methods=['PUT'])
+def update_task(task_id):
+    task = [task for task in tasks if task['id'] == task_id]
+    if len(task) == 0:
+        abort(404)
+    if not request.json:
+        abort(400)
+    if 'title' in request.json and type(request.json['title']) != unicode:
+        abort(400)
+    if 'description' in request.json and type(request.json['description']) is not unicode:
+        abort(400)
+    if 'done' in request.json and type(request.json['done']) is not bool:
+        abort(400)
+    task[0]['title'] = request.json.get('title', task[0]['title'])
+    task[0]['description'] = request.json.get('description', task[0]['description'])
+    task[0]['done'] = request.json.get('done', task[0]['done'])
+    return jsonify({'task': task[0]})
+'''
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

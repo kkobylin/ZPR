@@ -1,3 +1,9 @@
 venv/
-.idea
-.idea/*
+**/*.idea
+**/*.idea/*
+**/*.[oa]
+**/*.exe
+**/testoutput
+**/*.pbd
+**/*.sconsign.dblite
+**/TODO.txt
