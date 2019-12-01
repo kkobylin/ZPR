@@ -13,18 +13,13 @@
 
 ```sudo apt-get install libboost-all-dev```
 
-```sudo apt-get install gcc (not sure)```
+```sudo apt-get install gcc (not needed)```
 
-```sudo apt-get install g++```
-
-add to project-config.jam
-
-#Python configuration
-
-using python : 3.6 : /usr/include/python3.6 ;
+```sudo apt-get install g++(not needed)```
 
 
-```./bootstrap gcc --with-python=PYTHON```
+
+```./bootstrap.bat gcc --with-python=PYTHON```
 
 ```./b2 clean```
 
