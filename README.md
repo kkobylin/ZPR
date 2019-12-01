@@ -9,7 +9,7 @@
 
 ```sudo add-apt-repository universe```
 
-```sudo apt-get update\n```
+```sudo apt-get update```
 
 ```sudo apt-get install libboost-all-dev```
 
