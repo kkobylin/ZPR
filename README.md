@@ -5,7 +5,7 @@
 - Flask
 
 
-#Installation:
+### Installation:
 
 ```sudo add-apt-repository universe```
 
@@ -19,7 +19,7 @@
 
 add to project-config.jam
 
-# Python configuration
+#Python configuration
 
 using python : 3.6 : /usr/include/python3.6 ;
 
