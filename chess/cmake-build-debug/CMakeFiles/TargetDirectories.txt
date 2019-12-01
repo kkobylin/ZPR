@@ -1,0 +1,3 @@
+C:/Users/Krzysiek/Documents/Studia/sem5/ZPR/ZPR-Chess/chess/cmake-build-debug/CMakeFiles/chess.dir
+C:/Users/Krzysiek/Documents/Studia/sem5/ZPR/ZPR-Chess/chess/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Krzysiek/Documents/Studia/sem5/ZPR/ZPR-Chess/chess/cmake-build-debug/CMakeFiles/rebuild_cache.dir
