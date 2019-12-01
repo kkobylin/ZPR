@@ -6,8 +6,8 @@
 
 
 ###Installation:
-.sudo add-apt-repository universe
-sudo apt-get update\n
+1. sudo add-apt-repository universe
+2. sudo apt-get update\n
 sudo apt-get install libboost-all-dev
 sudo apt-get install gcc (not sure)
 sudo apt-get install g++
