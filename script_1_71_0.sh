@@ -32,6 +32,8 @@ echo "building"
 ./b2 --with-python link=static cxxflags="-std=c++11 -fPIC" variant=release install
 echo "Trying to install flask"
 sudo apt install -y python3-flask
+echo "Trying to install cmake"
+sudo apt install cmake
 echo "finished"
 
 
