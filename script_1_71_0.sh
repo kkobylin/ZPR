@@ -33,7 +33,7 @@ echo "building"
 echo "Trying to install flask"
 sudo apt install -y python3-flask
 echo "Trying to install cmake"
-sudo apt install cmake
+sudo apt install -y cmake
 echo "finished"
 
 
