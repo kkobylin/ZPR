@@ -39,7 +39,7 @@ def receive_msg():
     # else:
     #     temp = False
     #     app.logger.info("False")
-    temp = libchesslib.ifMovePossible(source, target)
+    temp = libchesslib.ifMovePossible(target, source)
 
 
     return jsonify({'legalMove': temp}), 201
