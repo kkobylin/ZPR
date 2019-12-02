@@ -5,7 +5,15 @@
 - Flask
 
 
-### Installation:
+
+### Automated installation:
+```chmod +x script.sh```
+```./script.sh```
+
+This script automatically builds and installs all required files for boost. Using boost_1_60_0
+
+### Manual installation:
+
 
 ```sudo add-apt-repository universe```
 
