@@ -1,76 +1,29 @@
 # Chess
 
-### Prerequisites:
-- Python3
-- Flask
 
-
-
-### Automated installation:
-```chmod +x script_1_71_0.sh```
-
+### Instalacja:
+1.  ```chmod +x script_1_71_0.sh```
+2. Instalowanie wszystkich potrzebnych narzędzi do kompilacji Boost python
 ```./script_1_71_0.sh```
-
-This script automatically builds and installs all required files for boost. Using boost_1_71_0
-
-### Manual installation:
-
-
-```sudo add-apt-repository universe```
-
-```sudo apt-get update```
-
-```sudo apt-get install libboost-all-dev```
-
-```sudo apt-get install gcc (not needed)```
-
-```sudo apt-get install g++(not needed)```
-
-
-
-```./bootstrap.bat gcc --with-python=PYTHON```
-
-```./b2 clean```
-
-```./b2 --with-python link=static cxxflags="-std=c++11 -fPIC" variant=release stage```
-
-```./b2 --with-python link=static cxxflags="-std=c++11 -fPIC" variant=release install```
-
-
-test code from https://stackoverflow.com/questions/7195959/hello-world-with-boost-python-and-python-3-2?fbclid=IwAR2BDN60iFKOi28ep-99fL7FLx622alLhQu9_YBE3nYod0_aVylnMmsFWWA:
-
+3. Wejść w katalog chess_engine i wykonać komendy:
 ```
-#include <iostream>
-
-using namespace std;
-
-void say_hello(const char* name) {
-    cout << "Hello " <<  name << "!\n";
-}
-
-int main(){return 0;}
-
-#include <boost/python/module.hpp>
-#include <boost/python/def.hpp>
-using namespace boost::python;
-
-BOOST_PYTHON_MODULE(hello)
-{
-    def("say_hello", say_hello);
-}
+    
 ```
 
-```g++ -std=c++11 hellopy.cpp -I/usr/include/python3.6 -I/Desktop/Boost/boost_1_60_0/ -lboost_python3  -o hello.so -shared -fPIC```
-
-
-```python3```
-
-```import hello```
-
-```hello.say_hello('string')```
+### Krótki opis
+    Na daną chwilę stworzone są wszystkie 3 moduły aplikacji w wersji podstawowej(klient w JavaScript, serwer w Pythonie oraz logika w C++) oraz komunikacja pomiędzy nimi. Klient pobiera skąd oraz dokąd dana figura ma być przemieszczona i wysyła te informacje za pomocą REST do serwera. Następnie serwer wykorzystując Boost::Python i dynamiczną bibliotekę z plikami cpp sprawdza poprawność danego ruchu i odsyła tę informację do klienta. 
+    Zbudowanie biblioteki Boost::Python zajęło nam do tej pory zdecydowanie najwięcej czasu z powodu wielu napotkanych tam problemów i głównie przez to aplikacja w tym momencie działa poprawnie jedynie na Linuxie, a kod wymaga refactoringu. Co do logiki programu dla przykładu, poprawnie działają pierwsze ruchy pionków.
+    Do zbudowania aplikacji wykorzystywane są skrypty Shella oraz Cmake. Przykładowy test jednostkowy znajduje się w katalogu chess_engine/test.
 
 
 
 
-### Documentation:
-https://docs.google.com/document/d/1X6gbnl_c4IqO27oWqCdfzpGKbXuc61YNTEv0DQXR5UQ/edit?usp=sharing
+
+
+
+
+
+
+
+
+
