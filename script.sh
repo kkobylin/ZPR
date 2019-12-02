@@ -2,10 +2,10 @@
 echo "installing required packages"
 echo "add universe repository"
 sudo add-apt-repository universe
-echo "apt-get update"
+echo "apt-get -y update"
 sudo apt-get update
 echo "install libboost dev"
-sudo apt-get install libboost-all-dev
+sudo apt-get -y install libboost-all-dev
 echo "getting boost_1_60_0"
 FILE=~/Downloads/boost_1_60_0.tar.bz2
 if test -f "$FILE"; then
@@ -24,7 +24,7 @@ tar --bzip2 -xf ~/Downloads/boost_1_60_0.tar.bz2
 echo "change directory to ~/Desktop/Boost/boost_1_60_0"
 cd ~/Desktop/Boost/boost_1_60_0/
 echo "Bootstrap files"
-./bootstrap gcc --with-python=PYTHON
+./bootstrap.sh gcc --with-python=PYTHON
 echo "clean"
 ./b2 clean
 echo "building"
