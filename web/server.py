@@ -1,5 +1,7 @@
 #!flask/bin/python
 from flask import Flask, jsonify, request, make_response, abort, render_template, send_file
+import sys
+sys.path.append('../chess_engine')
 import libchesslib
 app = Flask(__name__)
 
@@ -12,10 +14,11 @@ def index():
 
 
 # Uri from chessboard_js library
-# todo change url for Linux also
+# todo change url for Windows also
 @app.route('/img/chesspieces/wikipedia/<piece>.png', methods=['GET'])
 def get_image(piece):
-    filename = 'templates\\img\\chesspieces\\wikipedia\\' + piece + '.png'
+    # filename = 'templates\\img\\chesspieces\\wikipedia\\' + piece + '.png'
+    filename = 'templates/img/chesspieces/wikipedia/' + piece + '.png'
     return send_file(filename, mimetype='image/png')
 
 
