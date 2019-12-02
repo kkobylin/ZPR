@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <iostream>
 
-
+//todo delete figureName
 class Pawn : public Piece{
 private:
     bool moved = false;

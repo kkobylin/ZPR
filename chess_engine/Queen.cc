@@ -20,8 +20,8 @@ void Queen::setPossibleMove(std::shared_ptr<Board> board){
 
     int i = 1; // iterator for moves. In every 
 
-    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0 || 
-             column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
+    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  < 0 ||
+             column_current - i * direction_of_move > 7 || column_current - i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current - i * direction_of_move][row_current + i * direction_of_move];
 
@@ -42,8 +42,8 @@ void Queen::setPossibleMove(std::shared_ptr<Board> board){
 
     // right forward
     i = 1;
-    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0 || 
-             column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){
+    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  < 0 ||
+             column_current + i * direction_of_move > 7 || column_current + i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current + i * direction_of_move][row_current + i * direction_of_move];
 
@@ -62,8 +62,8 @@ void Queen::setPossibleMove(std::shared_ptr<Board> board){
     }
     // left backward
     i = 1;
-    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0 || 
-             column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
+    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  < 0 ||
+             column_current - i * direction_of_move > 7 || column_current - i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current - i * direction_of_move][row_current - i * direction_of_move];
 
@@ -82,8 +82,8 @@ void Queen::setPossibleMove(std::shared_ptr<Board> board){
     }
     // right backward
     i = 1;
-    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0 || 
-             column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){
+    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  < 0 ||
+             column_current + i * direction_of_move > 7 || column_current + i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current + i * direction_of_move][row_current - i * direction_of_move];
 
@@ -104,7 +104,7 @@ void Queen::setPossibleMove(std::shared_ptr<Board> board){
     //forward
     i = 1;
 
-    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0)){
+    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current][row_current + i * direction_of_move];
 
@@ -125,7 +125,7 @@ void Queen::setPossibleMove(std::shared_ptr<Board> board){
 
     // backward 
     i = 1;
-    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0)){
+    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current][row_current + i * direction_of_move];
 
@@ -144,7 +144,7 @@ void Queen::setPossibleMove(std::shared_ptr<Board> board){
     }
     // left
     i = 1;
-    while (!(column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
+    while (!(column_current - i * direction_of_move > 7 || column_current - i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current - i * direction_of_move][row_current];
 
@@ -163,7 +163,7 @@ void Queen::setPossibleMove(std::shared_ptr<Board> board){
     }
     // right
     i = 1;
-    while (!(column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){
+    while (!(column_current + i * direction_of_move > 7 || column_current + i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current + i * direction_of_move][row_current];
 

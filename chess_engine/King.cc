@@ -42,8 +42,8 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     // left forward
 
 
-    if (!(row_current + 1 * direction_of_move  > 7 || row_current + 1 * direction_of_move  > 0 || 
-             column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move > 0)){
+    if (!(row_current + 1 * direction_of_move  > 7 || row_current + 1 * direction_of_move  < 0 ||
+             column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current - 1 * direction_of_move][row_current + 1 * direction_of_move];
 
@@ -80,8 +80,8 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     }
     // left backward
     
-    if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  > 0 || 
-             column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move > 0)){
+    if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  < 0 ||
+             column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current - 1 * direction_of_move][row_current - 1 * direction_of_move];
 
@@ -98,8 +98,8 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     }
     // right backward
     
-    if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  > 0 || 
-             column_current + 1 * direction_of_move > 7 || column_current + 1 * direction_of_move > 0)){
+    if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  < 0 ||
+             column_current + 1 * direction_of_move > 7 || column_current + 1 * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current + 1 * direction_of_move][row_current - 1 * direction_of_move];
 
@@ -118,7 +118,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     //forward
     
 
-    if (!(row_current + 1 * direction_of_move  > 7 || row_current + 1 * direction_of_move  > 0)){
+    if (!(row_current + 1 * direction_of_move  > 7 || row_current + 1 * direction_of_move  < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current][row_current + 1 * direction_of_move];
 
@@ -137,7 +137,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
 
     // backward 
     
-    if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  > 0)){
+    if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current][row_current + 1 * direction_of_move];
 
@@ -154,7 +154,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     }
     // left
     
-    if (!(column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move > 0)){
+    if (!(column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current - 1 * direction_of_move][row_current];
 
@@ -171,7 +171,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     }
     // right
     
-    if (!(column_current + 1 * direction_of_move > 7 || column_current + 1 * direction_of_move > 0)){
+    if (!(column_current + 1 * direction_of_move > 7 || column_current + 1 * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current + 1 * direction_of_move][row_current];
 

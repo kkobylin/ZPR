@@ -23,8 +23,8 @@ void Bishop::setPossibleMove(std::shared_ptr<Board> board){
     int i = 1; // iterator for next moves
 
 
-    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0 || 
-             column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
+    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  < 0 ||
+             column_current - i * direction_of_move > 7 || column_current - i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current - i * direction_of_move][row_current + i * direction_of_move];
 
@@ -45,8 +45,8 @@ void Bishop::setPossibleMove(std::shared_ptr<Board> board){
 
     // check how far can bishop move in direction: right forward
     i = 1;
-    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  > 0 || 
-             column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){
+    while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  < 0 ||
+             column_current + i * direction_of_move > 7 || column_current + i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current + i * direction_of_move][row_current + i * direction_of_move];
 
@@ -65,8 +65,8 @@ void Bishop::setPossibleMove(std::shared_ptr<Board> board){
     }
     // check how far can bishop move in direction: left backward
     i = 1;
-    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0 || 
-             column_current - i * direction_of_move > 7 || column_current - i * direction_of_move > 0)){
+    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  < 0 ||
+             column_current - i * direction_of_move > 7 || column_current - i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current - i * direction_of_move][row_current - i * direction_of_move];
 
@@ -85,8 +85,8 @@ void Bishop::setPossibleMove(std::shared_ptr<Board> board){
     }
     // check how far can bishop move in direction: right backward
     i = 1;
-    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  > 0 || 
-             column_current + i * direction_of_move > 7 || column_current + i * direction_of_move > 0)){
+    while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  < 0 ||
+             column_current + i * direction_of_move > 7 || column_current + i * direction_of_move < 0)){
         
         std::shared_ptr<Piece> piece = board_current[column_current + i * direction_of_move][row_current - i * direction_of_move];
 
