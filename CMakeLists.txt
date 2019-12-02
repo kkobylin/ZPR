@@ -28,11 +28,11 @@ add_library(chesslib SHARED
         Square.cc
         )
 cmake_host_system_information(RESULT name QUERY HOSTNAME)
-set(BOOST_ROOT "/home/${name}/Desktop/Boost/boost_1_71_0")
-set(BOOSTROOT "/home/${name}/Desktop/Boost/boost_1_71_0")
-set(Boost_INCLUDE_DIR "/home/${name}/Desktop/Boost/boost_1_71_0")
+set(BOOST_ROOT "/home/$ENV{USERNAME}/Desktop/Boost/boost_1_71_0")
+set(BOOSTROOT "/home/$ENV{USERNAME}/Desktop/Boost/boost_1_71_0")
+set(Boost_INCLUDE_DIR "/home/$ENV{USERNAME}/Desktop/Boost/boost_1_71_0")
 set(PYTHON_INCLUDE "/usr/include/python3.6")
-set(Boost_Linker "/home/" ${name} "/Desktop/Boost/boost_1_71_0/stage/lib")
+set(Boost_Linker "/home/" $ENV{USERNAME} "/Desktop/Boost/boost_1_71_0/stage/lib")
 
 target_link_libraries(chesslib python3.6m boost_system boost_python3)
 find_package(Boost 1.71.0 REQUIRED COMPONENTS python3)
