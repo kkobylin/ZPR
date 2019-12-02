@@ -30,6 +30,8 @@ echo "clean"
 echo "building"
 ./b2 --with-python link=static cxxflags="-std=c++11 -fPIC" variant=release stage
 ./b2 --with-python link=static cxxflags="-std=c++11 -fPIC" variant=release install
+echo "installing flask"
+sudo apt install -y python3-flask
 echo "finished"
 
 
