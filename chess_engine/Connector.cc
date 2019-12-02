@@ -13,10 +13,15 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     std::shared_ptr<Board> boardInstance = Board::getInstance();
     board_type board = boardInstance->getBoard();
 
-    board[src[0] -'a'][static_cast<int>(src[1]) - 1]->setPossibleMove(boardInstance);
-    std::vector<Position> possiblePositions = board[src[0] -'a'][static_cast<int>(src[1]) - 1]->getMoves();
+    int src_col = src[0] - 'a';
+    int src_row = (src[1] - '0') - 1;
+    int dest_col = dest[0] - 'a';
+    int dest_row = (dest[1] - '0') - 1;
+
+    board[src_col][src_row]->setPossibleMove(boardInstance);
+    std::vector<Position> possiblePositions = board[src_col][src_row]->getMoves();
     for(Position p : possiblePositions){
-        if(p.column == dest[0] - 'a' && p.row == static_cast<int>(dest[1]) -1 )
+        if(p.column == dest_col && p.row == dest_row)
             return true;
     }
 
