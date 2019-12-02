@@ -2,8 +2,8 @@
 echo "installing required packages"
 echo "add universe repository"
 sudo add-apt-repository universe
-echo "apt-get -y update"
-sudo apt-get update
+echo "apt-get update"
+sudo apt-get -y update
 echo "install libboost dev"
 sudo apt-get -y install libboost-all-dev
 echo "getting boost_1_60_0"
