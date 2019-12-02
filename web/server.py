@@ -1,7 +1,6 @@
 #!flask/bin/python
 from flask import Flask, jsonify, request, make_response, abort, render_template, send_file
-import chess_logic
-
+import libchesslib
 app = Flask(__name__)
 
 temp = True
@@ -25,6 +24,7 @@ def receive_msg():
     json_dict = request.form.to_dict()
     source = json_dict.get("source")
     target = json_dict.get("target")
+    piece = json_dict.get("piece")
     app.logger.info("Getting message from + %s + to + %s", source, target)
 
     # Cpp function here as return if move valid or not
@@ -35,7 +35,7 @@ def receive_msg():
     # else:
     #     temp = False
     #     app.logger.info("False")
-    temp = chess_logic.ifMovePossible(source, target)
+    temp = libchesslib.ifMovePossible(source, target)
 
     return jsonify({'legalMove': temp}), 201
 

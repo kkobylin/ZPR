@@ -33,7 +33,8 @@ function onDragStart (source, piece, position, orientation) {
 function onDrop (source, target, piece, newPos, oldPos, orientation) {
     var jsonToSend = {
         "source": source,
-        "target": target
+        "target": target,
+        "piece": piece
     };
 
     $.ajax({
