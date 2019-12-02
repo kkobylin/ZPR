@@ -1,6 +1,6 @@
 # Chess
 
-### Prerequisities:
+### Prerequisites:
 - Python3
 - Flask
 
