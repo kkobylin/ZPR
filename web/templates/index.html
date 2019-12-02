@@ -21,6 +21,12 @@
     <!--
     <script type="text/javascript" src="{{ url_for('static', filename='chess.js') }}"></script>
     -->
+    <style>
+        .board{
+            margin: auto;
+            width: 40%;
+        }
+    </style>
 </head>
 <body>
 <div class="navbar">
@@ -32,7 +38,7 @@
 <button id="btn1" class="btn">Get messages</button>
 <button id="btn2" class="btn">Send message</button>
 
-<div id="myBoard" style="width: 40%"></div>
+<div id="myBoard" class="board"></div>
 <button id="showPositionBtn">Show position in console</button>
 
 <script>
@@ -71,20 +77,24 @@
     function onDrop (source, target, piece, newPos, oldPos, orientation) {
         var jsonToSend = {
             "source": source,
-            "target": target
+            "target": target,
+            "piece": piece
         };
 
         $.ajax({
             type: "POST",
+            async: false,
             url: postURI,
             data: jsonToSend,
             success: function (result) {
                 snapBack = (result.legalMove === false);
             },
             error: function (result) {
-                alert("error:" + result);
+
+                alert("error:" + JSON.stringify(result));
             }
         });
+
         if (snapBack) return 'snapback';
     }
 </script>

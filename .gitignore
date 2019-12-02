@@ -1,4 +1,6 @@
 venv/
+boost_1_71_0
+boost_1_71_0/*
 **/*.idea
 **/*.idea/*
 **/*.[oa]
