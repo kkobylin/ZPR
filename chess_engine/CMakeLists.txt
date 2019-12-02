@@ -26,7 +26,9 @@ add_library(chesslib SHARED
         Queen.cc
         Rook.cc
         Square.cc
-        test/PawnTest.cpp)
+        AI/AIClass.cpp
+        AI/AIClass.h
+        AI/positionValue.h)
 
 set(BOOST_ROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")
 set(BOOSTROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")

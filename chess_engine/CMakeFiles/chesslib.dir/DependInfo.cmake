@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.cpp" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles/chesslib.dir/AI/AIClass.o"
   "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.cc" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles/chesslib.dir/Bishop.o"
   "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.cc" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles/chesslib.dir/Board.o"
   "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.cc" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles/chesslib.dir/Connector.o"
@@ -15,18 +16,13 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.cc" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles/chesslib.dir/Queen.o"
   "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.cc" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles/chesslib.dir/Rook.o"
   "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.cc" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles/chesslib.dir/Square.o"
-  "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/PawnTest.cpp" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles/chesslib.dir/test/PawnTest.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "chesslib_EXPORTS"
-  )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0,"
+  "/usr/include/python3.6"
   )
 
 # Targets to which this target links.

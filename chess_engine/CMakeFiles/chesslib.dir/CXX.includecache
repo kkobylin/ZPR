@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.cpp
+AIClass.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.h
+
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.h
+memory
+-
+lib/Board.h
+-
+
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.cc
 lib/Bishop.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
