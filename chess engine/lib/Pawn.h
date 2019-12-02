@@ -13,7 +13,7 @@ public:
     Pawn(int column, int row, PieceColor color, std::string figureName) :
     Piece (column, row, color, figureName){};
 
-    void setPossibleMove(Board) override;
+    void setPossibleMove(std::shared_ptr<Board>) override;
     void move(Position);
     void move(Position, Board) override;
     

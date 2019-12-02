@@ -2,11 +2,11 @@
 #include <memory>
 
 void Queen::move(Position position, Board board){}
-void Queen::setPossibleMove(Board board){}/*
+void Queen::setPossibleMove(std::shared_ptr<Board> board){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
-    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board.getBoard();
+    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
 
@@ -183,4 +183,4 @@ void Queen::setPossibleMove(Board board){}/*
 
 
     this->setMoves(possiblePosition);
-}*/
+}

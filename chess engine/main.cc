@@ -3,15 +3,15 @@
 
 int main(void){
     //std::cout << "tu";
-    Board board {};
-    Position pos {1,2};
-
-
-     for (auto b : board.getBoard())
-        for (auto a : b)
-            std::cout << *a;
-    board_type x = board.getBoard();
-    x[1][1]->move(pos,board);
+//    Board board {};
+//    Position pos {1,2};
+//
+//
+//     for (auto b : board.getBoard())
+//        for (auto a : b)
+//            std::cout << *a;
+//    board_type x = board.getBoard();
+//    x[1][1]->move(pos,board);
 
 
 }

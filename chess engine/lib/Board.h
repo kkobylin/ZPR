@@ -39,12 +39,16 @@ std::vector <std::vector <std::string>> const INITIAL_BOARD = {
 
 class Board{
 private:
-    std::vector <std::vector <std::shared_ptr<Piece>>> board;
-    int x;
-    int y;
-public:
+    static std::shared_ptr<Board> instance;
+    board_type board;
+    Board(const Board&) = delete;
+    Board& operator=(const Board&) = delete;
     Board();
-    void updateSquare(int, int, std::shared_ptr<Piece>);
-    std::vector <std::vector <std::shared_ptr<Piece>>> getBoard();
+public:
+    //void static updateSquare(int, int, std::shared_ptr<Piece>); //todo zeby dzialalo na swoim boardzie
+    //std::vector <std::vector <std::shared_ptr<Piece>>> getBoard();
+    static std::shared_ptr<Board> getInstance();
+    board_type getBoard();
+
 };
 #endif

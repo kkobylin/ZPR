@@ -2,11 +2,11 @@
 #include <memory>
 
 void Knight::move(Position position, Board board){}
-void Knight::setPossibleMove(Board board){}/*
+void Knight::setPossibleMove(std::shared_ptr<Board> board){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
-    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board.getBoard();
+    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
 
@@ -169,4 +169,4 @@ void Knight::setPossibleMove(Board board){}/*
 
 
     this->setMoves(possiblePosition);
-}*/
+}

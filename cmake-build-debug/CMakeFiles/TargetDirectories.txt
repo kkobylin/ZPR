@@ -1,0 +1,3 @@
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/cmake-build-debug/CMakeFiles/ZPR.dir
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/cmake-build-debug/CMakeFiles/edit_cache.dir
