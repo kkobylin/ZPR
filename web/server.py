@@ -21,6 +21,7 @@ def get_image(piece):
 
 @app.route('/api/post', methods=['POST'])
 def receive_msg():
+
     json_dict = request.form.to_dict()
     source = json_dict.get("source")
     target = json_dict.get("target")
@@ -36,6 +37,7 @@ def receive_msg():
     #     temp = False
     #     app.logger.info("False")
     temp = libchesslib.ifMovePossible(source, target)
+
 
     return jsonify({'legalMove': temp}), 201
 

@@ -1,7 +1,7 @@
 postURI = 'http://localhost:5000/api/post';
 
 /* Global variable to define whether move or not */
-var snapBack = true;
+var snapBack;
 
 var chessConfig = {
     draggable: true,
@@ -33,6 +33,7 @@ function onDragStart (source, piece, position, orientation) {
 function onDrop (source, target, piece, newPos, oldPos, orientation) {
     var jsonToSend = {
         "source": source,
+
         "target": target,
         "piece": piece
     };
@@ -46,6 +47,7 @@ function onDrop (source, target, piece, newPos, oldPos, orientation) {
             snapBack = (result.legalMove === false);
         },
         error: function (result) {
+
             alert("error:" + JSON.stringify(result));
         }
     });

@@ -45,7 +45,7 @@
     postURI = 'http://localhost:5000/api/post';
 
     /* Global variable to define whether move or not */
-    var snapBack = true;
+    var snapBack;
 
     var chessConfig = {
         draggable: true,
@@ -90,6 +90,7 @@
                 snapBack = (result.legalMove === false);
             },
             error: function (result) {
+
                 alert("error:" + JSON.stringify(result));
             }
         });
