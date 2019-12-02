@@ -8,6 +8,6 @@ public:
     Empty(int column, int row,bool occupied, std::string figureName) :
     Piece (column, row, occupied, figureName){};
     void move(Position, Board) override;
-    void setPossibleMove(Board) override;
+    void setPossibleMove(std::shared_ptr<Board>) override;
 };
 #endif

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="chess"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chesslib">
+				<Option output="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/cmake-build-debug/libchesslib.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0,"/>
+					<Add directory="/usr/include/python3.6"/>
+					<Add directory="."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 chesslib"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chesslib/fast">
+				<Option output="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/cmake-build-debug/libchesslib.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0,"/>
+					<Add directory="/usr/include/python3.6"/>
+					<Add directory="."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 chesslib/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess\ engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Bishop.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Board.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Connector.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Connector.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Empty_square.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/King.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Knight.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Pawn.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Piece.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Queen.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Rook.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/Square.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/Bishop.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/Board.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/Empty_square.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/King.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/Knight.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/Pawn.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/Piece.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/Queen.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/Rook.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/lib/Square.h">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/main.cc">
+			<Option target="chesslib"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess engine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

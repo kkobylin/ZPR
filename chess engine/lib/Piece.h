@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <string>
 #include <iostream>
+#include <memory>
 //#include "Board.h"
 
 class Board;
@@ -62,7 +63,7 @@ public:
     void setMoves(std::vector<Position>); // set possible moves
     void setFigureName(std::string); // set figure name
     virtual void move(Position, Board) = 0; // move figure
-    virtual void setPossibleMove(Board) = 0; // set vector of possible moves
+    virtual void setPossibleMove(std::shared_ptr<Board>) = 0; // set vector of possible moves
 
     PieceColor            getColor(); // get color of figure
     int                   getColumn(); // get column of figure

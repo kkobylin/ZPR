@@ -7,7 +7,8 @@
     this->moved = true;
 }*/
 void Pawn::move(Position position, Board board){
-    this->setPossibleMove(board);
+    //todo
+    //this->setPossibleMove(board);
     std::vector<Position> position_vector = this->getMoves();
     std::vector<Position>::iterator it = std::find(position_vector.begin(),
                                                    position_vector.end(), 
@@ -29,11 +30,11 @@ if (isMoved)
     
 } */
 
-void Pawn::setPossibleMove(Board board){}/*
+void Pawn::setPossibleMove(std::shared_ptr<Board> board){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
-    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board.getBoard();
+    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
 
@@ -84,4 +85,4 @@ void Pawn::setPossibleMove(Board board){}/*
 
     this->setMoves(possiblePosition);
 
-}*/
+}

@@ -5,6 +5,7 @@
 
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
+//todo zmienic kontruktor zeby dzialal na wskazniku
 Board::Board(){
     for (int column = 0; column < 8; column++){
         board.push_back(std::vector<std::shared_ptr<Piece>>());
@@ -35,12 +36,16 @@ Board::Board(){
             }
         } 
     }
-    
-
             
 }
 
-std::vector <std::vector <std::shared_ptr<Piece>>> Board::getBoard(){
-    return this->board;
+std::shared_ptr<Board> Board::getInstance(){
+    if(!instance)
+        instance = std::shared_ptr<Board> (new Board());
+    return instance;
+}
+
+board_type Board::getBoard() {
+    return board;
 }
 
