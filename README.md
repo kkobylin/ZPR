@@ -7,11 +7,11 @@
 
 
 ### Automated installation:
-```chmod +x script.sh```
+```chmod +x script_1_71_0.sh```
 
-```./script.sh```
+```./script_1_71_0.sh```
 
-This script automatically builds and installs all required files for boost. Using boost_1_60_0
+This script automatically builds and installs all required files for boost. Using boost_1_71_0
 
 ### Manual installation:
 
