@@ -33,19 +33,24 @@ function onDragStart (source, piece, position, orientation) {
 function onDrop (source, target, piece, newPos, oldPos, orientation) {
     var jsonToSend = {
         "source": source,
-        "target": target
+
+        "target": target,
+        "piece": piece
     };
 
     $.ajax({
         type: "POST",
+        async: false,
         url: postURI,
         data: jsonToSend,
         success: function (result) {
             snapBack = (result.legalMove === false);
         },
         error: function (result) {
-            alert("error:" + result);
+
+            alert("error:" + JSON.stringify(result));
         }
     });
+
     if (snapBack) return 'snapback';
 }
