@@ -22,6 +22,8 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     std::vector<Position> possiblePositions = board[src_col][src_row]->getMoves();
     for(Position p : possiblePositions){
         if(p.column == dest_col && p.row == dest_row)
+            board[dest_col][dest_row] = board[src_col][src_row];
+            board[src_col][src_row] = new std::shared_ptr<Empty> {new Empty(src_col, src_row, false, "NN")};
             return true;
     }
 
