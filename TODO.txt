@@ -1,0 +1,26 @@
+refaktor kodu
+dziedziczenie empty po piece
+skonczenie logiki figur
+zaimplementowac przesuniecie figur (Singleton)
+dopasować kod do wymagań dr B.
+cmake i skrytpkty instalujace
+testy jednostkowe
+komentarze
+szachowanie króla
+doxygen
+
+
+
+
+konektor
+AI poczatki (min max, wartosc pól)
+frontend (naprawić przyciski)
+forntend (wygrana przegrana)
+frontend( wiadomości od AI)
+
+dodatki:
+serwer na innym komputerze niz uzytkownik
+podswietlanie (JS)
+cofanie ruchu
+mozliwe ruchy dla gracza (C++)
+
