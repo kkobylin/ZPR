@@ -23,7 +23,8 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     for(Position p : possiblePositions){
         if(p.column == dest_col && p.row == dest_row)
             board[dest_col][dest_row] = board[src_col][src_row];
-            board[src_col][src_row] = new std::shared_ptr<Empty> {new Empty(src_col, src_row, false, "NN")};
+            std::string name (1, 'E');
+            board[src_col][src_row] = std::shared_ptr<Empty> {new Empty(src_col, src_row, false, name)};
             return true;
     }
 
