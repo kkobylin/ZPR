@@ -1,5 +1,5 @@
 refaktor kodu
-dziedziczenie empty po piece
+dziedziczenie empty po piece -zrobione
 skonczenie logiki figur
 zaimplementowac przesuniecie figur (Singleton)
 dopasować kod do wymagań dr B.
