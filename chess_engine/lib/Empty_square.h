@@ -3,7 +3,7 @@
 #include "Piece.h"
 #include "Board.h"
 
-class Empty : public Piece{
+[[deprecated("Changed inheritance dependencies")]]class Empty : public Piece{
 public:
     Empty(int column, int row,bool occupied, std::string figureName) :
     Piece (column, row, occupied, figureName){};

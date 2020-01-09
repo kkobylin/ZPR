@@ -13,19 +13,36 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     std::shared_ptr<Board> boardInstance = Board::getInstance();
     board_type board = boardInstance->getBoard();
 
-    int src_col = src[0] - 'a';
-    int src_row = (src[1] - '0') - 1;
-    int dest_col = dest[0] - 'a';
-    int dest_row = (dest[1] - '0') - 1;
+    int src_col = src[0] - 'a'; std::cout << "src_col" << src_col << std::endl; //test
+    int src_row = (src[1] - '0') - 1; std::cout << "src_row" << src_row << std::endl; //test
+    int dest_col = dest[0] - 'a'; std::cout << "dest_col" << dest_col << std::endl; //test
+    int dest_row = (dest[1] - '0') - 1; std::cout << "dest_row" << dest_row << std::endl; //test
+    std::cout << "source place of figure: " << board[src_col][src_row]->getPiece() << std::endl; //test
 
-    board[src_col][src_row]->setPossibleMove(boardInstance);
-    std::vector<Position> possiblePositions = board[src_col][src_row]->getMoves();
+    board[src_col][src_row]->getPiece()->setPossibleMove(boardInstance);
+    std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getMoves();
+
     for(Position p : possiblePositions){
-        if(p.column == dest_col && p.row == dest_row)
-            board[dest_col][dest_row] = board[src_col][src_row];
-            std::string name (1, 'E');
-            board[src_col][src_row] = std::shared_ptr<Empty> {new Empty(src_col, src_row, false, name)};
+        if(p.column == dest_col && p.row == dest_row){
+            //update board
+                //update destination Square
+            board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
+            board[dest_col][dest_row]->setOccupied(true);
+            board[dest_col][dest_row]->getPiece()->setPosition(p); // aktualizacja pozycji figury
+            if(board[dest_col][dest_row]->getPiece()->getFigureName() == "P"){
+                board[dest_col][dest_row]->getPiece()->setMoved();
+            }
+
+                //update source Square
+            board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
+            board[src_col][src_row]->setOccupied(false);
+
+
+            std::cout << "destination place of figure: " << *(board[dest_col][dest_row]->getPiece()) << std::endl; //test
             return true;
+
+        }
+        
     }
 
     return false;

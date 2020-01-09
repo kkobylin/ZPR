@@ -12,6 +12,7 @@ CMakeFiles/chesslib.dir/Bishop.o
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Queen.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Rook.h
+ /home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Board.o
  /home/marcin/ZPR/ZPR/chess_engine/Board.cc
  /home/marcin/ZPR/ZPR/chess_engine/lib/Bishop.h
@@ -23,6 +24,7 @@ CMakeFiles/chesslib.dir/Board.o
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Queen.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Rook.h
+ /home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Connector.o
  /home/marcin/ZPR/ZPR/chess_engine/Connector.cc
  /home/marcin/ZPR/ZPR/chess_engine/Connector.h
@@ -35,6 +37,7 @@ CMakeFiles/chesslib.dir/Connector.o
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Queen.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Rook.h
+ /home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Empty_square.o
  /home/marcin/ZPR/ZPR/chess_engine/Empty_square.cc
  /home/marcin/ZPR/ZPR/chess_engine/lib/Bishop.h
@@ -46,6 +49,7 @@ CMakeFiles/chesslib.dir/Empty_square.o
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Queen.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Rook.h
+ /home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/King.o
  /home/marcin/ZPR/ZPR/chess_engine/King.cc
  /home/marcin/ZPR/ZPR/chess_engine/lib/Bishop.h
@@ -57,6 +61,7 @@ CMakeFiles/chesslib.dir/King.o
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Queen.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Rook.h
+ /home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Knight.o
  /home/marcin/ZPR/ZPR/chess_engine/Knight.cc
  /home/marcin/ZPR/ZPR/chess_engine/lib/Bishop.h
@@ -68,6 +73,7 @@ CMakeFiles/chesslib.dir/Knight.o
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Queen.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Rook.h
+ /home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Pawn.o
  /home/marcin/ZPR/ZPR/chess_engine/Pawn.cc
  /home/marcin/ZPR/ZPR/chess_engine/lib/Bishop.h
@@ -79,6 +85,7 @@ CMakeFiles/chesslib.dir/Pawn.o
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Queen.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Rook.h
+ /home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Piece.o
  /home/marcin/ZPR/ZPR/chess_engine/Piece.cc
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
@@ -93,6 +100,7 @@ CMakeFiles/chesslib.dir/Queen.o
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Queen.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Rook.h
+ /home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Rook.o
  /home/marcin/ZPR/ZPR/chess_engine/Rook.cc
  /home/marcin/ZPR/ZPR/chess_engine/lib/Bishop.h
@@ -104,6 +112,7 @@ CMakeFiles/chesslib.dir/Rook.o
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Queen.h
  /home/marcin/ZPR/ZPR/chess_engine/lib/Rook.h
+ /home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Square.o
  /home/marcin/ZPR/ZPR/chess_engine/Square.cc
  /home/marcin/ZPR/ZPR/chess_engine/lib/Piece.h

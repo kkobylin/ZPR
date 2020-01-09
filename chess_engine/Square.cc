@@ -30,3 +30,11 @@ Square::Square(std::shared_ptr<Piece> piece){
 		this->row = row;
 	}
 
+	bool Square::getOccupied(){
+		return occupied;
+	}
+
+	void Square::setOccupied(bool occupied){
+		this->occupied = occupied;
+	}
+

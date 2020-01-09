@@ -30,7 +30,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
-    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board->getBoard();
+    std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
 
@@ -45,7 +45,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     if (!(row_current + 1 * direction_of_move  > 7 || row_current + 1 * direction_of_move  < 0 ||
              column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current - 1 * direction_of_move][row_current + 1 * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current - 1 * direction_of_move][row_current + 1 * direction_of_move];
 
         position.column = column_current - 1 * direction_of_move;
         position.row    = row_current + 1 * direction_of_move;
@@ -53,7 +53,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
         possiblePosition.push_back(position);
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             
         }
@@ -62,10 +62,10 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
 
     // right forward
     
-    if (!(row_current + 1 * direction_of_move  > 7 || row_current + 1 * direction_of_move  > 0 || 
-             column_current + 1 * direction_of_move > 7 || column_current + 1 * direction_of_move > 0)){
+    if (!(row_current + 1 * direction_of_move  > 7 || row_current + 1 * direction_of_move  < 0 || 
+             column_current + 1 * direction_of_move > 7 || column_current + 1 * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current + 1 * direction_of_move][row_current + 1 * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current + 1 * direction_of_move][row_current + 1 * direction_of_move];
 
         position.column = column_current + 1 * direction_of_move;
         position.row    = row_current + 1 * direction_of_move;
@@ -73,7 +73,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
         possiblePosition.push_back(position);
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             
         }
@@ -83,7 +83,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  < 0 ||
              column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current - 1 * direction_of_move][row_current - 1 * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current - 1 * direction_of_move][row_current - 1 * direction_of_move];
 
         position.column = column_current - 1 * direction_of_move;
         position.row    = row_current - 1 * direction_of_move;
@@ -91,7 +91,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
         possiblePosition.push_back(position);
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             
         }
@@ -101,7 +101,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  < 0 ||
              column_current + 1 * direction_of_move > 7 || column_current + 1 * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current + 1 * direction_of_move][row_current - 1 * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current + 1 * direction_of_move][row_current - 1 * direction_of_move];
 
         position.column = column_current + 1 * direction_of_move;
         position.row    = row_current - 1 * direction_of_move;
@@ -109,7 +109,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
         possiblePosition.push_back(position);
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             
         }
@@ -120,7 +120,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
 
     if (!(row_current + 1 * direction_of_move  > 7 || row_current + 1 * direction_of_move  < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current][row_current + 1 * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current][row_current + 1 * direction_of_move];
 
         position.column = column_current;
         position.row    = row_current + 1 * direction_of_move;
@@ -128,7 +128,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
         possiblePosition.push_back(position);
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             
         }
@@ -139,7 +139,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     
     if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current][row_current + 1 * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current][row_current + 1 * direction_of_move];
 
         position.column = column_current;
         position.row    = row_current + 1 * direction_of_move;
@@ -147,7 +147,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
         possiblePosition.push_back(position);
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             
         }
@@ -156,7 +156,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     
     if (!(column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current - 1 * direction_of_move][row_current];
+        std::shared_ptr<Square> piece = board_current[column_current - 1 * direction_of_move][row_current];
 
         position.column = column_current - 1 * direction_of_move;
         position.row    = row_current;
@@ -164,7 +164,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
         possiblePosition.push_back(position);
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             
         }
@@ -173,7 +173,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
     
     if (!(column_current + 1 * direction_of_move > 7 || column_current + 1 * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current + 1 * direction_of_move][row_current];
+        std::shared_ptr<Square> piece = board_current[column_current + 1 * direction_of_move][row_current];
 
         position.column = column_current + 1 * direction_of_move;
         position.row    = row_current;
@@ -181,7 +181,7 @@ void King::setPossibleMove(std::shared_ptr<Board> board){
         possiblePosition.push_back(position);
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             
         }

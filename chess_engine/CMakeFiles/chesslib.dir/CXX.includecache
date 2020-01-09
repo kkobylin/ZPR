@@ -101,6 +101,8 @@ Pawn.h
 /home/marcin/ZPR/ZPR/chess_engine/lib/Pawn.h
 Empty_square.h
 /home/marcin/ZPR/ZPR/chess_engine/lib/Empty_square.h
+Square.h
+/home/marcin/ZPR/ZPR/chess_engine/lib/Square.h
 memory
 -
 
