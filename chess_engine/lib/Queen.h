@@ -9,6 +9,6 @@ public:
     Queen(int column, int row, PieceColor color, std::string figureName) :
     Piece (column, row, color, figureName){};
     void move(Position, Board) override;
-    void setPossibleMove(std::shared_ptr<Board>) override;
+    std::vector<Position> getPossibleMoves() override;
 };
 #endif

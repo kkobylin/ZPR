@@ -63,7 +63,7 @@ public:
     void setMoves(std::vector<Position>); // set possible moves
     void setFigureName(std::string); // set figure name
     virtual void move(Position, Board) = 0; // move figure
-    virtual void setPossibleMove(std::shared_ptr<Board>) = 0; // set vector of possible moves
+    virtual std::vector<Position> getPossibleMoves() = 0; // get vector of possible moves
 
     PieceColor            getColor(); // get color of figure
     int                   getColumn(); // get column of figure
@@ -72,7 +72,7 @@ public:
     bool                  isKilled(); // set figure killed
     bool                  getMoved(); // set figure moved
     bool                  getOccupied(); // is square occupied
-    std::vector<Position> getMoves(); // get possible moves of figure
+
     std::string           getFigureName(); // get figure name
 
     friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row << c.color << c.figureName << std::endl;}; // output position and figure name

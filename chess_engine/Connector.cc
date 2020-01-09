@@ -7,19 +7,24 @@
 #include <boost/python/def.hpp>
 #include "lib/Board.h"
 #include <memory>
+#include <string>
 
-// todo zmienic board zeby mialo wiersze x kolumny
 bool const Connector::ifMovePossible(std::string dest, std::string src){
     std::shared_ptr<Board> boardInstance = Board::getInstance();
     board_type board = boardInstance->getBoard();
 
-    int src_col = src[0] - 'a';
-    int src_row = (src[1] - '0') - 1;
-    int dest_col = dest[0] - 'a';
-    int dest_row = (dest[1] - '0') - 1;
+    /* Convert columns from A to H to 0-7*/
+    // 97 - value of 'a' in ASCII table
+    int src_col = static_cast<int>(src[0]) - 97;
+    int dest_col = static_cast<int>(dest[0]) - 97;
 
-    board[src_col][src_row]->setPossibleMove(boardInstance);
-    std::vector<Position> possiblePositions = board[src_col][src_row]->getMoves();
+    /* Convert rows from 1 to 8 to 0-7*/
+    int src_row = std::stoi(src.substr(1,1));
+    src_row --;
+    int dest_row = std::stoi(dest.substr(1,1));
+    dest_row --;
+
+    std::vector<Position> possiblePositions = board[src_col][src_row]->getPossibleMoves();
     for(Position p : possiblePositions){
         if(p.column == dest_col && p.row == dest_row)
             return true;
@@ -28,10 +33,20 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     return false;
 }
 
+std::string const Connector::checkForWin() {
+    /* none draw win lose*/
+    //todo cpp function to check win
+    return "none";
+}
+std::string const Connector::opponentMove(){
+        /* Format e2-e4 */
+    return "b7-b3";
+}
 
 BOOST_PYTHON_MODULE(libchesslib)
         {
                 using namespace boost::python;
-                def("ifMovePossible", Connector::ifMovePossible)
-                ;
+                def("ifMovePossible", Connector::ifMovePossible);
+                def("checkForWin", Connector::checkForWin);
+                def("opponentMove", Connector::opponentMove);
         }
