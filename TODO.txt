@@ -14,13 +14,14 @@ doxygen
 
 konektor
 AI poczatki (min max, wartosc pól)
-frontend (naprawić przyciski)
-forntend (wygrana przegrana)
-frontend( wiadomości od AI)
+frontend (naprawić przyciski) - done
+forntend (wygrana przegrana) - done
+frontend( wiadomości od AI) - done
 
 dodatki:
 serwer na innym komputerze niz uzytkownik
 podswietlanie (JS)
 cofanie ruchu
 mozliwe ruchy dla gracza (C++)
+restart gry
 
