@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/chesslib.dir/AI/AIClass.o"
+  "CMakeFiles/chesslib.dir/AI/PositionValue.o"
   "CMakeFiles/chesslib.dir/Bishop.o"
   "CMakeFiles/chesslib.dir/Board.o"
   "CMakeFiles/chesslib.dir/Connector.o"
@@ -10,7 +12,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/chesslib.dir/Queen.o"
   "CMakeFiles/chesslib.dir/Rook.o"
   "CMakeFiles/chesslib.dir/Square.o"
-  "CMakeFiles/chesslib.dir/AI/AIClass.o"
   "libchesslib.pdb"
   "libchesslib.so"
 )

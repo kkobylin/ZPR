@@ -13,6 +13,7 @@ public:
     Piece (column, row, color, figureName){};
     void move(Position, Board) override;
     std::vector<Position> getPossibleMoves() override;
+    double getPositionValue() override ;
     
     bool getMoved();
     void setMoved(bool);

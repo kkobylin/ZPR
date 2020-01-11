@@ -1,5 +1,6 @@
 #include "lib/Knight.h"
 #include <memory>
+#include <AI/PositionValue.h>
 
 void Knight::move(Position position, Board board){}
 std::vector<Position>  Knight::getPossibleMoves(){
@@ -171,4 +172,9 @@ std::vector<Position>  Knight::getPossibleMoves(){
 
     this->setMoves(possiblePosition);
     return possiblePosition;
+}
+
+double Knight::getPositionValue(){
+
+    return PositionValue::KnightEval[this->getRow()][this->getColumn()];
 }

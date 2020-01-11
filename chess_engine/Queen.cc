@@ -1,5 +1,6 @@
 #include "lib/Queen.h"
 #include <memory>
+#include <AI/PositionValue.h>
 
 void Queen::move(Position position, Board board){}
 std::vector<Position>  Queen::getPossibleMoves(){
@@ -185,4 +186,9 @@ std::vector<Position>  Queen::getPossibleMoves(){
 
     this->setMoves(possiblePosition);
     return possiblePosition;
+}
+
+double Queen::getPositionValue(){
+
+    return PositionValue::QueenEval[this->getRow()][this->getColumn()];
 }

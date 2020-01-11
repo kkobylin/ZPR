@@ -9,16 +9,18 @@
 #include <lib/Board.h>
 
 struct MovePacket{
-    PieceColor color;
-    int value;
-    Position src;
-    Position dest;
+    int src;
+    int dest;
 };
 
-class AIClass {
-    std::shared_ptr<MovePacket> MiniMaxRoot(int depth, std::shared_ptr<Board> currentBoard, int whosTurn);
-    int evaluateBoard(std::shared_ptr<Board> currentBoard, int side);
+typedef std::vector <std::vector <std::shared_ptr<Piece>>> board_type;
 
+class AIClass {
+public:
+    MovePacket MiniMaxRoot(int depth, PieceColor turn);
+
+private:
+    double evaluateBoard(board_type board);
 };
 
 

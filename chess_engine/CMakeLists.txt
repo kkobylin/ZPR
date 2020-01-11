@@ -28,7 +28,7 @@ add_library(chesslib SHARED
         Square.cc
         AI/AIClass.cpp
         AI/AIClass.h
-        AI/positionValue.h)
+        AI/PositionValue.h AI/PositionValue.cpp)
 
 set(BOOST_ROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")
 set(BOOSTROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")

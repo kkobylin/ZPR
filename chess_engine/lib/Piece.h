@@ -64,6 +64,8 @@ public:
     void setFigureName(std::string); // set figure name
     virtual void move(Position, Board) = 0; // move figure
     virtual std::vector<Position> getPossibleMoves() = 0; // get vector of possible moves
+    //todo
+    virtual double getPositionValue() = 0;
 
     PieceColor            getColor(); // get color of figure
     int                   getColumn(); // get column of figure

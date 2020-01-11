@@ -16,6 +16,7 @@ public:
     std::vector<Position> getPossibleMoves() override;
     void move(Position);
     void move(Position, Board) override;
+    double getPositionValue() override ;
     
 };
 #endif

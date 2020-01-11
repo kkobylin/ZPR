@@ -1,6 +1,6 @@
 #include "lib/Pawn.h"
 #include <memory>
-
+#include <AI/PositionValue.h>
 
 
 /* Pawn::setMoved(){
@@ -87,4 +87,13 @@ std::vector<Position>  Pawn::getPossibleMoves(){
     this->setMoves(possiblePosition);
     return possiblePosition;
 
+}
+
+double Pawn::getPositionValue(){
+    PieceColor color = this->getColor();
+
+    if(color == BLACK)
+        return PositionValue::PawnEvalBlack[this->getRow()][this->getColumn()];
+    else
+        return PositionValue::PawnEvalWhite[this->getRow()][this->getColumn()];
 }

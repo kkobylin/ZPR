@@ -1,5 +1,6 @@
 #include "lib/King.h"
 #include <memory>
+#include <AI/PositionValue.h>
 
 bool King::getMoved(){
         return this->moved;
@@ -193,4 +194,13 @@ std::vector<Position>  King::getPossibleMoves(){
 
     this->setMoves(possiblePosition);
     return possiblePosition;
+}
+
+double King::getPositionValue(){
+    PieceColor color = this->getColor();
+
+    if(color == BLACK)
+        return PositionValue::KingEvalBlack[this->getRow()][this->getColumn()];
+    else
+        return PositionValue::KingEvalWhite[this->getRow()][this->getColumn()];
 }
