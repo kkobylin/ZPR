@@ -25,6 +25,7 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Boar
         for(auto square : column){
             if(square->getOccupied() && square->getPiece()->getColor() == turn) {
                 std::shared_ptr<Piece> piece = square->getPiece();
+                //todo w getPossibleMoves przekazac board
                 auto posMoves = piece->getPossibleMoves();
                 for(auto pos : posMoves){
                     auto newBoard = boardObj;
