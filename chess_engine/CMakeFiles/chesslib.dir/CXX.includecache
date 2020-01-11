@@ -29,6 +29,8 @@ lib/Board.h
 /home/marcin/ZPR/ZPR/chess_engine/lib/Board.h
 memory
 -
+string
+-
 
 /home/marcin/ZPR/ZPR/chess_engine/Connector.h
 string

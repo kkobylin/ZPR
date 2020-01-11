@@ -30,11 +30,13 @@ if (isMoved)
     
 } */
 
-void Pawn::setPossibleMove(std::shared_ptr<Board> board){
+
+std::vector<Position> Pawn::getPossibleMove(){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
     std::cout << *this; //test
+    std::shared_ptr<Board> board = Board::getInstance();
     std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
@@ -85,7 +87,6 @@ void Pawn::setPossibleMove(std::shared_ptr<Board> board){
     }
 
     this->setMoves(possiblePosition);
-    for(auto p : possiblePosition) //test
-        std::cout << p.column << p.row << std::endl; //test
+return possiblePosition;
 
 }
