@@ -30,12 +30,14 @@ if (isMoved)
     
 } */
 
-std::vector<Position>  Pawn::getPossibleMoves(){
+
+std::vector<Position> Pawn::getPossibleMoves(){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
+    std::cout << *this; //test
     std::shared_ptr<Board> board = Board::getInstance();
-    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board->getBoard();
+    std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
 
@@ -64,8 +66,8 @@ std::vector<Position>  Pawn::getPossibleMoves(){
     if (!(row_current + 1 * direction_of_move > 7 || row_current + 1 * direction_of_move < 0)){
         // pawn can go left
         if (!(column_current - 1 * direction_of_move > 7 || column_current - 1 * direction_of_move < 0)){
-            std::shared_ptr<Piece> left_diagonal_piece = board_current[column_current - 1 * direction_of_move][row_current + 1 * direction_of_move];
-            if (left_diagonal_piece->getOccupied() && left_diagonal_piece->getColor() == -1 * direction_of_move){
+            std::shared_ptr<Square> left_diagonal_piece = board_current[column_current - 1 * direction_of_move][row_current + 1 * direction_of_move];
+            if (left_diagonal_piece->getOccupied() && left_diagonal_piece->getPiece()->getColor() == -1 * direction_of_move){
                 position.column = column_current - 1 * direction_of_move;
                 position.row    = row_current + 1 * direction_of_move;
 
@@ -74,8 +76,8 @@ std::vector<Position>  Pawn::getPossibleMoves(){
         }
         //pawn can go right
         if (!(column_current + 1 * direction_of_move > 7 || column_current + 1 * direction_of_move < 0)){
-            std::shared_ptr<Piece> right_diagonal_piece = board_current[column_current + 1 * direction_of_move][row_current + 1 * direction_of_move];
-            if (right_diagonal_piece->getOccupied() && right_diagonal_piece->getColor() == -1 * direction_of_move){
+            std::shared_ptr<Square> right_diagonal_piece = board_current[column_current + 1 * direction_of_move][row_current + 1 * direction_of_move];
+            if (right_diagonal_piece->getOccupied() && right_diagonal_piece->getPiece()->getColor() == -1 * direction_of_move){
                 position.column = column_current + 1 * direction_of_move;
                 position.row    = row_current + 1 * direction_of_move;
 

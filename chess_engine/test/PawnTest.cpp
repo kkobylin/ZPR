@@ -8,6 +8,7 @@
 #include "lib/Pawn.h"
 #include "lib/Piece.h"
 
+/*
 BOOST_AUTO_TEST_CASE(PawnTestCase)
 {
     PieceColor w = WHITE;
@@ -22,3 +23,4 @@ BOOST_AUTO_TEST_CASE(PawnTestCase)
    // BOOST_CHECK_EQUAL((int)x, 9);
    // BOOST_CHECK_CLOSE(x, 9.5f, 0.0001f); // Checks differ no more then 0.0001%
 }
+*/

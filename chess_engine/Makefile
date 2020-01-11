@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine
+CMAKE_SOURCE_DIR = /home/marcin/ZPR/ZPR_11_01_2020/chess_engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine
+CMAKE_BINARY_DIR = /home/marcin/ZPR/ZPR_11_01_2020/chess_engine
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,21 +122,6 @@ chesslib: cmake_check_build_system
 chesslib/fast:
 	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/build
 .PHONY : chesslib/fast
-
-# target to build an object file
-AI/AIClass.o:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/AI/AIClass.o
-.PHONY : AI/AIClass.o
-
-# target to preprocess a source file
-AI/AIClass.i:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/AI/AIClass.i
-.PHONY : AI/AIClass.i
-
-# target to generate assembly for a file
-AI/AIClass.s:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/AI/AIClass.s
-.PHONY : AI/AIClass.s
 
 # target to build an object file
 Bishop.o:
@@ -312,9 +297,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... chesslib"
 	@echo "... edit_cache"
-	@echo "... AI/AIClass.o"
-	@echo "... AI/AIClass.i"
-	@echo "... AI/AIClass.s"
 	@echo "... Bishop.o"
 	@echo "... Bishop.i"
 	@echo "... Bishop.s"
