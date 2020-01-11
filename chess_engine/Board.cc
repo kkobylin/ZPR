@@ -85,3 +85,43 @@ void Board::updateBoard(int src_col, int src_row, int dest_col, int dest_row){
 
 }
 
+bool Board::gogoPowerRangers(std::string dest, std::string src){
+    std::shared_ptr<Board> boardInstance = Board::getInstance();
+    board_type board = boardInstance->getBoard();
+
+    int src_col = src[0] - 'a'; std::cout << "src_col" << src_col << std::endl; //test
+    int src_row = (src[1] - '0') - 1; std::cout << "src_row" << src_row << std::endl; //test
+    int dest_col = dest[0] - 'a'; std::cout << "dest_col" << dest_col << std::endl; //test
+    int dest_row = (dest[1] - '0') - 1; std::cout << "dest_row" << dest_row << std::endl; //test
+    std::cout << "source place of figure: " << board[src_col][src_row]->getPiece() << std::endl; //test
+
+    board[src_col][src_row]->getPiece()->setPossibleMove(boardInstance);
+    std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getMoves();
+
+    for(Position p : possiblePositions){
+        if(p.column == dest_col && p.row == dest_row){
+            //update board
+                //update destination Square
+            board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
+            board[dest_col][dest_row]->setOccupied(true);
+            board[dest_col][dest_row]->getPiece()->setPosition(p); // aktualizacja pozycji figury
+            //pion poruszony
+            if(board[dest_col][dest_row]->getPiece()->getFigureName() == "P"){
+                board[dest_col][dest_row]->getPiece()->setMoved();
+            }
+
+                //update source Square
+            board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
+            board[src_col][src_row]->setOccupied(false);
+
+
+            std::cout << "destination place of figure: " << *(board[dest_col][dest_row]->getPiece()) << std::endl; //test
+            return true;
+
+        }
+        
+    }
+
+    return false;
+}
+

@@ -53,5 +53,7 @@ public:
     static std::shared_ptr<Board> getInstance();
     board_type getBoard();
 
+    bool gogoPowerRangers(std::string ,std::string);
+
 };
 #endif
