@@ -31,18 +31,14 @@ def receive_msg():
     piece = json_dict.get("piece")
     app.logger.info("Getting message from + %s + to + %s", source, target)
 
-    # Cpp function here as return if move valid or not
-    # global temp
-    # if not temp:
-    #     temp = True
-    #     app.logger.info("True")
-    # else:
-    #     temp = False
-    #     app.logger.info("False")
-    temp = libchesslib.ifMovePossible(target, source)
+    legal_move = libchesslib.ifMovePossible(target, source)
+    end_of_game = libchesslib.checkForWin()
+    opponent_move = libchesslib.opponentMove()
 
+    if end_of_game != 'none':
+        app.logger.info("End of the game")
 
-    return jsonify({'legalMove': temp}), 201
+    return jsonify({'legalMove': legal_move, 'endOfGame':end_of_game, 'opponentMove':opponent_move}), 201
 
 
 if __name__ == '__main__':

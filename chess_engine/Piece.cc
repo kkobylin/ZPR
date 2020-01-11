@@ -104,9 +104,7 @@ bool Piece::getMoved(){
 void Piece::setMoves(std::vector<Position> possible_move){
     this->moves = possible_move;
 }
-std::vector<Position> Piece::getMoves(){
-    return this->moves;
-}
+
 //void Piece::move(Position position, Board board){};
 
 void Piece::setFigureName(std::string figureName){

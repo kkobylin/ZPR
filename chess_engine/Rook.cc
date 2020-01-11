@@ -10,10 +10,11 @@ void Rook::setMoved(bool moved){
 }
 
 void Rook::move(Position position, Board board){}
-void Rook::setPossibleMove(std::shared_ptr<Board> board){
+std::vector<Position>  Rook::getPossibleMoves(){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
+    std::shared_ptr<Board> board = Board::getInstance();
     std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
@@ -107,4 +108,5 @@ void Rook::setPossibleMove(std::shared_ptr<Board> board){
 
 
     this->setMoves(possiblePosition);
+    return possiblePosition;
 }
