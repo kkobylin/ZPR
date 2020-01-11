@@ -91,6 +91,8 @@ void Piece::setOccupied(bool occupied){
 
 void Piece::setPosition(Position position){
     this->position = position;
+    this->column = position.column;
+    this->row = position.row;
 }
 
 Position Piece::getPosition(){
@@ -99,6 +101,10 @@ Position Piece::getPosition(){
 
 bool Piece::getMoved(){
     return this->moved;
+}
+
+void Piece::setMoved(){
+    this->moved = true;
 }
 
 void Piece::setMoves(std::vector<Position> possible_move){
@@ -113,4 +119,8 @@ void Piece::setFigureName(std::string figureName){
 
 std::string Piece::getFigureName(){
     return this->figureName;
+}
+
+std::vector<Position> Piece::getMoves(){
+    return this->moves;
 }

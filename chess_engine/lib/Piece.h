@@ -74,9 +74,9 @@ public:
     bool                  isKilled(); // set figure killed
     bool                  getMoved(); // set figure moved
     bool                  getOccupied(); // is square occupied
-
+    std::vector<Position> getMoves(); // get possible moves of figure
     std::string           getFigureName(); // get figure name
 
-    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row << c.color << c.figureName << std::endl;}; // output position and figure name
+    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row  << c.figureName << std::endl;}; // output position and figure name
 };
 #endif

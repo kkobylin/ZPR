@@ -8,6 +8,7 @@ private:
     std::shared_ptr<Piece> piece{};
     int   column;
     int   row;
+    bool occupied = false;
 
 public:
     Square(std::shared_ptr<Piece>);
@@ -18,5 +19,8 @@ public:
     std::shared_ptr<Piece> getPiece();
     int   getRow();
     int   getColumn();
+
+    bool getOccupied();
+    void setOccupied(bool);
 };
 #endif

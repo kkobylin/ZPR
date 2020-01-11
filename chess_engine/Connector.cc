@@ -10,6 +10,7 @@
 #include <string>
 
 bool const Connector::ifMovePossible(std::string dest, std::string src){
+
     std::shared_ptr<Board> boardInstance = Board::getInstance();
     board_type board = boardInstance->getBoard();
 
@@ -24,14 +25,35 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     int dest_row = std::stoi(dest.substr(1,1));
     dest_row --;
 
-    std::vector<Position> possiblePositions = board[src_col][src_row]->getPossibleMoves();
+    std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves();
     for(Position p : possiblePositions){
-        if(p.column == dest_col && p.row == dest_row)
+        if(p.column == dest_col && p.row == dest_row){
+            //update board
+                //update destination Square
+            board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
+            board[dest_col][dest_row]->setOccupied(true);
+            board[dest_col][dest_row]->getPiece()->setPosition(p); // aktualizacja pozycji figury
+            //pion poruszony
+            if(board[dest_col][dest_row]->getPiece()->getFigureName() == "P"){
+                board[dest_col][dest_row]->getPiece()->setMoved();
+            }
+
+                //update source Square
+            board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
+            board[src_col][src_row]->setOccupied(false);
+
+
+            std::cout << "destination place of figure: " << *(board[dest_col][dest_row]->getPiece()) << std::endl; //test
             return true;
+
+        }
+        
     }
 
     return false;
+
 }
+
 
 std::string const Connector::checkForWin() {
     /* none draw win lose*/

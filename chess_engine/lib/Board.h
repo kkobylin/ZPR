@@ -8,9 +8,10 @@
 #include "Queen.h"
 #include "Pawn.h"
 #include "Empty_square.h"
+#include "Square.h"
 #include <memory>
 
-typedef std::vector <std::vector <std::shared_ptr<Piece>>> board_type;
+typedef std::vector <std::vector <std::shared_ptr<Square>>> board_type;
 
 
 enum Column {
@@ -47,8 +48,14 @@ private:
 public:
     //void static updateSquare(int, int, std::shared_ptr<Piece>); //todo zeby dzialalo na swoim boardzie
     //std::vector <std::vector <std::shared_ptr<Piece>>> getBoard();
+
+    //todo konstruktor kopiujacy
+    //todo update board
+    void updateBoard(int,int,int,int);
     static std::shared_ptr<Board> getInstance();
     board_type getBoard();
+
+    bool gogoPowerRangers(std::string ,std::string);
 
 };
 #endif

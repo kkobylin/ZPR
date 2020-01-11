@@ -4,6 +4,8 @@
 CMakeFiles/chesslib.dir/AI/AIClass.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.cpp
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.h
+CMakeFiles/chesslib.dir/AI/PositionValue.o
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.cpp
 CMakeFiles/chesslib.dir/Bishop.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
@@ -15,6 +17,7 @@ CMakeFiles/chesslib.dir/Bishop.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Board.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
@@ -26,6 +29,7 @@ CMakeFiles/chesslib.dir/Board.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Connector.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.h
@@ -38,6 +42,7 @@ CMakeFiles/chesslib.dir/Connector.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Empty_square.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Empty_square.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
@@ -49,6 +54,7 @@ CMakeFiles/chesslib.dir/Empty_square.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/King.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
@@ -60,6 +66,7 @@ CMakeFiles/chesslib.dir/King.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Knight.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
@@ -71,6 +78,7 @@ CMakeFiles/chesslib.dir/Knight.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Pawn.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
@@ -82,6 +90,7 @@ CMakeFiles/chesslib.dir/Pawn.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Piece.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
@@ -96,6 +105,7 @@ CMakeFiles/chesslib.dir/Queen.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Rook.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
@@ -107,6 +117,7 @@ CMakeFiles/chesslib.dir/Rook.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 CMakeFiles/chesslib.dir/Square.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.cc
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h

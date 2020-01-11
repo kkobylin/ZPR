@@ -9,7 +9,7 @@ std::vector<Position> Bishop::getPossibleMoves(){
     int row_current    = this->getRow();
     int color          = this->getColor();
     std::shared_ptr<Board> board = Board::getInstance();
-    std::vector<std::vector <std::shared_ptr<Piece>>> board_current = board->getBoard();
+    std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
 
@@ -26,7 +26,7 @@ std::vector<Position> Bishop::getPossibleMoves(){
     while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  < 0 ||
              column_current - i * direction_of_move > 7 || column_current - i * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current - i * direction_of_move][row_current + i * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current - i * direction_of_move][row_current + i * direction_of_move];
 
         position.column = column_current - i * direction_of_move;
         position.row    = row_current + i * direction_of_move;
@@ -36,7 +36,7 @@ std::vector<Position> Bishop::getPossibleMoves(){
         i++;
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             break;
         }
@@ -48,7 +48,7 @@ std::vector<Position> Bishop::getPossibleMoves(){
     while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  < 0 ||
              column_current + i * direction_of_move > 7 || column_current + i * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current + i * direction_of_move][row_current + i * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current + i * direction_of_move][row_current + i * direction_of_move];
 
         position.column = column_current + i * direction_of_move;
         position.row    = row_current + i * direction_of_move;
@@ -58,7 +58,7 @@ std::vector<Position> Bishop::getPossibleMoves(){
         i++;
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             break;
         }
@@ -68,7 +68,7 @@ std::vector<Position> Bishop::getPossibleMoves(){
     while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  < 0 ||
              column_current - i * direction_of_move > 7 || column_current - i * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current - i * direction_of_move][row_current - i * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current - i * direction_of_move][row_current - i * direction_of_move];
 
         position.column = column_current - i * direction_of_move;
         position.row    = row_current - i * direction_of_move;
@@ -78,7 +78,7 @@ std::vector<Position> Bishop::getPossibleMoves(){
         i++;
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             break;
         }
@@ -88,7 +88,7 @@ std::vector<Position> Bishop::getPossibleMoves(){
     while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  < 0 ||
              column_current + i * direction_of_move > 7 || column_current + i * direction_of_move < 0)){
         
-        std::shared_ptr<Piece> piece = board_current[column_current + i * direction_of_move][row_current - i * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current + i * direction_of_move][row_current - i * direction_of_move];
 
         position.column = column_current + i * direction_of_move;
         position.row    = row_current - i * direction_of_move;
@@ -98,7 +98,7 @@ std::vector<Position> Bishop::getPossibleMoves(){
         i++;
 
         if (piece->getOccupied()){
-            if(piece->getColor() == direction_of_move)
+            if(piece->getPiece()->getColor() == direction_of_move)
                 possiblePosition.pop_back();
             break;
         }
