@@ -13,7 +13,7 @@ doxygen
 
 
 konektor
-AI poczatki (min max, wartosc pól)
+AI poczatki (min max, wartosc pól) - done
 frontend (naprawić przyciski) - done
 forntend (wygrana przegrana) - done
 frontend( wiadomości od AI) - done
