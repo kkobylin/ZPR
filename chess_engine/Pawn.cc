@@ -8,8 +8,8 @@
 }*/
 void Pawn::move(Position position, Board board){
     //todo
-    //this->setPossibleMove(board);
-    std::vector<Position> position_vector = this->getMoves();
+    //this->getPossibleMoves(board);
+    std::vector<Position> position_vector = this->getPossibleMoves();
     std::vector<Position>::iterator it = std::find(position_vector.begin(),
                                                    position_vector.end(), 
                                                    position);
@@ -31,7 +31,7 @@ if (isMoved)
 } */
 
 
-std::vector<Position> Pawn::getPossibleMove(){
+std::vector<Position> Pawn::getPossibleMoves(){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
@@ -87,6 +87,6 @@ std::vector<Position> Pawn::getPossibleMove(){
     }
 
     this->setMoves(possiblePosition);
-return possiblePosition;
+    return possiblePosition;
 
 }

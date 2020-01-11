@@ -26,7 +26,7 @@ void King::setChecked(bool checked){
 }
 void King::move(Position position, Board board){}
 
-std::vector<Position> King::getPossibleMove(){
+std::vector<Position>  King::getPossibleMoves(){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();

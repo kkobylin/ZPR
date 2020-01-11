@@ -2,9 +2,7 @@
 
 void Bishop::move(Position position, Board board){} // todo
 
-
-
-std::vector<Position> Bishop::getPossibleMove(){
+std::vector<Position> Bishop::getPossibleMoves(){
     
     int column_current = this->getColumn();
     int row_current    = this->getRow();
@@ -107,5 +105,5 @@ std::vector<Position> Bishop::getPossibleMove(){
 
 
     this->setMoves(possiblePosition);
-return possiblePosition;
+    return possiblePosition;
 }

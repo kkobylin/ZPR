@@ -14,7 +14,7 @@ public:
     King(int column, int row, PieceColor color, std::string figureName) :
     Piece (column, row, color, figureName){};
     void move(Position, Board) override;
-    std::vector<Position> getPossibleMove() override;
+    std::vector<Position> getPossibleMoves() override;
     
     bool getMoved();
     bool getCastled();

@@ -10,7 +10,7 @@ void Rook::setMoved(bool moved){
 }
 
 void Rook::move(Position position, Board board){}
-std::vector<Position> Rook::getPossibleMove(){
+std::vector<Position>  Rook::getPossibleMoves(){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();

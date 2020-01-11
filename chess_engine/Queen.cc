@@ -2,7 +2,7 @@
 #include <memory>
 
 void Queen::move(Position position, Board board){}
-std::vector<Position> Queen::getPossibleMove(){
+std::vector<Position>  Queen::getPossibleMoves(){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();

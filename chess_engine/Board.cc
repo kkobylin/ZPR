@@ -95,7 +95,7 @@ bool Board::gogoPowerRangers(std::string dest, std::string src){
     int dest_row = (dest[1] - '0') - 1; std::cout << "dest_row" << dest_row << std::endl; //test
     std::cout << "source place of figure: " << board[src_col][src_row]->getPiece() << std::endl; //test
 
-    board[src_col][src_row]->getPiece()->getPossibleMove();
+    board[src_col][src_row]->getPiece()->getPossibleMoves();
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getMoves();
 
     for(Position p : possiblePositions){

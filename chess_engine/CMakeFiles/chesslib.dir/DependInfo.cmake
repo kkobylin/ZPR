@@ -4,17 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/marcin/ZPR/ZPR/chess_engine/Bishop.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Bishop.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/Board.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Board.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/Connector.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Connector.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/Empty_square.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Empty_square.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/King.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/King.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/Knight.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Knight.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/Pawn.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Pawn.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/Piece.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Piece.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/Queen.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Queen.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/Rook.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Rook.o"
-  "/home/marcin/ZPR/ZPR/chess_engine/Square.cc" "/home/marcin/ZPR/ZPR/chess_engine/CMakeFiles/chesslib.dir/Square.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Bishop.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Bishop.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Board.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Board.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Connector.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Connector.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Empty_square.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Empty_square.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/King.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/King.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Knight.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Knight.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Pawn.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Pawn.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Piece.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Piece.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Queen.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Queen.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Rook.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Rook.o"
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Square.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Square.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

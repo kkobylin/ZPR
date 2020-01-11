@@ -2,8 +2,7 @@
 #include <memory>
 
 void Knight::move(Position position, Board board){}
-
-std::vector<Position> Knight::getPossibleMove(){
+std::vector<Position>  Knight::getPossibleMoves(){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();

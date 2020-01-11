@@ -1,4 +1,4 @@
-# Install script for directory: /home/marcin/ZPR/ZPR/chess_engine
+# Install script for directory: /home/marcin/ZPR/ZPR_11_01_2020/chess_engine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/marcin/ZPR/ZPR/chess_engine/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

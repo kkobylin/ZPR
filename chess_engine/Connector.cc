@@ -9,7 +9,6 @@
 #include <memory>
 #include <string>
 
-// todo zmienic board zeby mialo wiersze x kolumny
 bool const Connector::ifMovePossible(std::string dest, std::string src){
 
     std::shared_ptr<Board> boardInstance = Board::getInstance();
@@ -26,9 +25,7 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     int dest_row = std::stoi(dest.substr(1,1));
     dest_row --;
 
-
-    std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMove();
-
+    std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves();
     for(Position p : possiblePositions){
         if(p.column == dest_col && p.row == dest_row){
             //update board
@@ -56,7 +53,6 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     return false;
 
 }
-
 
 
 std::string const Connector::checkForWin() {
