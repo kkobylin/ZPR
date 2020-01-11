@@ -23,8 +23,10 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn){
 
     for(auto column : board)
         for(auto square : column){
-            if(square->getOccupied() && sq)
-                result += square->getPiece->getPositionValue();
+            if(square->getOccupied() && square->getPiece()->getColor() == turn)
+                //auto piece = square->getPiece();
+                auto piece = square;
+                piece
         }
 
 }
