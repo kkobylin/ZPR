@@ -16,7 +16,7 @@ double AIClass::evaluateBoard(board_type board) {
     return result;
 }
 
-MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Board> boardObj){
+MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> boardObj){
     board_type board = boardObj->getBoard();
     MovePacket bestMove;
     bestMove.score = 0;
@@ -26,7 +26,7 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Boar
             if(square->getOccupied() && square->getPiece()->getColor() == turn) {
                 std::shared_ptr<Piece> piece = square->getPiece();
                 //todo w getPossibleMoves przekazac board
-                auto posMoves = piece->getPossibleMoves();
+                auto posMoves = piece->getPossibleMoves(boardObj);
                 for(auto pos : posMoves){
                     auto newBoard = boardObj;
                     newBoard->updateBoard(piece->getRow(), piece->getColumn(), pos.row, pos.column);
