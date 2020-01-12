@@ -8,7 +8,7 @@ testy jednostkowe
 komentarze
 szachowanie króla
 doxygen
-
+wyjatki porzucac i polapac 
 
 
 
