@@ -318,36 +318,6 @@ Square.s:
 	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/Square.s
 .PHONY : Square.s
 
-# target to build an object file
-main.o:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/main.o
-.PHONY : main.o
-
-# target to preprocess a source file
-main.i:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/main.i
-.PHONY : main.i
-
-# target to generate assembly for a file
-main.s:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/main.s
-.PHONY : main.s
-
-# target to build an object file
-test/PawnTest.o:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/test/PawnTest.o
-.PHONY : test/PawnTest.o
-
-# target to preprocess a source file
-test/PawnTest.i:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/test/PawnTest.i
-.PHONY : test/PawnTest.i
-
-# target to generate assembly for a file
-test/PawnTest.s:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/test/PawnTest.s
-.PHONY : test/PawnTest.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -396,12 +366,6 @@ help:
 	@echo "... Square.o"
 	@echo "... Square.i"
 	@echo "... Square.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... test/PawnTest.o"
-	@echo "... test/PawnTest.i"
-	@echo "... test/PawnTest.s"
 .PHONY : help
 
 

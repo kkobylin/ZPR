@@ -5,13 +5,10 @@
 
 std::shared_ptr<Board> Board::instance = nullptr;
 
-
 std::shared_ptr<Board> Board::getInstance(){
-    if(!instance) {
-        instance = std::shared_ptr<Board>(new Board());
-        std::cout<<"New instance"<<std::endl;
-    }
+    if(!instance)
+        instance = std::shared_ptr<Board> (new Board());
     return instance;
 }
 
-Board::Board() : BaseBoard(){};
+Board::Board() : BaseBoard(INITIAL_BOARD){};

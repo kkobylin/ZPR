@@ -28,19 +28,17 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
     for(Position p : possiblePositions){
         if(p.column == dest_col && p.row == dest_row){
-            //update board
-                //update destination Square
-            board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
-            board[dest_col][dest_row]->setOccupied(true);
-            board[dest_col][dest_row]->getPiece()->setPosition(p); // aktualizacja pozycji figury
-            board[dest_col][dest_row]->getPiece()->setMoved();
-
-                //update source Square
-            board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
-            board[src_col][src_row]->setOccupied(false);
-
-
-            std::cout << "destination place of figure: " << *(board[dest_col][dest_row]->getPiece()) << std::endl; //test
+            boardInstance->updateBoard(dest_col,dest_row,src_col,src_row);
+            for (int column = 0; column < 7; column++){
+                for (int row = 0; row < 8; row++){
+                    if(board[column][row]->getOccupied())
+                        std::cout << board[column][row]->getPiece()->getColumn() <<board[column][row]->getPiece()->getRow();
+                    std::cout <<board[column][row]->getColumn() << board[column][row]->getRow()  <<boardInstance->getBoardString()[column][row] << " " ;
+                    if (row == 7){
+                        std::cout << std::endl;
+                    }
+                }
+            }
             return true;
 
         }

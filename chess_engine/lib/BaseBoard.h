@@ -37,9 +37,10 @@ class BaseBoard{
     board_type board;
 
     public:
-    BaseBoard();
+    BaseBoard(std::vector <std::vector <std::string>>);
     board_type getBoard();
-    BaseBoard(BaseBoard&);
-    void updateBoard(int,int,int,int);
+    void updateBoard(int, int, int, int);
+    std::vector <std::vector <std::string>> getBoardString();
+
 };
 #endif

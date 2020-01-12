@@ -1,4 +1,5 @@
 #include "lib/BaseBoard.h"
+#include <memory>
 
 #include "lib/Piece.h"
 #include "lib/Bishop.h"
@@ -10,12 +11,12 @@
 
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
-BaseBoard::BaseBoard(){
+BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
     for (int column = 0; column < 8; column++){
         board.push_back(std::vector<std::shared_ptr<Square>>());
         for (int row = 0; row < 8; row++ ){
             
-            std::string buffer = INITIAL_BOARD[row][column];
+            std::string buffer = boardString[row][column];
 
              if (buffer.compare("NN") == 0){
                     board[column].push_back(std::shared_ptr<Square>{
@@ -76,6 +77,46 @@ board_type BaseBoard::getBoard() {
     return board;
 }
 
-void BaseBoard::updateBoard(int src_row, int src_col, int dest_row, int dest_col){
+void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row){
+            //update board
+                //update destination Square
+            Position position {dest_col, dest_row};
+            board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
+            board[dest_col][dest_row]->setOccupied(true);
+            board[dest_col][dest_row]->getPiece()->setPosition(position); // aktualizacja pozycji figury
+            board[dest_col][dest_row]->getPiece()->setMoved();
+
+                //update source Square
+            board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
+            board[src_col][src_row]->setOccupied(false);
+}
+
+
+std::vector <std::vector <std::string>> BaseBoard::getBoardString(){
+    std::vector <std::vector <std::string>> boardReturn;
+    std::string piece = "";
+    std::string color = "";
+
+    for (int column = 0; column < 8; column++){
+        boardReturn.push_back(std::vector<std::string>());
+        for (int row = 0; row < 8; row++){
+            if (board[column][row]->getOccupied()){
+                if(board[column][row]->getPiece()->getColor() == WHITE){
+                    color = "W";
+                }else{
+                    color = "B";
+                }
+                    
+                piece = board[column][row]->getPiece()->getFigureName();
+                boardReturn[column].push_back(color + piece);
+            }else
+            {
+                boardReturn[column].push_back("NN");
+            }
+            
+        }
+    }
+
+    return boardReturn;
 
 }
