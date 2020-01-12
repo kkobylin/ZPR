@@ -8,11 +8,11 @@ std::shared_ptr<BaseBoard> Board::instance = nullptr;
 
 std::shared_ptr<BaseBoard> Board::getInstance(){
     if(!instance)
-        instance = std::shared_ptr<BaseBoard> (new Board());
+        instance = std::shared_ptr<BaseBoard> (new BaseBoard(INITIAL_BOARD));
     return instance;
 }
 
-Board::Board() : BaseBoard(){};
+Board::Board() : BaseBoard(INITIAL_BOARD){};
 /*
 Board::Board(){
     for (int column = 0; column < 8; column++){

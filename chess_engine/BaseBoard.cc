@@ -1,16 +1,17 @@
 #include "lib/BaseBoard.h"
+#include <memory>
 
 
 
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
 //todo zmienic kontruktor zeby dzialal na wskazniku
-BaseBoard::BaseBoard(){
+BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
     for (int column = 0; column < 8; column++){
         board.push_back(std::vector<std::shared_ptr<Square>>());
         for (int row = 0; row < 8; row++ ){
             
-            std::string buffer = INITIAL_BOARD[row][column];
+            std::string buffer = boardString[row][column];
 
          if (buffer.compare("NN") == 0){
                 //std::string name (1, 'E'); teraz niepotrzebne
@@ -74,49 +75,49 @@ board_type BaseBoard::getBoard() {
     return board;
 }
 
-void BaseBoard::updateBoard(int src_col, int src_row, int dest_col, int dest_row){
 
-}
 
-/*
-bool Board::gogoPowerRangers(std::string dest, std::string src){
-    std::shared_ptr<BaseBoard> boardInstance = Board::getInstance();
-    board_type board = boardInstance->getBoard();
-
-    int src_col = src[0] - 'a'; std::cout << "src_col" << src_col << std::endl; //test
-    int src_row = (src[1] - '0') - 1; std::cout << "src_row" << src_row << std::endl; //test
-    int dest_col = dest[0] - 'a'; std::cout << "dest_col" << dest_col << std::endl; //test
-    int dest_row = (dest[1] - '0') - 1; std::cout << "dest_row" << dest_row << std::endl; //test
-    std::cout << "source place of figure: " << board[src_col][src_row]->getPiece() << std::endl; //test
-
-    board[src_col][src_row]->getPiece()->getPossibleMoves();
-    std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getMoves();
-
-    for(Position p : possiblePositions){
-        if(p.column == dest_col && p.row == dest_row){
+void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row){
             //update board
                 //update destination Square
+            Position position {dest_col, dest_row};
             board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
             board[dest_col][dest_row]->setOccupied(true);
-            board[dest_col][dest_row]->getPiece()->setPosition(p); // aktualizacja pozycji figury
-            //pion poruszony
-            if(board[dest_col][dest_row]->getPiece()->getFigureName() == "P"){
-                board[dest_col][dest_row]->getPiece()->setMoved();
-            }
+            board[dest_col][dest_row]->getPiece()->setPosition(position); // aktualizacja pozycji figury
+            board[dest_col][dest_row]->getPiece()->setMoved();
 
                 //update source Square
             board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
             board[src_col][src_row]->setOccupied(false);
+}
 
 
-            std::cout << "destination place of figure: " << *(board[dest_col][dest_row]->getPiece()) << std::endl; //test
-            return true;
+std::vector <std::vector <std::string>> BaseBoard::getBoardString(){
+    std::vector <std::vector <std::string>> boardReturn;
+    std::string piece = "";
+    std::string color = "";
 
+    for (int column = 0; column < 8; column++){
+        boardReturn.push_back(std::vector<std::string>());
+        for (int row = 0; row < 8; row++){
+            if (board[column][row]->getOccupied()){
+                if(board[column][row]->getPiece()->getColor() == WHITE){
+                    color = "W";
+                }else{
+                    color = "B";
+                }
+                    
+                piece = board[column][row]->getPiece()->getFigureName();
+                boardReturn[column].push_back(color + piece);
+            }else
+            {
+                boardReturn[column].push_back("NN");
+            }
+            
         }
-        
     }
 
-    return false;
+    return boardReturn;
+
 }
-*/
 
