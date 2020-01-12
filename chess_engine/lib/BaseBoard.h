@@ -39,19 +39,7 @@ class BaseBoard{
     public:
     BaseBoard();
     board_type getBoard();
-    BaseBoard(const BaseBoard&);
+    BaseBoard(BaseBoard&);
     void updateBoard(int,int,int,int);
-
 };
-
-
-#include "Piece.h"
-#include "Bishop.h"
-#include "Rook.h"
-#include "Knight.h"
-#include "King.h"
-#include "Queen.h"
-#include "Pawn.h"
-#include "Empty_square.h"
-
 #endif

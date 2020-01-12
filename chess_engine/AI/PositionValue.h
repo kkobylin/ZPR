@@ -18,7 +18,4 @@ public:
     static const double PawnEvalWhite [8][8];
     static const double PawnEvalBlack [8][8];
 };
-
-
-
 #endif //CHESS_POSITIONVALUE_H

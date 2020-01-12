@@ -51,12 +51,12 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
 
 }
 
-
 std::string const Connector::checkForWin() {
     /* none draw win lose*/
     //todo cpp function to check win
     return "none";
 }
+
 std::string const Connector::opponentMove(){
         /* Format e2-e4 */
     return "h8-h8";

@@ -214,21 +214,6 @@ Connector.s:
 .PHONY : Connector.s
 
 # target to build an object file
-Empty_square.o:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/Empty_square.o
-.PHONY : Empty_square.o
-
-# target to preprocess a source file
-Empty_square.i:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/Empty_square.i
-.PHONY : Empty_square.i
-
-# target to generate assembly for a file
-Empty_square.s:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/Empty_square.s
-.PHONY : Empty_square.s
-
-# target to build an object file
 King.o:
 	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/King.o
 .PHONY : King.o
@@ -333,6 +318,36 @@ Square.s:
 	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/Square.s
 .PHONY : Square.s
 
+# target to build an object file
+main.o:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/main.o
+.PHONY : main.o
+
+# target to preprocess a source file
+main.i:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/main.i
+.PHONY : main.i
+
+# target to generate assembly for a file
+main.s:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/main.s
+.PHONY : main.s
+
+# target to build an object file
+test/PawnTest.o:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/test/PawnTest.o
+.PHONY : test/PawnTest.o
+
+# target to preprocess a source file
+test/PawnTest.i:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/test/PawnTest.i
+.PHONY : test/PawnTest.i
+
+# target to generate assembly for a file
+test/PawnTest.s:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/test/PawnTest.s
+.PHONY : test/PawnTest.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -360,9 +375,6 @@ help:
 	@echo "... Connector.o"
 	@echo "... Connector.i"
 	@echo "... Connector.s"
-	@echo "... Empty_square.o"
-	@echo "... Empty_square.i"
-	@echo "... Empty_square.s"
 	@echo "... King.o"
 	@echo "... King.i"
 	@echo "... King.s"
@@ -384,6 +396,12 @@ help:
 	@echo "... Square.o"
 	@echo "... Square.i"
 	@echo "... Square.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... test/PawnTest.o"
+	@echo "... test/PawnTest.i"
+	@echo "... test/PawnTest.s"
 .PHONY : help
 
 

@@ -6,12 +6,11 @@
 
 class Board : public BaseBoard{
 private:
-    static std::shared_ptr<BaseBoard> instance;
+    static std::shared_ptr<Board> instance;
     Board& operator=(const Board&) = delete;
     Board();
 public:
-
-    static std::shared_ptr<BaseBoard> getInstance();
+    static std::shared_ptr<Board> getInstance();
 
 };
 #endif

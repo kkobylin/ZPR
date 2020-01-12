@@ -21,7 +21,6 @@ std::vector<Position> Bishop::getPossibleMoves(std::shared_ptr<BaseBoard>board, 
 
     int i = 1; // iterator for next moves
 
-
     while (!(row_current + i * direction_of_move  > 7 || row_current + i * direction_of_move  < 0 ||
              column_current - i * direction_of_move > 7 || column_current - i * direction_of_move < 0)){
         

@@ -20,7 +20,7 @@ typedef std::vector <std::vector <std::shared_ptr<Square>>> board_type;
 
 class AIClass {
 public:
-    MovePacket MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> board);
+    MovePacket MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> board, PieceColor side);
 
 private:
     double evaluateBoard(board_type board);

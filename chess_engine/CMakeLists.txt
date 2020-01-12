@@ -4,10 +4,9 @@ project(chess)
 set(CMAKE_CXX_STANDARD 17)
 
 add_library(chesslib SHARED
-	lib/BaseBoard.h
+	    lib/BaseBoard.h
         lib/Bishop.h
         lib/Board.h
-        lib/Empty_square.h
         lib/King.h
         lib/Knight.h
         lib/Pawn.h
@@ -20,7 +19,6 @@ add_library(chesslib SHARED
         Board.cc
         Connector.cc
         Connector.h
-        Empty_square.cc
         King.cc
         Knight.cc
         Pawn.cc
@@ -31,7 +29,8 @@ add_library(chesslib SHARED
         AI/AIClass.cpp
         AI/AIClass.h
         AI/PositionValue.h 
-	AI/PositionValue.cpp)
+	    AI/PositionValue.cpp
+        )
 
 set(BOOST_ROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")
 set(BOOSTROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")
@@ -39,7 +38,7 @@ set(Boost_INCLUDE_DIR "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_
 set(PYTHON_INCLUDE "/usr/include/python3.6")
 set(Boost_Linker "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0/stage/lib")
 
-target_link_libraries(chesslib python3.6m boost_system boost_python3)
+target_link_libraries(chesslib python3.6m boost_system boost_python3 boost_unit_test_framework )
 find_package(Boost 1.71.0 REQUIRED COMPONENTS python3)
 
 if(Boost_FOUND)
