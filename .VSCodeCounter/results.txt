@@ -1,0 +1,86 @@
+Date : 2020-01-12 15:27:33
+Directory : /home/marcin/ZPR/ZPR_11_01_2020
+Total : 46 files,  3202 codes, 605 comments, 982 blanks, all 4789 lines
+
+Languages
++--------------+------------+------------+------------+------------+------------+
+| language     | files      | code       | comment    | blank      | total      |
++--------------+------------+------------+------------+------------+------------+
+| JavaScript   |          3 |      1,620 |        311 |        411 |      2,342 |
+| C++          |         30 |      1,209 |        273 |        450 |      1,932 |
+| Markdown     |          4 |        133 |          0 |         72 |        205 |
+| HTML         |          1 |         94 |          6 |         15 |        115 |
+| Shell Script |          4 |         49 |          3 |         10 |         62 |
+| CSS          |          2 |         43 |          3 |         11 |         57 |
+| Python       |          1 |         28 |          5 |         13 |         46 |
+| JSON         |          1 |         26 |          4 |          0 |         30 |
++--------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                       | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                          |         46 |      3,202 |        605 |        982 |      4,789 |
+| chess_engine                                                               |         31 |      1,210 |        273 |        450 |      1,933 |
+| chess_engine/AI                                                            |          3 |        131 |          9 |         26 |        166 |
+| chess_engine/lib                                                           |         11 |        248 |          6 |         62 |        316 |
+| chess_engine/test                                                          |          1 |          5 |         19 |          3 |         27 |
+| web                                                                        |         11 |      1,908 |        329 |        490 |      2,727 |
+| web/static                                                                 |          1 |         42 |          3 |         11 |         56 |
+| web/templates                                                              |          9 |      1,838 |        321 |        466 |      2,625 |
+| web/templates/css                                                          |          2 |         43 |          3 |         11 |         57 |
+| web/templates/js                                                           |          2 |      1,578 |        308 |        400 |      2,286 |
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| filename                                                                   | language     | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| /home/marcin/ZPR/ZPR_11_01_2020/README.md                                  | Markdown     |         36 |          0 |         32 |         68 |
+| /home/marcin/ZPR/ZPR_11_01_2020/build_and_run.sh                           | Shell Script |          9 |          1 |          3 |         13 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/AI/AIClass.cpp                | C++          |          1 |          3 |          2 |          6 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/AI/AIClass.h                  | C++          |         15 |          3 |          8 |         26 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/AI/positionValue.h            | C++          |        115 |          3 |         16 |        134 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/BaseBoard.cc                  | C++          |         62 |         44 |         16 |        122 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Bishop.cc                     | C++          |         70 |          6 |         33 |        109 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Board.cc                      | C++          |         11 |        111 |          5 |        127 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Connector.cc                  | C++          |         45 |         13 |         16 |         74 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Connector.h                   | C++          |         10 |          3 |          6 |         19 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Empty_square.cc               | C++          |          3 |          0 |          2 |          5 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/King.cc                       | C++          |        117 |         11 |         68 |        196 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Knight.cc                     | C++          |        103 |         10 |         62 |        175 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Pawn.cc                       | C++          |         58 |         14 |         20 |         92 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Piece.cc                      | C++          |        100 |          1 |         25 |        126 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Queen.cc                      | C++          |        123 |         10 |         55 |        188 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Rook.cc                       | C++          |         73 |          6 |         33 |        112 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Square.cc                     | C++          |         29 |          0 |         12 |         41 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/compile.sh                    | Shell Script |          1 |          0 |          0 |          1 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/BaseBoard.h               | C++          |         44 |          0 |         12 |         56 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Bishop.h                  | C++          |         12 |          0 |          2 |         14 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Board.h                   | C++          |         14 |          4 |          5 |         23 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Empty_square.h            | C++          |         12 |          0 |          2 |         14 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/King.h                    | C++          |         22 |          0 |          6 |         28 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Knight.h                  | C++          |         12 |          0 |          4 |         16 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Pawn.h                    | C++          |         17 |          1 |          4 |         22 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Piece.h                   | C++          |         65 |          1 |         14 |         80 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Queen.h                   | C++          |         12 |          0 |          3 |         15 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Rook.h                    | C++          |         16 |          0 |          5 |         21 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Square.h                  | C++          |         22 |          0 |          5 |         27 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/main.cc                       | C++          |          8 |         10 |          3 |         21 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/main1.cc                      | C++          |         13 |          0 |          3 |         16 |
+| /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/test/PawnTest.cpp             | C++          |          5 |         19 |          3 |         27 |
+| /home/marcin/ZPR/ZPR_11_01_2020/run.sh                                     | Shell Script |          4 |          1 |          3 |          8 |
+| /home/marcin/ZPR/ZPR_11_01_2020/script_1_71_0.sh                           | Shell Script |         35 |          1 |          4 |         40 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/server.py                              | Python       |         28 |          5 |         13 |         46 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/static/chess.js                        | JavaScript   |         42 |          3 |         11 |         56 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/templates/CHANGELOG.md                 | Markdown     |         26 |          0 |          7 |         33 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/templates/LICENSE.md                   | Markdown     |         17 |          0 |          4 |         21 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/templates/README.md                    | Markdown     |         54 |          0 |         29 |         83 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/templates/css/chessboard-1.0.0.css     | CSS          |         42 |          2 |         11 |         55 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/templates/css/chessboard-1.0.0.min.css | CSS          |          1 |          1 |          0 |          2 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/templates/index.html                   | HTML         |         94 |          6 |         15 |        115 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/templates/js/chessboard-1.0.0.js       | JavaScript   |      1,159 |        307 |        352 |      1,818 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/templates/js/chessboard-1.0.0.min.js   | JavaScript   |        419 |          1 |         48 |        468 |
+| /home/marcin/ZPR/ZPR_11_01_2020/web/templates/package.json                 | JSON         |         26 |          4 |          0 |         30 |
+| Total                                                                      |              |      3,202 |        605 |        982 |      4,789 |
++----------------------------------------------------------------------------+--------------+------------+------------+------------+------------+

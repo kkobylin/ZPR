@@ -9,12 +9,11 @@ void Rook::setMoved(bool moved){
     this->moved = moved;
 }
 
-void Rook::move(Position position, Board board){}
-std::vector<Position>  Rook::getPossibleMoves(){
+void Rook::move(Position position, BaseBoard board){}
+std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvalution){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
-    std::shared_ptr<Board> board = Board::getInstance();
     std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
@@ -52,10 +51,10 @@ std::vector<Position>  Rook::getPossibleMoves(){
     i = 1;
     while (!(row_current - i * direction_of_move  > 7 || row_current - i * direction_of_move  < 0)){
         
-        std::shared_ptr<Square> piece = board_current[column_current][row_current + i * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current][row_current - i * direction_of_move];
 
         position.column = column_current;
-        position.row    = row_current + i * direction_of_move;
+        position.row    = row_current - i * direction_of_move;
 
         possiblePosition.push_back(position);
 
