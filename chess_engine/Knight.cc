@@ -2,12 +2,11 @@
 #include <memory>
 #include <AI/PositionValue.h>
 
-void Knight::move(Position position, Board board){}
-std::vector<Position>  Knight::getPossibleMoves(){
+void Knight::move(Position position, BaseBoard board){}
+std::vector<Position>  Knight::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
-    std::shared_ptr<Board> board = Board::getInstance();
     std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;

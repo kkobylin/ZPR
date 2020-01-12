@@ -11,9 +11,10 @@ private:
 public:
     Rook(int column, int row, PieceColor color, std::string figureName) :
     Piece (column, row, color, figureName){};
-    void move(Position, Board) override;
-    std::vector<Position> getPossibleMoves() override;
+    void move(Position, BaseBoard) override;
+    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool) override;
     double getPositionValue() override ;
+
     
     bool getMoved();
     void setMoved(bool);

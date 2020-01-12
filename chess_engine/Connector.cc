@@ -11,7 +11,7 @@
 
 bool const Connector::ifMovePossible(std::string dest, std::string src){
 
-    std::shared_ptr<Board> boardInstance = Board::getInstance();
+    std::shared_ptr<BaseBoard> boardInstance = Board::getInstance();
     board_type board = boardInstance->getBoard();
 
     /* Convert columns from A to H to 0-7*/
@@ -25,7 +25,7 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     int dest_row = std::stoi(dest.substr(1,1));
     dest_row --;
 
-    std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves();
+    std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
     for(Position p : possiblePositions){
         if(p.column == dest_col && p.row == dest_row){
             //update board
@@ -33,10 +33,7 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
             board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
             board[dest_col][dest_row]->setOccupied(true);
             board[dest_col][dest_row]->getPiece()->setPosition(p); // aktualizacja pozycji figury
-            //pion poruszony
-            if(board[dest_col][dest_row]->getPiece()->getFigureName() == "P"){
-                board[dest_col][dest_row]->getPiece()->setMoved();
-            }
+            board[dest_col][dest_row]->getPiece()->setMoved();
 
                 //update source Square
             board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
@@ -62,7 +59,7 @@ std::string const Connector::checkForWin() {
 }
 std::string const Connector::opponentMove(){
         /* Format e2-e4 */
-    return "b7-b3";
+    return "h8-h8";
 }
 
 BOOST_PYTHON_MODULE(libchesslib)

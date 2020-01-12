@@ -1,14 +1,13 @@
 #include <AI/PositionValue.h>
 #include "lib/Bishop.h"
 
-void Bishop::move(Position position, Board board){} // todo
+void Bishop::move(Position position, BaseBoard board){} // todo
 
-std::vector<Position> Bishop::getPossibleMoves(){
+std::vector<Position> Bishop::getPossibleMoves(std::shared_ptr<BaseBoard>board, bool originalEvaluation){
     
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
-    std::shared_ptr<Board> board = Board::getInstance();
     std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
@@ -106,6 +105,10 @@ std::vector<Position> Bishop::getPossibleMoves(){
 
 
     this->setMoves(possiblePosition);
+
+    if (originalEvaluation){
+        evaluateCheck(board, false);
+    }
     return possiblePosition;
 }
 

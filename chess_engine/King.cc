@@ -25,13 +25,12 @@ bool King::getChecked(){
 void King::setChecked(bool checked){
         this->checked = checked;
 }
-void King::move(Position position, Board board){}
+void King::move(Position position, BaseBoard board){}
 
-std::vector<Position>  King::getPossibleMoves(){
+std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
-    std::shared_ptr<Board> board = Board::getInstance();
     std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
     Position position;
@@ -141,10 +140,10 @@ std::vector<Position>  King::getPossibleMoves(){
     
     if (!(row_current - 1 * direction_of_move  > 7 || row_current - 1 * direction_of_move  < 0)){
         
-        std::shared_ptr<Square> piece = board_current[column_current][row_current + 1 * direction_of_move];
+        std::shared_ptr<Square> piece = board_current[column_current][row_current - 1 * direction_of_move];
 
         position.column = column_current;
-        position.row    = row_current + 1 * direction_of_move;
+        position.row    = row_current - 1 * direction_of_move;
 
         possiblePosition.push_back(position);
 

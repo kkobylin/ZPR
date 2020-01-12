@@ -4,6 +4,7 @@ project(chess)
 set(CMAKE_CXX_STANDARD 17)
 
 add_library(chesslib SHARED
+	lib/BaseBoard.h
         lib/Bishop.h
         lib/Board.h
         lib/Empty_square.h
@@ -14,6 +15,7 @@ add_library(chesslib SHARED
         lib/Queen.h
         lib/Rook.h
         lib/Square.h
+	    BaseBoard.cc
         Bishop.cc
         Board.cc
         Connector.cc
