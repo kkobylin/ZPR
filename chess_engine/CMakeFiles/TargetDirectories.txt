@@ -1,3 +1,0 @@
-/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/rebuild_cache.dir
-/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir
-/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/edit_cache.dir
