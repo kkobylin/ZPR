@@ -39,7 +39,7 @@ class BaseBoard{
     public:
     BaseBoard();
     board_type getBoard();
-    //BaseBoard(const BaseBoard&);
+    BaseBoard(const BaseBoard&);
     void updateBoard(int,int,int,int);
 
 };
