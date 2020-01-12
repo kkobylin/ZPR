@@ -8,6 +8,8 @@
 
 class Connector {
 
+
+
 public:
     static bool const ifMovePossible(std::string dest, std::string src);
     static std::string const checkForWin();

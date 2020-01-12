@@ -318,6 +318,21 @@ Square.s:
 	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/Square.s
 .PHONY : Square.s
 
+# target to build an object file
+main.o:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/main.o
+.PHONY : main.o
+
+# target to preprocess a source file
+main.i:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/main.i
+.PHONY : main.i
+
+# target to generate assembly for a file
+main.s:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/main.s
+.PHONY : main.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -366,6 +381,9 @@ help:
 	@echo "... Square.o"
 	@echo "... Square.i"
 	@echo "... Square.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

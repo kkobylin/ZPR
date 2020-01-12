@@ -8,6 +8,8 @@
 #include "lib/Board.h"
 #include <memory>
 #include <string>
+#include "AI/AIClass.h"
+#include "lib/BaseBoard.h"
 
 bool const Connector::ifMovePossible(std::string dest, std::string src){
 
@@ -57,7 +59,27 @@ std::string const Connector::checkForWin() {
 
 std::string const Connector::opponentMove(){
         /* Format e2-e4 */
-    return "h8-h8";
+    //return "h8-h8";
+
+    std::string chessColumnConvert[8] = {"A", "B", "C", "D", "E", "F", "G", "H"};
+
+    auto board = Board::getInstance();
+
+    std::cout<<"a"<<std::endl;
+
+    MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, board, BLACK);
+
+    std::cout<<"b"<<std::endl;
+
+    std::string src_row = std::to_string(movePacket.src_row++);
+
+    std::string src_col = chessColumnConvert[movePacket.src_col];
+
+    std::string dest_row = std::to_string(movePacket.dest_row++);
+
+    std::string dest_col = chessColumnConvert[movePacket.dest_col];
+
+    return src_col + src_row + '-' + dest_col + dest_row;
 }
 
 BOOST_PYTHON_MODULE(libchesslib)

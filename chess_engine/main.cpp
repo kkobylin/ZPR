@@ -4,6 +4,7 @@
 
 #include "lib/Board.h"
 #include <iostream>
+#include "Connector.h"
 
 int main(void){
     //std::cout << "tu";
@@ -16,6 +17,6 @@ int main(void){
 //            std::cout << *a;
 //    board_type x = board.getBoard();
 //    x[1][1]->move(pos,board);
-    auto board = Board::getInstance();
+    Connector::opponentMove();
 
 }
