@@ -9,8 +9,6 @@ boost_1_71_0/*
 **/*.pbd
 **/*.sconsign.dblite
 **/TODO.txt
-chess
-chess/*
 chess_engine/cmake-build-debug
 chess_engine/cmake-build-debug/*
 chess_engine/CMakeFiles
