@@ -8,7 +8,7 @@
 #include <memory>
 //#include "Board.h"
 
-class Board;
+class BaseBoard;
 
 enum PieceColor {
     BLACK = -1,
@@ -62,8 +62,9 @@ public:
     void setOccupied(bool); // set square occupied
     void setMoves(std::vector<Position>); // set possible moves
     void setFigureName(std::string); // set figure name
-    virtual void move(Position, Board) = 0; // move figure
-    virtual std::vector<Position> getPossibleMoves() = 0; // get vector of possible moves
+    void evaluateCheck(std::shared_ptr<BaseBoard>, bool);
+    virtual void move(Position, BaseBoard) = 0; // move figure
+    virtual std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
 
     PieceColor            getColor(); // get color of figure
     int                   getColumn(); // get column of figure

@@ -16,8 +16,8 @@ struct MovePacket{
 };
 
 class AIClass {
-    std::shared_ptr<MovePacket> MiniMaxRoot(int depth, std::shared_ptr<Board> currentBoard, int whosTurn);
-    int evaluateBoard(std::shared_ptr<Board> currentBoard, int side);
+    std::shared_ptr<MovePacket> MiniMaxRoot(int depth, std::shared_ptr<BaseBoard> currentBoard, int whosTurn);
+    int evaluateBoard(std::shared_ptr<BaseBoard> currentBoard, int side);
 
 };
 

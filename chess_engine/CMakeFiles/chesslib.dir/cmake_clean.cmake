@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/chesslib.dir/BaseBoard.o"
   "CMakeFiles/chesslib.dir/Bishop.o"
   "CMakeFiles/chesslib.dir/Board.o"
   "CMakeFiles/chesslib.dir/Connector.o"

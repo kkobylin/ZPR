@@ -57,9 +57,33 @@ include CMakeFiles/chesslib.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/chesslib.dir/flags.make
 
+CMakeFiles/chesslib.dir/BaseBoard.o: CMakeFiles/chesslib.dir/flags.make
+CMakeFiles/chesslib.dir/BaseBoard.o: BaseBoard.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chesslib.dir/BaseBoard.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/BaseBoard.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/BaseBoard.cc
+
+CMakeFiles/chesslib.dir/BaseBoard.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chesslib.dir/BaseBoard.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/BaseBoard.cc > CMakeFiles/chesslib.dir/BaseBoard.i
+
+CMakeFiles/chesslib.dir/BaseBoard.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chesslib.dir/BaseBoard.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/BaseBoard.cc -o CMakeFiles/chesslib.dir/BaseBoard.s
+
+CMakeFiles/chesslib.dir/BaseBoard.o.requires:
+
+.PHONY : CMakeFiles/chesslib.dir/BaseBoard.o.requires
+
+CMakeFiles/chesslib.dir/BaseBoard.o.provides: CMakeFiles/chesslib.dir/BaseBoard.o.requires
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/BaseBoard.o.provides.build
+.PHONY : CMakeFiles/chesslib.dir/BaseBoard.o.provides
+
+CMakeFiles/chesslib.dir/BaseBoard.o.provides.build: CMakeFiles/chesslib.dir/BaseBoard.o
+
+
 CMakeFiles/chesslib.dir/Bishop.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Bishop.o: Bishop.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chesslib.dir/Bishop.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chesslib.dir/Bishop.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Bishop.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Bishop.cc
 
 CMakeFiles/chesslib.dir/Bishop.i: cmake_force
@@ -83,7 +107,7 @@ CMakeFiles/chesslib.dir/Bishop.o.provides.build: CMakeFiles/chesslib.dir/Bishop.
 
 CMakeFiles/chesslib.dir/Board.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Board.o: Board.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chesslib.dir/Board.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/chesslib.dir/Board.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Board.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Board.cc
 
 CMakeFiles/chesslib.dir/Board.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/chesslib.dir/Board.o.provides.build: CMakeFiles/chesslib.dir/Board.o
 
 CMakeFiles/chesslib.dir/Connector.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Connector.o: Connector.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/chesslib.dir/Connector.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chesslib.dir/Connector.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Connector.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Connector.cc
 
 CMakeFiles/chesslib.dir/Connector.i: cmake_force
@@ -131,7 +155,7 @@ CMakeFiles/chesslib.dir/Connector.o.provides.build: CMakeFiles/chesslib.dir/Conn
 
 CMakeFiles/chesslib.dir/Empty_square.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Empty_square.o: Empty_square.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chesslib.dir/Empty_square.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chesslib.dir/Empty_square.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Empty_square.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Empty_square.cc
 
 CMakeFiles/chesslib.dir/Empty_square.i: cmake_force
@@ -155,7 +179,7 @@ CMakeFiles/chesslib.dir/Empty_square.o.provides.build: CMakeFiles/chesslib.dir/E
 
 CMakeFiles/chesslib.dir/King.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/King.o: King.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chesslib.dir/King.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/chesslib.dir/King.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/King.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/King.cc
 
 CMakeFiles/chesslib.dir/King.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/chesslib.dir/King.o.provides.build: CMakeFiles/chesslib.dir/King.o
 
 CMakeFiles/chesslib.dir/Knight.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Knight.o: Knight.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/chesslib.dir/Knight.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/chesslib.dir/Knight.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Knight.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Knight.cc
 
 CMakeFiles/chesslib.dir/Knight.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/chesslib.dir/Knight.o.provides.build: CMakeFiles/chesslib.dir/Knight.
 
 CMakeFiles/chesslib.dir/Pawn.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Pawn.o: Pawn.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/chesslib.dir/Pawn.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/chesslib.dir/Pawn.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Pawn.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Pawn.cc
 
 CMakeFiles/chesslib.dir/Pawn.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/chesslib.dir/Pawn.o.provides.build: CMakeFiles/chesslib.dir/Pawn.o
 
 CMakeFiles/chesslib.dir/Piece.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Piece.o: Piece.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/chesslib.dir/Piece.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/chesslib.dir/Piece.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Piece.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Piece.cc
 
 CMakeFiles/chesslib.dir/Piece.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/chesslib.dir/Piece.o.provides.build: CMakeFiles/chesslib.dir/Piece.o
 
 CMakeFiles/chesslib.dir/Queen.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Queen.o: Queen.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/chesslib.dir/Queen.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/chesslib.dir/Queen.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Queen.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Queen.cc
 
 CMakeFiles/chesslib.dir/Queen.i: cmake_force
@@ -275,7 +299,7 @@ CMakeFiles/chesslib.dir/Queen.o.provides.build: CMakeFiles/chesslib.dir/Queen.o
 
 CMakeFiles/chesslib.dir/Rook.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Rook.o: Rook.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/chesslib.dir/Rook.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/chesslib.dir/Rook.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Rook.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Rook.cc
 
 CMakeFiles/chesslib.dir/Rook.i: cmake_force
@@ -299,7 +323,7 @@ CMakeFiles/chesslib.dir/Rook.o.provides.build: CMakeFiles/chesslib.dir/Rook.o
 
 CMakeFiles/chesslib.dir/Square.o: CMakeFiles/chesslib.dir/flags.make
 CMakeFiles/chesslib.dir/Square.o: Square.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/chesslib.dir/Square.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/chesslib.dir/Square.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chesslib.dir/Square.o -c /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Square.cc
 
 CMakeFiles/chesslib.dir/Square.i: cmake_force
@@ -323,6 +347,7 @@ CMakeFiles/chesslib.dir/Square.o.provides.build: CMakeFiles/chesslib.dir/Square.
 
 # Object files for target chesslib
 chesslib_OBJECTS = \
+"CMakeFiles/chesslib.dir/BaseBoard.o" \
 "CMakeFiles/chesslib.dir/Bishop.o" \
 "CMakeFiles/chesslib.dir/Board.o" \
 "CMakeFiles/chesslib.dir/Connector.o" \
@@ -338,6 +363,7 @@ chesslib_OBJECTS = \
 # External object files for target chesslib
 chesslib_EXTERNAL_OBJECTS =
 
+libchesslib.so: CMakeFiles/chesslib.dir/BaseBoard.o
 libchesslib.so: CMakeFiles/chesslib.dir/Bishop.o
 libchesslib.so: CMakeFiles/chesslib.dir/Board.o
 libchesslib.so: CMakeFiles/chesslib.dir/Connector.o
@@ -351,7 +377,7 @@ libchesslib.so: CMakeFiles/chesslib.dir/Rook.o
 libchesslib.so: CMakeFiles/chesslib.dir/Square.o
 libchesslib.so: CMakeFiles/chesslib.dir/build.make
 libchesslib.so: CMakeFiles/chesslib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX shared library libchesslib.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX shared library libchesslib.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chesslib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -359,6 +385,7 @@ CMakeFiles/chesslib.dir/build: libchesslib.so
 
 .PHONY : CMakeFiles/chesslib.dir/build
 
+CMakeFiles/chesslib.dir/requires: CMakeFiles/chesslib.dir/BaseBoard.o.requires
 CMakeFiles/chesslib.dir/requires: CMakeFiles/chesslib.dir/Bishop.o.requires
 CMakeFiles/chesslib.dir/requires: CMakeFiles/chesslib.dir/Board.o.requires
 CMakeFiles/chesslib.dir/requires: CMakeFiles/chesslib.dir/Connector.o.requires

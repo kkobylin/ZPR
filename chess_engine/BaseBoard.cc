@@ -1,20 +1,11 @@
 #include "lib/BaseBoard.h"
-#include "lib/Board.h"
-#include <iostream>
-#include <memory>
-
-std::shared_ptr<BaseBoard> Board::instance = nullptr;
 
 
-std::shared_ptr<BaseBoard> Board::getInstance(){
-    if(!instance)
-        instance = std::shared_ptr<BaseBoard> (new Board());
-    return instance;
-}
 
-Board::Board() : BaseBoard(){};
-/*
-Board::Board(){
+extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
+
+//todo zmienic kontruktor zeby dzialal na wskazniku
+BaseBoard::BaseBoard(){
     for (int column = 0; column < 8; column++){
         board.push_back(std::vector<std::shared_ptr<Square>>());
         for (int row = 0; row < 8; row++ ){
@@ -37,7 +28,6 @@ Board::Board(){
             else if (buffer[0] == 'W') color = WHITE;
 
             std::string name (1, buffer[1]);
-        std::cout << "dotarlismy";
             switch(buffer[1]){
             //TODO pozmieniac na Square
             case 'N':
@@ -80,10 +70,15 @@ Board::Board(){
 }
 
 
-void Board::updateBoard(int src_col, int src_row, int dest_col, int dest_row){
+board_type BaseBoard::getBoard() {
+    return board;
+}
+
+void BaseBoard::updateBoard(int src_col, int src_row, int dest_col, int dest_row){
 
 }
 
+/*
 bool Board::gogoPowerRangers(std::string dest, std::string src){
     std::shared_ptr<BaseBoard> boardInstance = Board::getInstance();
     board_type board = boardInstance->getBoard();

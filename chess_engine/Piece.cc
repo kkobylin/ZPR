@@ -1,4 +1,5 @@
 #include "lib/Piece.h"
+#include "lib/BaseBoard.h"
 
 class Board;
 
@@ -123,4 +124,33 @@ std::string Piece::getFigureName(){
 
 std::vector<Position> Piece::getMoves(){
     return this->moves;
+}
+
+void Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardInitial, bool originalEvaluation){
+    std::vector<Position> possiblePosition; //Create buffer for computed possible positions
+
+    for (Position position : this->getMoves()){
+        std::shared_ptr<BaseBoard> boardCopy(boardInitial);
+        board_type board = boardCopy->getBoard();
+
+        int src_col = this->getColumn();
+        int src_row = this->getRow();
+
+        int dest_col = position.column;
+        int dest_row = position.row;
+
+        //update board
+        //update destination Square
+            board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
+            board[dest_col][dest_row]->setOccupied(true);
+            board[dest_col][dest_row]->getPiece()->setPosition(position); // aktualizacja pozycji figury
+            board[dest_col][dest_row]->getPiece()->setMoved();
+
+                //update source Square
+            board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
+            board[src_col][src_row]->setOccupied(false);
+
+        ;
+    }
+
 }

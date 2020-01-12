@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/BaseBoard.cc
+lib/BaseBoard.h
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/BaseBoard.h
+
 /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Bishop.cc
 lib/Bishop.h
 /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Bishop.h
 
 /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Board.cc
+lib/BaseBoard.h
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/BaseBoard.h
 lib/Board.h
 /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Board.h
 iostream
@@ -80,13 +86,15 @@ lib/Square.h
 memory
 -
 
-/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Bishop.h
-Piece.h
-/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Piece.h
-Board.h
-/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Board.h
-
-/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Board.h
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/BaseBoard.h
+Square.h
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Square.h
+vector
+-
+iostream
+-
+memory
+-
 Piece.h
 /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Piece.h
 Bishop.h
@@ -103,8 +111,16 @@ Pawn.h
 /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Pawn.h
 Empty_square.h
 /home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Empty_square.h
-Square.h
-/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Square.h
+
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Bishop.h
+Piece.h
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Piece.h
+Board.h
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Board.h
+
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/Board.h
+BaseBoard.h
+/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/lib/BaseBoard.h
 memory
 -
 

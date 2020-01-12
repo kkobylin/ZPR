@@ -124,6 +124,21 @@ chesslib/fast:
 .PHONY : chesslib/fast
 
 # target to build an object file
+BaseBoard.o:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/BaseBoard.o
+.PHONY : BaseBoard.o
+
+# target to preprocess a source file
+BaseBoard.i:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/BaseBoard.i
+.PHONY : BaseBoard.i
+
+# target to generate assembly for a file
+BaseBoard.s:
+	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/BaseBoard.s
+.PHONY : BaseBoard.s
+
+# target to build an object file
 Bishop.o:
 	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/Bishop.o
 .PHONY : Bishop.o
@@ -297,6 +312,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... chesslib"
 	@echo "... edit_cache"
+	@echo "... BaseBoard.o"
+	@echo "... BaseBoard.i"
+	@echo "... BaseBoard.s"
 	@echo "... Bishop.o"
 	@echo "... Bishop.i"
 	@echo "... Bishop.s"

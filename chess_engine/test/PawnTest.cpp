@@ -14,7 +14,7 @@ BOOST_AUTO_TEST_CASE(PawnTestCase)
     PieceColor w = WHITE;
     PieceColor b = BLACK;
     Piece *p = new Pawn(0, 1, w, "Pawn");
-    std::shared_ptr<Board> board = Board::getInstance();
+    std::shared_ptr<BaseBoard> board = Board::getInstance();
     p->setPossibleMove(board);
     std::vector<Position> positions = p->getMoves();
 

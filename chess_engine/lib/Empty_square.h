@@ -7,7 +7,7 @@
 public:
     Empty(int column, int row,bool occupied, std::string figureName) :
     Piece (column, row, occupied, figureName){};
-    void move(Position, Board) override;
-    std::vector<Position> getPossibleMoves() override;
+    void move(Position, BaseBoard) override;
+    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool) override;
 };
 #endif

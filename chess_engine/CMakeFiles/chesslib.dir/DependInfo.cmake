@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/BaseBoard.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/BaseBoard.o"
   "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Bishop.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Bishop.o"
   "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Board.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Board.o"
   "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/Connector.cc" "/home/marcin/ZPR/ZPR_11_01_2020/chess_engine/CMakeFiles/chesslib.dir/Connector.o"
