@@ -15,7 +15,7 @@ public:
 
     //void updateBoard(int,int,int,int);
     static std::shared_ptr<BaseBoard> getInstance();
-    //bool gogoPowerRangers(std::string ,std::string);
+    
 
 };
 #endif
