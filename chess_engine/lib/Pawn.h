@@ -13,9 +13,9 @@ public:
     Pawn(int column, int row, PieceColor color, std::string figureName) :
     Piece (column, row, color, figureName){};
 
-    std::vector<Position> getPossibleMoves() override;
+    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool) override;
     void move(Position);
-    void move(Position, Board) override;
+    void move(Position, BaseBoard) override;
     
 };
 #endif
