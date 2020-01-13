@@ -35,12 +35,35 @@ int main(void){
 
     std::string chessColumnConvert[8] = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
-    std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(example_board));
-    MovePacket mp = AIClass::MiniMaxRoot(2, BLACK, board_ptr, BLACK);
-    //std::string result = Connector::opponentMove();
-    std::string src_row = std::to_string(++mp.src_row);
-    std::string src_col = chessColumnConvert[mp.src_col];
-    std::string dest_row = std::to_string(++mp.dest_row);
-    std::string dest_col = chessColumnConvert[mp.dest_col];
-    cout<< src_col + src_row + '-' + dest_col + dest_row<<endl;
+//    std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(example_board));
+//    MovePacket mp = AIClass::MiniMaxRoot(2, BLACK, board_ptr, BLACK);
+//    //std::string result = Connector::opponentMove();
+//    std::string src_row = std::to_string(++mp.src_row);
+//    std::string src_col = chessColumnConvert[mp.src_col];
+//    std::string dest_row = std::to_string(++mp.dest_row);
+//    std::string dest_col = chessColumnConvert[mp.dest_col];
+//    cout<< src_col + src_row + '-' + dest_col + dest_row<<endl;
+
+    Connector::ifMovePossible("a3", "a2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("c3", "c2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("e3", "e2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("g3", "g2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("b4", "b2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("d4", "d2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("f4", "f2");
+    Connector::opponentMove();
+
+    //Board::getInstance()->toString();
 }

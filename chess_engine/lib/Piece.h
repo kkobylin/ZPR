@@ -63,7 +63,7 @@ public:
     void setFigureName(std::string); // set figure name
     void evaluateCheck(std::shared_ptr<BaseBoard>, bool);
     virtual void move(Position, BaseBoard) = 0; // move figure
-    virtual std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
+    virtual std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
     virtual double getPositionValue() = 0;
 
 

@@ -15,9 +15,11 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
 
     std::shared_ptr<BaseBoard> boardInstance = Board::getInstance();
     board_type board = boardInstance->getBoard();
+    auto temp = boardInstance->toString();
 
     /* Convert columns from A to H to 0-7*/
     // 97 - value of 'a' in ASCII table
+    //todo change method of conversion
     int src_col = static_cast<int>(src[0]) - 97;
     int dest_col = static_cast<int>(dest[0]) - 97;
 
@@ -27,11 +29,18 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     int dest_row = std::stoi(dest.substr(1,1));
     dest_row --;
 
+    std::cout<<"dest"<<dest<<" src "<<src<<std::endl;
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
     for(Position p : possiblePositions){
         if(p.column == dest_col && p.row == dest_row){
             boardInstance->updateBoard(dest_col,dest_row,src_col,src_row);
-            for (int column = 0; column < 7; column++){
+            if(boardInstance->getBoard()[src_col][src_row]->getPiece() != nullptr){
+                std::cout<<"blad"<<std::endl;
+            }
+            if(boardInstance->getBoard()[dest_col][dest_row]->getPiece() == nullptr){
+                std::cout<<"blad"<<std::endl;
+            }
+            for (int column = 0; column < 8; column++){
                 for (int row = 0; row < 8; row++){
                     std::cout << board[column][row]->getColumn() << board[column][row]->getRow() << boardInstance->toString()[column][row] << " " ;
                     if (row == 7){
@@ -39,6 +48,7 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
                     }
                 }
             }
+            std::cout<<std::endl;
             return true;
 
         }
@@ -64,11 +74,31 @@ std::string const Connector::opponentMove(){
     auto board = Board::getInstance();
 
     MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, board, BLACK);
+    std::cout<<movePacket.src_col<<movePacket.src_row<<"-"<<movePacket.dest_col<<movePacket.dest_row<<std::endl;
     board->updateBoard(movePacket.dest_col, movePacket.dest_row, movePacket.src_col, movePacket.src_row);
-    std::cout<<"src_col "<<movePacket.src_col<<std::endl;
-    std::cout<<"src_row "<<movePacket.src_row<<std::endl;
-    std::cout<<"dest_col "<<movePacket.dest_col<<std::endl;
-    std::cout<<"dest_row "<<movePacket.dest_row<<std::endl;
+
+    if(board->getBoard()[movePacket.src_col][movePacket.src_row]->getPiece() != nullptr){
+        std::cout<<"blad"<<std::endl;
+    }
+    if(board->getBoard()[movePacket.dest_col][movePacket.dest_row]->getPiece() == nullptr){
+        std::cout<<"blad"<<std::endl;
+    }
+
+
+
+//    std::cout<<"src_col "<<movePacket.src_col<<std::endl;
+//    std::cout<<"src_row "<<movePacket.src_row<<std::endl;
+//    std::cout<<"dest_col "<<movePacket.dest_col<<std::endl;
+//    std::cout<<"dest_row "<<movePacket.dest_row<<std::endl;
+    board_type temp = board->getBoard();
+    for (int column = 0; column < 8; column++){
+        for (int row = 0; row < 8; row++){
+            std::cout << temp[column][row]->getColumn() << temp[column][row]->getRow() << board->toString()[column][row] << " " ;
+            if (row == 7){
+                std::cout << std::endl;
+            }
+        }
+    }
 
     std::string src_row = std::to_string(++movePacket.src_row);
     std::string src_col = chessColumnConvert[movePacket.src_col];

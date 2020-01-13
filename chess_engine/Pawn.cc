@@ -32,7 +32,7 @@ if (isMoved)
     
 } */ //todo
 
-std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
+std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
