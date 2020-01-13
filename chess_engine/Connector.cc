@@ -32,6 +32,7 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     std::cout<<"dest"<<dest<<" src "<<src<<std::endl;
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
     for(Position p : possiblePositions){
+        std::cout << p.column << p.row << std::endl;
         if(p.column == dest_col && p.row == dest_row){
             boardInstance->updateBoard(dest_col,dest_row,src_col,src_row);
             if(boardInstance->getBoard()[src_col][src_row]->getPiece() != nullptr){
@@ -40,14 +41,8 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
             if(boardInstance->getBoard()[dest_col][dest_row]->getPiece() == nullptr){
                 std::cout<<"blad"<<std::endl;
             }
-            for (int column = 0; column < 8; column++){
-                for (int row = 0; row < 8; row++){
-                    std::cout << board[column][row]->getColumn() << board[column][row]->getRow() << boardInstance->toString()[column][row] << " " ;
-                    if (row == 7){
-                        std::cout << std::endl;
-                    }
-                }
-            }
+
+            boardInstance->printBoardCout();
             std::cout<<std::endl;
             return true;
 

@@ -86,6 +86,11 @@ std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> bo
     }
 
     this->setMoves(possiblePosition);
+
+    if (originalEvaluation){
+        possiblePosition = evaluateCheck(board, false);
+        this->setMoves(possiblePosition);
+    }
     return possiblePosition;
 
 }
