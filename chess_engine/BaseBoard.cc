@@ -1,5 +1,13 @@
 #include "lib/BaseBoard.h"
 #include <memory>
+#include "lib/Piece.h"
+#include "lib/Bishop.h"
+#include "lib/Rook.h"
+#include "lib/Knight.h"
+#include "lib/King.h"
+#include "lib/Queen.h"
+#include "lib/Pawn.h"
+
 
 #include "lib/Piece.h"
 #include "lib/Bishop.h"
@@ -64,9 +72,9 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
                 std::shared_ptr<Pawn>{new Pawn(column, row, color, name)})});
                 break;
             }
-            board[column].back()->setOccupied(true);
-            board[column].back()->setColumn(column);
-            board[column].back()->setRow(row);
+            board[column][row]->setOccupied(true);
+            board[column][row]->setColumn(column);
+            board[column][row]->setRow(row);
         } 
     }
 }
@@ -118,3 +126,16 @@ std::vector <std::vector <std::string>> BaseBoard::toString(){
     return boardReturn;
 
 }
+
+void BaseBoard::printBoardCout(){
+    std::cout << "Current Board:" << std::endl;
+    for (int column = 0; column < 8; column++){
+        for (int row = 0; row < 8; row++){
+            std::cout <<board[column][row]->getColumn() << board[column][row]->getRow()  <<this->toString()[column][row] << " " ;
+            if (row == 7){
+                std::cout << std::endl;
+            }
+        }
+    }
+}
+

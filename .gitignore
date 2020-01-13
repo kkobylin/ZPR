@@ -21,6 +21,9 @@ chess_engine/chesslib
 chess_engine/Makefile
 chess_engine/main1
 chess_engine/.vscode/
+/.vscode
+/.VSCodeCounter
+
 test/CMakeFiles
 test/CMakeFiles/*
 test/CMakeCache.txt

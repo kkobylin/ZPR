@@ -21,14 +21,15 @@ enum Column {
 };
 
 std::vector <std::vector <std::string>> const INITIAL_BOARD = {
-        {"WR","WP","NN","NN","NN","NN","BP","BR"},
-        {"WN","WP","NN","NN","NN","NN","BP","BN"},
-        {"WB","WP","NN","NN","NN","NN","BP","BB"},
-        {"WQ","WP","NN","NN","NN","NN","BP","BQ"},
-        {"WK","WP","NN","NN","NN","NN","BP","BK"},
-        {"WB","WP","NN","NN","NN","NN","BP","BB"},
-        {"WN","WP","NN","NN","NN","NN","BP","BN"},
-        {"WR","WP","NN","NN","NN","NN","BP","BR"}
+{"WR","WP","NN","NN","NN","NN","BP","BR"},
+{"WN","WP","NN","NN","NN","NN","BP","BN"},
+{"WB","WP","NN","NN","NN","NN","BP","BB"},
+{"WQ","WP","NN","NN","NN","NN","BP","BQ"},
+{"WK","WP","NN","NN","NN","NN","BP","BK"},
+{"WB","WP","NN","NN","NN","NN","BP","BB"},
+{"WN","WP","NN","NN","NN","NN","BP","BN"},
+{"WR","WP","NN","NN","NN","NN","BP","BR"}
+
 };
 
 class BaseBoard{
@@ -40,6 +41,7 @@ class BaseBoard{
     board_type getBoard();
     void updateBoard(int, int, int, int);
     std::vector <std::vector <std::string>> toString();
+    void printBoardCout();
 
 };
 #endif
