@@ -94,11 +94,11 @@
 
         if (snapBack) return 'snapback';
         // alert(JSON.stringify(opponentMove))
-        if (endOfGame === 'none'){
+        if (endOfGame === 'none' && !snapBack){
             board.move(opponentMove);
         }
         // Repair bug - opponent moved before white piece ended move
-        if(opponentMove.substr(3,2) === target)
+        if(endOfGame === 'none' && !snapBack && opponentMove.substr(3,2) === target)
             return 'trash';
     }
 
