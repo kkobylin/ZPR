@@ -40,20 +40,7 @@ class BaseBoard{
     BaseBoard(std::vector <std::vector <std::string>>);
     board_type getBoard();
     void updateBoard(int, int, int, int);
-    std::vector <std::vector <std::string>> getBoardString();
-    void printBoardCout();
-
+    std::vector <std::vector <std::string>> toString();
 
 };
-
-
-#include "Piece.h"
-#include "Bishop.h"
-#include "Rook.h"
-#include "Knight.h"
-#include "King.h"
-#include "Queen.h"
-#include "Pawn.h"
-#include "Empty_square.h"
-
 #endif

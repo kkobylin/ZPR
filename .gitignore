@@ -17,9 +17,16 @@ chess_engine/chess.cbp
 chess_engine/CMakeCache.txt
 chess_engine/cmake_install.cmake
 chess_engine/libchesslib.so
+chess_engine/chesslib
 chess_engine/Makefile
 chess_engine/main1
 chess_engine/.vscode/
 /.vscode
 /.VSCodeCounter
 
+test/CMakeFiles
+test/CMakeFiles/*
+test/CMakeCache.txt
+test/cmake_install.cmake
+test/Makefile
+test/tests

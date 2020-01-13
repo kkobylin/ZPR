@@ -6,7 +6,6 @@
 #include <string>
 #include <iostream>
 #include <memory>
-//#include "Board.h"
 
 class BaseBoard;
 
@@ -34,14 +33,14 @@ class Piece{
 private:
     std::string           figureName; // name of figure to transfer to frontend
     PieceColor            color = BLACK; // color of figure
-    Position              position; // position on board, cosists od column and row
+    Position              position; // position on board, consists od column and row
     int                   column; // vertical position of figure
     int                   row; // horizontal position of figure
+    //todo sprawdzic czy nie wywalic killed, occupied, moved
     bool                  killed; // is figure killed
     bool                  occupied = true; // is square occupied
     bool                  moved = false; // was figure moved, used to castle and en passant pawn move
     std::vector<Position> moves; // vector of possible moves
-
 
 public:
     Piece(int, int, PieceColor);
@@ -67,6 +66,8 @@ public:
     std::vector<Position> evaluateCheck(std::shared_ptr<BaseBoard>, bool);
     virtual void move(Position, BaseBoard) = 0; // move figure
     virtual std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
+    virtual double getPositionValue() = 0;
+
 
 
     PieceColor            getColor(); // get color of figure

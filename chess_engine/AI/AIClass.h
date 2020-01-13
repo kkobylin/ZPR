@@ -6,19 +6,25 @@
 #define CHESS_AICLASS_H
 
 #include <memory>
-#include <lib/Board.h>
+#include <vector>
+#include "../lib/Square.h"
 
 struct MovePacket{
-    PieceColor color;
-    int value;
-    Position src;
-    Position dest;
+    int src_row;
+    int src_col;
+    int dest_row;
+    int dest_col;
+    double score;
 };
 
-class AIClass {
-    std::shared_ptr<MovePacket> MiniMaxRoot(int depth, std::shared_ptr<BaseBoard> currentBoard, int whosTurn);
-    int evaluateBoard(std::shared_ptr<BaseBoard> currentBoard, int side);
+typedef std::vector <std::vector <std::shared_ptr<Square>>> board_type;
 
+class AIClass {
+public:
+    static MovePacket MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> board, PieceColor side);
+
+private:
+    static double evaluateBoard(board_type board);
 };
 
 

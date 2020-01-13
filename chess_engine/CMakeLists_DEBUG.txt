@@ -3,10 +3,9 @@ project(chess)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(chesslib SHARED
+add_executable(chesslib 
         lib/Bishop.h
         lib/Board.h
-        lib/Empty_square.h
         lib/King.h
         lib/Knight.h
         lib/Pawn.h
@@ -18,7 +17,6 @@ add_library(chesslib SHARED
         Board.cc
         Connector.cc
         Connector.h
-        Empty_square.cc
         King.cc
         Knight.cc
         Pawn.cc
@@ -26,6 +24,7 @@ add_library(chesslib SHARED
         Queen.cc
         Rook.cc
         Square.cc
+	main.cpp
         )
 cmake_host_system_information(RESULT name QUERY HOSTNAME)
 set(BOOST_ROOT "/home/$ENV{USER}/Desktop/Boost/boost_1_71_0")

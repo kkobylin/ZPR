@@ -9,32 +9,29 @@
 #include "lib/Pawn.h"
 #include "lib/Empty_square.h"
 
-
+#include "lib/Piece.h"
+#include "lib/Bishop.h"
+#include "lib/Rook.h"
+#include "lib/Knight.h"
+#include "lib/King.h"
+#include "lib/Queen.h"
+#include "lib/Pawn.h"
 
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
-//todo zmienic kontruktor zeby dzialal na wskazniku
 BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
     for (int column = 0; column < 8; column++){
         board.push_back(std::vector<std::shared_ptr<Square>>());
         for (int row = 0; row < 8; row++ ){
             
             std::string buffer = boardString[column][row];
-            /*
-            int temp = row;
-            row = column;
-            column = temp;
-            */
-         if (buffer.compare("NN") == 0){
-                //std::string name (1, 'E'); teraz niepotrzebne
-                board[column].push_back(std::shared_ptr<Square>{
-                new Square
-                (nullptr)});
-                
-                board[column].back()->setColumn(column);
-                board[column].back()->setRow(row);
-                continue; 
-        }    
+
+             if (buffer.compare("NN") == 0){
+                    board[column].push_back(std::shared_ptr<Square>{new Square(nullptr)});
+                    board[column].back()->setColumn(column);
+                    board[column].back()->setRow(row);
+                    continue;
+            }
 
             PieceColor color; 
 
@@ -80,15 +77,11 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
             board[column][row]->setRow(row);
         } 
     }
-            
 }
-
 
 board_type BaseBoard::getBoard() {
     return board;
 }
-
-
 
 void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row){
             //update board
@@ -105,7 +98,7 @@ void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row
 }
 
 
-std::vector <std::vector <std::string>> BaseBoard::getBoardString(){
+std::vector <std::vector <std::string>> BaseBoard::toString(){
     std::vector <std::vector <std::string>> boardReturn;
     std::string piece = "";
     std::string color = "";

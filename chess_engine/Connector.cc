@@ -8,6 +8,8 @@
 #include "lib/Board.h"
 #include <memory>
 #include <string>
+#include "AI/AIClass.h"
+#include "lib/BaseBoard.h"
 
 bool const Connector::ifMovePossible(std::string dest, std::string src){
 
@@ -41,15 +43,33 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
 
 }
 
-
 std::string const Connector::checkForWin() {
     /* none draw win lose*/
     //todo cpp function to check win
     return "none";
 }
+
 std::string const Connector::opponentMove(){
         /* Format e2-e4 */
-    return "h8-h8";
+    //return "h8-h8";
+
+    std::string chessColumnConvert[8] = {"a", "b", "c", "d", "e", "f", "g", "h"};
+
+    auto board = Board::getInstance();
+
+    MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, board, BLACK);
+    board->updateBoard(movePacket.dest_col, movePacket.dest_row, movePacket.src_col, movePacket.src_row);
+    std::cout<<"src_col "<<movePacket.src_col<<std::endl;
+    std::cout<<"src_row "<<movePacket.src_row<<std::endl;
+    std::cout<<"dest_col "<<movePacket.dest_col<<std::endl;
+    std::cout<<"dest_row "<<movePacket.dest_row<<std::endl;
+
+    std::string src_row = std::to_string(++movePacket.src_row);
+    std::string src_col = chessColumnConvert[movePacket.src_col];
+    std::string dest_row = std::to_string(++movePacket.dest_row);
+    std::string dest_col = chessColumnConvert[movePacket.dest_col];
+
+    return src_col + src_row + '-' + dest_col + dest_row;
 }
 
 BOOST_PYTHON_MODULE(libchesslib)
