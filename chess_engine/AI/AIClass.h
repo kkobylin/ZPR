@@ -6,7 +6,8 @@
 #define CHESS_AICLASS_H
 
 #include <memory>
-#include <lib/Board.h>
+#include <vector>
+#include "../lib/Square.h"
 
 struct MovePacket{
     int src_row;

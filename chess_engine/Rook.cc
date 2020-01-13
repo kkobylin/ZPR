@@ -1,6 +1,6 @@
 #include "lib/Rook.h"
 #include <memory>
-#include <AI/PositionValue.h>
+#include "AI/PositionValue.h"
 
 bool Rook::getMoved(){
     return this->moved;
@@ -115,7 +115,7 @@ double Rook::getPositionValue(){
     PieceColor color = this->getColor();
 
     if(color == BLACK)
-        return PositionValue::RookEvalBlack[this->getRow()][this->getColumn()];
+        return PositionValue::RookEvalBlack[this->getRow()][this->getColumn()] * (-1);
     else
         return PositionValue::RookEvalWhite[this->getRow()][this->getColumn()];
 }

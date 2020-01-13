@@ -1,6 +1,6 @@
 #include "lib/Knight.h"
 #include <memory>
-#include <AI/PositionValue.h>
+#include "AI/PositionValue.h"
 
 void Knight::move(Position position, BaseBoard board){}
 std::vector<Position>  Knight::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
@@ -175,5 +175,9 @@ std::vector<Position>  Knight::getPossibleMoves(std::shared_ptr<BaseBoard> board
 
 double Knight::getPositionValue(){
 
-    return PositionValue::KnightEval[this->getRow()][this->getColumn()];
+    PieceColor color = this->getColor();
+    if(color == BLACK)
+        return PositionValue::KnightEval[this->getRow()][this->getColumn()] * (-1);
+    else
+        return PositionValue::KnightEval[this->getRow()][this->getColumn()];
 }

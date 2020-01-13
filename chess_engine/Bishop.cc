@@ -1,4 +1,4 @@
-#include <AI/PositionValue.h>
+#include "AI/PositionValue.h"
 #include "lib/Bishop.h"
 
 void Bishop::move(Position position, BaseBoard board){} // todo
@@ -115,7 +115,7 @@ double Bishop::getPositionValue(){
     PieceColor color = this->getColor();
 
     if(color == BLACK)
-        return PositionValue::BishopEvalBlack[this->getRow()][this->getColumn()];
+        return PositionValue::BishopEvalBlack[this->getRow()][this->getColumn()] * (-1);
     else
         return PositionValue::BishopEvalWhite[this->getRow()][this->getColumn()];
 }

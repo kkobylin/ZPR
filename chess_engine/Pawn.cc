@@ -1,6 +1,6 @@
 #include "lib/Pawn.h"
 #include <memory>
-#include <AI/PositionValue.h>
+#include "AI/PositionValue.h"
 
 
 /* Pawn::setMoved(){

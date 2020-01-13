@@ -16,12 +16,10 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
         board.push_back(std::vector<std::shared_ptr<Square>>());
         for (int row = 0; row < 8; row++ ){
             
-            std::string buffer = boardString[row][column];
+            std::string buffer = boardString[column][row];
 
              if (buffer.compare("NN") == 0){
-                    board[column].push_back(std::shared_ptr<Square>{
-                    new Square
-                    (nullptr)});
+                    board[column].push_back(std::shared_ptr<Square>{new Square(nullptr)});
                     board[column].back()->setColumn(column);
                     board[column].back()->setRow(row);
                     continue;
@@ -92,7 +90,7 @@ void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row
 }
 
 
-std::vector <std::vector <std::string>> BaseBoard::getBoardString(){
+std::vector <std::vector <std::string>> BaseBoard::toString(){
     std::vector <std::vector <std::string>> boardReturn;
     std::string piece = "";
     std::string color = "";

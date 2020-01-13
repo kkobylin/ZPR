@@ -3,7 +3,7 @@ project(chess)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(chesslib
+add_library(chesslib SHARED
 	    lib/BaseBoard.h
         lib/Bishop.h
         lib/Board.h
@@ -30,7 +30,6 @@ add_executable(chesslib
         AI/AIClass.h
         AI/PositionValue.h 
 	    AI/PositionValue.cpp
-        main.cpp
         )
 
 set(BOOST_ROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")
