@@ -136,6 +136,7 @@ Position Piece::getKing(std::shared_ptr<BaseBoard> board){
                 if (piece == "K"){
                     pieceColor = board->getBoard()[column][row]->getPiece()->getColor();
                     if (color == pieceColor){
+                        //std::cout << "krol" <<board->getBoard()[column][row]->getPiece()->getColumn() << board->getBoard()[column][row]->getPiece()->getRow() << color<< pieceColor << std::endl;
                         return board->getBoard()[column][row]->getPiece()->getPosition();
                     }
                 }
@@ -146,9 +147,11 @@ Position Piece::getKing(std::shared_ptr<BaseBoard> board){
 
 bool Piece::isChecking(Position positionPiece, Position positionKing){
     if (positionKing.column == positionPiece.column && positionKing.row == positionPiece.row){
-        std::cout << "Moze bic" << std::endl;
+        //std::cout << "Szach" << std::endl;
         return true;
     }else{
+        //std::cout << "Nie Szach: " << positionPiece.column << positionPiece.row << std::endl;
+        //std::cout << "Krol: " << positionKing.column << positionKing.row << std::endl;
         return false;
     }
 }
@@ -157,7 +160,7 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
     std::vector<Position> possiblePosition; //Create buffer for computed possible positions
 
     for (Position position : this->getMoves()){
-        std::shared_ptr<BaseBoard> boardCopy (new BaseBoard(boardInitial->getBoardString()));
+        std::shared_ptr<BaseBoard> boardCopy (new BaseBoard(boardInitial->toString()));
         board_type board = boardCopy->getBoard();
 
         int src_col = this->getColumn();
@@ -179,11 +182,11 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
 
         //Evaluating Board Created, now check if king is underCheck
         Position king = this->getKing(boardCopy);
+        //std::cout << this->getColumn() << this->getRow() << std::endl;
 
-        boardCopy->printBoardCout();
         PieceColor color = this->getColor();
         PieceColor opponentColor;
-        if (color = WHITE){
+        if (color == WHITE){
             opponentColor = BLACK;
         }else{
             opponentColor = WHITE;
@@ -198,7 +201,6 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
                 if (board[column][row]->getOccupied()){
                     color = board[column][row]->getPiece()->getColor();
                     if (color == opponentColor){
-                        std::cout << "krol:" << king.column << king.row << std::endl;
                         for (auto pos : board[column][row]->getPiece()->getPossibleMoves(boardCopy, false)){
                             
                             if (board[column][row]->getPiece()->isChecking(pos,king)){

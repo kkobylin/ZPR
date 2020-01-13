@@ -7,7 +7,7 @@
 #include "lib/King.h"
 #include "lib/Queen.h"
 #include "lib/Pawn.h"
-#include "lib/Empty_square.h"
+
 
 #include "lib/Piece.h"
 #include "lib/Bishop.h"
@@ -129,11 +129,9 @@ std::vector <std::vector <std::string>> BaseBoard::toString(){
 
 void BaseBoard::printBoardCout(){
     std::cout << "Current Board:" << std::endl;
-    for (int column = 0; column < 7; column++){
+    for (int column = 0; column < 8; column++){
         for (int row = 0; row < 8; row++){
-            if(board[column][row]->getOccupied())
-                std::cout << board[column][row]->getPiece()->getColumn() <<board[column][row]->getPiece()->getRow();
-            std::cout <<board[column][row]->getColumn() << board[column][row]->getRow()  <<this->getBoardString()[column][row] << " " ;
+            std::cout <<board[column][row]->getColumn() << board[column][row]->getRow()  <<this->toString()[column][row] << " " ;
             if (row == 7){
                 std::cout << std::endl;
             }

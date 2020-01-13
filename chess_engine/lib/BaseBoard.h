@@ -41,6 +41,7 @@ class BaseBoard{
     board_type getBoard();
     void updateBoard(int, int, int, int);
     std::vector <std::vector <std::string>> toString();
+    void printBoardCout();
 
 };
 #endif

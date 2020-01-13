@@ -7,41 +7,32 @@
 #include "lib/King.h"
 #include "lib/Queen.h"
 #include "lib/Pawn.h"
-#include "lib/Empty_square.h"
+#include "Connector.h"
+
 
 int main(void){
     std::shared_ptr<BaseBoard> boardInstance = Board::getInstance();
     board_type board = boardInstance->getBoard();
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++){
-            if(board[column][row]->getOccupied())
-                std::cout << boardInstance->getBoard()[column][row]->getColumn()<< boardInstance->getBoard()[column][row]->getRow() <<boardInstance->getBoard()[column][row]->getPiece()->getColumn() << boardInstance->getBoard()[column][row]->getPiece()->getRow();
-            std::cout << boardInstance->getBoardString()[column][row] << " ";
-            if (row == 7) std::cout << std::endl;
-        }
-    }
-    std::shared_ptr<BaseBoard> board_temp1 (new BaseBoard(boardInstance->getBoardString()));
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++){
-            if(board[column][row]->getOccupied())
-                std::cout << board_temp1->getBoard()[column][row]->getColumn()<< board_temp1->getBoard()[column][row]->getRow() << board_temp1->getBoard()[column][row]->getPiece()->getColumn() << board_temp1->getBoard()[column][row]->getPiece()->getRow();
-            std::cout << board_temp1->getBoardString()[column][row] << " ";
-            if (row == 7){
-                std::cout << std::endl;
-            }
-        }
-    }
-    std::shared_ptr<BaseBoard> board_temp2 (new BaseBoard(board_temp1->getBoardString()));
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++){
-            if(board[column][row]->getOccupied())
-                std::cout << board_temp2->getBoard()[column][row]->getColumn()<< board_temp2->getBoard()[column][row]->getRow() << board_temp2->getBoard()[column][row]->getPiece()->getColumn() << board_temp2->getBoard()[column][row]->getPiece()->getRow();
-            std::cout << board_temp2->getBoardString()[column][row] << " ";
-            if (row == 7){
-                std::cout << std::endl;
-            }
-        }
-    }
+    Connector::ifMovePossible("a3", "a2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("c3", "c2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("e3", "e2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("g3", "g2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("b4", "b2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("d4", "d2");
+    Connector::opponentMove();
+
+    Connector::ifMovePossible("f4", "f2");
+    Connector::opponentMove();
     board[1][1]->getPiece()->getPossibleMoves(boardInstance);
     std::vector<Position> possiblePositions = board[1][1]->getPiece()->getMoves();
     for(Position p : possiblePositions){
