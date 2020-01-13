@@ -1,5 +1,13 @@
 #include "lib/BaseBoard.h"
 #include <memory>
+#include "lib/Piece.h"
+#include "lib/Bishop.h"
+#include "lib/Rook.h"
+#include "lib/Knight.h"
+#include "lib/King.h"
+#include "lib/Queen.h"
+#include "lib/Pawn.h"
+#include "lib/Empty_square.h"
 
 
 
@@ -11,13 +19,18 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
         board.push_back(std::vector<std::shared_ptr<Square>>());
         for (int row = 0; row < 8; row++ ){
             
-            std::string buffer = boardString[row][column];
-
+            std::string buffer = boardString[column][row];
+            /*
+            int temp = row;
+            row = column;
+            column = temp;
+            */
          if (buffer.compare("NN") == 0){
                 //std::string name (1, 'E'); teraz niepotrzebne
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square
                 (nullptr)});
+                
                 board[column].back()->setColumn(column);
                 board[column].back()->setRow(row);
                 continue; 
@@ -62,9 +75,9 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
                 std::shared_ptr<Pawn>{new Pawn(column, row, color, name)})});
                 break;
             }
-            board[column].back()->setOccupied(true);
-            board[column].back()->setColumn(column);
-            board[column].back()->setRow(row);
+            board[column][row]->setOccupied(true);
+            board[column][row]->setColumn(column);
+            board[column][row]->setRow(row);
         } 
     }
             
@@ -119,5 +132,19 @@ std::vector <std::vector <std::string>> BaseBoard::getBoardString(){
 
     return boardReturn;
 
+}
+
+void BaseBoard::printBoardCout(){
+    std::cout << "Current Board:" << std::endl;
+    for (int column = 0; column < 7; column++){
+        for (int row = 0; row < 8; row++){
+            if(board[column][row]->getOccupied())
+                std::cout << board[column][row]->getPiece()->getColumn() <<board[column][row]->getPiece()->getRow();
+            std::cout <<board[column][row]->getColumn() << board[column][row]->getRow()  <<this->getBoardString()[column][row] << " " ;
+            if (row == 7){
+                std::cout << std::endl;
+            }
+        }
+    }
 }
 

@@ -27,18 +27,10 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
 
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
     for(Position p : possiblePositions){
+        std::cout << p.column << p.row << std::endl;
         if(p.column == dest_col && p.row == dest_row){
             boardInstance->updateBoard(dest_col,dest_row,src_col,src_row);
-            for (int column = 0; column < 7; column++){
-                for (int row = 0; row < 8; row++){
-                    if(board[column][row]->getOccupied())
-                        std::cout << board[column][row]->getPiece()->getColumn() <<board[column][row]->getPiece()->getRow();
-                    std::cout <<board[column][row]->getColumn() << board[column][row]->getRow()  <<boardInstance->getBoardString()[column][row] << " " ;
-                    if (row == 7){
-                        std::cout << std::endl;
-                    }
-                }
-            }
+            boardInstance->printBoardCout();
             return true;
 
         }

@@ -169,5 +169,10 @@ std::vector<Position>  Knight::getPossibleMoves(std::shared_ptr<BaseBoard> board
 
 
     this->setMoves(possiblePosition);
+
+    if (originalEvaluation){
+        possiblePosition = evaluateCheck(board, false);
+        this->setMoves(possiblePosition);
+    }
     return possiblePosition;
 }

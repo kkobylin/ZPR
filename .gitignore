@@ -20,4 +20,6 @@ chess_engine/libchesslib.so
 chess_engine/Makefile
 chess_engine/main1
 chess_engine/.vscode/
+/.vscode
+/.VSCodeCounter
 

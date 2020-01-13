@@ -106,7 +106,8 @@ std::vector<Position> Bishop::getPossibleMoves(std::shared_ptr<BaseBoard>board, 
     this->setMoves(possiblePosition);
 
     if (originalEvaluation){
-        evaluateCheck(board, false);
+        possiblePosition = evaluateCheck(board, false);
+        this->setMoves(possiblePosition);
     }
     return possiblePosition;
 }
