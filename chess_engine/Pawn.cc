@@ -1,6 +1,6 @@
 #include "lib/Pawn.h"
 #include <memory>
-
+#include "AI/PositionValue.h"
 
 
 /* Pawn::setMoved(){
@@ -31,7 +31,6 @@ Pawn::getPossibleNextMove(Board board){
 if (isMoved)
     
 } */ //todo
-
 
 std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();
@@ -89,4 +88,13 @@ std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, b
     this->setMoves(possiblePosition);
     return possiblePosition;
 
+}
+
+double Pawn::getPositionValue(){
+    PieceColor color = this->getColor();
+
+    if(color == BLACK)
+        return PositionValue::PawnEvalBlack[this->getRow()][this->getColumn()];
+    else
+        return PositionValue::PawnEvalWhite[this->getRow()][this->getColumn()];
 }

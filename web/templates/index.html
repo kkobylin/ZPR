@@ -85,6 +85,7 @@
                 snapBack = (result.legalMove === false);
                 endOfGame = result.endOfGame;
                 opponentMove = result.opponentMove;
+                board.move('G7-G5');
             },
             error: function (result) {
                 alert("error:" + JSON.stringify(result));
@@ -92,9 +93,10 @@
         });
 
         if (snapBack) return 'snapback';
-        if (endOfGame === 'none')
+        // alert(JSON.stringify(opponentMove))
+        if (endOfGame === 'none'){
             board.move(opponentMove);
-
+        }
         // Repair bug - opponent moved before white piece ended move
         if(opponentMove.substr(3,2) === target)
             return 'trash';

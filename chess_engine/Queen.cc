@@ -1,5 +1,6 @@
 #include "lib/Queen.h"
 #include <memory>
+#include "AI/PositionValue.h"
 
 void Queen::move(Position position, BaseBoard board){}
 std::vector<Position>  Queen::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
@@ -184,4 +185,14 @@ std::vector<Position>  Queen::getPossibleMoves(std::shared_ptr<BaseBoard> board,
 
     this->setMoves(possiblePosition);
     return possiblePosition;
+}
+
+double Queen::getPositionValue(){
+
+    PieceColor color = this->getColor();
+
+    if(color == BLACK)
+        return PositionValue::QueenEval[this->getRow()][this->getColumn()] * (-1);
+    else
+        return PositionValue::QueenEval[this->getRow()][this->getColumn()];
 }
