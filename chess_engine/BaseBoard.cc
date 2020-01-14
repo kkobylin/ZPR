@@ -75,6 +75,10 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
             board[column][row]->setOccupied(true);
             board[column][row]->setColumn(column);
             board[column][row]->setRow(row);
+
+            if (buffer != INITIAL_BOARD[column][row]){
+                board[column][row]->getPiece()->setMoved();
+            }
         } 
     }
 }

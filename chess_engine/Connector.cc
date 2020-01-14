@@ -56,6 +56,7 @@ std::string const Connector::opponentMove(){
     std::string chessColumnConvert[8] = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
     auto board = Board::getInstance();
+    
 
     MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, board, BLACK);
     board->updateBoard(movePacket.dest_col, movePacket.dest_row, movePacket.src_col, movePacket.src_row);
