@@ -3,7 +3,7 @@ project(chess)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(chesslib
+add_library(chesslib SHARED
         lib/BaseBoard.h
         lib/Bishop.h
         lib/Board.h
@@ -32,7 +32,7 @@ add_executable(chesslib
         AI/PositionValue.cpp
         exceptions/WrongArgException.h
         exceptions/WrongArgException.cpp
-        test/PawnTest.cpp
+        main.cpp
         )
 
 cmake_host_system_information(RESULT name QUERY HOSTNAME)
