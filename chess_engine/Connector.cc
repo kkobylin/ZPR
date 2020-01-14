@@ -15,9 +15,11 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
 
     std::shared_ptr<BaseBoard> boardInstance = Board::getInstance();
     board_type board = boardInstance->getBoard();
+    auto temp = boardInstance->toString();
 
     /* Convert columns from A to H to 0-7*/
     // 97 - value of 'a' in ASCII table
+    //todo change method of conversion
     int src_col = static_cast<int>(src[0]) - 97;
     int dest_col = static_cast<int>(dest[0]) - 97;
 
@@ -30,8 +32,8 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     std::cout << "White King: " << boardInstance->getKing(WHITE);
     std::cout << "Black King: " << boardInstance->getKing(BLACK);
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
+
     for(Position p : possiblePositions){
-        std::cout << p.column << p.row << std::endl;
         if(p.column == dest_col && p.row == dest_row){
             boardInstance->updateBoard(dest_col,dest_row,src_col,src_row);
 
@@ -43,7 +45,6 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     }
 
     return false;
-
 }
 
 std::string const Connector::checkForWin() {
@@ -59,14 +60,14 @@ std::string const Connector::opponentMove(){
     std::string chessColumnConvert[8] = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
     auto board = Board::getInstance();
-    
+    std::shared_ptr<BaseBoard> minMaxBoard(new BaseBoard(board->toString()));
 
+<<<<<<< HEAD
     MovePacket movePacket = AIClass::MiniMaxRoot(3, BLACK, board, BLACK);
+=======
+    MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, minMaxBoard, BLACK);
+>>>>>>> master
     board->updateBoard(movePacket.dest_col, movePacket.dest_row, movePacket.src_col, movePacket.src_row);
-    std::cout<<"src_col "<<movePacket.src_col<<std::endl;
-    std::cout<<"src_row "<<movePacket.src_row<<std::endl;
-    std::cout<<"dest_col "<<movePacket.dest_col<<std::endl;
-    std::cout<<"dest_row "<<movePacket.dest_row<<std::endl;
 
     std::string src_row = std::to_string(++movePacket.src_row);
     std::string src_col = chessColumnConvert[movePacket.src_col];
