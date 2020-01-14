@@ -2,7 +2,6 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-void Knight::move(Position position, BaseBoard board){}
 std::vector<Position>  Knight::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();

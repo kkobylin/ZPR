@@ -3,12 +3,7 @@
 #include "AI/PositionValue.h"
 
 
-/* Pawn::setMoved(){
-    this->moved = true;
-}*/
 
-
-void Pawn::move(Position position, BaseBoard board){}
 
 std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     //board->printBoardCout();

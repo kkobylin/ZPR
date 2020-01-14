@@ -36,12 +36,20 @@ class BaseBoard{
     private:
     board_type board;
 
+    Position whiteKing;
+    Position blackKing;
+
+
+
     public:
     BaseBoard(std::vector <std::vector <std::string>>);
     board_type getBoard();
     void updateBoard(int, int, int, int);
     std::vector <std::vector <std::string>> toString();
     void printBoardCout();
+
+    Position getKing(PieceColor kingColor);
+    void setKing(Position positionKing, PieceColor kingColor);
 
 };
 #endif

@@ -10,7 +10,6 @@ void Rook::setMoved(bool moved){
     this->moved = moved;
 }
 
-void Rook::move(Position position, BaseBoard board){}
 std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
