@@ -40,7 +40,6 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
 
             std::string name (1, buffer[1]);
             switch(buffer[1]){
-            //TODO pozmieniac na Square
             case 'N':
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
@@ -65,6 +64,7 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
                 std::shared_ptr<King>{new King(column, row, color, name)})});
+                this->setKing(Position{column,row}, color);
                 break;
             case 'P': 
                 board[column].push_back(std::shared_ptr<Square>{
@@ -95,6 +95,13 @@ void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row
             board[dest_col][dest_row]->setOccupied(true);
             board[dest_col][dest_row]->getPiece()->setPosition(position); // aktualizacja pozycji figury
             board[dest_col][dest_row]->getPiece()->setMoved();
+
+            if (Position{src_col,src_row} == this->getKing(WHITE)){
+                this->setKing(Position{dest_col,dest_row}, WHITE);
+            }
+            if (Position{src_col,src_row} == this->getKing(BLACK)){
+                this->setKing(Position{dest_col,dest_row}, BLACK);
+            }
 
                 //update source Square
             board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
@@ -140,6 +147,22 @@ void BaseBoard::printBoardCout(){
                 std::cout << std::endl;
             }
         }
+    }
+}
+
+
+Position BaseBoard::getKing(PieceColor kingColor){
+    if (kingColor == WHITE){
+        return this->whiteKing;
+    }else{
+        return this->blackKing;
+    }
+}
+void BaseBoard::setKing(Position positionKing, PieceColor kingColor){
+    if (kingColor == WHITE){
+        this->whiteKing = positionKing;
+    }else{
+        this->blackKing = positionKing;
     }
 }
 

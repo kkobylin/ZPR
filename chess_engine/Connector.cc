@@ -29,11 +29,15 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     int dest_row = std::stoi(dest.substr(1,1));
     dest_row --;
     boardInstance->printBoardCout();
+    std::cout << "White King: " << boardInstance->getKing(WHITE);
+    std::cout << "Black King: " << boardInstance->getKing(BLACK);
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
 
     for(Position p : possiblePositions){
         if(p.column == dest_col && p.row == dest_row){
             boardInstance->updateBoard(dest_col,dest_row,src_col,src_row);
+
+
             return true;
 
         }
@@ -58,7 +62,11 @@ std::string const Connector::opponentMove(){
     auto board = Board::getInstance();
     std::shared_ptr<BaseBoard> minMaxBoard(new BaseBoard(board->toString()));
 
+<<<<<<< HEAD
+    MovePacket movePacket = AIClass::MiniMaxRoot(3, BLACK, board, BLACK);
+=======
     MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, minMaxBoard, BLACK);
+>>>>>>> master
     board->updateBoard(movePacket.dest_col, movePacket.dest_row, movePacket.src_col, movePacket.src_row);
 
     std::string src_row = std::to_string(++movePacket.src_row);

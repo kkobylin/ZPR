@@ -20,10 +20,14 @@ struct Position{
 
     bool operator==(Position pos1){ return pos1.column == column && pos1.row == row;} // override operator to use std::find
     bool operator!=(Position pos1){ return pos1.column != column || pos1.row != row;} // override operator to use std::find
+<<<<<<< HEAD
+    friend std::ostream & operator<<(std::ostream &out, const Position &c){return out << (char)(c.column + 65) << c.row + 1 << std::endl;}; // output position and figure name
+=======
 
     std::string toString(){
         return std::to_string(column) + std::to_string(row);
     }
+>>>>>>> master
 };
 
 
@@ -37,26 +41,20 @@ class Piece{
 private:
     std::string           figureName; // name of figure to transfer to frontend
     PieceColor            color = BLACK; // color of figure
+
     Position              position; // position on board, consists od column and row
     int                   column; // vertical position of figure
     int                   row; // horizontal position of figure
-    //todo sprawdzic czy nie wywalic killed, occupied, moved
-    bool                  killed; // is figure killed
+
     bool                  occupied = true; // is square occupied
     bool                  moved = false; // was figure moved, used to castle and en passant pawn move
+
     std::vector<Position> moves; // vector of possible moves
 
 public:
-    Piece(int, int, PieceColor);
-    Piece(int, int, bool occupied);
-    Piece(int, int, bool occupied, std::string);
     Piece(int, int, PieceColor, std::string);
+    Piece(Position, PieceColor, std::string){};
 
-    Piece(Position, PieceColor);
-    Piece(Position, bool occupied);
-    Piece(Position, PieceColor, std::string){}; // todo
-
-    void setKilled(bool); // set figure killed
     void setColor(PieceColor); // set color of figure
     void setRow(int); // set figure row
     void setColumn(int); // set figure column
@@ -66,10 +64,14 @@ public:
     void setMoves(std::vector<Position>); // set possible moves
     void setFigureName(std::string); // set figure name
     bool isChecking(Position positionPiece, Position positionKing);
-    Position getKing(std::shared_ptr<BaseBoard>);
+    Position getKing(std::shared_ptr<BaseBoard>, PieceColor pieceColor);
     std::vector<Position> evaluateCheck(std::shared_ptr<BaseBoard>, bool);
+<<<<<<< HEAD
+    virtual std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
+=======
     virtual void move(Position, BaseBoard) = 0; // move figure
     virtual std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
+>>>>>>> master
     virtual double getPositionValue() = 0;
 
 
@@ -77,7 +79,6 @@ public:
     int                   getColumn(); // get column of figure
     int                   getRow(); // get row of piece
     Position              getPosition(); // get position of piece (column and row)
-    bool                  isKilled(); // set figure killed
     bool                  getMoved(); // set figure moved
     bool                  getOccupied(); // is square occupied
     std::vector<Position> getMoves(); // get possible moves of figure

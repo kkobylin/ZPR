@@ -25,7 +25,7 @@ bool King::getChecked(){
 void King::setChecked(bool checked){
         this->checked = checked;
 }
-void King::move(Position position, BaseBoard board){}
+
 
 std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();

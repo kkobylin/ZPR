@@ -13,7 +13,7 @@ public:
         Piece (column, row, color, figureName){};
     std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool) override;
     void move(Position);
-    void move(Position, BaseBoard) override;
+    
     double getPositionValue() override ;
 };
 #endif
