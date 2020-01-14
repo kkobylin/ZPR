@@ -166,3 +166,44 @@ void BaseBoard::setKing(Position positionKing, PieceColor kingColor){
     }
 }
 
+bool BaseBoard::isChecking(PieceColor opponentColor, std::shared_ptr<BaseBoard> board){
+    //Check if opponent is checked
+
+    Position opponentKing = this->getKing(static_cast<PieceColor>(-1*opponentColor));
+    for (int column = 0; column < 8; column++){
+        for (int row = 0; row < 8; row++){
+            if (this->getBoard()[column][row]->getOccupied()){
+                if (this->getBoard()[column][row]->getPiece()->getColor() == opponentColor){
+                    auto possibleMoves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(board);
+                    for (auto pos : possibleMoves){
+                        if (opponentKing == pos){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}
+
+bool BaseBoard::isCheckMate(PieceColor opponentColor, std::shared_ptr<BaseBoard> board){
+    //Check if opponent is check mated
+
+    Position opponentKing = this->getKing(static_cast<PieceColor>(-1*opponentColor));
+    for (int column = 0; column < 8; column++){
+        for (int row = 0; row < 8; row++){
+            if (this->getBoard()[column][row]->getOccupied()){
+                if (this->getBoard()[column][row]->getPiece()->getColor() == opponentColor){
+                    auto possibleMoves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(board);
+                    for (auto pos : possibleMoves){
+                        std::cout << "moze ruch" <<std::endl;
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+    return true;
+}    
+

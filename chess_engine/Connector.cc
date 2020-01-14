@@ -31,12 +31,20 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     boardInstance->printBoardCout();
     std::cout << "White King: " << boardInstance->getKing(WHITE);
     std::cout << "Black King: " << boardInstance->getKing(BLACK);
+  
+    
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
 
     for(Position p : possiblePositions){
         if(p.column == dest_col && p.row == dest_row){
             boardInstance->updateBoard(dest_col,dest_row,src_col,src_row);
-
+                if (boardInstance->isChecking(WHITE,boardInstance)){
+                    std::cout << "Szach bialy" << std::endl;
+                }
+                    
+                if (boardInstance->isChecking(BLACK,boardInstance)){
+                    std::cout << "Szach czarny" << std::endl;
+                }
 
             return true;
 
@@ -63,8 +71,21 @@ std::string const Connector::opponentMove(){
     std::shared_ptr<BaseBoard> minMaxBoard(new BaseBoard(board->toString()));
 
     MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, minMaxBoard, BLACK);
+    if (board->isCheckMate(WHITE,board)){
+        std::cout << "mat bialy" << std::endl;
+    }
+        
+    if (board->isCheckMate(BLACK,board)){
+        std::cout << "mat czarny" << std::endl;
+    }
     board->updateBoard(movePacket.dest_col, movePacket.dest_row, movePacket.src_col, movePacket.src_row);
-
+    if (board->isChecking(WHITE,board)){
+        std::cout << "Szach bialy" << std::endl;
+    }
+        
+    if (board->isChecking(BLACK,board)){
+        std::cout << "Szach czarny" << std::endl;
+    }
     std::string src_row = std::to_string(++movePacket.src_row);
     std::string src_col = chessColumnConvert[movePacket.src_col];
     std::string dest_row = std::to_string(++movePacket.dest_row);
