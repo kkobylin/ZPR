@@ -4,7 +4,7 @@ project(chess)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(chesslib
-	    lib/BaseBoard.h
+        lib/BaseBoard.h
         lib/Bishop.h
         lib/Board.h
         lib/King.h
@@ -14,7 +14,7 @@ add_executable(chesslib
         lib/Queen.h
         lib/Rook.h
         lib/Square.h
-	    BaseBoard.cc
+        BaseBoard.cc
         Bishop.cc
         Board.cc
         Connector.cc
@@ -29,10 +29,11 @@ add_executable(chesslib
         AI/AIClass.cpp
         AI/AIClass.h
         AI/PositionValue.h
-	    AI/PositionValue.cpp
-        main.cpp
-        exceptions/WrongArgumentException.h
-        exceptions/WrongArgumentException.cpp)
+        AI/PositionValue.cpp
+        exceptions/WrongArgException.h
+        exceptions/WrongArgException.cpp
+        test/PawnTest.cpp
+        )
 
 cmake_host_system_information(RESULT name QUERY HOSTNAME)
 set(BOOST_ROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")

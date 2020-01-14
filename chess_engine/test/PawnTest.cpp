@@ -34,6 +34,7 @@ void compareVectors(std::vector<Position> pos ,std::vector<std::string> correctP
 
 BOOST_AUTO_TEST_CASE(PawnTestCase)
 {
+/* --------------------------------------------------------------- Pawn -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
     Piece *p = new Pawn(0, 1, WHITE, "P");
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
@@ -64,8 +65,7 @@ BOOST_AUTO_TEST_CASE(PawnTestCase)
     delete p;
     p = new Pawn(2, 3, WHITE, "P");
     pos = p->getPossibleMoves(board_ptr);
-    //todo chce zbic piona
-    //BOOST_CHECK(pos.size() == 0);
+    BOOST_CHECK(pos.size() == 0);
 
     /* 3rd case - black pawn on the beginning position, figure 2 fields in front of*/
     case_board = {
@@ -177,9 +177,55 @@ BOOST_AUTO_TEST_CASE(PawnTestCase)
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
     p = new Pawn(1, 7, WHITE, "P");
-    //pos = p->getPossibleMoves(board_ptr);
-    //todo nie dziala test na get Possible moves
-    //BOOST_CHECK(pos.size() == 0);
+    pos = p->getPossibleMoves(board_ptr);
+    BOOST_CHECK(pos.size() == 0);
+
+    /* 7th  case - King Defending - avoid King from check*/
+    case_board = {
+            /* 1   2    3    4    5     6   7     8 */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* A */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* B */
+            {"NN","NN","NN","NN","BP","NN","NN","NN"}, /* C */
+            {"NN","NN","WK","WP","NN","NN","NN","BR"}, /* D */
+            {"NN","NN","NN","NN","BP","NN","NN","NN"}, /* E */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* F */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* G */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}  /* H */
+    };
+    board_ptr.reset(new BaseBoard(case_board));
+    delete p;
+    p = new Pawn(3, 3, WHITE, "P");
+    p -> setMoved();
+    pos = p->getPossibleMoves(board_ptr);
+    BOOST_CHECK(pos.size() == 1);
+
+    correctPositions.clear();
+    correctPositions.push_back("34");
+
+    compareVectors(pos, correctPositions);
+
+    /* 8th  case - King Defending - stop king checking*/
+    case_board = {
+            /* 1   2    3    4    5     6   7     8 */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* A */
+            {"NN","NN","NN","BP","NN","NN","NN","NN"}, /* B */
+            {"NN","NN","WP","BQ","NN","NN","NN","NN"}, /* C */
+            {"NN","NN","NN","BB","NN","NN","NN","NN"}, /* D */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* E */
+            {"NN","WK","NN","NN","NN","NN","NN","NN"}, /* F */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* G */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}  /* H */
+    };
+    board_ptr.reset(new BaseBoard(case_board));
+    delete p;
+    p = new Pawn(2, 2, WHITE, "P");
+    pos = p->getPossibleMoves(board_ptr);
+    BOOST_CHECK(pos.size() == 1);
+
+    correctPositions.clear();
+    correctPositions.push_back("33");
+
+    compareVectors(pos, correctPositions);
 
 /* --------------------------------------------------------------- Bishop -----------------------------------------------------------------------------------------------*/
 
@@ -268,6 +314,49 @@ BOOST_AUTO_TEST_CASE(PawnTestCase)
     b = new Bishop(6, 6, WHITE, "B");
     pos = b->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 5);
+
+    /* 6th  case - King Defending - avoid King from check*/
+    case_board = {
+            /* 1   2    3    4    5     6   7     8 */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* A */
+            {"NN","NN","BK","NN","NN","NN","NN","NN"}, /* B */
+            {"NN","NN","NN","BB","NN","NN","NN","NN"}, /* C */
+            {"NN","NN","NN","NN","WQ","NN","NN","NN"}, /* D */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* E */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* F */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* G */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}  /* H */
+    };
+    board_ptr.reset(new BaseBoard(case_board));
+    delete b;
+    b = new Bishop(2, 3, BLACK, "B");
+    pos = b->getPossibleMoves(board_ptr);
+    BOOST_CHECK(pos.size() == 1);
+    correctPositions.clear();
+    correctPositions.push_back("34");
+    compareVectors(pos, correctPositions);
+
+    /* 6th  case - King Defending - stop king checking*/
+    case_board = {
+            /* 1   2    3    4    5     6   7     8 */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* A */
+            {"NN","NN","WK","NN","NN","NN","NN","NN"}, /* B */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* C */
+            {"NN","NN","WB","NN","NN","NN","NN","NN"}, /* D */
+            {"NN","NN","NN","NN","NN","BB","NN","NN"}, /* E */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* F */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* G */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}  /* H */
+    };
+    board_ptr.reset(new BaseBoard(case_board));
+    delete b;
+    b = new Bishop(3, 2, WHITE, "B");
+    pos = b->getPossibleMoves(board_ptr);
+    BOOST_CHECK(pos.size() == 1);
+    correctPositions.clear();
+    correctPositions.push_back("23");
+
+    compareVectors(pos, correctPositions);
 
 /* --------------------------------------------------------------- Knight -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
@@ -452,11 +541,11 @@ BOOST_AUTO_TEST_CASE(PawnTestCase)
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete k;
-    k = new King(0, 7, WHITE, "R");
+    k = new King(0, 7, WHITE, "K");
     pos = k->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 3);
 
-    /* 2nd case*/
+    /* 3rd case*/
     case_board = {
             /* 1   2    3    4    5     6   7     8 */
             {"NN","NN","BR","NN","BR","NN","NN","NN"}, /* A */
@@ -470,9 +559,74 @@ BOOST_AUTO_TEST_CASE(PawnTestCase)
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete k;
-    k = new King(3, 3, WHITE, "R");
+    k = new King(3, 3, WHITE, "K");
     pos = k->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 2);
+
+    /* 4th case*/
+    case_board = {
+            /* 1   2    3    4    5     6   7     8 */
+            {"NN","NN","BR","NN","BR","NN","NN","NN"}, /* A */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* B */
+            {"NN","NN","NN","NN","NN","NN","BR","NN"}, /* C */
+            {"NN","NN","NN","WK","NN","NN","NN","NN"}, /* D */
+            {"NN","NN","NN","NN","NN","NN","BR","NN"}, /* E */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* F */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* G */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}  /* H */
+    };
+    board_ptr.reset(new BaseBoard(case_board));
+    delete k;
+    k = new King(3, 3, WHITE, "K");
+    pos = k->getPossibleMoves(board_ptr);
+    BOOST_CHECK(pos.size() == 0);
+
+    /* 5th case*/
+    case_board = {
+            /* 1   2    3    4    5     6   7     8 */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* A */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* B */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* C */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* D */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* E */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* F */
+            {"NN","NN","BP","WP","BP","NN","NN","NN"}, /* G */
+            {"NN","NN","NN","BK","NN","NN","NN","WR"}  /* H */
+    };
+    board_ptr.reset(new BaseBoard(case_board));
+    delete k;
+    k = new King(7, 3, BLACK, "K");
+    pos = k->getPossibleMoves(board_ptr);
+    BOOST_CHECK(pos.size() == 1);
+    correctPositions.clear();
+    correctPositions.push_back("63");
+
+    compareVectors(pos, correctPositions);
+
+    /* 6th case*/
+    case_board = {
+            /* 1   2    3    4    5     6   7     8 */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* A */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* B */
+            {"NN","NN","NN","NN","BQ","BB","NN","NN"}, /* C */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* D */
+            {"NN","NN","NN","WK","NN","NN","NN","NN"}, /* E */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* F */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}, /* G */
+            {"NN","NN","NN","NN","NN","NN","NN","NN"}  /* H */
+    };
+    board_ptr.reset(new BaseBoard(case_board));
+    delete k;
+    k = new King(4, 3, WHITE, "K");
+    pos = k->getPossibleMoves(board_ptr);
+    BOOST_CHECK(pos.size() == 2);
+
+    correctPositions.clear();
+    correctPositions.push_back("32");
+    correctPositions.push_back("53");
+
+    compareVectors(pos, correctPositions);
+
 }
 
 

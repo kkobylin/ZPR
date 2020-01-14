@@ -169,20 +169,11 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
         int dest_col = position.column;
         int dest_row = position.row;
 
-        //update board
-            //update destination Square
-        board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
-        board[dest_col][dest_row]->setOccupied(true);
-        board[dest_col][dest_row]->getPiece()->setPosition(position); // aktualizacja pozycji figury
-        board[dest_col][dest_row]->getPiece()->setMoved();
 
-            //update source Square
-        board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
-        board[src_col][src_row]->setOccupied(false);
+        boardCopy->updateBoard(dest_col,dest_row,src_col,src_row);      
 
         //Evaluating Board Created, now check if king is underCheck
         Position king = this->getKing(boardCopy);
-        //std::cout << this->getColumn() << this->getRow() << std::endl;
 
         PieceColor color = this->getColor();
         PieceColor opponentColor;
@@ -213,7 +204,7 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
             }
         }
     if (safe){
-        possiblePosition.push_back(position); 
+        possiblePosition.push_back(position);
         }
     }
     return possiblePosition;

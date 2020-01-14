@@ -75,6 +75,10 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
             board[column][row]->setOccupied(true);
             board[column][row]->setColumn(column);
             board[column][row]->setRow(row);
+
+            if (buffer != INITIAL_BOARD[column][row]){
+                board[column][row]->getPiece()->setMoved();
+            }
         } 
     }
 }
@@ -131,7 +135,7 @@ void BaseBoard::printBoardCout(){
     std::cout << "Current Board:" << std::endl;
     for (int column = 0; column < 8; column++){
         for (int row = 0; row < 8; row++){
-            std::cout <<board[column][row]->getColumn() << board[column][row]->getRow()  <<this->toString()[column][row] << " " ;
+            std::cout <<(char)(board[column][row]->getColumn() + 65)  << board[column][row]->getRow() + 1  <<this->toString()[column][row] << " " ;
             if (row == 7){
                 std::cout << std::endl;
             }

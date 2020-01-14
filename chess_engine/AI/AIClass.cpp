@@ -54,7 +54,7 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Base
                                 break;
                         }
                     } else{//depth > 1
-                        PieceColor nextTurn = turn == BLACK ? WHITE : BLACK;
+                        PieceColor nextTurn = (turn == BLACK ? WHITE : BLACK);
                         MovePacket nextScore = MiniMaxRoot(depth - 1, nextTurn, newBoard, side);
                         switch(side){
                             case BLACK:

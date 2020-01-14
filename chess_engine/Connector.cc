@@ -28,7 +28,7 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     src_row --;
     int dest_row = std::stoi(dest.substr(1,1));
     dest_row --;
-
+    boardInstance->printBoardCout();
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
 
     for(Position p : possiblePositions){
