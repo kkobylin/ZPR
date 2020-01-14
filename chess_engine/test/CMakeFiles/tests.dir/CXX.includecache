@@ -45,6 +45,20 @@ lib/Queen.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
 lib/Pawn.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Pawn.h
+lib/Piece.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
+lib/Bishop.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
+lib/Rook.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
+lib/Knight.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Knight.h
+lib/King.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/King.h
+lib/Queen.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
+lib/Pawn.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Pawn.h
 
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.cc
 AI/PositionValue.h
@@ -223,4 +237,8 @@ memory
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
 ../lib/BaseBoard.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/BaseBoard.h
+vector
+-
+algorithm
+-
 

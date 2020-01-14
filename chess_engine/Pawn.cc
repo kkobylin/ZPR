@@ -10,8 +10,7 @@
 
 void Pawn::move(Position position, BaseBoard board){}
 
-std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
-    //board->printBoardCout();
+std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
@@ -66,7 +65,6 @@ std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, b
         }
     }
     this->setMoves(possiblePosition);
-
     if (originalEvaluation){
         possiblePosition = evaluateCheck(board, false);
         this->setMoves(possiblePosition);

@@ -204,8 +204,8 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
             }
         }
     if (safe){
-        possiblePosition.push_back(position); 
-    }   
+        possiblePosition.push_back(position);
+        }
     }
     return possiblePosition;
 

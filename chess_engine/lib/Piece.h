@@ -20,6 +20,10 @@ struct Position{
 
     bool operator==(Position pos1){ return pos1.column == column && pos1.row == row;} // override operator to use std::find
     bool operator!=(Position pos1){ return pos1.column != column || pos1.row != row;} // override operator to use std::find
+
+    std::string toString(){
+        return std::to_string(column) + std::to_string(row);
+    }
 };
 
 
@@ -65,9 +69,8 @@ public:
     Position getKing(std::shared_ptr<BaseBoard>);
     std::vector<Position> evaluateCheck(std::shared_ptr<BaseBoard>, bool);
     virtual void move(Position, BaseBoard) = 0; // move figure
-    virtual std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
+    virtual std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
     virtual double getPositionValue() = 0;
-
 
 
     PieceColor            getColor(); // get color of figure
