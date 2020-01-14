@@ -47,22 +47,32 @@ int main(void){
     Connector::ifMovePossible("a3", "a2");
     Connector::opponentMove();
 
-    Connector::ifMovePossible("c3", "c2");
+
+    //Board::getInstance()->printBoardCout();
+
+    //Connector::ifMovePossible("c6", "b8");
+    //Connector::opponentMove();
+    //blad
+
+    Connector::ifMovePossible("a4", "a3");
     Connector::opponentMove();
 
-    Connector::ifMovePossible("e3", "e2");
+    //Connector::ifMovePossible("f6", "g8");
+    //Connector::opponentMove();
+
+    Connector::ifMovePossible("a5", "a4");
     Connector::opponentMove();
 
-    Connector::ifMovePossible("g3", "g2");
+    //Connector::ifMovePossible("d5", "d7");
+    //Connector::opponentMove();
+
+    Connector::ifMovePossible("a6", "a5");
     Connector::opponentMove();
 
-    Connector::ifMovePossible("b4", "b2");
-    Connector::opponentMove();
+    //Connector::ifMovePossible("e5", "e7");
+    //Connector::opponentMove();
 
-    Connector::ifMovePossible("d4", "d2");
-    Connector::opponentMove();
-
-    Connector::ifMovePossible("f4", "f2");
+    Connector::ifMovePossible("b7", "a6");
     Connector::opponentMove();
 
     //Board::getInstance()->toString();

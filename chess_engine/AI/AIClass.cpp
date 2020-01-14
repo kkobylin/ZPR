@@ -80,6 +80,5 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Base
                 }
             }
         }
-
     return bestMove;
 }

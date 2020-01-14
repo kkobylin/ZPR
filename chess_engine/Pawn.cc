@@ -86,7 +86,7 @@ std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> bo
     }
 
     this->setMoves(possiblePosition);
-
+    //todo sobie radosnie zwraca row = 8
     if (originalEvaluation){
         possiblePosition = evaluateCheck(board, false);
         this->setMoves(possiblePosition);
