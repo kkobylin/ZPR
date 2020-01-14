@@ -20,14 +20,11 @@ struct Position{
 
     bool operator==(Position pos1){ return pos1.column == column && pos1.row == row;} // override operator to use std::find
     bool operator!=(Position pos1){ return pos1.column != column || pos1.row != row;} // override operator to use std::find
-<<<<<<< HEAD
     friend std::ostream & operator<<(std::ostream &out, const Position &c){return out << (char)(c.column + 65) << c.row + 1 << std::endl;}; // output position and figure name
-=======
 
     std::string toString(){
         return std::to_string(column) + std::to_string(row);
     }
->>>>>>> master
 };
 
 
