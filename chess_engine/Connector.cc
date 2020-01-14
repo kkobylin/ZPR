@@ -26,13 +26,12 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     src_row --;
     int dest_row = std::stoi(dest.substr(1,1));
     dest_row --;
-
+    boardInstance->printBoardCout();
     std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
     for(Position p : possiblePositions){
         std::cout << p.column << p.row << std::endl;
         if(p.column == dest_col && p.row == dest_row){
             boardInstance->updateBoard(dest_col,dest_row,src_col,src_row);
-            boardInstance->printBoardCout();
             return true;
 
         }
@@ -56,6 +55,7 @@ std::string const Connector::opponentMove(){
     std::string chessColumnConvert[8] = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
     auto board = Board::getInstance();
+    
 
     MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, board, BLACK);
     board->updateBoard(movePacket.dest_col, movePacket.dest_row, movePacket.src_col, movePacket.src_row);
