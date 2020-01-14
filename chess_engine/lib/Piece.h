@@ -66,12 +66,7 @@ public:
     bool isChecking(Position positionPiece, Position positionKing);
     Position getKing(std::shared_ptr<BaseBoard>, PieceColor pieceColor);
     std::vector<Position> evaluateCheck(std::shared_ptr<BaseBoard>, bool);
-<<<<<<< HEAD
     virtual std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
-=======
-    virtual void move(Position, BaseBoard) = 0; // move figure
-    virtual std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
->>>>>>> master
     virtual double getPositionValue() = 0;
 
 

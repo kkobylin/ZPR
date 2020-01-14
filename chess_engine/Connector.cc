@@ -62,11 +62,7 @@ std::string const Connector::opponentMove(){
     auto board = Board::getInstance();
     std::shared_ptr<BaseBoard> minMaxBoard(new BaseBoard(board->toString()));
 
-<<<<<<< HEAD
-    MovePacket movePacket = AIClass::MiniMaxRoot(3, BLACK, board, BLACK);
-=======
     MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, minMaxBoard, BLACK);
->>>>>>> master
     board->updateBoard(movePacket.dest_col, movePacket.dest_row, movePacket.src_col, movePacket.src_row);
 
     std::string src_row = std::to_string(++movePacket.src_row);
