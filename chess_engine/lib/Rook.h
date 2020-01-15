@@ -1,5 +1,16 @@
-#ifndef ROOK
-#define ROOK
+/**
+ * @file Rook.h
+ * @author Marcin Michalski (marmichalski97@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2020-01-15
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
+#ifndef ROOK_H
+#define ROOK_H
 #include "Piece.h"
 #include "Board.h"
 
@@ -9,13 +20,10 @@ private:
     bool moved = false;
 
 public:
-    Rook(int column, int row, PieceColor color, std::string figureName) :
-    Piece (column, row, color, figureName){};
+    Rook(int column, int row, PieceColor color) :
+    Piece (column, row, color){setFigureName("R");};
     
-    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool) override;
+    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard) override;
     double getPositionValue() override ;
-
-    bool getMoved();
-    void setMoved(bool);
 };
-#endif
+#endif //ROOK_H

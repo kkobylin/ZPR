@@ -2,13 +2,6 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-bool King::getMoved(){
-        return this->moved;
-}
-
-void King::setMoved(bool moved){
-        this->moved = moved;
-}
 
 bool King::getCastled(){
         return this->castled;

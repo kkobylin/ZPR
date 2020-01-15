@@ -9,14 +9,6 @@
 #include "lib/Pawn.h"
 
 
-#include "lib/Piece.h"
-#include "lib/Bishop.h"
-#include "lib/Rook.h"
-#include "lib/Knight.h"
-#include "lib/King.h"
-#include "lib/Queen.h"
-#include "lib/Pawn.h"
-
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
 BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
@@ -43,33 +35,33 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
             case 'N':
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Knight>{new Knight(column, row, color, name)})});
+                std::shared_ptr<Knight>{new Knight(column, row, color)})});
                 break;
             case 'R': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Rook>{new Rook(column, row, color, name)})});
+                std::shared_ptr<Rook>{new Rook(column, row, color)})});
                 break;
             case 'B': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Bishop>{new Bishop(column, row, color, name)})});
+                std::shared_ptr<Bishop>{new Bishop(column, row, color)})});
                 break;
             case 'Q': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Queen> {new Queen(column, row, color, name)})});
+                std::shared_ptr<Queen> {new Queen(column, row, color)})});
                 break;
             case 'K': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<King>{new King(column, row, color, name)})});
+                std::shared_ptr<King>{new King(column, row, color)})});
                 this->setKing(Position{column,row}, color);
                 break;
             case 'P': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Pawn>{new Pawn(column, row, color, name)})});
+                std::shared_ptr<Pawn>{new Pawn(column, row, color)})});
                 break;
             }
             board[column][row]->setOccupied(true);

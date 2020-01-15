@@ -1,0 +1,6 @@
+<map id="lib/King.h" name="lib/King.h">
+<area shape="rect" id="node2" href="$_piece_8h.html" title="Piece.h" alt="" coords="187,304,253,331"/>
+<area shape="rect" id="node8" href="$_board_8h.html" title="Board.h" alt="" coords="303,80,369,107"/>
+<area shape="rect" id="node9" href="$_base_board_8h.html" title="Class holding informations about pieces, used to be an auxiliary class to generate temporary boards..." alt="" coords="287,155,385,181"/>
+<area shape="rect" id="node10" href="$_square_8h.html" title="Square.h" alt="" coords="323,229,397,256"/>
+</map>

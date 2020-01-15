@@ -1,0 +1,8 @@
+<map id="Queen.cc" name="Queen.cc">
+<area shape="rect" id="node2" href="$_queen_8h.html" title="lib/Queen.h" alt="" coords="89,80,177,107"/>
+<area shape="rect" id="node12" href="$_position_value_8h.html" title="AI/PositionValue.h" alt="" coords="201,80,332,107"/>
+<area shape="rect" id="node3" href="$_piece_8h.html" title="Piece.h" alt="" coords="269,379,336,405"/>
+<area shape="rect" id="node9" href="$_board_8h.html" title="Board.h" alt="" coords="100,155,167,181"/>
+<area shape="rect" id="node10" href="$_base_board_8h.html" title="Class holding informations about pieces, used to be an auxiliary class to generate temporary boards..." alt="" coords="133,229,230,256"/>
+<area shape="rect" id="node11" href="$_square_8h.html" title="Square.h" alt="" coords="144,304,219,331"/>
+</map>

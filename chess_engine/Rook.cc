@@ -2,13 +2,6 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-bool Rook::getMoved(){
-    return this->moved;
-}
-
-void Rook::setMoved(bool moved){
-    this->moved = moved;
-}
 
 std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();

@@ -1,0 +1,9 @@
+<map id="AI/PositionValue.h" name="AI/PositionValue.h">
+<area shape="rect" id="node2" href="$_position_value_8cpp.html" title="AI/PositionValue.cpp" alt="" coords="5,80,149,107"/>
+<area shape="rect" id="node3" href="$_bishop_8cc.html" title="Bishop.cc" alt="" coords="173,80,253,107"/>
+<area shape="rect" id="node4" href="$_king_8cc.html" title="King.cc" alt="" coords="277,80,344,107"/>
+<area shape="rect" id="node5" href="$_knight_8cc.html" title="Knight.cc" alt="" coords="368,80,445,107"/>
+<area shape="rect" id="node6" href="$_pawn_8cc.html" title="Pawn.cc" alt="" coords="470,80,543,107"/>
+<area shape="rect" id="node7" href="$_queen_8cc.html" title="Queen.cc" alt="" coords="567,80,646,107"/>
+<area shape="rect" id="node8" href="$_rook_8cc.html" title="Rook.cc" alt="" coords="670,80,741,107"/>
+</map>

@@ -29,13 +29,12 @@ PieceColor Piece::getColor(){
 }
 
 
-Piece::Piece(int column, int row, PieceColor color, std::string figureName){
+Piece::Piece(int column, int row, PieceColor color){
     this->column = column;
     this->row    = row;
     this->color  = color;
     this->position.column = column;
     this->position.row = row;
-    this->figureName = figureName;
 }
 
 

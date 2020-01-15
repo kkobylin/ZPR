@@ -1,0 +1,71 @@
+\hypertarget{class_queen}{}\section{Queen Class Reference}
+\label{class_queen}\index{Queen@{Queen}}
+
+
+{\ttfamily \#include $<$Queen.\+h$>$}
+
+
+
+Inheritance diagram for Queen\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_queen__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Queen\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{class_queen__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_queen_a633fa03d244578e267f373141ceac812}{Queen} (int \hyperlink{class_piece_aa8f39e11280395103164f6ae07398c82}{column}, int \hyperlink{class_piece_ac6ef7c474f20562cb629c2452ce0631d}{row}, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} \hyperlink{class_piece_a8dfe0501fe95a1a7618cf5ad3b9fda69}{color}, std\+::string \hyperlink{class_piece_af2fe809fd0d35d167f2419768e49fd3a}{figure\+Name})
+\item 
+std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_queen_ab599f550fe04cda1f421e657841022fd}{get\+Possible\+Moves} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$, bool) override
+\item 
+double \hyperlink{class_queen_aa2ca0d72a74a245470f502a82eaf1052}{get\+Position\+Value} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_queen_a633fa03d244578e267f373141ceac812}\label{class_queen_a633fa03d244578e267f373141ceac812}} 
+\index{Queen@{Queen}!Queen@{Queen}}
+\index{Queen@{Queen}!Queen@{Queen}}
+\subsubsection{\texorpdfstring{Queen()}{Queen()}}
+{\footnotesize\ttfamily Queen\+::\+Queen (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{int}]{row,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{color,  }\item[{std\+::string}]{figure\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_queen_aa2ca0d72a74a245470f502a82eaf1052}\label{class_queen_aa2ca0d72a74a245470f502a82eaf1052}} 
+\index{Queen@{Queen}!get\+Position\+Value@{get\+Position\+Value}}
+\index{get\+Position\+Value@{get\+Position\+Value}!Queen@{Queen}}
+\subsubsection{\texorpdfstring{get\+Position\+Value()}{getPositionValue()}}
+{\footnotesize\ttfamily double Queen\+::get\+Position\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_piece_a4adfa58b4f0368c9a5859afcf294e0a4}{Piece}.
+
+\mbox{\Hypertarget{class_queen_ab599f550fe04cda1f421e657841022fd}\label{class_queen_ab599f550fe04cda1f421e657841022fd}} 
+\index{Queen@{Queen}!get\+Possible\+Moves@{get\+Possible\+Moves}}
+\index{get\+Possible\+Moves@{get\+Possible\+Moves}!Queen@{Queen}}
+\subsubsection{\texorpdfstring{get\+Possible\+Moves()}{getPossibleMoves()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ Queen\+::get\+Possible\+Moves (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board,  }\item[{bool}]{original\+Evaluation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_piece_a8891924c280568529878549f59541925}{Piece}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\hyperlink{_queen_8h}{Queen.\+h}\item 
+\hyperlink{_queen_8cc}{Queen.\+cc}\end{DoxyCompactItemize}

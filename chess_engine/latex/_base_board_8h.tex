@@ -1,0 +1,93 @@
+\hypertarget{_base_board_8h}{}\section{lib/\+Base\+Board.h File Reference}
+\label{_base_board_8h}\index{lib/\+Base\+Board.\+h@{lib/\+Base\+Board.\+h}}
+
+
+Class holding informations about pieces, used to be an auxiliary class to generate temporary boards.  
+
+
+{\ttfamily \#include \char`\"{}Square.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+Include dependency graph for Base\+Board.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_base_board_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_base_board_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_base_board}{Base\+Board}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_square}{Square} $>$ $>$ $>$ \hyperlink{_base_board_8h_a6e73002e9c84a7986c39d7e80e83dc8d}{board\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ const \hyperlink{_base_board_8h_a9965e03c4f48ae012bf1d93c397bf22c}{I\+N\+I\+T\+I\+A\+L\+\_\+\+B\+O\+A\+RD}
+\begin{DoxyCompactList}\small\item\em vector used to initialize starting boards \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class holding informations about pieces, used to be an auxiliary class to generate temporary boards. 
+
+\begin{DoxyAuthor}{Author}
+Marcin Michalski (\href{mailto:marmichalski97@gmail.com}{\tt marmichalski97@gmail.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020-\/01-\/15
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{_base_board_8h_a6e73002e9c84a7986c39d7e80e83dc8d}\label{_base_board_8h_a6e73002e9c84a7986c39d7e80e83dc8d}} 
+\index{Base\+Board.\+h@{Base\+Board.\+h}!board\+\_\+type@{board\+\_\+type}}
+\index{board\+\_\+type@{board\+\_\+type}!Base\+Board.\+h@{Base\+Board.\+h}}
+\subsubsection{\texorpdfstring{board\+\_\+type}{board\_type}}
+{\footnotesize\ttfamily typedef std\+::vector$<$std\+::vector $<$std\+::shared\+\_\+ptr$<$\hyperlink{class_square}{Square}$>$ $>$ $>$ \hyperlink{_a_i_class_8h_a6e73002e9c84a7986c39d7e80e83dc8d}{board\+\_\+type}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_base_board_8h_a9965e03c4f48ae012bf1d93c397bf22c}\label{_base_board_8h_a9965e03c4f48ae012bf1d93c397bf22c}} 
+\index{Base\+Board.\+h@{Base\+Board.\+h}!I\+N\+I\+T\+I\+A\+L\+\_\+\+B\+O\+A\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+B\+O\+A\+RD}}
+\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+B\+O\+A\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+B\+O\+A\+RD}!Base\+Board.\+h@{Base\+Board.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+I\+T\+I\+A\+L\+\_\+\+B\+O\+A\+RD}{INITIAL\_BOARD}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector $<$std\+::string$>$ $>$ const I\+N\+I\+T\+I\+A\+L\+\_\+\+B\+O\+A\+RD}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+\{\textcolor{stringliteral}{"WR"},\textcolor{stringliteral}{"WP"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"BP"},\textcolor{stringliteral}{"BR"}\},
+\{\textcolor{stringliteral}{"WN"},\textcolor{stringliteral}{"WP"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"BP"},\textcolor{stringliteral}{"BN"}\},
+\{\textcolor{stringliteral}{"WB"},\textcolor{stringliteral}{"WP"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"BP"},\textcolor{stringliteral}{"BB"}\},
+\{\textcolor{stringliteral}{"WQ"},\textcolor{stringliteral}{"WP"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"BP"},\textcolor{stringliteral}{"BQ"}\},
+\{\textcolor{stringliteral}{"WK"},\textcolor{stringliteral}{"WP"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"BP"},\textcolor{stringliteral}{"BK"}\},
+\{\textcolor{stringliteral}{"WB"},\textcolor{stringliteral}{"WP"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"BP"},\textcolor{stringliteral}{"BB"}\},
+\{\textcolor{stringliteral}{"WN"},\textcolor{stringliteral}{"WP"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"BP"},\textcolor{stringliteral}{"BN"}\},
+\{\textcolor{stringliteral}{"WR"},\textcolor{stringliteral}{"WP"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"NN"},\textcolor{stringliteral}{"BP"},\textcolor{stringliteral}{"BR"}\}
+
+\}
+\end{DoxyCode}
+
+
+vector used to initialize starting boards 
+

@@ -1,0 +1,213 @@
+\hypertarget{class_base_board}{}\section{Base\+Board Class Reference}
+\label{class_base_board}\index{Base\+Board@{Base\+Board}}
+
+
+{\ttfamily \#include $<$Base\+Board.\+h$>$}
+
+
+
+Inheritance diagram for Base\+Board\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{class_base_board__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Base\+Board\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{class_base_board__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_base_board_a120d844f308b6ce12623d5a1ea59ccfb}{Base\+Board} (std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \hyperlink{class_base_board_ae52729f26a30d64d7d643187786e96c2}{board})
+\begin{DoxyCompactList}\small\item\em Construct a new Base \hyperlink{class_board}{Board} object. \end{DoxyCompactList}\item 
+\hyperlink{_a_i_class_8h_a6e73002e9c84a7986c39d7e80e83dc8d}{board\+\_\+type} \hyperlink{class_base_board_af8f8bdfb2aa7049b30efa40ea9acca20}{get\+Board} ()
+\begin{DoxyCompactList}\small\item\em Return board. \end{DoxyCompactList}\item 
+void \hyperlink{class_base_board_aeb96bf51fb9bb6fdc42a7abf87de6446}{update\+Board} (int destination\+Column, int destination\+Row, int source\+Column, int source\+Row)
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \hyperlink{class_base_board_ab3a49fb5a7284d66439b785e6add260f}{to\+String} ()
+\begin{DoxyCompactList}\small\item\em Used to extract board in vector of strings format to create new board. \end{DoxyCompactList}\item 
+void \hyperlink{class_base_board_a1c8fe600a3c0abea281b93cc8be71dd1}{print\+Board\+Cout} ()
+\begin{DoxyCompactList}\small\item\em Prints board in console. \end{DoxyCompactList}\item 
+\hyperlink{struct_position}{Position} \hyperlink{class_base_board_aebcd17c243c0748897b41fe683dd29f1}{get\+King} (\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} king\+Color)
+\item 
+void \hyperlink{class_base_board_a413af1d87b49a2ee4ce96cb0f165b01a}{set\+King} (\hyperlink{struct_position}{Position} position\+King, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} king\+Color)
+\item 
+bool \hyperlink{class_base_board_a88d6e53bd8d8dd1f3ec3695fd6c29a81}{is\+Checking} (\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} opponent\+Color, std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$ \hyperlink{class_base_board_ae52729f26a30d64d7d643187786e96c2}{board})
+\begin{DoxyCompactList}\small\item\em Is opponent\+Color player checked. \end{DoxyCompactList}\item 
+bool \hyperlink{class_base_board_af5c47782cec757ecb8f041925a0d7b7b}{is\+Check\+Mate} (\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} opponent\+Color, std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$ \hyperlink{class_base_board_ae52729f26a30d64d7d643187786e96c2}{board})
+\begin{DoxyCompactList}\small\item\em Is opponent\+Color player mated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_i_class_8h_a6e73002e9c84a7986c39d7e80e83dc8d}{board\+\_\+type} \hyperlink{class_base_board_ae52729f26a30d64d7d643187786e96c2}{board}
+\item 
+\hyperlink{struct_position}{Position} \hyperlink{class_base_board_a684c71ad408d12f6faf66298c1aeeabc}{white\+King}
+\begin{DoxyCompactList}\small\item\em position of white king \end{DoxyCompactList}\item 
+\hyperlink{struct_position}{Position} \hyperlink{class_base_board_a9557e923cc07fadd5f0da47ba2a9d230}{black\+King}
+\begin{DoxyCompactList}\small\item\em position of black king \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_base_board_a120d844f308b6ce12623d5a1ea59ccfb}\label{class_base_board_a120d844f308b6ce12623d5a1ea59ccfb}} 
+\index{Base\+Board@{Base\+Board}!Base\+Board@{Base\+Board}}
+\index{Base\+Board@{Base\+Board}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{Base\+Board()}{BaseBoard()}}
+{\footnotesize\ttfamily Base\+Board\+::\+Base\+Board (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$}]{board }\end{DoxyParamCaption})}
+
+
+
+Construct a new Base \hyperlink{class_board}{Board} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & vector of strings to generate new board \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_board_af8f8bdfb2aa7049b30efa40ea9acca20}\label{class_base_board_af8f8bdfb2aa7049b30efa40ea9acca20}} 
+\index{Base\+Board@{Base\+Board}!get\+Board@{get\+Board}}
+\index{get\+Board@{get\+Board}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{get\+Board()}{getBoard()}}
+{\footnotesize\ttfamily \hyperlink{_a_i_class_8h_a6e73002e9c84a7986c39d7e80e83dc8d}{board\+\_\+type} Base\+Board\+::get\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return board. 
+
+\mbox{\Hypertarget{class_base_board_aebcd17c243c0748897b41fe683dd29f1}\label{class_base_board_aebcd17c243c0748897b41fe683dd29f1}} 
+\index{Base\+Board@{Base\+Board}!get\+King@{get\+King}}
+\index{get\+King@{get\+King}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{get\+King()}{getKing()}}
+{\footnotesize\ttfamily \hyperlink{struct_position}{Position} Base\+Board\+::get\+King (\begin{DoxyParamCaption}\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{king\+Color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_base_board_a88d6e53bd8d8dd1f3ec3695fd6c29a81}\label{class_base_board_a88d6e53bd8d8dd1f3ec3695fd6c29a81}} 
+\index{Base\+Board@{Base\+Board}!is\+Checking@{is\+Checking}}
+\index{is\+Checking@{is\+Checking}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{is\+Checking()}{isChecking()}}
+{\footnotesize\ttfamily bool Base\+Board\+::is\+Checking (\begin{DoxyParamCaption}\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{opponent\+Color,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board }\end{DoxyParamCaption})}
+
+
+
+Is opponent\+Color player checked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opponent\+Color} & Color of player, which is checked \\
+\hline
+{\em board} & Current board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_base_board_af5c47782cec757ecb8f041925a0d7b7b}\label{class_base_board_af5c47782cec757ecb8f041925a0d7b7b}} 
+\index{Base\+Board@{Base\+Board}!is\+Check\+Mate@{is\+Check\+Mate}}
+\index{is\+Check\+Mate@{is\+Check\+Mate}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{is\+Check\+Mate()}{isCheckMate()}}
+{\footnotesize\ttfamily bool Base\+Board\+::is\+Check\+Mate (\begin{DoxyParamCaption}\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{opponent\+Color,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board }\end{DoxyParamCaption})}
+
+
+
+Is opponent\+Color player mated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opponent\+Color} & Color of player, which is mated \\
+\hline
+{\em board} & Current board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_base_board_a1c8fe600a3c0abea281b93cc8be71dd1}\label{class_base_board_a1c8fe600a3c0abea281b93cc8be71dd1}} 
+\index{Base\+Board@{Base\+Board}!print\+Board\+Cout@{print\+Board\+Cout}}
+\index{print\+Board\+Cout@{print\+Board\+Cout}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{print\+Board\+Cout()}{printBoardCout()}}
+{\footnotesize\ttfamily void Base\+Board\+::print\+Board\+Cout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints board in console. 
+
+\mbox{\Hypertarget{class_base_board_a413af1d87b49a2ee4ce96cb0f165b01a}\label{class_base_board_a413af1d87b49a2ee4ce96cb0f165b01a}} 
+\index{Base\+Board@{Base\+Board}!set\+King@{set\+King}}
+\index{set\+King@{set\+King}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{set\+King()}{setKing()}}
+{\footnotesize\ttfamily void Base\+Board\+::set\+King (\begin{DoxyParamCaption}\item[{\hyperlink{struct_position}{Position}}]{position\+King,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{king\+Color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_base_board_ab3a49fb5a7284d66439b785e6add260f}\label{class_base_board_ab3a49fb5a7284d66439b785e6add260f}} 
+\index{Base\+Board@{Base\+Board}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ Base\+Board\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to extract board in vector of strings format to create new board. 
+
+\mbox{\Hypertarget{class_base_board_aeb96bf51fb9bb6fdc42a7abf87de6446}\label{class_base_board_aeb96bf51fb9bb6fdc42a7abf87de6446}} 
+\index{Base\+Board@{Base\+Board}!update\+Board@{update\+Board}}
+\index{update\+Board@{update\+Board}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{update\+Board()}{updateBoard()}}
+{\footnotesize\ttfamily void Base\+Board\+::update\+Board (\begin{DoxyParamCaption}\item[{int}]{destination\+Column,  }\item[{int}]{destination\+Row,  }\item[{int}]{source\+Column,  }\item[{int}]{source\+Row }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination\+Column} & \\
+\hline
+{\em destination\+Row} & \\
+\hline
+{\em source\+Column} & From where we move \\
+\hline
+{\em source\+Row} & From where we move \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_base_board_a9557e923cc07fadd5f0da47ba2a9d230}\label{class_base_board_a9557e923cc07fadd5f0da47ba2a9d230}} 
+\index{Base\+Board@{Base\+Board}!black\+King@{black\+King}}
+\index{black\+King@{black\+King}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{black\+King}{blackKing}}
+{\footnotesize\ttfamily \hyperlink{struct_position}{Position} Base\+Board\+::black\+King\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+position of black king 
+
+\mbox{\Hypertarget{class_base_board_ae52729f26a30d64d7d643187786e96c2}\label{class_base_board_ae52729f26a30d64d7d643187786e96c2}} 
+\index{Base\+Board@{Base\+Board}!board@{board}}
+\index{board@{board}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{board}{board}}
+{\footnotesize\ttfamily \hyperlink{_a_i_class_8h_a6e73002e9c84a7986c39d7e80e83dc8d}{board\+\_\+type} Base\+Board\+::board\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_base_board_a684c71ad408d12f6faf66298c1aeeabc}\label{class_base_board_a684c71ad408d12f6faf66298c1aeeabc}} 
+\index{Base\+Board@{Base\+Board}!white\+King@{white\+King}}
+\index{white\+King@{white\+King}!Base\+Board@{Base\+Board}}
+\subsubsection{\texorpdfstring{white\+King}{whiteKing}}
+{\footnotesize\ttfamily \hyperlink{struct_position}{Position} Base\+Board\+::white\+King\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+position of white king 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\hyperlink{_base_board_8h}{Base\+Board.\+h}\item 
+\hyperlink{_base_board_8cc}{Base\+Board.\+cc}\end{DoxyCompactItemize}

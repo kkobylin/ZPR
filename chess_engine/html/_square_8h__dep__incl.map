@@ -1,0 +1,26 @@
+<map id="lib/Square.h" name="lib/Square.h">
+<area shape="rect" id="node2" href="$_a_i_class_8h.html" title="AI/AIClass.h" alt="" coords="104,80,201,107"/>
+<area shape="rect" id="node6" href="$_base_board_8h.html" title="Class holding informations about pieces, used to be an auxiliary class to generate temporary boards..." alt="" coords="394,80,509,107"/>
+<area shape="rect" id="node25" href="$_square_8cc.html" title="Square.cc" alt="" coords="533,80,615,107"/>
+<area shape="rect" id="node3" href="$_a_i_class_8cpp.html" title="AI/AIClass.cpp" alt="" coords="144,155,255,181"/>
+<area shape="rect" id="node4" href="$_connector_8cc.html" title="Connector.cc" alt="" coords="5,229,105,256"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="129,229,203,256"/>
+<area shape="rect" id="node7" href="$_base_board_8cc.html" title="BaseBoard.cc" alt="" coords="375,304,479,331"/>
+<area shape="rect" id="node8" href="$_board_8h.html" title="lib/Board.h" alt="" coords="467,155,551,181"/>
+<area shape="rect" id="node11" href="$main1_8cc.html" title="main1.cc" alt="" coords="605,304,679,331"/>
+<area shape="rect" id="node12" href="$_pawn_test_8cpp.html" title="test/PawnTest.cpp" alt="" coords="704,304,836,331"/>
+<area shape="rect" id="node23" href="$_board_8cc.html" title="Board.cc" alt="" coords="929,229,1003,256"/>
+<area shape="rect" id="node24" href="$_piece_8cc.html" title="Piece.cc" alt="" coords="1129,155,1203,181"/>
+<area shape="rect" id="node9" href="$_bishop_8h.html" title="lib/Bishop.h" alt="" coords="278,229,369,256"/>
+<area shape="rect" id="node13" href="$_rook_8h.html" title="lib/Rook.h" alt="" coords="393,229,475,256"/>
+<area shape="rect" id="node15" href="$_knight_8h.html" title="lib/Knight.h" alt="" coords="499,229,585,256"/>
+<area shape="rect" id="node17" href="$_king_8h.html" title="lib/King.h" alt="" coords="609,229,685,256"/>
+<area shape="rect" id="node19" href="$_queen_8h.html" title="lib/Queen.h" alt="" coords="710,229,798,256"/>
+<area shape="rect" id="node21" href="$_pawn_8h.html" title="lib/Pawn.h" alt="" coords="822,229,905,256"/>
+<area shape="rect" id="node10" href="$_bishop_8cc.html" title="Bishop.cc" alt="" coords="175,304,255,331"/>
+<area shape="rect" id="node14" href="$_rook_8cc.html" title="Rook.cc" alt="" coords="280,304,351,331"/>
+<area shape="rect" id="node16" href="$_knight_8cc.html" title="Knight.cc" alt="" coords="503,304,581,331"/>
+<area shape="rect" id="node18" href="$_king_8cc.html" title="King.cc" alt="" coords="861,304,927,331"/>
+<area shape="rect" id="node20" href="$_queen_8cc.html" title="Queen.cc" alt="" coords="952,304,1031,331"/>
+<area shape="rect" id="node22" href="$_pawn_8cc.html" title="Pawn.cc" alt="" coords="1055,304,1128,331"/>
+</map>

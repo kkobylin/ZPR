@@ -1,0 +1,13 @@
+<map id="main1.cc" name="main1.cc">
+<area shape="rect" id="node2" href="$_base_board_8h.html" title="Class holding informations about pieces, used to be an auxiliary class to generate temporary boards..." alt="" coords="9,229,124,256"/>
+<area shape="rect" id="node4" href="$_piece_8h.html" title="Piece.h" alt="" coords="410,379,477,405"/>
+<area shape="rect" id="node10" href="$_bishop_8h.html" title="lib/Bishop.h" alt="" coords="356,80,446,107"/>
+<area shape="rect" id="node12" href="$_rook_8h.html" title="lib/Rook.h" alt="" coords="471,80,552,107"/>
+<area shape="rect" id="node13" href="$_knight_8h.html" title="lib/Knight.h" alt="" coords="32,80,119,107"/>
+<area shape="rect" id="node14" href="$_king_8h.html" title="lib/King.h" alt="" coords="143,80,219,107"/>
+<area shape="rect" id="node15" href="$_queen_8h.html" title="lib/Queen.h" alt="" coords="244,80,332,107"/>
+<area shape="rect" id="node16" href="$_pawn_8h.html" title="lib/Pawn.h" alt="" coords="628,80,710,107"/>
+<area shape="rect" id="node17" href="$_connector_8h.html" title="Connector.h" alt="" coords="785,155,878,181"/>
+<area shape="rect" id="node3" href="$_square_8h.html" title="Square.h" alt="" coords="129,304,204,331"/>
+<area shape="rect" id="node11" href="$_board_8h.html" title="Board.h" alt="" coords="289,155,356,181"/>
+</map>

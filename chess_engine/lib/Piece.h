@@ -49,8 +49,8 @@ private:
     std::vector<Position> moves; // vector of possible moves
 
 public:
-    Piece(int, int, PieceColor, std::string);
-    Piece(Position, PieceColor, std::string){};
+    Piece(int, int, PieceColor);
+    Piece(Position, PieceColor){};
 
     void setColor(PieceColor); // set color of figure
     void setRow(int); // set figure row
@@ -62,7 +62,7 @@ public:
     void setFigureName(std::string); // set figure name
     bool isChecking(Position positionPiece, Position positionKing);
     Position getKing(std::shared_ptr<BaseBoard>, PieceColor pieceColor);
-    std::vector<Position> evaluateCheck(std::shared_ptr<BaseBoard>, bool);
+    std::vector<Position> evaluateCheck(std::shared_ptr<BaseBoard> board, bool initialboard);
     virtual std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
     virtual double getPositionValue() = 0;
 
