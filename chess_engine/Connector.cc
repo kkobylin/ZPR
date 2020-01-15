@@ -16,8 +16,8 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     if(dest == "offboard")
         return false;
 
-    std::shared_ptr<BaseBoard> boardInstance = Board::getInstance();
-    board_type board = boardInstance->getBoard();
+    std::shared_ptr<BaseBoard> board_instance = Board::getInstance();
+    board_type board = board_instance->getBoard();
 
     /* Convert columns from A to H to 0-7*/
     int src_col;
@@ -85,12 +85,12 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     src_row --;
     int dest_row = std::stoi(dest.substr(1,1));
     dest_row --;
-    //boardInstance->printBoardCout();
-    std::vector<Position> possiblePositions = board[src_col][src_row]->getPiece()->getPossibleMoves(boardInstance);
 
-    for(Position p : possiblePositions){
+    std::vector<Position> possible_positions = board[src_col][src_row]->getPiece()->getPossibleMoves(board_instance);
+
+    for(Position p : possible_positions){
         if(p.column == dest_col && p.row == dest_row){
-            boardInstance->updateBoard(dest_col,dest_row,src_col,src_row);
+            board_instance->updateBoard(dest_col, dest_row, src_col, src_row);
             return true;
         }
     }
@@ -107,17 +107,16 @@ std::string const Connector::checkForWin() {
 std::string const Connector::opponentMove(){
         /* Format e2-e4 */
     auto board = Board::getInstance();
-    std::shared_ptr<BaseBoard> minMaxBoard(new BaseBoard(board->toString()));
+    std::shared_ptr<BaseBoard> min_max_board(new BaseBoard(board->toString()));
 
-    MovePacket movePacket = AIClass::MiniMaxRoot(2, BLACK, minMaxBoard, BLACK);
-    board->updateBoard(movePacket.dest_col, movePacket.dest_row, movePacket.src_col, movePacket.src_row);
-
+    MovePacket move_packet = AIClass::MiniMaxRoot(2, BLACK, min_max_board, BLACK);
+    board->updateBoard(move_packet.dest_col, move_packet.dest_row, move_packet.src_col, move_packet.src_row);
     std::string chessColumnConvert[8] = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
-    std::string src_row = std::to_string(++movePacket.src_row);
-    std::string src_col = chessColumnConvert[movePacket.src_col];
-    std::string dest_row = std::to_string(++movePacket.dest_row);
-    std::string dest_col = chessColumnConvert[movePacket.dest_col];
+    std::string src_row = std::to_string(++move_packet.src_row);
+    std::string src_col = chessColumnConvert[move_packet.src_col];
+    std::string dest_row = std::to_string(++move_packet.dest_row);
+    std::string dest_col = chessColumnConvert[move_packet.dest_col];
 
     return src_col + src_row + '-' + dest_col + dest_row;
 }

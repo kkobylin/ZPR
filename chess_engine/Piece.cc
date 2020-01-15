@@ -8,33 +8,13 @@ void Piece::setColor(PieceColor color){
 }
 
 void Piece::setColumn(int column){
-    if (column > COLUMN_MIN && column < COLUMN_MAX)
         this->column = column;
-    else 
-        throw "Out of boundries, should be contained in (" 
-        + std::to_string(COLUMN_MIN) + ","
-        + std::to_string(COLUMN_MAX) + "). Is: "
-        + std::to_string(column);
 }
 
 void Piece::setRow(int row){
-    if (row > COLUMN_MIN && row < COLUMN_MAX)
         this->row = row;
-    else 
-        throw "Out of boundries, should be contained in (" 
-        + std::to_string(ROW_MIN) + ","
-        + std::to_string(ROW_MAX) + "). Is: "
-        + std::to_string(row);
-
 }
 
-void Piece::setKilled(bool killed){
-    this->killed = killed;
-}
-
-bool Piece::isKilled(){
-    return this->killed;
-}
 
 int Piece::getColumn(){
     return this->column;
@@ -48,13 +28,6 @@ PieceColor Piece::getColor(){
     return this->color;
 }
 
-Piece::Piece(int column, int row, PieceColor color){
-    this->column = column;
-    this->row    = row;
-    this->color  = color;
-    this->position.column = column;
-    this->position.row = row;
-}
 
 Piece::Piece(int column, int row, PieceColor color, std::string figure_name){
     this->column = column;
@@ -62,23 +35,6 @@ Piece::Piece(int column, int row, PieceColor color, std::string figure_name){
     this->color  = color;
     this->position.column = column;
     this->position.row = row;
-    this->figure_name = figure_name;
-}
-
-Piece::Piece(int column, int row, bool occupied){
-    this->column = column;
-    this->row    = row;
-    this->position.column = column;
-    this->position.row = row;
-    this->occupied  = occupied;
-}
-
-Piece::Piece(int column, int row, bool occupied, std::string figure_name){
-    this->column = column;
-    this->row    = row;
-    this->position.column = column;
-    this->position.row = row;
-    this->occupied  = occupied;
     this->figure_name = figure_name;
 }
 
@@ -125,9 +81,8 @@ std::string Piece::getFigureName(){
 std::vector<Position> Piece::getMoves(){
     return this->moves;
 }
-Position Piece::getKing(std::shared_ptr<BaseBoard> board){
-    PieceColor color = this->getColor();
-    PieceColor piece_color;
+
+Position Piece::getKing(std::shared_ptr<BaseBoard> board, PieceColor piece_color){
 
     for (int column = 0; column < 8; column++){
         for (int row = 0; row < 8; row++ ){
@@ -135,8 +90,7 @@ Position Piece::getKing(std::shared_ptr<BaseBoard> board){
                 std::string piece = board->getBoard()[column][row]->getPiece()->getFigureName();
                 if (piece == "K"){
                     piece_color = board->getBoard()[column][row]->getPiece()->getColor();
-                    if (color == piece_color){
-                        //std::cout << "krol" <<board->getBoard()[column][row]->getPiece()->getColumn() << board->getBoard()[column][row]->getPiece()->getRow() << color<< piece_color << std::endl;
+                    if (piece_color == piece_color){
                         return board->getBoard()[column][row]->getPiece()->getPosition();
                     }
                 }
@@ -147,11 +101,8 @@ Position Piece::getKing(std::shared_ptr<BaseBoard> board){
 
 bool Piece::isChecking(Position position_piece, Position position_king){
     if (position_king.column == position_piece.column && position_king.row == position_piece.row){
-        //std::cout << "Szach" << std::endl;
         return true;
     }else{
-        //std::cout << "Nie Szach: " << position_piece.column << position_piece.row << std::endl;
-        //std::cout << "Krol: " << position_king.column << position_king.row << std::endl;
         return false;
     }
 }
@@ -160,8 +111,8 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_init
     std::vector<Position> possible_position; //Create buffer for computed possible positions
 
     for (Position position : this->getMoves()){
-        std::shared_ptr<BaseBoard> boardCopy (new BaseBoard(board_initial->toString()));
-        board_type board = boardCopy->getBoard();
+        std::shared_ptr<BaseBoard> board_copy (new BaseBoard(board_initial->toString()));
+        board_type board = board_copy->getBoard();
 
         int src_col = this->getColumn();
         int src_row = this->getRow();
@@ -170,10 +121,10 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_init
         int dest_row = position.row;
 
 
-        boardCopy->updateBoard(dest_col,dest_row,src_col,src_row);      
+        board_copy->updateBoard(dest_col, dest_row, src_col, src_row);
 
         //Evaluating Board Created, now check if king is underCheck
-        Position king = this->getKing(boardCopy);
+        Position king = board_copy->getKing(this->getColor());
 
         PieceColor color = this->getColor();
         PieceColor opponent_color;
@@ -192,15 +143,27 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_init
                 if (board[column][row]->getOccupied()){
                     color = board[column][row]->getPiece()->getColor();
                     if (color == opponent_color){
-                        for (auto pos : board[column][row]->getPiece()->getPossibleMoves(boardCopy, false)){
+                        for (auto pos : board[column][row]->getPiece()->getPossibleMoves(board_copy, false)){
                             
                             if (board[column][row]->getPiece()->isChecking(pos,king)){
                                 safe = false;
                                 break;
                             }
                         }
+                        if (!safe){
+                            break; 
+                        }
+                    }
+                    if (!safe){
+                        break;
                     } 
                 }
+                if(!safe){
+                    break;
+                }
+            }
+            if(!safe){
+                break;
             }
         }
     if (safe){

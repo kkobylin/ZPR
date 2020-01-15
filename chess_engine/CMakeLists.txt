@@ -14,7 +14,7 @@ add_library(chesslib SHARED
         lib/Queen.h
         lib/Rook.h
         lib/Square.h
-        BaseBoard.cc
+	    BaseBoard.cc
         Bishop.cc
         Board.cc
         Connector.cc
@@ -32,7 +32,6 @@ add_library(chesslib SHARED
         AI/PositionValue.cpp
         exceptions/WrongArgException.h
         exceptions/WrongArgException.cpp
-        main.cpp
         )
 
 cmake_host_system_information(RESULT name QUERY HOSTNAME)

@@ -1,7 +1,6 @@
 #include "AI/PositionValue.h"
 #include "lib/Bishop.h"
 
-void Bishop::move(Position position, BaseBoard board){} // todo
 
 std::vector<Position> Bishop::getPossibleMoves(std::shared_ptr<BaseBoard>board, bool original_evaluation){
     

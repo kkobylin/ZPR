@@ -5,17 +5,15 @@ sys.path.append('../chess_engine')
 import libchesslib
 app = Flask(__name__)
 
-# todo change path to index.html
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
 # Uri from chessboard_js library
-# todo change url for Windows also
 @app.route('/img/chesspieces/wikipedia/<piece>.png', methods=['GET'])
 def get_image(piece):
-    # filename = 'templates\\img\\chesspieces\\wikipedia\\' + piece + '.png'
     filename = 'templates/img/chesspieces/wikipedia/' + piece + '.png'
     return send_file(filename, mimetype='image/png')
 
