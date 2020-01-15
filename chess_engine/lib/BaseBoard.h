@@ -50,6 +50,8 @@ class BaseBoard{
 
     Position getKing(PieceColor kingColor);
     void setKing(Position positionKing, PieceColor kingColor);
+    bool isChecking(PieceColor opponentColor, std::shared_ptr<BaseBoard> board);
+    bool isCheckMate(PieceColor opponentColor, std::shared_ptr<BaseBoard> board);
 
 };
 #endif

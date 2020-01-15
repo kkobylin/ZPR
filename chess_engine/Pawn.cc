@@ -4,15 +4,7 @@
 
 
 
-
-<<<<<<< HEAD
-std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
-    //board->printBoardCout();
-=======
-void Pawn::move(Position position, BaseBoard board){}
-
 std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> board, bool originalEvaluation){
->>>>>>> master
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
