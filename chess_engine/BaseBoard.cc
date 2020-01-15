@@ -19,12 +19,12 @@
 
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
-BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
+BaseBoard::BaseBoard(std::vector <std::vector <std::string>> board_string){
     for (int column = 0; column < 8; column++){
         board.push_back(std::vector<std::shared_ptr<Square>>());
         for (int row = 0; row < 8; row++ ){
             
-            std::string buffer = boardString[column][row];
+            std::string buffer = board_string[column][row];
 
              if (buffer.compare("NN") == 0){
                     board[column].push_back(std::shared_ptr<Square>{new Square(nullptr)});
@@ -103,12 +103,12 @@ void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row
 
 
 std::vector <std::vector <std::string>> BaseBoard::toString(){
-    std::vector <std::vector <std::string>> boardReturn;
+    std::vector <std::vector <std::string>> board_return;
     std::string piece = "";
     std::string color = "";
 
     for (int column = 0; column < 8; column++){
-        boardReturn.push_back(std::vector<std::string>());
+        board_return.push_back(std::vector<std::string>());
         for (int row = 0; row < 8; row++){
             if (board[column][row]->getOccupied()){
                 if(board[column][row]->getPiece()->getColor() == WHITE){
@@ -118,16 +118,16 @@ std::vector <std::vector <std::string>> BaseBoard::toString(){
                 }
                     
                 piece = board[column][row]->getPiece()->getFigureName();
-                boardReturn[column].push_back(color + piece);
+                board_return[column].push_back(color + piece);
             }else
             {
-                boardReturn[column].push_back("NN");
+                board_return[column].push_back("NN");
             }
             
         }
     }
 
-    return boardReturn;
+    return board_return;
 
 }
 

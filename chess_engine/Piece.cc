@@ -56,13 +56,13 @@ Piece::Piece(int column, int row, PieceColor color){
     this->position.row = row;
 }
 
-Piece::Piece(int column, int row, PieceColor color, std::string figureName){
+Piece::Piece(int column, int row, PieceColor color, std::string figure_name){
     this->column = column;
     this->row    = row;
     this->color  = color;
     this->position.column = column;
     this->position.row = row;
-    this->figureName = figureName;
+    this->figure_name = figure_name;
 }
 
 Piece::Piece(int column, int row, bool occupied){
@@ -73,13 +73,13 @@ Piece::Piece(int column, int row, bool occupied){
     this->occupied  = occupied;
 }
 
-Piece::Piece(int column, int row, bool occupied, std::string figureName){
+Piece::Piece(int column, int row, bool occupied, std::string figure_name){
     this->column = column;
     this->row    = row;
     this->position.column = column;
     this->position.row = row;
     this->occupied  = occupied;
-    this->figureName = figureName;
+    this->figure_name = figure_name;
 }
 
 bool Piece::getOccupied(){
@@ -114,12 +114,12 @@ void Piece::setMoves(std::vector<Position> possible_move){
 
 //void Piece::move(Position position, Board board){};
 
-void Piece::setFigureName(std::string figureName){
-    this->figureName = figureName;
+void Piece::setFigureName(std::string figure_name){
+    this->figure_name = figure_name;
 }
 
 std::string Piece::getFigureName(){
-    return this->figureName;
+    return this->figure_name;
 }
 
 std::vector<Position> Piece::getMoves(){
@@ -127,16 +127,16 @@ std::vector<Position> Piece::getMoves(){
 }
 Position Piece::getKing(std::shared_ptr<BaseBoard> board){
     PieceColor color = this->getColor();
-    PieceColor pieceColor;
+    PieceColor piece_color;
 
     for (int column = 0; column < 8; column++){
         for (int row = 0; row < 8; row++ ){
             if (board->getBoard()[column][row]->getOccupied()){
                 std::string piece = board->getBoard()[column][row]->getPiece()->getFigureName();
                 if (piece == "K"){
-                    pieceColor = board->getBoard()[column][row]->getPiece()->getColor();
-                    if (color == pieceColor){
-                        //std::cout << "krol" <<board->getBoard()[column][row]->getPiece()->getColumn() << board->getBoard()[column][row]->getPiece()->getRow() << color<< pieceColor << std::endl;
+                    piece_color = board->getBoard()[column][row]->getPiece()->getColor();
+                    if (color == piece_color){
+                        //std::cout << "krol" <<board->getBoard()[column][row]->getPiece()->getColumn() << board->getBoard()[column][row]->getPiece()->getRow() << color<< piece_color << std::endl;
                         return board->getBoard()[column][row]->getPiece()->getPosition();
                     }
                 }
@@ -145,22 +145,22 @@ Position Piece::getKing(std::shared_ptr<BaseBoard> board){
     }
 }
 
-bool Piece::isChecking(Position positionPiece, Position positionKing){
-    if (positionKing.column == positionPiece.column && positionKing.row == positionPiece.row){
+bool Piece::isChecking(Position position_piece, Position position_king){
+    if (position_king.column == position_piece.column && position_king.row == position_piece.row){
         //std::cout << "Szach" << std::endl;
         return true;
     }else{
-        //std::cout << "Nie Szach: " << positionPiece.column << positionPiece.row << std::endl;
-        //std::cout << "Krol: " << positionKing.column << positionKing.row << std::endl;
+        //std::cout << "Nie Szach: " << position_piece.column << position_piece.row << std::endl;
+        //std::cout << "Krol: " << position_king.column << position_king.row << std::endl;
         return false;
     }
 }
 
-std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardInitial, bool originalEvaluation){
-    std::vector<Position> possiblePosition; //Create buffer for computed possible positions
+std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_initial, bool original_evaluation){
+    std::vector<Position> possible_position; //Create buffer for computed possible positions
 
     for (Position position : this->getMoves()){
-        std::shared_ptr<BaseBoard> boardCopy (new BaseBoard(boardInitial->toString()));
+        std::shared_ptr<BaseBoard> boardCopy (new BaseBoard(board_initial->toString()));
         board_type board = boardCopy->getBoard();
 
         int src_col = this->getColumn();
@@ -176,11 +176,11 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
         Position king = this->getKing(boardCopy);
 
         PieceColor color = this->getColor();
-        PieceColor opponentColor;
+        PieceColor opponent_color;
         if (color == WHITE){
-            opponentColor = BLACK;
+            opponent_color = BLACK;
         }else{
-            opponentColor = WHITE;
+            opponent_color = WHITE;
         }
 
         bool safe = true;
@@ -191,7 +191,7 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
                 //check if on Square is piece
                 if (board[column][row]->getOccupied()){
                     color = board[column][row]->getPiece()->getColor();
-                    if (color == opponentColor){
+                    if (color == opponent_color){
                         for (auto pos : board[column][row]->getPiece()->getPossibleMoves(boardCopy, false)){
                             
                             if (board[column][row]->getPiece()->isChecking(pos,king)){
@@ -204,10 +204,10 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
             }
         }
     if (safe){
-        possiblePosition.push_back(position);
+        possible_position.push_back(position);
         }
     }
-    return possiblePosition;
+    return possible_position;
 
 }
 

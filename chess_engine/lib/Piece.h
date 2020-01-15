@@ -35,7 +35,7 @@ const int COLUMN_MAX = 8;
 
 class Piece{
 private:
-    std::string           figureName; // name of figure to transfer to frontend
+    std::string           figure_name; // name of figure to transfer to frontend
     PieceColor            color = BLACK; // color of figure
     Position              position; // position on board, consists od column and row
     int                   column; // vertical position of figure
@@ -65,7 +65,7 @@ public:
     void setOccupied(bool); // set square occupied
     void setMoves(std::vector<Position>); // set possible moves
     void setFigureName(std::string); // set figure name
-    bool isChecking(Position positionPiece, Position positionKing);
+    bool isChecking(Position position_piece, Position position_king);
     Position getKing(std::shared_ptr<BaseBoard>);
     std::vector<Position> evaluateCheck(std::shared_ptr<BaseBoard>, bool);
     virtual void move(Position, BaseBoard) = 0; // move figure
@@ -83,6 +83,6 @@ public:
     std::vector<Position> getMoves(); // get possible moves of figure
     std::string           getFigureName(); // get figure name
 
-    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row  << c.figureName << std::endl;}; // output position and figure name
+    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row << c.figure_name << std::endl;}; // output position and figure name
 };
 #endif

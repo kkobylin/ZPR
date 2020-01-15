@@ -39,7 +39,7 @@ class BaseBoard{
     public:
     BaseBoard(std::vector <std::vector <std::string>>);
     board_type getBoard();
-    void updateBoard(int, int, int, int);
+    void updateBoard(int dest_col, int dest_row, int src_col, int src_row);
     std::vector <std::vector <std::string>> toString();
     void printBoardCout();
 
