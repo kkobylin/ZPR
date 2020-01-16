@@ -20,14 +20,15 @@ public:
     Piece (column, row, color){
         setFigureName("Q");
         setRecursive();
+        setDirectionOfMove(Position{1,-1});
+        setDirectionOfMove(Position{1,0});
         setDirectionOfMove(Position{1,1});
         setDirectionOfMove(Position{0,1});
         setDirectionOfMove(Position{-1,1});
-        setDirectionOfMove(Position{1,0});
         setDirectionOfMove(Position{-1,0});
         setDirectionOfMove(Position{-1,-1});
-        setDirectionOfMove(Position{-1,0});
-        setDirectionOfMove(Position{-1,1});
+        setDirectionOfMove(Position{0,-1});
+
         };
     
     //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard);

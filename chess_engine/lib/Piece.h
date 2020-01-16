@@ -21,6 +21,7 @@ struct Position{
 
     bool operator==(Position pos1){ return pos1.column == column && pos1.row == row;} // override operator to use std::find
     bool operator!=(Position pos1){ return pos1.column != column || pos1.row != row;} // override operator to use std::find
+    //Position operator=(Position pos1){return pos1;}
     Position operator+(Position pos1){ return Position{pos1.column + column, pos1.row + row};}
     Position operator*(int const &pos1){ return Position{pos1 * column, pos1 * row};}
     
@@ -91,7 +92,7 @@ public:
     std::vector<Position> getMoves(); // get possible moves of figure
     std::string           getFigureName(); // get figure name
 
-    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row << c.figure_name << std::endl;}; // output position and figure name
+    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << (char)(c.column + 65) << c.row + 1 << c.figure_name << std::endl;}; // output position and figure name
 };
 #endif
 

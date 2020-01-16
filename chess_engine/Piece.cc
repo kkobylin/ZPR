@@ -196,14 +196,17 @@ bool Piece::moveIsInBoard(Position position){
 }
 
 std::vector<Position> Piece::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
-    std::vector<Position> possiblePosition;
+    std::vector<Position> possible_position;
     if(isMoveRecursive){
         for (auto move_scheme : directionOfMoves){
             Position dest_square = position + move_scheme;
             int i = 1;
             while(moveIsInBoard(dest_square) && isMoveValid(dest_square, board) != color){
-                possiblePosition.push_back(dest_square);
+                possible_position.push_back(dest_square);
                 ++i;
+                if (isMoveValid(dest_square, board) == static_cast<PieceColor>(-1*color)){
+                    break;
+                }
                 dest_square = position + (move_scheme * i);
             }
         }
@@ -211,19 +214,24 @@ std::vector<Position> Piece::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
         for (auto move_scheme : directionOfMoves){
             Position dest_square = position + move_scheme;
             if(moveIsInBoard(dest_square) && isMoveValid(dest_square, board) != color){
-                possiblePosition.push_back(dest_square);
+                possible_position.push_back(dest_square);
             }
         } 
     }
 
-    setMoves(possiblePosition);
+    setMoves(possible_position);
 
     if (originalEvaluation){
-        possiblePosition = evaluateCheck(board, false);
-        setMoves(possiblePosition);
+        possible_position = evaluateCheck(board, false);
+        setMoves(possible_position);
     }
-
-    return possiblePosition;
+    /*
+    if (originalEvaluation && getColor() == BLACK)
+        for (auto a: possible_position){
+            std::cout << "mozliwy ruch dla: " << *this << " " << a << std::endl;
+        }
+        */
+    return possible_position;
 }
 
 void Piece::setRecursive(){
