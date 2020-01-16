@@ -8,8 +8,16 @@ then
 	echo "boost not found"
 	echo "Installing boost from package"
 	sudo apt-get -y install libboost-dev
-	echo "Installing boost-python3"
-	apt-get -y install libboost-python-dev
+fi
+
+
+echo "Checking boost-python version"
+BOOST_PYTHON_VER=$(dpkg -s libboost-python-dev | grep "Version")
+if [ -z "${BOOST_PYTHON_VER}" ]
+then
+	echo "boost-python3 not found"
+	echo "Installing boost-python"
+	sudo apt-get -y install libboost-python3-dev
 fi
 
 
@@ -44,8 +52,8 @@ fi
 
 
 echo "Checking flask version"
-CMAKE_VER=$(cmake --version)
-if [ -z "${CMAKE_VER}" ]
+FLASK_VER=$(flask --version)
+if [ -z "${FLASK_VER}" ]
 then
 	echo "flask not found"
 	echo "Installing flask from package"
@@ -53,12 +61,12 @@ then
 fi
 
 
-GPP_VER=$(g++ --version)
+GPP_VER=$(g++-version)
 if [ -z "${GPP_VERSION}" ]
 then
-	echo "g++ not found"
+	echo "gcc not found"
 	echo "Installing g++ from package"
-	sudo apt-get -y install gpp
+	sudo apt-get -y install g++
 fi
 
 
