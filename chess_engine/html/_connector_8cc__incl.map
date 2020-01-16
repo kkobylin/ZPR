@@ -1,8 +1,0 @@
-<map id="Connector.cc" name="Connector.cc">
-<area shape="rect" id="node2" href="$_connector_8h.html" title="Connector.h" alt="" coords="5,229,99,256"/>
-<area shape="rect" id="node6" href="$_board_8h.html" title="lib/Board.h" alt="" coords="635,80,719,107"/>
-<area shape="rect" id="node7" href="$_base_board_8h.html" title="Class holding informations about pieces, used to be an auxiliary class to generate temporary boards..." alt="" coords="417,155,514,181"/>
-<area shape="rect" id="node14" href="$_a_i_class_8h.html" title="AI/AIClass.h" alt="" coords="550,155,647,181"/>
-<area shape="rect" id="node8" href="$_square_8h.html" title="Square.h" alt="" coords="491,229,565,256"/>
-<area shape="rect" id="node9" href="$_piece_8h.html" title="Piece.h" alt="" coords="299,304,365,331"/>
-</map>

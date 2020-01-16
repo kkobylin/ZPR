@@ -1,6 +1,0 @@
-<map id="Board.cc" name="Board.cc">
-<area shape="rect" id="node2" href="$_base_board_8h.html" title="Class holding informations about pieces, used to be an auxiliary class to generate temporary boards..." alt="" coords="181,155,296,181"/>
-<area shape="rect" id="node10" href="$_board_8h.html" title="lib/Board.h" alt="" coords="277,80,361,107"/>
-<area shape="rect" id="node3" href="$_square_8h.html" title="Square.h" alt="" coords="201,229,276,256"/>
-<area shape="rect" id="node4" href="$_piece_8h.html" title="Piece.h" alt="" coords="180,304,247,331"/>
-</map>

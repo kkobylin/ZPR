@@ -1,4 +1,0 @@
-<map id="Knight" name="Knight">
-<area shape="rect" id="node2" href="$class_piece.html" title="Piece" alt="" coords="13,95,67,121"/>
-<area shape="rect" id="node3" href="$struct_position.html" title="Position" alt="" coords="5,5,75,32"/>
-</map>

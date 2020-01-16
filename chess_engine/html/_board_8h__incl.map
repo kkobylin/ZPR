@@ -1,5 +1,0 @@
-<map id="lib/Board.h" name="lib/Board.h">
-<area shape="rect" id="node2" href="$_base_board_8h.html" title="Class holding informations about pieces, used to be an auxiliary class to generate temporary boards..." alt="" coords="193,80,290,107"/>
-<area shape="rect" id="node3" href="$_square_8h.html" title="Square.h" alt="" coords="204,155,279,181"/>
-<area shape="rect" id="node4" href="$_piece_8h.html" title="Piece.h" alt="" coords="180,229,247,256"/>
-</map>
