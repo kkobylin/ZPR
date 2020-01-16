@@ -83,8 +83,8 @@ std::vector<Position> Piece::getMoves(){
 
 Position Piece::getKing(std::shared_ptr<BaseBoard> board, PieceColor piece_color){
 
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++ ){
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
+        for (int row = ROW_MIN; row < ROW_MAX; row++ ){
             if (board->getBoard()[column][row]->getOccupied()){
                 std::string piece = board->getBoard()[column][row]->getPiece()->getFigureName();
                 if (piece == "K"){
@@ -135,9 +135,9 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_init
 
         bool safe = true;
         //iterate pieces by columns
-        for (int column = 0; column < 8; column++){
+        for (int column = COLUMN_MIN; column < COLUMN_MAX; column++ ){
             //iterate pieces by rows
-            for (int row = 0; row < 8; row++ ){
+            for (int row = ROW_MIN; row < ROW_MAX; row++ ){
                 //check if on Square is piece
                 if (board[column][row]->getOccupied()){
                     color = board[column][row]->getPiece()->getColor();

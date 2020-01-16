@@ -11,9 +11,9 @@
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
 BaseBoard::BaseBoard(std::vector <std::vector <std::string>> board_string){
-    for (int column = 0; column < 8; column++){
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
         board.push_back(std::vector<std::shared_ptr<Square>>());
-        for (int row = 0; row < 8; row++ ){
+        for (int row = ROW_MIN; row < ROW_MIN; row++ ){
             
             std::string buffer = board_string[column][row];
 
@@ -105,9 +105,10 @@ std::vector <std::vector <std::string>> BaseBoard::toString(){
     std::string piece = "";
     std::string color = "";
 
-    for (int column = 0; column < 8; column++){
+
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
         board_return.push_back(std::vector<std::string>());
-        for (int row = 0; row < 8; row++){
+        for (int row = ROW_MIN; row < ROW_MIN; row++ ){
             if (board[column][row]->getOccupied()){
                 if(board[column][row]->getPiece()->getColor() == WHITE){
                     color = "W";
@@ -131,8 +132,8 @@ std::vector <std::vector <std::string>> BaseBoard::toString(){
 
 void BaseBoard::printBoardCout(){
     std::cout << "Current Board:" << std::endl;
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++){
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
+        for (int row = ROW_MIN; row < ROW_MIN; row++ ){
             std::cout <<(char)(board[column][row]->getColumn() + 65)  << board[column][row]->getRow() + 1  <<this->toString()[column][row] << " " ;
             if (row == 7){
                 std::cout << std::endl;
@@ -161,8 +162,8 @@ bool BaseBoard::isChecking(PieceColor opponent_color){
     //Check if opponent is checked
 
     Position opponent_king = this->getKing(static_cast<PieceColor>(-1 * opponent_color));
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++){
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
+        for (int row = ROW_MIN; row < ROW_MIN; row++ ){
             if (this->getBoard()[column][row]->getOccupied()){
                 if (this->getBoard()[column][row]->getPiece()->getColor() == opponent_color){
                     auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
@@ -183,8 +184,8 @@ std::string BaseBoard::checkForWin(){
 
     bool white_lost = true;
     bool black_lost = true;
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++){
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
+        for (int row = ROW_MIN; row < ROW_MIN; row++ ){
             if (this->getBoard()[column][row]->getOccupied()){
                 if (this->getBoard()[column][row]->getPiece()->getColor() == BLACK){
                     auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
