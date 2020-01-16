@@ -17,7 +17,7 @@ if [ -z "${BOOST_PYTHON_VER}" ]
 then
 	echo "boost-python3 not found"
 	echo "Installing boost-python"
-	sudo apt-get -y install libboost-python3-dev
+	sudo apt-get -y install libboost-python-dev
 fi
 
 
