@@ -5,10 +5,9 @@
 
 class Bishop: public Piece{
 public:
-    Bishop(int column, int row, PieceColor color, std::string figureName) :
-        Piece (column, row, color, figureName){};
-    
-    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool) override;
+    Bishop(int column, int row, PieceColor color, std::string figure_name) :
+        Piece (column, row, color, figure_name){};
+    std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool) override;
     double getPositionValue() override ;
 };
 #endif

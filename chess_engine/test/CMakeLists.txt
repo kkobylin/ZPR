@@ -3,7 +3,7 @@ project(chess_test)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(tests
-        PawnTest.cpp
+        ChessTest.cpp
         ../lib/BaseBoard.h
         ../lib/Bishop.h
         ../lib/Board.h

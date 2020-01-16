@@ -4,12 +4,12 @@
 
 
 
-std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> board, bool originalEvaluation){
+std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> board, bool original_evaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
     std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
-    std::vector<Position> possiblePosition; //Create buffer for computed possible positions
+    std::vector<Position> possible_position; //Create buffer for computed possible positions
     Position position;
 
     int direction_of_move = this->getColor();
@@ -23,13 +23,13 @@ std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> bo
                     position.column = column_current;
                     position.row    = row_current + 2 * direction_of_move;
 
-                    possiblePosition.push_back(position);
+                    possible_position.push_back(position);
                 }
             }
             position.column = column_current;
             position.row    = row_current + 1 * direction_of_move;
 
-            possiblePosition.push_back(position);
+            possible_position.push_back(position);
         }
     }
 
@@ -43,7 +43,7 @@ std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> bo
                 position.column = column_current - 1 * direction_of_move;
                 position.row    = row_current + 1 * direction_of_move;
 
-                possiblePosition.push_back(position);
+                possible_position.push_back(position);
             }
         }
         
@@ -54,16 +54,16 @@ std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> bo
                 position.column = column_current + 1 * direction_of_move;
                 position.row    = row_current + 1 * direction_of_move;
 
-                possiblePosition.push_back(position);
+                possible_position.push_back(position);
             }       
         }
     }
-    this->setMoves(possiblePosition);
-    if (originalEvaluation){
-        possiblePosition = evaluateCheck(board, false);
-        this->setMoves(possiblePosition);
+    this->setMoves(possible_position);
+    if (original_evaluation){
+        possible_position = evaluateCheck(board, false);
+        this->setMoves(possible_position);
     }
-    return possiblePosition;
+    return possible_position;
 
 }
 

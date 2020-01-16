@@ -3,9 +3,14 @@
 
 CMakeFiles/tests.dir/PawnTest.o
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/BaseBoard.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Board.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/King.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Knight.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Pawn.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
+ /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
  /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/PawnTest.cpp
 CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o

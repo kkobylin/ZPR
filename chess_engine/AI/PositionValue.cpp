@@ -4,6 +4,8 @@
 
 #include "PositionValue.h"
 
+//max - 515 sr - 185
+
 const double PositionValue::KingEvalWhite [8][8] =
         {
                 {20, 30, 10,  0,  0, 10, 30, 20},

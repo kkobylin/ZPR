@@ -10,12 +10,13 @@ void Rook::setMoved(bool moved){
     this->moved = moved;
 }
 
-std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
+
+std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool original_evaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
     int color          = this->getColor();
     std::vector<std::vector <std::shared_ptr<Square>>> board_current = board->getBoard();
-    std::vector<Position> possiblePosition; //Create buffer for computed possible positions
+    std::vector<Position> possible_position; //Create buffer for computed possible positions
     Position position;
 
     int direction_of_move = this->getColor();
@@ -35,13 +36,13 @@ std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
         position.column = column_current;
         position.row    = row_current + i * direction_of_move;
 
-        possiblePosition.push_back(position);
+        possible_position.push_back(position);
 
         i++;
 
         if (piece->getOccupied()){
             if(piece->getPiece()->getColor() == direction_of_move)
-                possiblePosition.pop_back();
+                possible_position.pop_back();
             break;
         }
     }
@@ -56,13 +57,13 @@ std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
         position.column = column_current;
         position.row    = row_current - i * direction_of_move;
 
-        possiblePosition.push_back(position);
+        possible_position.push_back(position);
 
         i++;
 
         if (piece->getOccupied()){
             if(piece->getPiece()->getColor() == direction_of_move)
-                possiblePosition.pop_back();
+                possible_position.pop_back();
             break;
         }
     }
@@ -75,13 +76,13 @@ std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
         position.column = column_current - i * direction_of_move;
         position.row    = row_current;
 
-        possiblePosition.push_back(position);
+        possible_position.push_back(position);
 
         i++;
 
         if (piece->getOccupied()){
             if(piece->getPiece()->getColor() == direction_of_move)
-                possiblePosition.pop_back();
+                possible_position.pop_back();
             break;
         }
     }
@@ -94,25 +95,25 @@ std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
         position.column = column_current + i * direction_of_move;
         position.row    = row_current;
 
-        possiblePosition.push_back(position);
+        possible_position.push_back(position);
 
         i++;
 
         if (piece->getOccupied()){
             if(piece->getPiece()->getColor() == direction_of_move)
-                possiblePosition.pop_back();
+                possible_position.pop_back();
             break;
         }
     }
 
 
-    this->setMoves(possiblePosition);
+    this->setMoves(possible_position);
 
-    if (originalEvaluation){
-        possiblePosition = evaluateCheck(board, false);
-        this->setMoves(possiblePosition);
+    if (original_evaluation){
+        possible_position = evaluateCheck(board, false);
+        this->setMoves(possible_position);
     }
-    return possiblePosition;
+    return possible_position;
 }
 
 double Rook::getPositionValue(){
