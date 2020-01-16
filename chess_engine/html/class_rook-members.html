@@ -9,13 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -49,21 +42,6 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('class_rook.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,6 +56,7 @@ $(document).ready(function(){initNavTree('class_rook.html','');});
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Rook Member List</div>  </div>
@@ -86,41 +65,37 @@ $(document).ready(function(){initNavTree('class_rook.html','');});
 
 <p>This is the complete list of members for <a class="el" href="class_rook.html">Rook</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a0769c700d680b8036002c0427b7ac559">evaluateCheck</a>(std::shared_ptr&lt; BaseBoard &gt;, bool)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a9cb5fe774dcb187ce20ff18c93269e3f">evaluateCheck</a>(std::shared_ptr&lt; BaseBoard &gt; board, bool initialboard)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_piece.html#a184ce3e31f7b4d8a3d616a60fe60522e">getColor</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a3396fcbbe54260076bf2f6a39b0fb920">getColumn</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_piece.html#a094d0d28514219ab3f155d9241bb8f22">getFigureName</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a8537f9ebe9b135e3e5da99f385a90042">getKing</a>(std::shared_ptr&lt; BaseBoard &gt;, PieceColor pieceColor)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_rook.html#a63c6d35a7f51e24d17079c80980dd948">getMoved</a>()</td><td class="entry"><a class="el" href="class_rook.html">Rook</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_piece.html#ad23431fecbbedcff824dd38ffa6a47a1">getMoved</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a10eddaa8ade831cfee1c17b94bfcac09">getMoves</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_piece.html#abde93826a7b04b9e0f9739b11df0629e">getOccupied</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a2dee0ebeffdb733e17574471c441e06d">getPosition</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_rook.html#ab1d83e6acb838249647f1f5fa7d17f41">getPositionValue</a>() override</td><td class="entry"><a class="el" href="class_rook.html">Rook</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_rook.html#ab186037a1f596102d618c1c9df31490d">getPossibleMoves</a>(std::shared_ptr&lt; BaseBoard &gt;, bool) override</td><td class="entry"><a class="el" href="class_rook.html">Rook</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_rook.html#a631fce9b569ccf40b5b27cc6cc13cd93">getPossibleMoves</a>(std::shared_ptr&lt; BaseBoard &gt; board, bool initialboard) override</td><td class="entry"><a class="el" href="class_rook.html">Rook</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_piece.html#a070f593242fb8417429ac989184e682b">getRow</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_piece.html#aa45b0c7c5552437dfd9d4567d2c7e7dd">isChecking</a>(Position positionPiece, Position positionKing)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_rook.html#a2066de8a5df66bf3b8089d9d33e079ab">moved</a></td><td class="entry"><a class="el" href="class_rook.html">Rook</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a2975fad91c5ef37d678a22253d37548f">Piece</a>(int, int, PieceColor, std::string)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_piece.html#a99ebd588613d69a9aa7896240f810308">Piece</a>(Position, PieceColor, std::string)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_rook.html#a757e308feb1c2d2635e8beb6d9b23369">Rook</a>(int column, int row, PieceColor color, std::string figureName)</td><td class="entry"><a class="el" href="class_rook.html">Rook</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a1ae0a039406ce1ca4eebc4465426bf25">Piece</a>(int, int, PieceColor)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_piece.html#a98d2204a49a52df4cda971aa669e6796">Piece</a>(Position, PieceColor)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_rook.html#a76901ac8ae7beefdfdb70e5f2a207d85">Rook</a>(int column, int row, PieceColor color)</td><td class="entry"><a class="el" href="class_rook.html">Rook</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_piece.html#a5b8c0f65eb850c91ae148501cd15adbf">setColor</a>(PieceColor)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a826ba56a44a5bf2e1ecdea849f2581d3">setColumn</a>(int)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_piece.html#a16971e1511ab403ede566b4fdbbab8a8">setFigureName</a>(std::string)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_rook.html#a3ce8295607d89754d8c4be1813bc7b70">setMoved</a>(bool)</td><td class="entry"><a class="el" href="class_rook.html">Rook</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_piece.html#a0ff1ca92370da533f6ef421dc09741f8">Piece::setMoved</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_piece.html#ad63e838ac5edfe8abab7211fc79e5a82">setMoves</a>(std::vector&lt; Position &gt;)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_piece.html#aad0fbfd687db57c60b5b4585b67f387d">setOccupied</a>(bool)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a459865f830ff8c199cfca49f5d89b806">setPosition</a>(Position)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_piece.html#a604cbeae62b4358425d046bc5d737a39">setRow</a>(int)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a0ff1ca92370da533f6ef421dc09741f8">setMoved</a>()</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_piece.html#ad63e838ac5edfe8abab7211fc79e5a82">setMoves</a>(std::vector&lt; Position &gt;)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_piece.html#aad0fbfd687db57c60b5b4585b67f387d">setOccupied</a>(bool)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_piece.html#a459865f830ff8c199cfca49f5d89b806">setPosition</a>(Position)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_piece.html#a604cbeae62b4358425d046bc5d737a39">setRow</a>(int)</td><td class="entry"><a class="el" href="class_piece.html">Piece</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
 </body>
 </html>

@@ -25,15 +25,11 @@ Collaboration diagram for Rook\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_rook_a757e308feb1c2d2635e8beb6d9b23369}{Rook} (int \hyperlink{class_piece_aa8f39e11280395103164f6ae07398c82}{column}, int \hyperlink{class_piece_ac6ef7c474f20562cb629c2452ce0631d}{row}, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} \hyperlink{class_piece_a8dfe0501fe95a1a7618cf5ad3b9fda69}{color}, std\+::string \hyperlink{class_piece_af2fe809fd0d35d167f2419768e49fd3a}{figure\+Name})
+\hyperlink{class_rook_a76901ac8ae7beefdfdb70e5f2a207d85}{Rook} (int \hyperlink{class_piece_aa8f39e11280395103164f6ae07398c82}{column}, int \hyperlink{class_piece_ac6ef7c474f20562cb629c2452ce0631d}{row}, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} \hyperlink{class_piece_a8dfe0501fe95a1a7618cf5ad3b9fda69}{color})
 \item 
-std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_rook_ab186037a1f596102d618c1c9df31490d}{get\+Possible\+Moves} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$, bool) override
+std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_rook_a631fce9b569ccf40b5b27cc6cc13cd93}{get\+Possible\+Moves} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$ board, bool initialboard) override
 \item 
 double \hyperlink{class_rook_ab1d83e6acb838249647f1f5fa7d17f41}{get\+Position\+Value} () override
-\item 
-bool \hyperlink{class_rook_a63c6d35a7f51e24d17079c80980dd948}{get\+Moved} ()
-\item 
-void \hyperlink{class_rook_a3ce8295607d89754d8c4be1813bc7b70}{set\+Moved} (bool)
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -43,21 +39,15 @@ bool \hyperlink{class_rook_a2066de8a5df66bf3b8089d9d33e079ab}{moved} = false
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_rook_a757e308feb1c2d2635e8beb6d9b23369}\label{class_rook_a757e308feb1c2d2635e8beb6d9b23369}} 
+\mbox{\Hypertarget{class_rook_a76901ac8ae7beefdfdb70e5f2a207d85}\label{class_rook_a76901ac8ae7beefdfdb70e5f2a207d85}} 
 \index{Rook@{Rook}!Rook@{Rook}}
 \index{Rook@{Rook}!Rook@{Rook}}
 \subsubsection{\texorpdfstring{Rook()}{Rook()}}
-{\footnotesize\ttfamily Rook\+::\+Rook (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{int}]{row,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{color,  }\item[{std\+::string}]{figure\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Rook\+::\+Rook (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{int}]{row,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_rook_a63c6d35a7f51e24d17079c80980dd948}\label{class_rook_a63c6d35a7f51e24d17079c80980dd948}} 
-\index{Rook@{Rook}!get\+Moved@{get\+Moved}}
-\index{get\+Moved@{get\+Moved}!Rook@{Rook}}
-\subsubsection{\texorpdfstring{get\+Moved()}{getMoved()}}
-{\footnotesize\ttfamily bool Rook\+::get\+Moved (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{class_rook_ab1d83e6acb838249647f1f5fa7d17f41}\label{class_rook_ab1d83e6acb838249647f1f5fa7d17f41}} 
 \index{Rook@{Rook}!get\+Position\+Value@{get\+Position\+Value}}
 \index{get\+Position\+Value@{get\+Position\+Value}!Rook@{Rook}}
@@ -68,21 +58,15 @@ bool \hyperlink{class_rook_a2066de8a5df66bf3b8089d9d33e079ab}{moved} = false
 
 Implements \hyperlink{class_piece_a4adfa58b4f0368c9a5859afcf294e0a4}{Piece}.
 
-\mbox{\Hypertarget{class_rook_ab186037a1f596102d618c1c9df31490d}\label{class_rook_ab186037a1f596102d618c1c9df31490d}} 
+\mbox{\Hypertarget{class_rook_a631fce9b569ccf40b5b27cc6cc13cd93}\label{class_rook_a631fce9b569ccf40b5b27cc6cc13cd93}} 
 \index{Rook@{Rook}!get\+Possible\+Moves@{get\+Possible\+Moves}}
 \index{get\+Possible\+Moves@{get\+Possible\+Moves}!Rook@{Rook}}
 \subsubsection{\texorpdfstring{get\+Possible\+Moves()}{getPossibleMoves()}}
-{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ Rook\+::get\+Possible\+Moves (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board,  }\item[{bool}]{original\+Evaluation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ Rook\+::get\+Possible\+Moves (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board,  }\item[{bool}]{initialboard }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
 Implements \hyperlink{class_piece_a8891924c280568529878549f59541925}{Piece}.
-
-\mbox{\Hypertarget{class_rook_a3ce8295607d89754d8c4be1813bc7b70}\label{class_rook_a3ce8295607d89754d8c4be1813bc7b70}} 
-\index{Rook@{Rook}!set\+Moved@{set\+Moved}}
-\index{set\+Moved@{set\+Moved}!Rook@{Rook}}
-\subsubsection{\texorpdfstring{set\+Moved()}{setMoved()}}
-{\footnotesize\ttfamily void Rook\+::set\+Moved (\begin{DoxyParamCaption}\item[{bool}]{moved }\end{DoxyParamCaption})}
 
 
 

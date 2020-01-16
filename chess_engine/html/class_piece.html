@@ -9,13 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -49,21 +42,6 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('class_piece.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,6 +56,7 @@ $(document).ready(function(){initNavTree('class_piece.html','');});
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -102,7 +81,7 @@ Inheritance diagram for Piece:</div>
 <area shape="rect" id="node6" href="class_queen.html" title="Queen" alt="" coords="327,80,387,107"/>
 <area shape="rect" id="node7" href="class_rook.html" title="Rook" alt="" coords="411,80,465,107"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Piece:</div>
 <div class="dyncontent">
@@ -110,14 +89,14 @@ Collaboration diagram for Piece:</div>
 <map name="_piece_coll__map" id="_piece_coll__map">
 <area shape="rect" id="node2" href="struct_position.html" title="Position" alt="" coords="5,5,75,32"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2975fad91c5ef37d678a22253d37548f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a2975fad91c5ef37d678a22253d37548f">Piece</a> (int, int, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>, std::string)</td></tr>
-<tr class="separator:a2975fad91c5ef37d678a22253d37548f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99ebd588613d69a9aa7896240f810308"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a99ebd588613d69a9aa7896240f810308">Piece</a> (<a class="el" href="struct_position.html">Position</a>, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>, std::string)</td></tr>
-<tr class="separator:a99ebd588613d69a9aa7896240f810308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae0a039406ce1ca4eebc4465426bf25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a1ae0a039406ce1ca4eebc4465426bf25">Piece</a> (int, int, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>)</td></tr>
+<tr class="separator:a1ae0a039406ce1ca4eebc4465426bf25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d2204a49a52df4cda971aa669e6796"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a98d2204a49a52df4cda971aa669e6796">Piece</a> (<a class="el" href="struct_position.html">Position</a>, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>)</td></tr>
+<tr class="separator:a98d2204a49a52df4cda971aa669e6796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b8c0f65eb850c91ae148501cd15adbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a5b8c0f65eb850c91ae148501cd15adbf">setColor</a> (<a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>)</td></tr>
 <tr class="separator:a5b8c0f65eb850c91ae148501cd15adbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a604cbeae62b4358425d046bc5d737a39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a604cbeae62b4358425d046bc5d737a39">setRow</a> (int)</td></tr>
@@ -138,8 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa45b0c7c5552437dfd9d4567d2c7e7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8537f9ebe9b135e3e5da99f385a90042"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a8537f9ebe9b135e3e5da99f385a90042">getKing</a> (std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> pieceColor)</td></tr>
 <tr class="separator:a8537f9ebe9b135e3e5da99f385a90042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0769c700d680b8036002c0427b7ac559"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a0769c700d680b8036002c0427b7ac559">evaluateCheck</a> (std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;, bool)</td></tr>
-<tr class="separator:a0769c700d680b8036002c0427b7ac559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb5fe774dcb187ce20ff18c93269e3f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a9cb5fe774dcb187ce20ff18c93269e3f">evaluateCheck</a> (std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt; board, bool initialboard)</td></tr>
+<tr class="separator:a9cb5fe774dcb187ce20ff18c93269e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8891924c280568529878549f59541925"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="struct_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a8891924c280568529878549f59541925">getPossibleMoves</a> (std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;, bool=true)=0</td></tr>
 <tr class="separator:a8891924c280568529878549f59541925"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4adfa58b4f0368c9a5859afcf294e0a4"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a4adfa58b4f0368c9a5859afcf294e0a4">getPositionValue</a> ()=0</td></tr>
@@ -186,8 +165,8 @@ Friends</h2></td></tr>
 <tr class="separator:a2030184caa17f039eb2a026a6dbc7d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2975fad91c5ef37d678a22253d37548f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2975fad91c5ef37d678a22253d37548f">&#9670;&nbsp;</a></span>Piece() <span class="overload">[1/2]</span></h2>
+<a id="a1ae0a039406ce1ca4eebc4465426bf25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ae0a039406ce1ca4eebc4465426bf25">&#9670;&nbsp;</a></span>Piece() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,13 +187,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>&#160;</td>
-          <td class="paramname"><em>color</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>figureName</em>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -226,8 +199,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a99ebd588613d69a9aa7896240f810308"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99ebd588613d69a9aa7896240f810308">&#9670;&nbsp;</a></span>Piece() <span class="overload">[2/2]</span></h2>
+<a id="a98d2204a49a52df4cda971aa669e6796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d2204a49a52df4cda971aa669e6796">&#9670;&nbsp;</a></span>Piece() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,12 +218,6 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -269,8 +236,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0769c700d680b8036002c0427b7ac559"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0769c700d680b8036002c0427b7ac559">&#9670;&nbsp;</a></span>evaluateCheck()</h2>
+<a id="a9cb5fe774dcb187ce20ff18c93269e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cb5fe774dcb187ce20ff18c93269e3f">&#9670;&nbsp;</a></span>evaluateCheck()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,13 +246,13 @@ Friends</h2></td></tr>
           <td class="memname">std::vector&lt; <a class="el" href="struct_position.html">Position</a> &gt; Piece::evaluateCheck </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;&#160;</td>
-          <td class="paramname"><em>boardInitial</em>, </td>
+          <td class="paramname"><em>board</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>originalEvaluation</em>&#160;</td>
+          <td class="paramname"><em>initialboard</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -505,7 +472,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_king.html#ac320306876c17161cba6db2f4255751a">King</a>, <a class="el" href="class_rook.html#ab186037a1f596102d618c1c9df31490d">Rook</a>, <a class="el" href="class_pawn.html#a54eddd8724008c910f34c5c49374d5c5">Pawn</a>, <a class="el" href="class_knight.html#a65f4e2cdeafefd7e4a7d3c9bca051a5a">Knight</a>, <a class="el" href="class_bishop.html#aed393094415a51e98e0c300da7f79100">Bishop</a>, and <a class="el" href="class_queen.html#ab599f550fe04cda1f421e657841022fd">Queen</a>.</p>
+<p>Implemented in <a class="el" href="class_king.html#aa8adeaff952af3bf16ebc1c1c0699d43">King</a>, <a class="el" href="class_rook.html#a631fce9b569ccf40b5b27cc6cc13cd93">Rook</a>, <a class="el" href="class_pawn.html#af83688d6061d4dc14274af99bcbd2614">Pawn</a>, <a class="el" href="class_knight.html#a1b8ea442283ed12951dfb67d7382221d">Knight</a>, <a class="el" href="class_bishop.html#ab2f9cc1a56bc42fc019ba6edcb4b8426">Bishop</a>, and <a class="el" href="class_queen.html#a54461f7bace6797676679ad1da5901d3">Queen</a>.</p>
 
 </div>
 </div>
@@ -916,15 +883,11 @@ Friends</h2></td></tr>
 <li><a class="el" href="_piece_8cc.html">Piece.cc</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_piece.html">Piece</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
 </body>
 </html>

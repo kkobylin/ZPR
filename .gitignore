@@ -30,3 +30,6 @@ test/CMakeCache.txt
 test/cmake_install.cmake
 test/Makefile
 test/tests
+
+chess_engine/latex/*
+chess_engine/html/*

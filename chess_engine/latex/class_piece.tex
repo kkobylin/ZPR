@@ -25,9 +25,9 @@ Collaboration diagram for Piece\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_piece_a2975fad91c5ef37d678a22253d37548f}{Piece} (int, int, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}, std\+::string)
+\hyperlink{class_piece_a1ae0a039406ce1ca4eebc4465426bf25}{Piece} (int, int, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color})
 \item 
-\hyperlink{class_piece_a99ebd588613d69a9aa7896240f810308}{Piece} (\hyperlink{struct_position}{Position}, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}, std\+::string)
+\hyperlink{class_piece_a98d2204a49a52df4cda971aa669e6796}{Piece} (\hyperlink{struct_position}{Position}, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color})
 \item 
 void \hyperlink{class_piece_a5b8c0f65eb850c91ae148501cd15adbf}{set\+Color} (\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color})
 \item 
@@ -49,7 +49,7 @@ bool \hyperlink{class_piece_aa45b0c7c5552437dfd9d4567d2c7e7dd}{is\+Checking} (\h
 \item 
 \hyperlink{struct_position}{Position} \hyperlink{class_piece_a8537f9ebe9b135e3e5da99f385a90042}{get\+King} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} piece\+Color)
 \item 
-std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_piece_a0769c700d680b8036002c0427b7ac559}{evaluate\+Check} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$, bool)
+std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_piece_a9cb5fe774dcb187ce20ff18c93269e3f}{evaluate\+Check} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$ board, bool initialboard)
 \item 
 virtual std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_piece_a8891924c280568529878549f59541925}{get\+Possible\+Moves} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$, bool=true)=0
 \item 
@@ -98,26 +98,26 @@ std\+::ostream \& \hyperlink{class_piece_a2030184caa17f039eb2a026a6dbc7d23}{oper
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_piece_a2975fad91c5ef37d678a22253d37548f}\label{class_piece_a2975fad91c5ef37d678a22253d37548f}} 
+\mbox{\Hypertarget{class_piece_a1ae0a039406ce1ca4eebc4465426bf25}\label{class_piece_a1ae0a039406ce1ca4eebc4465426bf25}} 
 \index{Piece@{Piece}!Piece@{Piece}}
 \index{Piece@{Piece}!Piece@{Piece}}
 \subsubsection{\texorpdfstring{Piece()}{Piece()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{int}]{row,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{color,  }\item[{std\+::string}]{figure\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{int}]{row,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{color }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_piece_a99ebd588613d69a9aa7896240f810308}\label{class_piece_a99ebd588613d69a9aa7896240f810308}} 
+\mbox{\Hypertarget{class_piece_a98d2204a49a52df4cda971aa669e6796}\label{class_piece_a98d2204a49a52df4cda971aa669e6796}} 
 \index{Piece@{Piece}!Piece@{Piece}}
 \index{Piece@{Piece}!Piece@{Piece}}
 \subsubsection{\texorpdfstring{Piece()}{Piece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{\hyperlink{struct_position}{Position}}]{,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{\hyperlink{struct_position}{Position}}]{,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_piece_a0769c700d680b8036002c0427b7ac559}\label{class_piece_a0769c700d680b8036002c0427b7ac559}} 
+\mbox{\Hypertarget{class_piece_a9cb5fe774dcb187ce20ff18c93269e3f}\label{class_piece_a9cb5fe774dcb187ce20ff18c93269e3f}} 
 \index{Piece@{Piece}!evaluate\+Check@{evaluate\+Check}}
 \index{evaluate\+Check@{evaluate\+Check}!Piece@{Piece}}
 \subsubsection{\texorpdfstring{evaluate\+Check()}{evaluateCheck()}}
-{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ Piece\+::evaluate\+Check (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board\+Initial,  }\item[{bool}]{original\+Evaluation }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ Piece\+::evaluate\+Check (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board,  }\item[{bool}]{initialboard }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_piece_a184ce3e31f7b4d8a3d616a60fe60522e}\label{class_piece_a184ce3e31f7b4d8a3d616a60fe60522e}} 
 \index{Piece@{Piece}!get\+Color@{get\+Color}}
@@ -185,7 +185,7 @@ Implemented in \hyperlink{class_king_a047413f5f6df784b2fd308f20e356ea4}{King}, \
 
 
 
-Implemented in \hyperlink{class_king_ac320306876c17161cba6db2f4255751a}{King}, \hyperlink{class_rook_ab186037a1f596102d618c1c9df31490d}{Rook}, \hyperlink{class_pawn_a54eddd8724008c910f34c5c49374d5c5}{Pawn}, \hyperlink{class_knight_a65f4e2cdeafefd7e4a7d3c9bca051a5a}{Knight}, \hyperlink{class_bishop_aed393094415a51e98e0c300da7f79100}{Bishop}, and \hyperlink{class_queen_ab599f550fe04cda1f421e657841022fd}{Queen}.
+Implemented in \hyperlink{class_king_aa8adeaff952af3bf16ebc1c1c0699d43}{King}, \hyperlink{class_rook_a631fce9b569ccf40b5b27cc6cc13cd93}{Rook}, \hyperlink{class_pawn_af83688d6061d4dc14274af99bcbd2614}{Pawn}, \hyperlink{class_knight_a1b8ea442283ed12951dfb67d7382221d}{Knight}, \hyperlink{class_bishop_ab2f9cc1a56bc42fc019ba6edcb4b8426}{Bishop}, and \hyperlink{class_queen_a54461f7bace6797676679ad1da5901d3}{Queen}.
 
 \mbox{\Hypertarget{class_piece_a070f593242fb8417429ac989184e682b}\label{class_piece_a070f593242fb8417429ac989184e682b}} 
 \index{Piece@{Piece}!get\+Row@{get\+Row}}

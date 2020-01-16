@@ -9,13 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -49,21 +42,6 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('class_pawn.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,6 +56,7 @@ $(document).ready(function(){initNavTree('class_pawn.html','');});
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -96,7 +75,7 @@ Inheritance diagram for Pawn:</div>
 <map name="_pawn_inherit__map" id="_pawn_inherit__map">
 <area shape="rect" id="node2" href="class_piece.html" title="Piece" alt="" coords="5,5,60,32"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Pawn:</div>
 <div class="dyncontent">
@@ -105,21 +84,21 @@ Collaboration diagram for Pawn:</div>
 <area shape="rect" id="node2" href="class_piece.html" title="Piece" alt="" coords="13,95,67,121"/>
 <area shape="rect" id="node3" href="struct_position.html" title="Position" alt="" coords="5,5,75,32"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaf6f86ddb27b18e111cf2e2d7e65f844"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pawn.html#aaf6f86ddb27b18e111cf2e2d7e65f844">Pawn</a> (int <a class="el" href="class_piece.html#aa8f39e11280395103164f6ae07398c82">column</a>, int <a class="el" href="class_piece.html#ac6ef7c474f20562cb629c2452ce0631d">row</a>, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> <a class="el" href="class_piece.html#a8dfe0501fe95a1a7618cf5ad3b9fda69">color</a>, std::string <a class="el" href="class_piece.html#af2fe809fd0d35d167f2419768e49fd3a">figureName</a>)</td></tr>
-<tr class="separator:aaf6f86ddb27b18e111cf2e2d7e65f844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54eddd8724008c910f34c5c49374d5c5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pawn.html#a54eddd8724008c910f34c5c49374d5c5">getPossibleMoves</a> (const std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;, bool) override</td></tr>
-<tr class="separator:a54eddd8724008c910f34c5c49374d5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560979144129b551c2a27b2eb637d652"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pawn.html#a560979144129b551c2a27b2eb637d652">Pawn</a> (int <a class="el" href="class_piece.html#aa8f39e11280395103164f6ae07398c82">column</a>, int <a class="el" href="class_piece.html#ac6ef7c474f20562cb629c2452ce0631d">row</a>, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> <a class="el" href="class_piece.html#a8dfe0501fe95a1a7618cf5ad3b9fda69">color</a>)</td></tr>
+<tr class="separator:a560979144129b551c2a27b2eb637d652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af83688d6061d4dc14274af99bcbd2614"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pawn.html#af83688d6061d4dc14274af99bcbd2614">getPossibleMoves</a> (std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;, bool) override</td></tr>
+<tr class="separator:af83688d6061d4dc14274af99bcbd2614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a332e70ab65f480521428aa87c7cd2ef9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pawn.html#a332e70ab65f480521428aa87c7cd2ef9">getPositionValue</a> () override</td></tr>
 <tr class="separator:a332e70ab65f480521428aa87c7cd2ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_piece"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_piece')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_piece.html">Piece</a></td></tr>
-<tr class="memitem:a2975fad91c5ef37d678a22253d37548f inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a2975fad91c5ef37d678a22253d37548f">Piece</a> (int, int, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>, std::string)</td></tr>
-<tr class="separator:a2975fad91c5ef37d678a22253d37548f inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99ebd588613d69a9aa7896240f810308 inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a99ebd588613d69a9aa7896240f810308">Piece</a> (<a class="el" href="struct_position.html">Position</a>, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>, std::string)</td></tr>
-<tr class="separator:a99ebd588613d69a9aa7896240f810308 inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae0a039406ce1ca4eebc4465426bf25 inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a1ae0a039406ce1ca4eebc4465426bf25">Piece</a> (int, int, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>)</td></tr>
+<tr class="separator:a1ae0a039406ce1ca4eebc4465426bf25 inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d2204a49a52df4cda971aa669e6796 inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a98d2204a49a52df4cda971aa669e6796">Piece</a> (<a class="el" href="struct_position.html">Position</a>, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>)</td></tr>
+<tr class="separator:a98d2204a49a52df4cda971aa669e6796 inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b8c0f65eb850c91ae148501cd15adbf inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a5b8c0f65eb850c91ae148501cd15adbf">setColor</a> (<a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>)</td></tr>
 <tr class="separator:a5b8c0f65eb850c91ae148501cd15adbf inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a604cbeae62b4358425d046bc5d737a39 inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a604cbeae62b4358425d046bc5d737a39">setRow</a> (int)</td></tr>
@@ -140,8 +119,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa45b0c7c5552437dfd9d4567d2c7e7dd inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8537f9ebe9b135e3e5da99f385a90042 inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a8537f9ebe9b135e3e5da99f385a90042">getKing</a> (std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;, <a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> pieceColor)</td></tr>
 <tr class="separator:a8537f9ebe9b135e3e5da99f385a90042 inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0769c700d680b8036002c0427b7ac559 inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a0769c700d680b8036002c0427b7ac559">evaluateCheck</a> (std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;, bool)</td></tr>
-<tr class="separator:a0769c700d680b8036002c0427b7ac559 inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb5fe774dcb187ce20ff18c93269e3f inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_position.html">Position</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a9cb5fe774dcb187ce20ff18c93269e3f">evaluateCheck</a> (std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt; board, bool initialboard)</td></tr>
+<tr class="separator:a9cb5fe774dcb187ce20ff18c93269e3f inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a184ce3e31f7b4d8a3d616a60fe60522e inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a184ce3e31f7b4d8a3d616a60fe60522e">getColor</a> ()</td></tr>
 <tr class="separator:a184ce3e31f7b4d8a3d616a60fe60522e inherit pub_methods_class_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3396fcbbe54260076bf2f6a39b0fb920 inherit pub_methods_class_piece"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_piece.html#a3396fcbbe54260076bf2f6a39b0fb920">getColumn</a> ()</td></tr>
@@ -165,8 +144,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aac8df37fd58c41fe91460325e5447464"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aaf6f86ddb27b18e111cf2e2d7e65f844"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf6f86ddb27b18e111cf2e2d7e65f844">&#9670;&nbsp;</a></span>Pawn()</h2>
+<a id="a560979144129b551c2a27b2eb637d652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560979144129b551c2a27b2eb637d652">&#9670;&nbsp;</a></span>Pawn()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,13 +169,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="_piece_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a>&#160;</td>
-          <td class="paramname"><em>color</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>figureName</em>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -241,8 +214,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a54eddd8724008c910f34c5c49374d5c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54eddd8724008c910f34c5c49374d5c5">&#9670;&nbsp;</a></span>getPossibleMoves()</h2>
+<a id="af83688d6061d4dc14274af99bcbd2614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af83688d6061d4dc14274af99bcbd2614">&#9670;&nbsp;</a></span>getPossibleMoves()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,7 +226,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">std::vector&lt; <a class="el" href="struct_position.html">Position</a> &gt; Pawn::getPossibleMoves </td>
           <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_base_board.html">BaseBoard</a> &gt;&#160;</td>
           <td class="paramname"><em>board</em>, </td>
         </tr>
         <tr>
@@ -307,15 +280,11 @@ Private Attributes</h2></td></tr>
 <li><a class="el" href="_pawn_8cc.html">Pawn.cc</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_pawn.html">Pawn</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
 </body>
 </html>

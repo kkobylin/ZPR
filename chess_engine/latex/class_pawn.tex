@@ -25,9 +25,9 @@ Collaboration diagram for Pawn\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_pawn_aaf6f86ddb27b18e111cf2e2d7e65f844}{Pawn} (int \hyperlink{class_piece_aa8f39e11280395103164f6ae07398c82}{column}, int \hyperlink{class_piece_ac6ef7c474f20562cb629c2452ce0631d}{row}, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} \hyperlink{class_piece_a8dfe0501fe95a1a7618cf5ad3b9fda69}{color}, std\+::string \hyperlink{class_piece_af2fe809fd0d35d167f2419768e49fd3a}{figure\+Name})
+\hyperlink{class_pawn_a560979144129b551c2a27b2eb637d652}{Pawn} (int \hyperlink{class_piece_aa8f39e11280395103164f6ae07398c82}{column}, int \hyperlink{class_piece_ac6ef7c474f20562cb629c2452ce0631d}{row}, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} \hyperlink{class_piece_a8dfe0501fe95a1a7618cf5ad3b9fda69}{color})
 \item 
-std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_pawn_a54eddd8724008c910f34c5c49374d5c5}{get\+Possible\+Moves} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$, bool) override
+std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_pawn_af83688d6061d4dc14274af99bcbd2614}{get\+Possible\+Moves} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$, bool) override
 \item 
 double \hyperlink{class_pawn_a332e70ab65f480521428aa87c7cd2ef9}{get\+Position\+Value} () override
 \end{DoxyCompactItemize}
@@ -39,11 +39,11 @@ bool \hyperlink{class_pawn_aac8df37fd58c41fe91460325e5447464}{moved} = false
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_pawn_aaf6f86ddb27b18e111cf2e2d7e65f844}\label{class_pawn_aaf6f86ddb27b18e111cf2e2d7e65f844}} 
+\mbox{\Hypertarget{class_pawn_a560979144129b551c2a27b2eb637d652}\label{class_pawn_a560979144129b551c2a27b2eb637d652}} 
 \index{Pawn@{Pawn}!Pawn@{Pawn}}
 \index{Pawn@{Pawn}!Pawn@{Pawn}}
 \subsubsection{\texorpdfstring{Pawn()}{Pawn()}}
-{\footnotesize\ttfamily Pawn\+::\+Pawn (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{int}]{row,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{color,  }\item[{std\+::string}]{figure\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Pawn\+::\+Pawn (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{int}]{row,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -58,11 +58,11 @@ bool \hyperlink{class_pawn_aac8df37fd58c41fe91460325e5447464}{moved} = false
 
 Implements \hyperlink{class_piece_a4adfa58b4f0368c9a5859afcf294e0a4}{Piece}.
 
-\mbox{\Hypertarget{class_pawn_a54eddd8724008c910f34c5c49374d5c5}\label{class_pawn_a54eddd8724008c910f34c5c49374d5c5}} 
+\mbox{\Hypertarget{class_pawn_af83688d6061d4dc14274af99bcbd2614}\label{class_pawn_af83688d6061d4dc14274af99bcbd2614}} 
 \index{Pawn@{Pawn}!get\+Possible\+Moves@{get\+Possible\+Moves}}
 \index{get\+Possible\+Moves@{get\+Possible\+Moves}!Pawn@{Pawn}}
 \subsubsection{\texorpdfstring{get\+Possible\+Moves()}{getPossibleMoves()}}
-{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ Pawn\+::get\+Possible\+Moves (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board,  }\item[{bool}]{original\+Evaluation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ Pawn\+::get\+Possible\+Moves (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board,  }\item[{bool}]{original\+Evaluation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 

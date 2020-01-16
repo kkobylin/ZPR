@@ -9,13 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -50,20 +43,6 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('functions_func.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -86,7 +65,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_base_board.html#a120d844f308b6ce12623d5a1ea59ccfb">BaseBoard</a>
 </li>
 <li>Bishop()
-: <a class="el" href="class_bishop.html#a89b82abc3b5757e066039e47e398ca66">Bishop</a>
+: <a class="el" href="class_bishop.html#a7f1bb8d03cbb6e65697cd99f2a3454f4">Bishop</a>
 </li>
 <li>Board()
 : <a class="el" href="class_board.html#a9ee491d4fea680cf69b033374a9fdfcb">Board</a>
@@ -106,7 +85,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_a_i_class.html#afa75cf730441084f18ad3007d9e32574">AIClass</a>
 </li>
 <li>evaluateCheck()
-: <a class="el" href="class_piece.html#a0769c700d680b8036002c0427b7ac559">Piece</a>
+: <a class="el" href="class_piece.html#a9cb5fe774dcb187ce20ff18c93269e3f">Piece</a>
 </li>
 </ul>
 
@@ -139,9 +118,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="class_piece.html#a8537f9ebe9b135e3e5da99f385a90042">Piece</a>
 </li>
 <li>getMoved()
-: <a class="el" href="class_king.html#af1a2ad00bec8f420581666d1f3d4966d">King</a>
-, <a class="el" href="class_piece.html#ad23431fecbbedcff824dd38ffa6a47a1">Piece</a>
-, <a class="el" href="class_rook.html#a63c6d35a7f51e24d17079c80980dd948">Rook</a>
+: <a class="el" href="class_piece.html#ad23431fecbbedcff824dd38ffa6a47a1">Piece</a>
 </li>
 <li>getMoves()
 : <a class="el" href="class_piece.html#a10eddaa8ade831cfee1c17b94bfcac09">Piece</a>
@@ -166,13 +143,13 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="class_rook.html#ab1d83e6acb838249647f1f5fa7d17f41">Rook</a>
 </li>
 <li>getPossibleMoves()
-: <a class="el" href="class_bishop.html#aed393094415a51e98e0c300da7f79100">Bishop</a>
-, <a class="el" href="class_king.html#ac320306876c17161cba6db2f4255751a">King</a>
-, <a class="el" href="class_knight.html#a65f4e2cdeafefd7e4a7d3c9bca051a5a">Knight</a>
-, <a class="el" href="class_pawn.html#a54eddd8724008c910f34c5c49374d5c5">Pawn</a>
+: <a class="el" href="class_bishop.html#ab2f9cc1a56bc42fc019ba6edcb4b8426">Bishop</a>
+, <a class="el" href="class_king.html#aa8adeaff952af3bf16ebc1c1c0699d43">King</a>
+, <a class="el" href="class_knight.html#a1b8ea442283ed12951dfb67d7382221d">Knight</a>
+, <a class="el" href="class_pawn.html#af83688d6061d4dc14274af99bcbd2614">Pawn</a>
 , <a class="el" href="class_piece.html#a8891924c280568529878549f59541925">Piece</a>
-, <a class="el" href="class_queen.html#ab599f550fe04cda1f421e657841022fd">Queen</a>
-, <a class="el" href="class_rook.html#ab186037a1f596102d618c1c9df31490d">Rook</a>
+, <a class="el" href="class_queen.html#a54461f7bace6797676679ad1da5901d3">Queen</a>
+, <a class="el" href="class_rook.html#a631fce9b569ccf40b5b27cc6cc13cd93">Rook</a>
 </li>
 <li>getRow()
 : <a class="el" href="class_piece.html#a070f593242fb8417429ac989184e682b">Piece</a>
@@ -197,10 +174,10 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a id="index_k"></a>- k -</h3><ul>
 <li>King()
-: <a class="el" href="class_king.html#aed2be62051387868f78919da2d1970c9">King</a>
+: <a class="el" href="class_king.html#addeee144a4a5076e903652de9ad2f2ce">King</a>
 </li>
 <li>Knight()
-: <a class="el" href="class_knight.html#ad56d98cc438c67c44d5d18c3a51db1f0">Knight</a>
+: <a class="el" href="class_knight.html#aa418acf5ad780d161e472480b5919b9e">Knight</a>
 </li>
 </ul>
 
@@ -230,10 +207,10 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a id="index_p"></a>- p -</h3><ul>
 <li>Pawn()
-: <a class="el" href="class_pawn.html#aaf6f86ddb27b18e111cf2e2d7e65f844">Pawn</a>
+: <a class="el" href="class_pawn.html#a560979144129b551c2a27b2eb637d652">Pawn</a>
 </li>
 <li>Piece()
-: <a class="el" href="class_piece.html#a2975fad91c5ef37d678a22253d37548f">Piece</a>
+: <a class="el" href="class_piece.html#a1ae0a039406ce1ca4eebc4465426bf25">Piece</a>
 </li>
 <li>printBoardCout()
 : <a class="el" href="class_base_board.html#a1c8fe600a3c0abea281b93cc8be71dd1">BaseBoard</a>
@@ -243,14 +220,14 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a id="index_q"></a>- q -</h3><ul>
 <li>Queen()
-: <a class="el" href="class_queen.html#a633fa03d244578e267f373141ceac812">Queen</a>
+: <a class="el" href="class_queen.html#aa8675f82d1d05e7e457f94b897674ace">Queen</a>
 </li>
 </ul>
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>Rook()
-: <a class="el" href="class_rook.html#a757e308feb1c2d2635e8beb6d9b23369">Rook</a>
+: <a class="el" href="class_rook.html#a76901ac8ae7beefdfdb70e5f2a207d85">Rook</a>
 </li>
 </ul>
 
@@ -276,9 +253,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_base_board.html#a413af1d87b49a2ee4ce96cb0f165b01a">BaseBoard</a>
 </li>
 <li>setMoved()
-: <a class="el" href="class_king.html#a989b5fc467d9b3f16394e4acd3767108">King</a>
-, <a class="el" href="class_piece.html#a0ff1ca92370da533f6ef421dc09741f8">Piece</a>
-, <a class="el" href="class_rook.html#a3ce8295607d89754d8c4be1813bc7b70">Rook</a>
+: <a class="el" href="class_piece.html#a0ff1ca92370da533f6ef421dc09741f8">Piece</a>
 </li>
 <li>setMoves()
 : <a class="el" href="class_piece.html#ad63e838ac5edfe8abab7211fc79e5a82">Piece</a>
@@ -324,14 +299,11 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
 </body>
 </html>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pawn',['Pawn',['../class_pawn.html#aaf6f86ddb27b18e111cf2e2d7e65f844',1,'Pawn']]],
-  ['piece',['Piece',['../class_piece.html#a2975fad91c5ef37d678a22253d37548f',1,'Piece::Piece(int, int, PieceColor, std::string)'],['../class_piece.html#a99ebd588613d69a9aa7896240f810308',1,'Piece::Piece(Position, PieceColor, std::string)']]],
+  ['pawn',['Pawn',['../class_pawn.html#a560979144129b551c2a27b2eb637d652',1,'Pawn']]],
+  ['piece',['Piece',['../class_piece.html#a1ae0a039406ce1ca4eebc4465426bf25',1,'Piece::Piece(int, int, PieceColor)'],['../class_piece.html#a98d2204a49a52df4cda971aa669e6796',1,'Piece::Piece(Position, PieceColor)']]],
   ['printboardcout',['printBoardCout',['../class_base_board.html#a1c8fe600a3c0abea281b93cc8be71dd1',1,'BaseBoard']]]
 ];

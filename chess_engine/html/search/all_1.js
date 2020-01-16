@@ -3,7 +3,7 @@ var searchData=
   ['baseboard',['BaseBoard',['../class_base_board.html',1,'BaseBoard'],['../class_base_board.html#a120d844f308b6ce12623d5a1ea59ccfb',1,'BaseBoard::BaseBoard()']]],
   ['baseboard_2ecc',['BaseBoard.cc',['../_base_board_8cc.html',1,'']]],
   ['baseboard_2eh',['BaseBoard.h',['../_base_board_8h.html',1,'']]],
-  ['bishop',['Bishop',['../class_bishop.html',1,'Bishop'],['../class_bishop.html#a89b82abc3b5757e066039e47e398ca66',1,'Bishop::Bishop()']]],
+  ['bishop',['Bishop',['../class_bishop.html',1,'Bishop'],['../class_bishop.html#a7f1bb8d03cbb6e65697cd99f2a3454f4',1,'Bishop::Bishop()']]],
   ['bishop_2ecc',['Bishop.cc',['../_bishop_8cc.html',1,'']]],
   ['bishop_2eh',['Bishop.h',['../_bishop_8h.html',1,'']]],
   ['bishopevalblack',['BishopEvalBlack',['../class_position_value.html#aa492a3e22caecca103849320217a4707',1,'PositionValue']]],

@@ -25,20 +25,20 @@ Collaboration diagram for Knight\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_knight_ad56d98cc438c67c44d5d18c3a51db1f0}{Knight} (int \hyperlink{class_piece_aa8f39e11280395103164f6ae07398c82}{column}, int \hyperlink{class_piece_ac6ef7c474f20562cb629c2452ce0631d}{row}, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} \hyperlink{class_piece_a8dfe0501fe95a1a7618cf5ad3b9fda69}{color}, std\+::string \hyperlink{class_piece_af2fe809fd0d35d167f2419768e49fd3a}{figure\+Name})
+\hyperlink{class_knight_aa418acf5ad780d161e472480b5919b9e}{Knight} (int \hyperlink{class_piece_aa8f39e11280395103164f6ae07398c82}{column}, int \hyperlink{class_piece_ac6ef7c474f20562cb629c2452ce0631d}{row}, \hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color} \hyperlink{class_piece_a8dfe0501fe95a1a7618cf5ad3b9fda69}{color})
 \item 
-std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_knight_a65f4e2cdeafefd7e4a7d3c9bca051a5a}{get\+Possible\+Moves} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$, bool) override
+std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ \hyperlink{class_knight_a1b8ea442283ed12951dfb67d7382221d}{get\+Possible\+Moves} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$ board, bool initialboard) override
 \item 
 double \hyperlink{class_knight_aa5116e2b3cbbb576283015565b6261a1}{get\+Position\+Value} () override
 \end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_knight_ad56d98cc438c67c44d5d18c3a51db1f0}\label{class_knight_ad56d98cc438c67c44d5d18c3a51db1f0}} 
+\mbox{\Hypertarget{class_knight_aa418acf5ad780d161e472480b5919b9e}\label{class_knight_aa418acf5ad780d161e472480b5919b9e}} 
 \index{Knight@{Knight}!Knight@{Knight}}
 \index{Knight@{Knight}!Knight@{Knight}}
 \subsubsection{\texorpdfstring{Knight()}{Knight()}}
-{\footnotesize\ttfamily Knight\+::\+Knight (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{int}]{row,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{color,  }\item[{std\+::string}]{figure\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Knight\+::\+Knight (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{int}]{row,  }\item[{\hyperlink{_piece_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -53,11 +53,11 @@ double \hyperlink{class_knight_aa5116e2b3cbbb576283015565b6261a1}{get\+Position\
 
 Implements \hyperlink{class_piece_a4adfa58b4f0368c9a5859afcf294e0a4}{Piece}.
 
-\mbox{\Hypertarget{class_knight_a65f4e2cdeafefd7e4a7d3c9bca051a5a}\label{class_knight_a65f4e2cdeafefd7e4a7d3c9bca051a5a}} 
+\mbox{\Hypertarget{class_knight_a1b8ea442283ed12951dfb67d7382221d}\label{class_knight_a1b8ea442283ed12951dfb67d7382221d}} 
 \index{Knight@{Knight}!get\+Possible\+Moves@{get\+Possible\+Moves}}
 \index{get\+Possible\+Moves@{get\+Possible\+Moves}!Knight@{Knight}}
 \subsubsection{\texorpdfstring{get\+Possible\+Moves()}{getPossibleMoves()}}
-{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ Knight\+::get\+Possible\+Moves (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board,  }\item[{bool}]{original\+Evaluation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_position}{Position} $>$ Knight\+::get\+Possible\+Moves (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_base_board}{Base\+Board} $>$}]{board,  }\item[{bool}]{initialboard }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
