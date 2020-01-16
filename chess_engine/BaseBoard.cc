@@ -8,15 +8,14 @@
 #include "lib/Queen.h"
 #include "lib/Pawn.h"
 
-
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
-BaseBoard::BaseBoard(std::vector <std::vector <std::string>> boardString){
+BaseBoard::BaseBoard(std::vector <std::vector <std::string>> board_string){
     for (int column = 0; column < 8; column++){
         board.push_back(std::vector<std::shared_ptr<Square>>());
         for (int row = 0; row < 8; row++ ){
             
-            std::string buffer = boardString[column][row];
+            std::string buffer = board_string[column][row];
 
              if (buffer.compare("NN") == 0){
                     board[column].push_back(std::shared_ptr<Square>{new Square(nullptr)});
@@ -102,12 +101,12 @@ void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row
 
 
 std::vector <std::vector <std::string>> BaseBoard::toString(){
-    std::vector <std::vector <std::string>> boardReturn;
+    std::vector <std::vector <std::string>> board_return;
     std::string piece = "";
     std::string color = "";
 
     for (int column = 0; column < 8; column++){
-        boardReturn.push_back(std::vector<std::string>());
+        board_return.push_back(std::vector<std::string>());
         for (int row = 0; row < 8; row++){
             if (board[column][row]->getOccupied()){
                 if(board[column][row]->getPiece()->getColor() == WHITE){
@@ -117,16 +116,16 @@ std::vector <std::vector <std::string>> BaseBoard::toString(){
                 }
                     
                 piece = board[column][row]->getPiece()->getFigureName();
-                boardReturn[column].push_back(color + piece);
+                board_return[column].push_back(color + piece);
             }else
             {
-                boardReturn[column].push_back("NN");
+                board_return[column].push_back("NN");
             }
             
         }
     }
 
-    return boardReturn;
+    return board_return;
 
 }
 
@@ -143,32 +142,32 @@ void BaseBoard::printBoardCout(){
 }
 
 
-Position BaseBoard::getKing(PieceColor kingColor){
-    if (kingColor == WHITE){
-        return this->whiteKing;
+Position BaseBoard::getKing(PieceColor king_color){
+    if (king_color == WHITE){
+        return this->white_king;
     }else{
-        return this->blackKing;
+        return this->black_king;
     }
 }
-void BaseBoard::setKing(Position positionKing, PieceColor kingColor){
-    if (kingColor == WHITE){
-        this->whiteKing = positionKing;
+void BaseBoard::setKing(Position position_king, PieceColor king_color){
+    if (king_color == WHITE){
+        this->white_king = position_king;
     }else{
-        this->blackKing = positionKing;
+        this->black_king = position_king;
     }
 }
 
-bool BaseBoard::isChecking(PieceColor opponentColor, std::shared_ptr<BaseBoard> board){
+bool BaseBoard::isChecking(PieceColor opponent_color){
     //Check if opponent is checked
 
-    Position opponentKing = this->getKing(static_cast<PieceColor>(-1*opponentColor));
+    Position opponent_king = this->getKing(static_cast<PieceColor>(-1 * opponent_color));
     for (int column = 0; column < 8; column++){
         for (int row = 0; row < 8; row++){
             if (this->getBoard()[column][row]->getOccupied()){
-                if (this->getBoard()[column][row]->getPiece()->getColor() == opponentColor){
-                    auto possibleMoves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(board);
-                    for (auto pos : possibleMoves){
-                        if (opponentKing == pos){
+                if (this->getBoard()[column][row]->getPiece()->getColor() == opponent_color){
+                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
+                    for (auto pos : possible_moves){
+                        if (opponent_king == pos){
                             return true;
                         }
                     }
@@ -179,23 +178,37 @@ bool BaseBoard::isChecking(PieceColor opponentColor, std::shared_ptr<BaseBoard> 
     return false;
 }
 
-bool BaseBoard::isCheckMate(PieceColor opponentColor, std::shared_ptr<BaseBoard> board){
-    //Check if opponent is check mated
+std::string BaseBoard::checkForWin(){
+    //Check whether someone win
 
-    Position opponentKing = this->getKing(static_cast<PieceColor>(-1*opponentColor));
+    bool white_lost = true;
+    bool black_lost = true;
     for (int column = 0; column < 8; column++){
         for (int row = 0; row < 8; row++){
             if (this->getBoard()[column][row]->getOccupied()){
-                if (this->getBoard()[column][row]->getPiece()->getColor() == opponentColor){
-                    auto possibleMoves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(board);
-                    for (auto pos : possibleMoves){
-                        std::cout << "moze ruch" <<std::endl;
-                        return false;
+                if (this->getBoard()[column][row]->getPiece()->getColor() == BLACK){
+                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
+                    for (auto pos : possible_moves){
+                        black_lost = false;
+                    }
+                }
+                else if (this->getBoard()[column][row]->getPiece()->getColor() == WHITE){
+                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
+                    for (auto pos : possible_moves){
+                        white_lost = false;
                     }
                 }
             }
         }
     }
-    return true;
+
+    if(!white_lost && !black_lost)
+        return "none";
+    else if (white_lost && black_lost)
+        return "draw";
+    else if(black_lost)
+        return "win";
+    else
+        return "lost";
 }    
 

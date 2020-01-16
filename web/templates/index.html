@@ -51,7 +51,7 @@
         draggable: true,
         dropOffBoard: 'snapback',
         position: 'start',
-        /* Check whether move is legal */
+        /* Communication with server */
         onDrop: onDrop,
         /* Prevent from moving black pieces */
         onDragStart: onDragStart,
@@ -69,11 +69,10 @@
         }
     }
 
-    function onDrop (source, target, piece, newPos, oldPos, orientation) {
+    function onDrop (source, target) {
         var jsonToSend = {
             "source": source,
-            "target": target,
-            "piece": piece
+            "target": target
         };
 
         $.ajax({
@@ -85,7 +84,6 @@
                 snapBack = (result.legalMove === false);
                 endOfGame = result.endOfGame;
                 opponentMove = result.opponentMove;
-                board.move('G7-G5');
             },
             error: function (result) {
                 alert("error:" + JSON.stringify(result));
@@ -93,10 +91,11 @@
         });
 
         if (snapBack) return 'snapback';
-        // alert(JSON.stringify(opponentMove))
+
         if (endOfGame === 'none' && !snapBack){
             board.move(opponentMove);
         }
+
         // Repair bug - opponent moved before white piece ended move
         if(endOfGame === 'none' && !snapBack && opponentMove.substr(3,2) === target)
             return 'trash';
@@ -112,6 +111,5 @@
     }
 
 </script>
-
 </body>
 </html>

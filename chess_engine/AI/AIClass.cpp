@@ -4,11 +4,25 @@
 #include "AIClass.h"
 #include "../lib/BaseBoard.h"
 
-double AIClass::evaluateBoard(board_type board) {
+double AIClass::evaluateBoard(std::shared_ptr<BaseBoard> board, PieceColor side) {
 
     double result = 0;
 
-    for(auto column : board)
+    //if(board->isChecking(side == WHITE ? BLACK : WHITE))
+      //  result+=40;
+
+//    auto end_of_game = board->checkForWin();
+//    switch (side){
+//        case WHITE:
+//            if(end_of_game == "win")
+//                result+= 500;
+//            break;
+//        case BLACK:
+//            if(end_of_game == "lose")
+//                result+= 500;
+//    }
+
+    for(auto column : board->getBoard())
         for(auto square : column){
             if(square->getOccupied())
                 result += square->getPiece()->getPositionValue();
@@ -17,62 +31,62 @@ double AIClass::evaluateBoard(board_type board) {
     return result;
 }
 
-MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> boardObj, PieceColor side){
-    board_type board = boardObj->getBoard();
-    MovePacket bestMove;
+MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> board_obj, PieceColor side){
+    board_type board = board_obj->getBoard();
+    MovePacket best_move;
     /* Impossible value for source column to find the first case in searching */
-    bestMove.src_col = -1;
+    best_move.src_col = -1;
     for(auto column : board)
         for(auto square : column){
             if(square->getOccupied() && square->getPiece()->getColor() == turn) {
                 std::shared_ptr<Piece> piece = square->getPiece();
-                auto posMoves = piece->getPossibleMoves(boardObj);
+                auto posMoves = piece->getPossibleMoves(board_obj);
                 for(auto pos : posMoves){
-                    auto boardObjString = boardObj->toString();
-                    std::shared_ptr<BaseBoard> newBoard (new BaseBoard(boardObjString));
-                    newBoard->updateBoard(pos.column, pos.row, piece->getColumn(), piece->getRow());
+                    auto board_obj_string = board_obj->toString();
+                    std::shared_ptr<BaseBoard> new_board (new BaseBoard(board_obj_string));
+                    new_board->updateBoard(pos.column, pos.row, piece->getColumn(), piece->getRow());
                     if(depth == 1) {
-                        int score = evaluateBoard(newBoard->getBoard());
+                        int score = evaluateBoard(new_board, side);
                         switch (side) {
                             case BLACK:
-                                if (bestMove.src_col == -1 || score < bestMove.score) {
-                                    bestMove.src_row = piece->getRow();
-                                    bestMove.src_col = piece->getColumn();
-                                    bestMove.dest_row = pos.row;
-                                    bestMove.dest_col = pos.column;
-                                    bestMove.score = score;
+                                if (best_move.src_col == -1 || score < best_move.score) {
+                                    best_move.src_row = piece->getRow();
+                                    best_move.src_col = piece->getColumn();
+                                    best_move.dest_row = pos.row;
+                                    best_move.dest_col = pos.column;
+                                    best_move.score = score;
                                 }
                                 break;
                             case WHITE:
-                                if (bestMove.src_col == -1 || score > bestMove.score) {
-                                    bestMove.src_row = piece->getRow();
-                                    bestMove.src_col = piece->getColumn();
-                                    bestMove.dest_row = pos.row;
-                                    bestMove.dest_col = pos.column;
-                                    bestMove.score = score;
+                                if (best_move.src_col == -1 || score > best_move.score) {
+                                    best_move.src_row = piece->getRow();
+                                    best_move.src_col = piece->getColumn();
+                                    best_move.dest_row = pos.row;
+                                    best_move.dest_col = pos.column;
+                                    best_move.score = score;
                                 }
                                 break;
                         }
                     } else{//depth > 1
-                        PieceColor nextTurn = (turn == BLACK ? WHITE : BLACK);
-                        MovePacket nextScore = MiniMaxRoot(depth - 1, nextTurn, newBoard, side);
+                        PieceColor next_turn = (turn == BLACK ? WHITE : BLACK);
+                        MovePacket next_score = MiniMaxRoot(depth - 1, next_turn, new_board, side);
                         switch(side){
                             case BLACK:
-                                if(nextScore.score < bestMove.score){
-                                    bestMove.src_row = piece->getRow();
-                                    bestMove.src_col = piece->getColumn();
-                                    bestMove.dest_row = pos.row;
-                                    bestMove.dest_col = pos.column;
-                                    bestMove.score = nextScore.score;
+                                if(next_score.score < best_move.score){
+                                    best_move.src_row = piece->getRow();
+                                    best_move.src_col = piece->getColumn();
+                                    best_move.dest_row = pos.row;
+                                    best_move.dest_col = pos.column;
+                                    best_move.score = next_score.score;
                                 }
                                 break;
                             case WHITE:
-                                if(nextScore.score > bestMove.score){
-                                    bestMove.src_row = piece->getRow();
-                                    bestMove.src_col = piece->getColumn();
-                                    bestMove.dest_row = pos.row;
-                                    bestMove.dest_col = pos.column;
-                                    bestMove.score = nextScore.score;
+                                if(next_score.score > best_move.score){
+                                    best_move.src_row = piece->getRow();
+                                    best_move.src_col = piece->getColumn();
+                                    best_move.dest_row = pos.row;
+                                    best_move.dest_col = pos.column;
+                                    best_move.score = next_score.score;
                                 }
                                 break;
                         }
@@ -80,5 +94,5 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Base
                 }
             }
         }
-    return bestMove;
+    return best_move;
 }

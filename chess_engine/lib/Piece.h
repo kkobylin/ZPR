@@ -40,7 +40,7 @@ const int COLUMN_MAX = 8;
 
 class Piece{
 private:
-    std::string           figureName; // name of figure to transfer to frontend
+    std::string           figure_name; // name of figure to transfer to frontend
     PieceColor            color = BLACK; // color of figure
 
     Position              position; // position on board, consists od column and row
@@ -91,7 +91,7 @@ public:
     std::vector<Position> getMoves(); // get possible moves of figure
     std::string           getFigureName(); // get figure name
 
-    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row  << c.figureName << std::endl;}; // output position and figure name
+    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row << c.figure_name << std::endl;}; // output position and figure name
 };
 #endif
 

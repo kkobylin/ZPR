@@ -8,7 +8,7 @@
 #include <exception>
 #include <iostream>
 
-class WrongArgException: public std::exception
+class WrongArgException : public std::exception
 {
     std::string text;
 public:

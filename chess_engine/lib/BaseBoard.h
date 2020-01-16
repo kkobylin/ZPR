@@ -40,57 +40,25 @@ std::vector <std::vector <std::string>> const INITIAL_BOARD = {
 
 };
 
-class BaseBoard{
+class BaseBoard : public std::enable_shared_from_this<BaseBoard>{
     private:
 
     board_type board;
 
-    Position whiteKing;///< position of white king
-    Position blackKing;///< position of black king
-
-
+    Position white_king;
+    Position black_king;
 
     public:
-    /**
-     * @brief Construct a new Base Board object
-     * 
-     * @param board vector of strings to generate new board
-     */
-    BaseBoard(std::vector <std::vector <std::string>> board);
-    board_type getBoard(); ///< Return board
-    /**
-     * @brief 
-     * 
-     * @param destinationColumn 
-     * @param destinationRow 
-     * @param sourceColumn From where we move
-     * @param sourceRow From where we move
-     */
-    void updateBoard(int destinationColumn, int destinationRow, int sourceColumn, int sourceRow);
+    BaseBoard(std::vector <std::vector <std::string>>);
+    board_type getBoard();
+    void updateBoard(int dest_col, int dest_row, int src_col, int src_row);
+    std::vector <std::vector <std::string>> toString();
+    void printBoardCout();
 
-    std::vector <std::vector <std::string>> toString();///< Used to extract board in vector of strings format to create new board
-    void printBoardCout(); ///< Prints board in console
-
-    Position getKing(PieceColor kingColor);
-    void setKing(Position positionKing, PieceColor kingColor);
-    /**
-     * @brief Is opponentColor player checked
-     * 
-     * @param opponentColor Color of player, which is checked
-     * @param board Current board
-     * @return true 
-     * @return false 
-     */
-    bool isChecking(PieceColor opponentColor, std::shared_ptr<BaseBoard> board);
-    /**
-     * @brief Is opponentColor player mated
-     * 
-     * @param opponentColor Color of player, which is mated
-     * @param board Current board
-     * @return true 
-     * @return false 
-     */
-    bool isCheckMate(PieceColor opponentColor, std::shared_ptr<BaseBoard> board);
+    Position getKing(PieceColor king_color);
+    void setKing(Position position_king, PieceColor king_color);
+    bool isChecking(PieceColor opponent_color);
+    std::string checkForWin();
 
 };
 #endif // BASEBOARD_H
