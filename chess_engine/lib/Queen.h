@@ -17,9 +17,20 @@
 class Queen : public Piece{
 public:
     Queen(int column, int row, PieceColor color) :
-        Piece (column, row, color){setFigureName("Q");};
+    Piece (column, row, color){
+        setFigureName("Q");
+        setRecursive();
+        setDirectionOfMove(Position{1,1});
+        setDirectionOfMove(Position{0,1});
+        setDirectionOfMove(Position{-1,1});
+        setDirectionOfMove(Position{1,0});
+        setDirectionOfMove(Position{-1,0});
+        setDirectionOfMove(Position{-1,-1});
+        setDirectionOfMove(Position{-1,0});
+        setDirectionOfMove(Position{-1,1});
+        };
     
-    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard) override;
+    //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard);
     double getPositionValue() override ;
 };
 #endif //QUEEN_H

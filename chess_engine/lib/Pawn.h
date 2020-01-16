@@ -21,8 +21,10 @@ private:
     bool moved = false;
 public:
     Pawn(int column, int row, PieceColor color) :
-        Piece (column, row, color){setFigureName("P");};
-    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool) override;
+        Piece (column, row, color){
+            setFigureName("P");
+            };
+    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool = true);
     
     double getPositionValue() override ;
 };

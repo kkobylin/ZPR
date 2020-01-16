@@ -179,3 +179,70 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> boardIniti
 
 }
 
+PieceColor Piece::isMoveValid(Position position, std::shared_ptr<BaseBoard> board){
+    std::shared_ptr<Square> piece = board->getBoard()[position.column][position.row];
+
+    if (piece->getOccupied()){
+        if(piece->getPiece()->getColor() == color){
+            return color;
+        }else{
+            return static_cast<PieceColor>(-1*color);
+        }
+    }else{
+        return NONE;
+    }
+}
+
+bool Piece::moveIsInBoard(Position position){
+    if (position.column >= 0 && position.column < 8 && position.row >= 0 && position.row < 8){
+        std::cout << position << std::endl;
+        return true;
+    }else{
+        return false;
+    }
+}
+
+std::vector<Position> Piece::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
+    std::cout << getPosition() <<getFigureName() << std::endl;
+
+    std::vector<Position> possiblePosition;
+    if(isMoveRecursive){
+        for (auto move_scheme : directionOfMoves){
+            Position dest_square = position + move_scheme;
+            int i = 1;
+            //std:: cout <<" schemat: " << move_scheme << std::endl;
+            while(moveIsInBoard(dest_square) && isMoveValid(dest_square, board) != color){
+                //std::cout << color << std::endl;
+                possiblePosition.push_back(dest_square);
+                ++i;
+                dest_square = position + (move_scheme * i);
+                //std::cout << "i: " << dest_square << std::endl;
+            }
+        }
+    }else{
+        for (auto move_scheme : directionOfMoves){
+            Position dest_square = position + move_scheme;
+            if(moveIsInBoard(dest_square) && isMoveValid(dest_square, board) != color){
+                possiblePosition.push_back(dest_square);
+            }
+        } 
+    }
+
+    setMoves(possiblePosition);
+
+    if (originalEvaluation){
+        possiblePosition = evaluateCheck(board, false);
+        setMoves(possiblePosition);
+    }
+
+    return possiblePosition;
+}
+
+void Piece::setRecursive(){
+    isMoveRecursive = true;
+}
+
+void Piece::setDirectionOfMove(Position pos){
+    directionOfMoves.push_back(pos);
+
+}

@@ -17,9 +17,16 @@
 class Bishop: public Piece{
 public:
     Bishop(int column, int row, PieceColor color) :
-        Piece (column, row, color){setFigureName("B");};
+    Piece (column, row, color){
+        setFigureName("B");
+        setRecursive();
+        setDirectionOfMove(Position{1,1});
+        setDirectionOfMove(Position{-1,1});
+        setDirectionOfMove(Position{-1,-1});
+        setDirectionOfMove(Position{1,-1});
+        };
     
-    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation) override;
+    //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation);
     double getPositionValue() override ;
 };
 #endif // BISHOP_H

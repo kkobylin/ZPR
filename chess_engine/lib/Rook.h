@@ -21,9 +21,16 @@ private:
 
 public:
     Rook(int column, int row, PieceColor color) :
-    Piece (column, row, color){setFigureName("R");};
+    Piece (column, row, color){
+        setFigureName("R");
+        setRecursive();
+        setDirectionOfMove(Position{1,0});
+        setDirectionOfMove(Position{-1,0});
+        setDirectionOfMove(Position{0,1});
+        setDirectionOfMove(Position{0,-1});
+        };
     
-    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard) override;
+    //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool = true);
     double getPositionValue() override ;
 };
 #endif //ROOK_H

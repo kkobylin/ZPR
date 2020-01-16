@@ -21,9 +21,20 @@ private:
 
 public:
     King(int column, int row, PieceColor color) :
-        Piece (column, row, color){setFigureName("K");};
+    Piece (column, row, color){
+        setFigureName("K");
+        setDirectionOfMove(Position{1,1});
+        setDirectionOfMove(Position{0,1});
+        setDirectionOfMove(Position{-1,1});
+        setDirectionOfMove(Position{1,0});
+        setDirectionOfMove(Position{-1,0});
+        setDirectionOfMove(Position{-1,-1});
+        setDirectionOfMove(Position{-1,0});
+        setDirectionOfMove(Position{-1,1});
+
+        };
     
-    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard) override;
+    //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard);
     double getPositionValue() override ;
 
     bool getCastled();

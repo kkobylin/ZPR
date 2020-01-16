@@ -11,6 +11,7 @@ class BaseBoard;
 
 enum PieceColor {
     BLACK = -1,
+    NONE = 0,
     WHITE = 1
 };
 
@@ -20,7 +21,10 @@ struct Position{
 
     bool operator==(Position pos1){ return pos1.column == column && pos1.row == row;} // override operator to use std::find
     bool operator!=(Position pos1){ return pos1.column != column || pos1.row != row;} // override operator to use std::find
-    friend std::ostream & operator<<(std::ostream &out, const Position &c){return out << (char)(c.column + 65) << c.row + 1 << std::endl;}; // output position and figure name
+    Position operator+(Position pos1){ return Position{pos1.column + column, pos1.row + row};}
+    Position operator*(int const &pos1){ return Position{pos1 * column, pos1 * row};}
+    
+    friend std::ostream & operator<<(std::ostream &out, const Position &c){return out << (char)(c.column + 65) << c.row + 1;}; // output position and figure name
 
     std::string toString(){
         return std::to_string(column) + std::to_string(row);
@@ -46,7 +50,13 @@ private:
     bool                  occupied = true; // is square occupied
     bool                  moved = false; // was figure moved, used to castle and en passant pawn move
 
+
+
     std::vector<Position> moves; // vector of possible moves
+
+
+    std::vector<Position> directionOfMoves;
+    bool isMoveRecursive = false;
 
 public:
     Piece(int, int, PieceColor);
@@ -63,8 +73,13 @@ public:
     bool isChecking(Position positionPiece, Position positionKing);
     Position getKing(std::shared_ptr<BaseBoard>, PieceColor pieceColor);
     std::vector<Position> evaluateCheck(std::shared_ptr<BaseBoard> board, bool initialboard);
-    virtual std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool =true) = 0; // get vector of possible moves
+    virtual std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool = true); // get vector of possible moves
     virtual double getPositionValue() = 0;
+    void setRecursive();
+
+    PieceColor isMoveValid(Position position, std::shared_ptr<BaseBoard> board);
+    bool moveIsInBoard(Position position);
+    void setDirectionOfMove(Position pos);
 
 
     PieceColor            getColor(); // get color of figure
@@ -79,3 +94,4 @@ public:
     friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row  << c.figureName << std::endl;}; // output position and figure name
 };
 #endif
+

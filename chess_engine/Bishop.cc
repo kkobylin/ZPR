@@ -1,7 +1,7 @@
 #include "AI/PositionValue.h"
 #include "lib/Bishop.h"
 
-
+/*
 std::vector<Position> Bishop::getPossibleMoves(std::shared_ptr<BaseBoard>board, bool originalEvaluation){
     
     int column_current = this->getColumn();
@@ -110,7 +110,7 @@ std::vector<Position> Bishop::getPossibleMoves(std::shared_ptr<BaseBoard>board, 
     }
     return possiblePosition;
 }
-
+*/
 double Bishop::getPositionValue(){
     PieceColor color = this->getColor();
 

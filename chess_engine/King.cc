@@ -19,7 +19,7 @@ void King::setChecked(bool checked){
         this->checked = checked;
 }
 
-
+/*
 std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
@@ -192,6 +192,7 @@ std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
     }
     return possiblePosition;
 }
+*/
 
 double King::getPositionValue(){
     PieceColor color = this->getColor();
