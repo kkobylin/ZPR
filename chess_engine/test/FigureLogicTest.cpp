@@ -3,7 +3,8 @@
 //
 
 #define BOOST_TEST_DYN_LINK
-#define BOOST_TEST_MODULE ChessTest
+#define BOOST_TEST_MODULE FigureLogicTest
+
 #include <boost/test/included/unit_test.hpp>
 #include "../lib/Pawn.h"
 #include "../lib/Bishop.h"
@@ -16,6 +17,8 @@
 #include "../lib/King.h"
 #include <vector>
 #include <algorithm>
+
+
 
 void compareVectors(std::vector<Position> pos ,std::vector<std::string> correctPositions){
     std::vector <std::string> positions;
