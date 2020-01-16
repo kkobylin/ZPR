@@ -4,11 +4,25 @@
 #include "AIClass.h"
 #include "../lib/BaseBoard.h"
 
-double AIClass::evaluateBoard(board_type board) {
+double AIClass::evaluateBoard(std::shared_ptr<BaseBoard> board, PieceColor side) {
 
     double result = 0;
 
-    for(auto column : board)
+    //if(board->isChecking(side == WHITE ? BLACK : WHITE))
+      //  result+=40;
+
+//    auto end_of_game = board->checkForWin();
+//    switch (side){
+//        case WHITE:
+//            if(end_of_game == "win")
+//                result+= 500;
+//            break;
+//        case BLACK:
+//            if(end_of_game == "lose")
+//                result+= 500;
+//    }
+
+    for(auto column : board->getBoard())
         for(auto square : column){
             if(square->getOccupied())
                 result += square->getPiece()->getPositionValue();
@@ -32,7 +46,7 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Base
                     std::shared_ptr<BaseBoard> new_board (new BaseBoard(board_obj_string));
                     new_board->updateBoard(pos.column, pos.row, piece->getColumn(), piece->getRow());
                     if(depth == 1) {
-                        int score = evaluateBoard(new_board->getBoard());
+                        int score = evaluateBoard(new_board, side);
                         switch (side) {
                             case BLACK:
                                 if (best_move.src_col == -1 || score < best_move.score) {

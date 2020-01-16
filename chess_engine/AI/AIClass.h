@@ -24,7 +24,7 @@ public:
     static MovePacket MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> board_obj, PieceColor side);
 
 private:
-    static double evaluateBoard(board_type board);
+    static double evaluateBoard(std::shared_ptr<BaseBoard>  board, PieceColor side);
 };
 
 

@@ -100,8 +100,9 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
 
 std::string const Connector::checkForWin() {
     /* none draw win lose*/
-    //todo cpp function to check win
-    return "none";
+
+    auto board = Board::getInstance();
+    return board->checkForWin();
 }
 
 std::string const Connector::opponentMove(){

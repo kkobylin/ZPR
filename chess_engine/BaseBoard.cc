@@ -157,7 +157,7 @@ void BaseBoard::setKing(Position position_king, PieceColor king_color){
     }
 }
 
-bool BaseBoard::isChecking(PieceColor opponent_color, std::shared_ptr<BaseBoard> board){
+bool BaseBoard::isChecking(PieceColor opponent_color){
     //Check if opponent is checked
 
     Position opponent_king = this->getKing(static_cast<PieceColor>(-1 * opponent_color));
@@ -165,7 +165,7 @@ bool BaseBoard::isChecking(PieceColor opponent_color, std::shared_ptr<BaseBoard>
         for (int row = 0; row < 8; row++){
             if (this->getBoard()[column][row]->getOccupied()){
                 if (this->getBoard()[column][row]->getPiece()->getColor() == opponent_color){
-                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(board);
+                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
                     for (auto pos : possible_moves){
                         if (opponent_king == pos){
                             return true;
@@ -178,22 +178,37 @@ bool BaseBoard::isChecking(PieceColor opponent_color, std::shared_ptr<BaseBoard>
     return false;
 }
 
-bool BaseBoard::isCheckMate(PieceColor opponent_color, std::shared_ptr<BaseBoard> board){
-    //Check if opponent is check mated
+std::string BaseBoard::checkForWin(){
+    //Check whether someone win
 
-    Position opponent_king = this->getKing(static_cast<PieceColor>(-1 * opponent_color));
+    bool white_lost = true;
+    bool black_lost = true;
     for (int column = 0; column < 8; column++){
         for (int row = 0; row < 8; row++){
             if (this->getBoard()[column][row]->getOccupied()){
-                if (this->getBoard()[column][row]->getPiece()->getColor() == opponent_color){
-                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(board);
+                if (this->getBoard()[column][row]->getPiece()->getColor() == BLACK){
+                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
                     for (auto pos : possible_moves){
-                        return false;
+                        black_lost = false;
+                    }
+                }
+                else if (this->getBoard()[column][row]->getPiece()->getColor() == WHITE){
+                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
+                    for (auto pos : possible_moves){
+                        white_lost = false;
                     }
                 }
             }
         }
     }
-    return true;
+
+    if(!white_lost && !black_lost)
+        return "none";
+    else if (white_lost && black_lost)
+        return "draw";
+    else if(black_lost)
+        return "win";
+    else
+        return "lost";
 }    
 

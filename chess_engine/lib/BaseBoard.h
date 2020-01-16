@@ -32,7 +32,7 @@ std::vector <std::vector <std::string>> const INITIAL_BOARD = {
 
 };
 
-class BaseBoard{
+class BaseBoard : public std::enable_shared_from_this<BaseBoard>{
     private:
     board_type board;
 
@@ -48,8 +48,8 @@ class BaseBoard{
 
     Position getKing(PieceColor king_color);
     void setKing(Position position_king, PieceColor king_color);
-    bool isChecking(PieceColor opponent_color, std::shared_ptr<BaseBoard> board);
-    bool isCheckMate(PieceColor opponent_color, std::shared_ptr<BaseBoard> board);
+    bool isChecking(PieceColor opponent_color);
+    std::string checkForWin();
 
 };
 #endif

@@ -32,7 +32,7 @@ add_library(chesslib SHARED
         AI/PositionValue.cpp
         exceptions/WrongArgException.h
         exceptions/WrongArgException.cpp
-        )
+        exceptions/IllegalStateException.h)
 
 cmake_host_system_information(RESULT name QUERY HOSTNAME)
 set(BOOST_ROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")
