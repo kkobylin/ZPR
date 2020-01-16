@@ -3,7 +3,7 @@
 //
 
 #define BOOST_TEST_DYN_LINK
-#define BOOST_TEST_MODULE FigureLogicTest
+#define BOOST_TEST_MODULE ChessTest
 
 #include <boost/test/included/unit_test.hpp>
 #include "../lib/Pawn.h"
@@ -18,9 +18,7 @@
 #include <vector>
 #include <algorithm>
 
-
-
-void compareVectors(std::vector<Position> pos ,std::vector<std::string> correctPositions){
+void compareVectors(std::vector<Position> pos, std::vector<std::string> correct_positions) {
     std::vector <std::string> positions;
 
     for(auto p : pos){
@@ -28,8 +26,8 @@ void compareVectors(std::vector<Position> pos ,std::vector<std::string> correctP
     }
 
     std::sort(positions.begin(), positions.end());
-    std::sort(correctPositions.begin(), correctPositions.end());
-    BOOST_CHECK(positions == correctPositions);
+    std::sort(correct_positions.begin(), correct_positions.end());
+    BOOST_CHECK(positions == correct_positions);
 }
 
 BOOST_AUTO_TEST_CASE(PawnCase) {
@@ -42,11 +40,11 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
 
     BOOST_CHECK(pos.size() == 2);
 
-    std::vector<std::string> correctPositions;
-    correctPositions.push_back("02");
-    correctPositions.push_back("03");
+    std::vector<std::string> correct_positions;
+    correct_positions.push_back("02");
+    correct_positions.push_back("03");
 
-    compareVectors(pos, correctPositions);
+    compareVectors(pos, correct_positions);
 
     /* 2nd case - figure in front of pawn, no other figures nearby */
     std::vector<std::vector<std::string>> case_board = {
@@ -83,10 +81,10 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     p = new Pawn(2, 6, BLACK, "P");
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
-    correctPositions.clear();
-    correctPositions.push_back("25");
+    correct_positions.clear();
+    correct_positions.push_back("25");
 
-    compareVectors(pos, correctPositions);
+    compareVectors(pos, correct_positions);
 
     /* 4th  case */
     case_board = {
@@ -106,12 +104,12 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     p->setMoved();
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 3);
-    correctPositions.clear();
-    correctPositions.push_back("24");
-    correctPositions.push_back("34");
-    correctPositions.push_back("44");
+    correct_positions.clear();
+    correct_positions.push_back("24");
+    correct_positions.push_back("34");
+    correct_positions.push_back("44");
 
-    compareVectors(pos, correctPositions);
+    compareVectors(pos, correct_positions);
 
     /* 5th  case */
     case_board = {
@@ -131,10 +129,10 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     p->setMoved();
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
-    correctPositions.clear();
-    correctPositions.push_back("13");
+    correct_positions.clear();
+    correct_positions.push_back("13");
 
-    compareVectors(pos, correctPositions);
+    compareVectors(pos, correct_positions);
 
     /* 6th  case */
     case_board = {
@@ -153,13 +151,13 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     p = new Pawn(1, 6, BLACK, "P");
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 4);
-    correctPositions.clear();
-    correctPositions.push_back("05");
-    correctPositions.push_back("15");
-    correctPositions.push_back("14");
-    correctPositions.push_back("25");
+    correct_positions.clear();
+    correct_positions.push_back("05");
+    correct_positions.push_back("15");
+    correct_positions.push_back("14");
+    correct_positions.push_back("25");
 
-    compareVectors(pos, correctPositions);
+    compareVectors(pos, correct_positions);
 
     /* 7th  case */
     case_board = {
@@ -198,10 +196,10 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
 
-    correctPositions.clear();
-    correctPositions.push_back("34");
+    correct_positions.clear();
+    correct_positions.push_back("34");
 
-    compareVectors(pos, correctPositions);
+    compareVectors(pos, correct_positions);
 
     /* 8th  case - King Defending - stop king checking*/
     case_board = {
@@ -221,10 +219,10 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
 
-    correctPositions.clear();
-    correctPositions.push_back("33");
+    correct_positions.clear();
+    correct_positions.push_back("33");
 
-    compareVectors(pos, correctPositions);
+    compareVectors(pos, correct_positions);
 }
 
 BOOST_AUTO_TEST_CASE(BishopCase) {
