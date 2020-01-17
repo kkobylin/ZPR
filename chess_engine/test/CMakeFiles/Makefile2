@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test
 CMAKE_BINARY_DIR = /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test
 
 #=============================================================================
-# Target rules for target CMakeFiles/chesslib.dir
+# Target rules for target CMakeFiles/tests.dir
 
 # All Build rule for target.
-CMakeFiles/chesslib.dir/all:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/depend
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles --progress-num= "Built target chesslib"
-.PHONY : CMakeFiles/chesslib.dir/all
+CMakeFiles/tests.dir/all:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/depend
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target tests"
+.PHONY : CMakeFiles/tests.dir/all
 
 # Include target in all.
-all: CMakeFiles/chesslib.dir/all
+all: CMakeFiles/tests.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/chesslib.dir/rule: cmake_check_build_system
+CMakeFiles/tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles 17
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/chesslib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles 0
-.PHONY : CMakeFiles/chesslib.dir/rule
+.PHONY : CMakeFiles/tests.dir/rule
 
 # Convenience name for target.
-chesslib: CMakeFiles/chesslib.dir/rule
+tests: CMakeFiles/tests.dir/rule
 
-.PHONY : chesslib
-
-# clean rule for target.
-CMakeFiles/chesslib.dir/clean:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/clean
-.PHONY : CMakeFiles/chesslib.dir/clean
+.PHONY : tests
 
 # clean rule for target.
-clean: CMakeFiles/chesslib.dir/clean
+CMakeFiles/tests.dir/clean:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/clean
+.PHONY : CMakeFiles/tests.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/tests.dir/clean
 
 .PHONY : clean
 

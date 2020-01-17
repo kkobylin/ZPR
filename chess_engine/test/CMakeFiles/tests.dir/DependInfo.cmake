@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/PawnTest.cpp" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/tests.dir/PawnTest.o"
+  "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/EndOfGameTest.cpp" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/tests.dir/EndOfGameTest.o"
+  "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/ExceptionTest.cpp" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/tests.dir/ExceptionTest.o"
+  "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/FigureLogicTest.cpp" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/tests.dir/FigureLogicTest.o"
   "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.cpp" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o"
   "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.cpp" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o"
   "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.cc" "/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o"

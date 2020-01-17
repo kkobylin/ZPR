@@ -57,28 +57,28 @@ include CMakeFiles/tests.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tests.dir/flags.make
 
-CMakeFiles/tests.dir/PawnTest.o: CMakeFiles/tests.dir/flags.make
-CMakeFiles/tests.dir/PawnTest.o: PawnTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tests.dir/PawnTest.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/PawnTest.o -c /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/PawnTest.cpp
+CMakeFiles/tests.dir/FigureLogicTest.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/FigureLogicTest.o: FigureLogicTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tests.dir/FigureLogicTest.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/FigureLogicTest.o -c /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/FigureLogicTest.cpp
 
-CMakeFiles/tests.dir/PawnTest.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/PawnTest.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/PawnTest.cpp > CMakeFiles/tests.dir/PawnTest.i
+CMakeFiles/tests.dir/FigureLogicTest.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/FigureLogicTest.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/FigureLogicTest.cpp > CMakeFiles/tests.dir/FigureLogicTest.i
 
-CMakeFiles/tests.dir/PawnTest.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/PawnTest.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/PawnTest.cpp -o CMakeFiles/tests.dir/PawnTest.s
+CMakeFiles/tests.dir/FigureLogicTest.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/FigureLogicTest.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/FigureLogicTest.cpp -o CMakeFiles/tests.dir/FigureLogicTest.s
 
-CMakeFiles/tests.dir/PawnTest.o.requires:
+CMakeFiles/tests.dir/FigureLogicTest.o.requires:
 
-.PHONY : CMakeFiles/tests.dir/PawnTest.o.requires
+.PHONY : CMakeFiles/tests.dir/FigureLogicTest.o.requires
 
-CMakeFiles/tests.dir/PawnTest.o.provides: CMakeFiles/tests.dir/PawnTest.o.requires
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/PawnTest.o.provides.build
-.PHONY : CMakeFiles/tests.dir/PawnTest.o.provides
+CMakeFiles/tests.dir/FigureLogicTest.o.provides: CMakeFiles/tests.dir/FigureLogicTest.o.requires
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/FigureLogicTest.o.provides.build
+.PHONY : CMakeFiles/tests.dir/FigureLogicTest.o.provides
 
-CMakeFiles/tests.dir/PawnTest.o.provides.build: CMakeFiles/tests.dir/PawnTest.o
+CMakeFiles/tests.dir/FigureLogicTest.o.provides.build: CMakeFiles/tests.dir/FigureLogicTest.o
 
 
 CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o: CMakeFiles/tests.dir/flags.make
@@ -393,9 +393,57 @@ CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/
 CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o.provides.build: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o
 
 
+CMakeFiles/tests.dir/EndOfGameTest.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/EndOfGameTest.o: EndOfGameTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/tests.dir/EndOfGameTest.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/EndOfGameTest.o -c /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/EndOfGameTest.cpp
+
+CMakeFiles/tests.dir/EndOfGameTest.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/EndOfGameTest.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/EndOfGameTest.cpp > CMakeFiles/tests.dir/EndOfGameTest.i
+
+CMakeFiles/tests.dir/EndOfGameTest.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/EndOfGameTest.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/EndOfGameTest.cpp -o CMakeFiles/tests.dir/EndOfGameTest.s
+
+CMakeFiles/tests.dir/EndOfGameTest.o.requires:
+
+.PHONY : CMakeFiles/tests.dir/EndOfGameTest.o.requires
+
+CMakeFiles/tests.dir/EndOfGameTest.o.provides: CMakeFiles/tests.dir/EndOfGameTest.o.requires
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/EndOfGameTest.o.provides.build
+.PHONY : CMakeFiles/tests.dir/EndOfGameTest.o.provides
+
+CMakeFiles/tests.dir/EndOfGameTest.o.provides.build: CMakeFiles/tests.dir/EndOfGameTest.o
+
+
+CMakeFiles/tests.dir/ExceptionTest.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/ExceptionTest.o: ExceptionTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/tests.dir/ExceptionTest.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/ExceptionTest.o -c /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/ExceptionTest.cpp
+
+CMakeFiles/tests.dir/ExceptionTest.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/ExceptionTest.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/ExceptionTest.cpp > CMakeFiles/tests.dir/ExceptionTest.i
+
+CMakeFiles/tests.dir/ExceptionTest.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/ExceptionTest.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/ExceptionTest.cpp -o CMakeFiles/tests.dir/ExceptionTest.s
+
+CMakeFiles/tests.dir/ExceptionTest.o.requires:
+
+.PHONY : CMakeFiles/tests.dir/ExceptionTest.o.requires
+
+CMakeFiles/tests.dir/ExceptionTest.o.provides: CMakeFiles/tests.dir/ExceptionTest.o.requires
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/ExceptionTest.o.provides.build
+.PHONY : CMakeFiles/tests.dir/ExceptionTest.o.provides
+
+CMakeFiles/tests.dir/ExceptionTest.o.provides.build: CMakeFiles/tests.dir/ExceptionTest.o
+
+
 # Object files for target tests
 tests_OBJECTS = \
-"CMakeFiles/tests.dir/PawnTest.o" \
+"CMakeFiles/tests.dir/FigureLogicTest.o" \
 "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o" \
 "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.o" \
 "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.o" \
@@ -408,12 +456,14 @@ tests_OBJECTS = \
 "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.o" \
 "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.o" \
 "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o" \
-"CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o"
+"CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o" \
+"CMakeFiles/tests.dir/EndOfGameTest.o" \
+"CMakeFiles/tests.dir/ExceptionTest.o"
 
 # External object files for target tests
 tests_EXTERNAL_OBJECTS =
 
-tests: CMakeFiles/tests.dir/PawnTest.o
+tests: CMakeFiles/tests.dir/FigureLogicTest.o
 tests: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o
 tests: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.o
 tests: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.o
@@ -427,9 +477,11 @@ tests: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_eng
 tests: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.o
 tests: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o
 tests: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o
+tests: CMakeFiles/tests.dir/EndOfGameTest.o
+tests: CMakeFiles/tests.dir/ExceptionTest.o
 tests: CMakeFiles/tests.dir/build.make
 tests: CMakeFiles/tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -437,7 +489,7 @@ CMakeFiles/tests.dir/build: tests
 
 .PHONY : CMakeFiles/tests.dir/build
 
-CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/PawnTest.o.requires
+CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/FigureLogicTest.o.requires
 CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o.requires
 CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.o.requires
 CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.o.requires
@@ -451,6 +503,8 @@ CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/
 CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.o.requires
 CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o.requires
 CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o.requires
+CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/EndOfGameTest.o.requires
+CMakeFiles/tests.dir/requires: CMakeFiles/tests.dir/ExceptionTest.o.requires
 
 .PHONY : CMakeFiles/tests.dir/requires
 

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tests.dir/PawnTest.o"
+  "CMakeFiles/tests.dir/FigureLogicTest.o"
   "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o"
   "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.o"
   "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.o"
@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.o"
   "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o"
   "CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o"
+  "CMakeFiles/tests.dir/EndOfGameTest.o"
+  "CMakeFiles/tests.dir/ExceptionTest.o"
   "tests.pdb"
   "tests"
 )

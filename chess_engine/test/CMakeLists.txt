@@ -29,7 +29,12 @@ add_executable(tests
         ../AI/AIClass.cpp
         ../AI/AIClass.h
         ../AI/PositionValue.h
-        ../AI/PositionValue.cpp)
+        ../AI/PositionValue.cpp
+        ../exceptions/WrongArgException.h
+        ../exceptions/IllegalStateException.h
+        FigureLogicTest.cpp
+        EndOfGameTest.cpp
+        ExceptionTest.cpp)
 
 set(BOOST_ROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")
 set(BOOSTROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")

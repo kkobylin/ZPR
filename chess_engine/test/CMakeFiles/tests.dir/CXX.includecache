@@ -11,6 +11,8 @@ AIClass.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.h
 ../lib/BaseBoard.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/BaseBoard.h
+../exceptions/IllegalStateException.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/exceptions/IllegalStateException.h
 
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.h
 memory
@@ -45,20 +47,8 @@ lib/Queen.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
 lib/Pawn.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Pawn.h
-lib/Piece.h
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h
-lib/Bishop.h
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h
-lib/Rook.h
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h
-lib/Knight.h
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Knight.h
-lib/King.h
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/King.h
-lib/Queen.h
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h
-lib/Pawn.h
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Pawn.h
+exceptions/WrongArgException.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/exceptions/WrongArgException.h
 
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.cc
 AI/PositionValue.h
@@ -93,6 +83,10 @@ AI/AIClass.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.h
 lib/BaseBoard.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/BaseBoard.h
+exceptions/IllegalStateException.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/exceptions/IllegalStateException.h
+exceptions/WrongArgException.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/exceptions/WrongArgException.h
 
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.h
 string
@@ -148,6 +142,16 @@ AI/PositionValue.h
 lib/Square.h
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h
 memory
+-
+
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/exceptions/IllegalStateException.h
+exception
+-
+
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/exceptions/WrongArgException.h
+exception
+-
+iostream
 -
 
 /home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/BaseBoard.h
@@ -226,7 +230,25 @@ Piece.h
 memory
 -
 
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/PawnTest.cpp
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/EndOfGameTest.cpp
+boost/test/unit_test.hpp
+-
+../lib/BaseBoard.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/BaseBoard.h
+
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/ExceptionTest.cpp
+boost/test/unit_test.hpp
+-
+../lib/BaseBoard.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/BaseBoard.h
+../AI/AIClass.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.h
+../exceptions/IllegalStateException.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/exceptions/IllegalStateException.h
+../exceptions/WrongArgException.h
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/exceptions/WrongArgException.h
+
+/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/FigureLogicTest.cpp
 boost/test/included/unit_test.hpp
 -
 ../lib/Pawn.h

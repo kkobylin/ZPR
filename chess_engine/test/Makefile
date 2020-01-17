@@ -111,17 +111,257 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named chesslib
+# Target rules for targets named tests
 
 # Build rule for target.
-chesslib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 chesslib
-.PHONY : chesslib
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
 
 # fast build rule for target.
-chesslib/fast:
-	$(MAKE) -f CMakeFiles/chesslib.dir/build.make CMakeFiles/chesslib.dir/build
-.PHONY : chesslib/fast
+tests/fast:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+# target to build an object file
+EndOfGameTest.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/EndOfGameTest.o
+.PHONY : EndOfGameTest.o
+
+# target to preprocess a source file
+EndOfGameTest.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/EndOfGameTest.i
+.PHONY : EndOfGameTest.i
+
+# target to generate assembly for a file
+EndOfGameTest.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/EndOfGameTest.s
+.PHONY : EndOfGameTest.s
+
+# target to build an object file
+ExceptionTest.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/ExceptionTest.o
+.PHONY : ExceptionTest.o
+
+# target to preprocess a source file
+ExceptionTest.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/ExceptionTest.i
+.PHONY : ExceptionTest.i
+
+# target to generate assembly for a file
+ExceptionTest.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/ExceptionTest.s
+.PHONY : ExceptionTest.s
+
+# target to build an object file
+FigureLogicTest.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/FigureLogicTest.o
+.PHONY : FigureLogicTest.o
+
+# target to preprocess a source file
+FigureLogicTest.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/FigureLogicTest.i
+.PHONY : FigureLogicTest.i
+
+# target to generate assembly for a file
+FigureLogicTest.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/FigureLogicTest.s
+.PHONY : FigureLogicTest.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.s
+
+# target to build an object file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.o
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.o
+
+# target to preprocess a source file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.i
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.i
+
+# target to generate assembly for a file
+home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.s
+.PHONY : home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.s
 
 # Help Target
 help:
@@ -130,8 +370,56 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... chesslib"
+	@echo "... tests"
 	@echo "... edit_cache"
+	@echo "... EndOfGameTest.o"
+	@echo "... EndOfGameTest.i"
+	@echo "... EndOfGameTest.s"
+	@echo "... ExceptionTest.o"
+	@echo "... ExceptionTest.i"
+	@echo "... ExceptionTest.s"
+	@echo "... FigureLogicTest.o"
+	@echo "... FigureLogicTest.i"
+	@echo "... FigureLogicTest.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.s"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.o"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.i"
+	@echo "... home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.s"
 .PHONY : help
 
 
