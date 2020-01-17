@@ -7,6 +7,7 @@
 #include "lib/King.h"
 #include "lib/Queen.h"
 #include "lib/Pawn.h"
+#include "exceptions/WrongArgException.h"
 
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
@@ -79,24 +80,28 @@ board_type BaseBoard::getBoard() {
 }
 
 void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row){
-            //update board
-                //update destination Square
-            Position position {dest_col, dest_row};
-            board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
-            board[dest_col][dest_row]->setOccupied(true);
-            board[dest_col][dest_row]->getPiece()->setPosition(position); // aktualizacja pozycji figury
-            board[dest_col][dest_row]->getPiece()->setMoved();
+    //update board
+        //update destination Square
+    if(dest_col < 0 || dest_col > 7 || dest_row < 0 || dest_row > 7 ||
+            src_col < 0 || src_col > 7 || src_row < 0 || src_row > 7)
+        throw WrongArgException();
 
-            if (Position{src_col,src_row} == this->getKing(WHITE)){
-                this->setKing(Position{dest_col,dest_row}, WHITE);
-            }
-            if (Position{src_col,src_row} == this->getKing(BLACK)){
-                this->setKing(Position{dest_col,dest_row}, BLACK);
-            }
+    Position position {dest_col, dest_row};
+    board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
+    board[dest_col][dest_row]->setOccupied(true);
+    board[dest_col][dest_row]->getPiece()->setPosition(position); // aktualizacja pozycji figury
+    board[dest_col][dest_row]->getPiece()->setMoved();
 
-                //update source Square
-            board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
-            board[src_col][src_row]->setOccupied(false);
+    if (Position{src_col,src_row} == this->getKing(WHITE)){
+        this->setKing(Position{dest_col,dest_row}, WHITE);
+    }
+    if (Position{src_col,src_row} == this->getKing(BLACK)){
+        this->setKing(Position{dest_col,dest_row}, BLACK);
+    }
+
+        //update source Square
+    board[src_col][src_row]->setPiece(std::shared_ptr<Piece>{nullptr});
+    board[src_col][src_row]->setOccupied(false);
 }
 
 
@@ -209,6 +214,6 @@ std::string BaseBoard::checkForWin(){
     else if(black_lost)
         return "win";
     else
-        return "lost";
+        return "lose";
 }    
 

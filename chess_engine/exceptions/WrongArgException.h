@@ -10,9 +10,6 @@
 
 class WrongArgException : public std::exception
 {
-    std::string text;
-public:
-    WrongArgException(std::string text);
 };
 
 #endif //CHESS_WRONGARGEXCEPTION_H
