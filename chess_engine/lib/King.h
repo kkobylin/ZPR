@@ -20,7 +20,7 @@ private:
     bool checked = false;
 
 public:
-    King(int column, int row, PieceColor color) :
+    King(const int column,const int row,const PieceColor color) :
     Piece (column, row, color){
         setFigureName("K");
         setDirectionOfMove(Position{1,-1});
@@ -34,13 +34,7 @@ public:
 
         };
     
-    //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard);
-    double getPositionValue() override ;
 
-    bool getCastled();
-    bool getChecked();
-
-    void setCastled(bool castled);
-    void setChecked(bool checked);
+    double getPositionValue() const override ;
 };
 #endif //KING_H

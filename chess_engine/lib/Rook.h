@@ -16,11 +16,8 @@
 
 
 class Rook : public Piece{
-private:
-    bool moved = false;
-
 public:
-    Rook(int column, int row, PieceColor color) :
+    Rook(const int column,const int row,const PieceColor color) :
     Piece (column, row, color){
         setFigureName("R");
         setRecursive();
@@ -31,6 +28,6 @@ public:
         };
     
     //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool = true);
-    double getPositionValue() override ;
+    double getPositionValue() const override ;
 };
 #endif //ROOK_H

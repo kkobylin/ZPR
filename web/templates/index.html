@@ -1,3 +1,14 @@
+<!--
+/**
+ * @file index.html
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Frontend of application has 2 main tasks
+ * Present view for the user
+ * Get move from the user and send that to the server
+ * @version 1.0
+ * @date 2020-01-15
+ */
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +42,7 @@
 <body>
 <div class="navbar">
     <div class="navbar-inner">
-        <a class="brand" href="#">Chess</a>
+        <a class="brand" href="#">Szachy online</a>
     </div>
 </div>
 
@@ -92,7 +103,7 @@
 
         if (snapBack) return 'snapback';
 
-        if (endOfGame === 'none' && !snapBack){
+        if (!snapBack && (endOfGame === 'none' || endOfGame === 'lose') ){
             if(opponentMove != "00-00")
                 board.move(opponentMove);
             else{

@@ -16,15 +16,15 @@ void Piece::setRow(int row){
 }
 
 
-int Piece::getColumn(){
+int Piece::getColumn() const{
     return this->column;
 }
 
-int Piece::getRow(){
+int Piece::getRow() const{
     return this->row;
 }
 
-PieceColor Piece::getColor(){
+PieceColor Piece::getColor() const{
     return this->color;
 }
 
@@ -37,7 +37,16 @@ Piece::Piece(int column, int row, PieceColor color){
     this->position.row = row;
 }
 
-bool Piece::getOccupied(){
+Piece::Piece(const Piece &piece_) {
+    this->column = piece_.getColumn();
+    this->row    = piece_.getRow();
+    this->color  = piece_.getColor();
+    this->position.column = piece_.getColumn();
+    this->position.row = piece_.getRow();
+    this->figure_name = piece_.getFigureName();
+}
+
+bool Piece::getOccupied() const{
     return this->occupied;
 }
 
@@ -51,16 +60,16 @@ void Piece::setPosition(Position position){
     this->row = position.row;
 }
 
-Position Piece::getPosition(){
+Position Piece::getPosition() const{
     return this->position;
 }
 
-bool Piece::getMoved(){
+bool Piece::getMoved() const{
     return this->moved;
 }
 
-void Piece::setMoved(){
-    this->moved = true;
+void Piece::setMoved(bool moved){
+    this->moved = moved;
 }
 
 void Piece::setMoves(std::vector<Position> possible_move){
@@ -73,11 +82,11 @@ void Piece::setFigureName(std::string figure_name){
     this->figure_name = figure_name;
 }
 
-std::string Piece::getFigureName(){
+std::string Piece::getFigureName() const{
     return this->figure_name;
 }
 
-std::vector<Position> Piece::getMoves(){
+std::vector<Position> Piece::getMoves() const{
     return this->moves;
 }
 
@@ -98,7 +107,7 @@ Position Piece::getKing(std::shared_ptr<BaseBoard> board, PieceColor piece_color
     }
 }
 
-bool Piece::isChecking(Position position_piece, Position position_king){
+bool Piece::isChecking(Position position_piece, Position position_king) const{
     if (position_king.column == position_piece.column && position_king.row == position_piece.row){
         return true;
     }else{
@@ -106,7 +115,7 @@ bool Piece::isChecking(Position position_piece, Position position_king){
     }
 }
 
-std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_initial, bool original_evaluation){
+std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_initial, bool original_evaluation) const{
     std::vector<Position> possible_position; //Create buffer for computed possible positions
 
     for (Position position : this->getMoves()){
@@ -237,7 +246,7 @@ std::vector<Position> Piece::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
 void Piece::setRecursive(){
     isMoveRecursive = true;
 }
-
+// todo getrecursive
 void Piece::setDirectionOfMove(Position pos){
     directionOfMoves.push_back(pos);
 

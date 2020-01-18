@@ -43,7 +43,7 @@ std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, b
 
 }
 
-double Pawn::getPositionValue(){
+double Pawn::getPositionValue() const{
     PieceColor color = getColor();
 
     if(color == BLACK)

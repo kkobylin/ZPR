@@ -16,7 +16,7 @@
 
 class Queen : public Piece{
 public:
-    Queen(int column, int row, PieceColor color) :
+    Queen(const int column,const int row,const PieceColor color) :
     Piece (column, row, color){
         setFigureName("Q");
         setRecursive();
@@ -31,7 +31,7 @@ public:
 
         };
     
-    //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard);
-    double getPositionValue() override ;
+
+    double getPositionValue() const override ;
 };
 #endif //QUEEN_H

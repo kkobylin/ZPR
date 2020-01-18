@@ -27,6 +27,6 @@ public:
         };
     
     //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation);
-    double getPositionValue() override ;
+    double getPositionValue() const override ;
 };
 #endif // BISHOP_H

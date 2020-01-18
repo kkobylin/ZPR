@@ -2,7 +2,7 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-double Knight::getPositionValue(){
+double Knight::getPositionValue() const{
 
     PieceColor color = this->getColor();
     if(color == BLACK)

@@ -17,8 +17,6 @@
 #include <iostream>
 
 class Pawn : public Piece{
-private:
-    bool moved = false;
 public:
     Pawn(int column, int row, PieceColor color) :
         Piece (column, row, color){
@@ -26,6 +24,6 @@ public:
             };
     std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool = true);
     
-    double getPositionValue() override ;
+    double getPositionValue() const override ;
 };
 #endif //PAWN_H

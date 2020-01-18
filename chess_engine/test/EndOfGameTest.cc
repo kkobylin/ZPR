@@ -1,13 +1,17 @@
-//
-// Created by root on 15.01.2020.
-//
+/**
+ * @file EndOfGameTest.cc
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Boost auto test, testing checkForWin method
+ * in few cases
+ * @version 1.0
+ * @date 2020-01-15
+ */
 
 #define BOOST_TEST_DYN_LINK
 #include <boost/test/unit_test.hpp>
 #include "../lib/BaseBoard.h"
 
 BOOST_AUTO_TEST_SUITE(EndOfGameTest)
-
     BOOST_AUTO_TEST_CASE(WhiteWin) {
         std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
         std::string end_of_game = board_ptr->checkForWin();

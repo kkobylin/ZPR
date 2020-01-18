@@ -2,7 +2,7 @@
 #include "lib/Bishop.h"
 
 
-double Bishop::getPositionValue(){
+double Bishop::getPositionValue() const{
     PieceColor color = this->getColor();
 
     if(color == BLACK)

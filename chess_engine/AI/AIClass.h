@@ -1,7 +1,10 @@
-//
-// Created by Krzysiek on 29/11/2019.
-//
-
+/**
+ * @file AIClass.h
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Class calculating opponent move, using minmax algorithm
+ * @version 1.0
+ * @date 2020-01-15
+ */
 #ifndef CHESS_AICLASS_H
 #define CHESS_AICLASS_H
 
@@ -21,10 +24,10 @@ typedef std::vector <std::vector <std::shared_ptr<Square>>> board_type;
 
 class AIClass {
 public:
-    static MovePacket MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> board_obj, PieceColor side);
+    static MovePacket MiniMaxRoot(const int depth,const  PieceColor turn,const std::shared_ptr<BaseBoard> board_obj, double alpha, double beta);
 
 private:
-    static double evaluateBoard(std::shared_ptr<BaseBoard>  board, PieceColor side);
+    static double evaluateBoard(const std::shared_ptr<BaseBoard>  board,const PieceColor side);
 };
 
 

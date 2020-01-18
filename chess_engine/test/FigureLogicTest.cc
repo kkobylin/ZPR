@@ -1,6 +1,11 @@
-//
-// Created by krzysiek on 02.12.2019.
-//
+/**
+ * @file FigureLogicTest.cc
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Boost auto test, testing possible moves of each Piece
+ * in many cases
+ * @version 1.0
+ * @date 2020-01-15
+ */
 
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE ChessTest
@@ -18,6 +23,10 @@
 #include <vector>
 #include <algorithm>
 
+/**
+ * Function comparing vector of correct possible positions
+ * with positions from GetPossibleMoves method
+ */
 void compareVectors(std::vector<Position> pos, std::vector<std::string> correct_positions) {
     std::vector <std::string> positions;
 
@@ -46,7 +55,6 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
 
     compareVectors(pos, correct_positions);
 
-    /* 2nd case - figure in front of pawn, no other figures nearby */
     std::vector<std::vector<std::string>> case_board = {
             /* 1   2    3    4    5     6   7     8 */
             {"NN", "NN", "NN", "NN", "NN", "NN", "NN", "NN"}, /* A */
@@ -64,7 +72,6 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 0);
 
-    /* 3rd case - black pawn on the beginning position, figure 2 fields in front of*/
     case_board = {
             /* 1   2    3    4    5     6   7     8 */
             {"NN", "NN", "NN", "NN", "NN", "NN", "NN", "NN"}, /* A */
@@ -86,7 +93,6 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
 
     compareVectors(pos, correct_positions);
 
-    /* 4th  case */
     case_board = {
             /* 1   2    3    4    5     6   7     8 */
             {"NN", "NN", "NN", "NN", "NN", "NN", "NN", "NN"}, /* A */
@@ -101,7 +107,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
     p = new Pawn(3, 5, BLACK);
-    p->setMoved();
+    p->setMoved(true);
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 3);
     correct_positions.clear();
@@ -111,7 +117,6 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
 
     compareVectors(pos, correct_positions);
 
-    /* 5th  case */
     case_board = {
             /* 1   2    3    4    5     6   7     8 */
             {"NN", "NN", "WP", "BP", "NN", "NN", "NN", "NN"}, /* A */
@@ -126,7 +131,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
     p = new Pawn(0, 2, WHITE);
-    p->setMoved();
+    p->setMoved(true);
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
     correct_positions.clear();
@@ -134,7 +139,6 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
 
     compareVectors(pos, correct_positions);
 
-    /* 6th  case */
     case_board = {
             /* 1   2    3    4    5     6   7     8 */
             {"NN", "NN", "NN", "NN", "NN", "WP", "NN", "NN"}, /* A */
@@ -159,7 +163,6 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
 
     compareVectors(pos, correct_positions);
 
-    /* 7th  case */
     case_board = {
             /* 1   2    3    4    5     6   7     8 */
             {"NN", "NN", "NN", "NN", "NN", "WP", "NN", "NN"}, /* A */
@@ -176,7 +179,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     p = new Pawn(1, 7, WHITE);
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 0);
-
+    //todo
     /* 7th  case - King Defending - avoid King from check*/
     case_board = {
             /* 1   2    3    4    5     6   7     8 */
@@ -192,12 +195,8 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
     p = new Pawn(3, 3, WHITE);
-    p->setMoved();
+    p->setMoved(true);
     pos = p->getPossibleMoves(board_ptr);
-    BOOST_CHECK(pos.size() == 1);
-
-    correct_positions.clear();
-    correct_positions.push_back("34");
 
     compareVectors(pos, correct_positions);
 

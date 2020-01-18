@@ -3,7 +3,7 @@
 #include "AI/PositionValue.h"
 
 
-double Rook::getPositionValue(){
+double Rook::getPositionValue() const{
     PieceColor color = this->getColor();
 
     if(color == BLACK)

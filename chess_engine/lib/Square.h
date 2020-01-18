@@ -11,16 +11,16 @@ private:
     bool occupied = false;
 
 public:
-    Square(std::shared_ptr<Piece>);
-    void setPiece(std::shared_ptr<Piece>);
-    void setColumn(int);
-    void setRow(int);
+    Square(const std::shared_ptr<Piece>);
+    void setPiece(const std::shared_ptr<Piece>);
+    void setColumn(const int);
+    void setRow(const int);
+    void setOccupied(const bool);
 
-    std::shared_ptr<Piece> getPiece();
-    int   getRow();
-    int   getColumn();
+    std::shared_ptr<Piece> getPiece() const;
+    int   getRow() const;
+    int   getColumn() const;
+    bool getOccupied() const;
 
-    bool getOccupied();
-    void setOccupied(bool);
 };
 #endif
