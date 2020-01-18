@@ -5,17 +5,10 @@
 
 
 class Rook : public Piece{
-private:
-    bool moved = false;
-
 public:
-
-    Rook(int column, int row, PieceColor color, std::string figure_name) :
+    Rook(const int column,const int row,const PieceColor color,const std::string figure_name) :
         Piece (column, row, color, figure_name){};
-    std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool) override;
-    double getPositionValue() override ;
-
-    bool getMoved();
-    void setMoved(bool);
+    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>,const bool) override;
+    double getPositionValue() const override ;
 };
 #endif

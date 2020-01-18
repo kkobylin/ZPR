@@ -2,8 +2,6 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-
-
 std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> board, bool original_evaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
@@ -67,7 +65,7 @@ std::vector<Position> Pawn::getPossibleMoves(const std::shared_ptr<BaseBoard> bo
 
 }
 
-double Pawn::getPositionValue(){
+double Pawn::getPositionValue() const{
     PieceColor color = this->getColor();
 
     if(color == BLACK)

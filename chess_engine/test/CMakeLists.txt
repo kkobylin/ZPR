@@ -3,7 +3,7 @@ project(chess_test)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(tests
-        FigureLogicTest.cpp
+        FigureLogicTest.cc
         ../lib/BaseBoard.h
         ../lib/Bishop.h
         ../lib/Board.h
@@ -26,15 +26,14 @@ add_executable(tests
         ../Queen.cc
         ../Rook.cc
         ../Square.cc
-        ../AI/AIClass.cpp
+        ../AI/AIClass.cc
         ../AI/AIClass.h
         ../AI/PositionValue.h
-        ../AI/PositionValue.cpp
+        ../AI/PositionValue.cc
         ../exceptions/WrongArgException.h
-        ../exceptions/IllegalStateException.h
-        FigureLogicTest.cpp
-        EndOfGameTest.cpp
-        ExceptionTest.cpp)
+        FigureLogicTest.cc
+        EndOfGameTest.cc
+        ExceptionTest.cc)
 
 set(BOOST_ROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")
 set(BOOSTROOT "/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0")

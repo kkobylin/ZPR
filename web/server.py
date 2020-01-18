@@ -1,3 +1,13 @@
+'''
+/**
+ * @file server.py
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Server of the application
+ * Communicate frontend with chess logic 
+ * @version 1.0
+ * @date 2020-01-15
+ */
+'''
 #!flask/bin/python
 from flask import Flask, jsonify, request, make_response, abort, render_template, send_file
 import sys
@@ -29,11 +39,12 @@ def receive_msg():
     end_of_game = 'none'
     opponent_move = 'none'
     legal_move = libchesslib.ifMovePossible(target, source)
+
+    if(legal_move ):
+        opponent_move = libchesslib.opponentMove()
+    
     if(legal_move):
         end_of_game = libchesslib.checkForWin()
-
-    if(legal_move and end_of_game == 'none'):
-        opponent_move = libchesslib.opponentMove()
 
     if end_of_game != 'none':
         app.logger.info("End of the game")

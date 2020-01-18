@@ -2,31 +2,6 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-bool King::getMoved(){
-        return this->moved;
-}
-
-void King::setMoved(bool moved){
-        this->moved = moved;
-}
-
-bool King::getCastled(){
-        return this->castled;
-}
-
-void King::setCastled(bool castled){
-        this->castled = castled;
-}
-
-bool King::getChecked(){
-        return this->checked;
-}
-
-void King::setChecked(bool checked){
-        this->checked = checked;
-}
-
-
 std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool original_evaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
@@ -188,9 +163,6 @@ std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
         }
     }
 
-    //todo castle 
-
-
     this->setMoves(possible_position);
 
     if (original_evaluation){
@@ -200,7 +172,7 @@ std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
     return possible_position;
 }
 
-double King::getPositionValue(){
+double King::getPositionValue() const{
     PieceColor color = this->getColor();
 
     if(color == BLACK)
