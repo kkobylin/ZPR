@@ -6,10 +6,9 @@
 
 std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     std::vector<Position> possible_position;
+    
     Position position = getPosition();
-
     int directionOfMove = getColor();
-    //std::cout << directionOfMove << std::endl;
 
     Position dest_square = position + Position{0, directionOfMove};
 
