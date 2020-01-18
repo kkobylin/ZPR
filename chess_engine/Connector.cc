@@ -148,7 +148,7 @@ std::string const Connector::opponentMove(){
 
     MovePacket move_packet;
     try {
-        move_packet = AIClass::MiniMaxRoot(2, BLACK, min_max_board, std::numeric_limits<double>::max()*-1, std::numeric_limits<double>::max());
+        move_packet = AIClass::MiniMaxRoot(3, BLACK, min_max_board, std::numeric_limits<double>::max()*-1, std::numeric_limits<double>::max());
         board->updateBoard(move_packet.dest_col, move_packet.dest_row, move_packet.src_col, move_packet.src_row);
     }
     catch(std::exception& e){

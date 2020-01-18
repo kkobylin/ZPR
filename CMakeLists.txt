@@ -4,7 +4,7 @@ project(chess)
 set(CMAKE_CXX_STANDARD 17)
 
 add_library(chesslib SHARED
-        lib/BaseBoard.h
+	    lib/BaseBoard.h
         lib/Bishop.h
         lib/Board.h
         lib/King.h
@@ -14,7 +14,7 @@ add_library(chesslib SHARED
         lib/Queen.h
         lib/Rook.h
         lib/Square.h
-	    BaseBoard.cc
+	BaseBoard.cc
         Bishop.cc
         Board.cc
         Connector.cc
@@ -26,24 +26,15 @@ add_library(chesslib SHARED
         Queen.cc
         Rook.cc
         Square.cc
-        AI/AIClass.cc
+        AI/AIClass.cpp
         AI/AIClass.h
-        AI/PositionValue.h
-        AI/PositionValue.cc
-        exceptions/WrongArgException.h
-        test/FigureLogicTest.cc
-        test/ExceptionTest.cc
-        test/EndOfGameTest.cc
+        AI/PositionValue.h 
+	AI/PositionValue.cpp
         )
 
-cmake_host_system_information(RESULT name QUERY HOSTNAME)
-set(BOOST_ROOT "/home/$ENV{USER}/Desktop/Boost/boost_1_71_0")
-set(BOOSTROOT "/home/$ENV{USER}/Desktop/Boost/boost_1_71_0")
-set(Boost_INCLUDE_DIR "/home/$ENV{USER}/Desktop/Boost/boost_1_71_0")
 set(PYTHON_INCLUDE "/usr/include/python3.6")
-set(Boost_Linker "/home/" $ENV{USER} "/Desktop/Boost/boost_1_71_0/stage/lib")
-target_link_libraries(chesslib python3.6m boost_system boost_python3 boost_unit_test_framework )
-find_package(Boost 1.71.0 REQUIRED COMPONENTS python3)
+target_link_libraries(chesslib python3.6m boost_python3 )
+find_package(Boost 1.65 REQUIRED COMPONENTS python3)
 
 if(Boost_FOUND)
     message(STATUS "It works!")
@@ -54,5 +45,3 @@ endif()
 if(NOT Boost_FOUND)
     message(FATAL_ERROR "Could not find boost!")
 endif()
-
-

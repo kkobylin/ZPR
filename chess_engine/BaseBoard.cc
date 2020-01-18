@@ -12,9 +12,9 @@
 extern std::vector <std::vector <std::string>> const INITIAL_BOARD;
 
 BaseBoard::BaseBoard(std::vector <std::vector <std::string>> board_string){
-    for (int column = 0; column < 8; column++){
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
         board.push_back(std::vector<std::shared_ptr<Square>>());
-        for (int row = 0; row < 8; row++ ){
+        for (int row = ROW_MIN; row < ROW_MAX; row++ ){
             
             std::string buffer = board_string[column][row];
 
@@ -35,33 +35,33 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> board_string){
             case 'N':
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Knight>{new Knight(column, row, color, name)})});
+                std::shared_ptr<Knight>{new Knight(column, row, color)})});
                 break;
             case 'R': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Rook>{new Rook(column, row, color, name)})});
+                std::shared_ptr<Rook>{new Rook(column, row, color)})});
                 break;
             case 'B': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Bishop>{new Bishop(column, row, color, name)})});
+                std::shared_ptr<Bishop>{new Bishop(column, row, color)})});
                 break;
             case 'Q': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Queen> {new Queen(column, row, color, name)})});
+                std::shared_ptr<Queen> {new Queen(column, row, color)})});
                 break;
             case 'K': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<King>{new King(column, row, color, name)})});
+                std::shared_ptr<King>{new King(column, row, color)})});
                 this->setKing(Position{column,row}, color);
                 break;
             case 'P': 
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
-                std::shared_ptr<Pawn>{new Pawn(column, row, color, name)})});
+                std::shared_ptr<Pawn>{new Pawn(column, row, color)})});
                 break;
             }
             board[column][row]->setOccupied(true);
@@ -97,35 +97,35 @@ BaseBoard::BaseBoard(const BaseBoard &base_board) {
 
             switch(name[0]){
                 case 'N': {
-                    std::shared_ptr<Knight> ptr(new Knight(column_nr, row_nr, color, name));
+                    std::shared_ptr<Knight> ptr(new Knight(column_nr, row_nr, color));
                     ptr->setMoved(piece->getMoved());
                     ptr->setMoves(piece->getMoves());
                     board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
                     break;
                 }
                 case 'R': {
-                    std::shared_ptr<Rook> ptr {new Rook(column_nr, row_nr, color, name)};
+                    std::shared_ptr<Rook> ptr {new Rook(column_nr, row_nr, color)};
                     ptr->setMoved(piece->getMoved());
                     ptr->setMoves(piece->getMoves());
                     board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
                     break;
                 }
                 case 'B':{
-                    std::shared_ptr<Bishop> ptr {new Bishop(column_nr, row_nr, color, name)};
+                    std::shared_ptr<Bishop> ptr {new Bishop(column_nr, row_nr, color)};
                     ptr->setMoved(piece->getMoved());
                     ptr->setMoves(piece->getMoves());
                     board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
                     break;
                 }
                 case 'Q':{
-                    std::shared_ptr<Queen> ptr {new Queen(column_nr, row_nr, color, name)};
+                    std::shared_ptr<Queen> ptr {new Queen(column_nr, row_nr, color)};
                     ptr->setMoved(piece->getMoved());
                     ptr->setMoves(piece->getMoves());
                     board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
                     break;
                 }
                 case 'K':{
-                    std::shared_ptr<King> ptr {new King(column_nr, row_nr, color, name)};
+                    std::shared_ptr<King> ptr {new King(column_nr, row_nr, color)};
                     ptr->setMoved(piece->getMoved());
                     ptr->setMoves(piece->getMoves());
                     board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
@@ -133,7 +133,7 @@ BaseBoard::BaseBoard(const BaseBoard &base_board) {
                     break;
                 }
                 case 'P':{
-                    std::shared_ptr<Pawn> ptr {new Pawn(column_nr, row_nr, color, name)};
+                    std::shared_ptr<Pawn> ptr {new Pawn(column_nr, row_nr, color)};
                     ptr->setMoved(piece->getMoved());
                     ptr->setMoves(piece->getMoves());
                     board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
@@ -183,9 +183,10 @@ std::vector <std::vector <std::string>> BaseBoard::toString() const{
     std::string piece = "";
     std::string color = "";
 
-    for (int column = 0; column < 8; column++){
+
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
         board_return.push_back(std::vector<std::string>());
-        for (int row = 0; row < 8; row++){
+        for (int row = ROW_MIN; row < ROW_MAX; row++ ){
             if (board[column][row]->getOccupied()){
                 if(board[column][row]->getPiece()->getColor() == WHITE){
                     color = "W";
@@ -207,6 +208,19 @@ std::vector <std::vector <std::string>> BaseBoard::toString() const{
 
 }
 
+void const BaseBoard::printBoardCout(){
+    std::cout << "Current Board:" << std::endl;
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
+        for (int row = ROW_MIN; row < ROW_MAX; row++ ){
+            std::cout <<(char)(board[column][row]->getColumn() + 65)  << board[column][row]->getRow() + 1  <<this->toString()[column][row] << " " ;
+            if (row == 7){
+                std::cout << std::endl;
+            }
+        }
+    }
+}
+
+
 Position BaseBoard::getKing (PieceColor king_color) const{
     if (king_color == WHITE){
         return this->white_king;
@@ -226,8 +240,8 @@ bool BaseBoard::isChecking(PieceColor opponent_color){
     //Check if opponent is checked
 
     Position opponent_king = this->getKing(static_cast<PieceColor>(-1 * opponent_color));
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++){
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
+        for (int row = ROW_MIN; row < ROW_MAX; row++ ){
             if (this->getBoard()[column][row]->getOccupied()){
                 if (this->getBoard()[column][row]->getPiece()->getColor() == opponent_color){
                     auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
@@ -248,8 +262,8 @@ std::string BaseBoard::checkForWin(){
 
     bool white_lost = true;
     bool black_lost = true;
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++){
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
+        for (int row = ROW_MIN; row < ROW_MAX; row++ ){
             if (this->getBoard()[column][row]->getOccupied()){
                 if (this->getBoard()[column][row]->getPiece()->getColor() == BLACK){
                     auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());

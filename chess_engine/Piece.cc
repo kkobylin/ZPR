@@ -29,13 +29,12 @@ PieceColor Piece::getColor() const{
 }
 
 
-Piece::Piece(int column, int row, PieceColor color, std::string figure_name){
+Piece::Piece(int column, int row, PieceColor color){
     this->column = column;
     this->row    = row;
     this->color  = color;
     this->position.column = column;
     this->position.row = row;
-    this->figure_name = figure_name;
 }
 
 Piece::Piece(const Piece &piece_) {
@@ -91,6 +90,23 @@ std::vector<Position> Piece::getMoves() const{
     return this->moves;
 }
 
+Position Piece::getKing(std::shared_ptr<BaseBoard> board, PieceColor piece_color){
+
+    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
+        for (int row = ROW_MIN; row < ROW_MAX; row++ ){
+            if (board->getBoard()[column][row]->getOccupied()){
+                std::string piece = board->getBoard()[column][row]->getPiece()->getFigureName();
+                if (piece == "K"){
+                    piece_color = board->getBoard()[column][row]->getPiece()->getColor();
+                    if (piece_color == piece_color){
+                        return board->getBoard()[column][row]->getPiece()->getPosition();
+                    }
+                }
+            }
+        }
+    }
+}
+
 bool Piece::isChecking(Position position_piece, Position position_king) const{
     if (position_king.column == position_piece.column && position_king.row == position_piece.row){
         return true;
@@ -128,9 +144,9 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_init
 
         bool safe = true;
         //iterate pieces by columns
-        for (int column = 0; column < 8; column++){
+        for (int column = COLUMN_MIN; column < COLUMN_MAX; column++ ){
             //iterate pieces by rows
-            for (int row = 0; row < 8; row++ ){
+            for (int row = ROW_MIN; row < ROW_MAX; row++ ){
                 //check if on Square is piece
                 if (board[column][row]->getOccupied()){
                     color = board[column][row]->getPiece()->getColor();
@@ -166,3 +182,72 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_init
 
 }
 
+PieceColor Piece::isMoveValid(Position position, std::shared_ptr<BaseBoard> board){
+    std::shared_ptr<Square> piece = board->getBoard()[position.column][position.row];
+
+    if (piece->getOccupied()){
+        if(piece->getPiece()->getColor() == color){
+            return color;
+        }else{
+            return static_cast<PieceColor>(-1*color);
+        }
+    }else{
+        return NONE;
+    }
+}
+
+bool Piece::moveIsInBoard(Position position){
+    if (position.column >= 0 && position.column < 8 && position.row >= 0 && position.row < 8){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+std::vector<Position> Piece::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
+    std::vector<Position> possible_position;
+    if(isMoveRecursive){
+        for (auto move_scheme : directionOfMoves){
+            Position dest_square = position + move_scheme;
+            int i = 1;
+            while(moveIsInBoard(dest_square) && isMoveValid(dest_square, board) != color){
+                possible_position.push_back(dest_square);
+                ++i;
+                if (isMoveValid(dest_square, board) == static_cast<PieceColor>(-1*color)){
+                    break;
+                }
+                dest_square = position + (move_scheme * i);
+            }
+        }
+    }else{
+        for (auto move_scheme : directionOfMoves){
+            Position dest_square = position + move_scheme;
+            if(moveIsInBoard(dest_square) && isMoveValid(dest_square, board) != color){
+                possible_position.push_back(dest_square);
+            }
+        } 
+    }
+
+    setMoves(possible_position);
+
+    if (originalEvaluation){
+        possible_position = evaluateCheck(board, false);
+        setMoves(possible_position);
+    }
+    /*
+    if (originalEvaluation && getColor() == BLACK)
+        for (auto a: possible_position){
+            std::cout << "mozliwy ruch dla: " << *this << " " << a << std::endl;
+        }
+        */
+    return possible_position;
+}
+
+void Piece::setRecursive(){
+    isMoveRecursive = true;
+}
+// todo getrecursive
+void Piece::setDirectionOfMove(Position pos){
+    directionOfMoves.push_back(pos);
+
+}

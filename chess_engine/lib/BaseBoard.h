@@ -1,5 +1,16 @@
-#ifndef BASEBOARD
-#define BASEBOARD
+/**
+ * @file BaseBoard.h
+ * @author Marcin Michalski (marmichalski97@gmail.com)
+ * @brief Class holding informations about pieces, used to be an auxiliary class to generate temporary boards
+ * @version 0.1
+ * @date 2020-01-15
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
+#ifndef BASEBOARD_H
+#define BASEBOARD_H
 
 
 #include "Square.h"
@@ -7,19 +18,16 @@
 #include <iostream>
 #include <memory>
 
+/**
+ * @brief 
+ * 
+ */
 typedef std::vector <std::vector <std::shared_ptr<Square>>> board_type;
 
-enum Column {
-    A = 1,
-    B = 2,
-    C = 3,
-    D = 4,
-    E = 5,
-    F = 6,
-    G = 7,
-    H = 8
-};
-
+/**
+ * @brief vector used to initialize starting boards
+ * 
+ */
 std::vector <std::vector <std::string>> const INITIAL_BOARD = {
 {"WR","WP","NN","NN","NN","NN","BP","BR"},
 {"WN","WP","NN","NN","NN","NN","BP","BN"},
@@ -34,6 +42,7 @@ std::vector <std::vector <std::string>> const INITIAL_BOARD = {
 
 class BaseBoard : public std::enable_shared_from_this<BaseBoard>{
     private:
+
     board_type board;
 
     Position white_king;
@@ -50,6 +59,7 @@ class BaseBoard : public std::enable_shared_from_this<BaseBoard>{
     void setKing(const Position position_king,const PieceColor king_color);
     bool isChecking(const PieceColor opponent_color);
     std::string checkForWin();
+    void const printBoardCout();
 
 };
-#endif
+#endif // BASEBOARD_H

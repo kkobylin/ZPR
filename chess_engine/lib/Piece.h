@@ -11,6 +11,7 @@ class BaseBoard;
 
 enum PieceColor {
     BLACK = -1,
+    NONE = 0,
     WHITE = 1
 };
 
@@ -21,6 +22,8 @@ struct Position{
     bool operator==(const Position pos1){ return pos1.column == column && pos1.row == row;} // override operator to use std::find
     bool operator!=(const Position pos1){ return pos1.column != column || pos1.row != row;} // override operator to use std::find
     friend std::ostream & operator<<(std::ostream &out, const Position &c){return out << (char)(c.column + 65) << c.row + 1 << std::endl;}; // output position and figure name
+    Position operator+(Position pos1){ return Position{pos1.column + column, pos1.row + row};} //todo
+    Position operator*(int const &pos1){ return Position{pos1 * column, pos1 * row};} //todo
 
     std::string toString(){
         return std::to_string(column) + std::to_string(row);
@@ -45,9 +48,13 @@ private:
     bool                  moved = false; // was figure moved, used to castle and en passant pawn move
     std::vector<Position> moves; // vector of possible moves
 
+
+    std::vector<Position> directionOfMoves;
+    bool isMoveRecursive = false;
+
 public:
-    Piece(const int,const int,const PieceColor, std::string);
-    Piece(const Position,const PieceColor,const std::string){};
+    Piece(const int,const int,const PieceColor);
+    Piece(const Position,const PieceColor){};
     Piece(const Piece &piece_);
 
     void setColor(const PieceColor); // set color of figure
@@ -59,10 +66,16 @@ public:
     void setMoves(const std::vector<Position>); // set possible moves
     void setFigureName(const std::string); // set figure name
     bool isChecking(const Position position_piece,const Position position_king) const;
-
+    Position getKing(std::shared_ptr<BaseBoard>, PieceColor pieceColor); //todo
     std::vector<Position> evaluateCheck(const std::shared_ptr<BaseBoard>,const bool) const;
-    virtual std::vector<Position> getPossibleMoves (std::shared_ptr<BaseBoard>,const bool =true) = 0; // get vector of possible moves
+    virtual std::vector<Position> getPossibleMoves (std::shared_ptr<BaseBoard>,const bool =true); // get vector of possible moves
     virtual double getPositionValue() const = 0;
+
+    void setRecursive();
+
+    PieceColor isMoveValid(Position position, std::shared_ptr<BaseBoard> board); //todo
+    bool moveIsInBoard(Position position); //todo
+    void setDirectionOfMove(Position pos); //todo
 
 
     PieceColor            getColor() const; // get color of figure
@@ -74,6 +87,7 @@ public:
     std::vector<Position> getMoves() const; // get possible moves of figure
     std::string           getFigureName() const; // get figure name
 
-    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << c.column << c.row << c.figure_name << std::endl;}; // output position and figure name
+    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << (char)(c.column + 65) << c.row + 1 << c.figure_name << std::endl;}; // output position and figure name
 };
 #endif
+

@@ -1,5 +1,5 @@
-#ifndef BOARD
-#define BOARD
+#ifndef BOARD_H
+#define BOARD_H
 #include "BaseBoard.h"
 #include <memory>
 
@@ -13,4 +13,4 @@ public:
     static std::shared_ptr<Board> getInstance();
 
 };
-#endif
+#endif //BOARD_H

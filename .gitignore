@@ -24,6 +24,15 @@ chess_engine/.vscode/
 /.vscode
 /.VSCodeCounter
 
+test/CMakeFiles
+test/CMakeFiles/*
+test/CMakeCache.txt
+test/cmake_install.cmake
+test/Makefile
+test/tests
+
+chess_engine/latex/*
+chess_engine/html/*
 chess_engine/test/CMakeFiles
 chess_engine/test/CMakeFiles/*
 chess_engine/test/CMakeCache.txt

@@ -1,19 +1,40 @@
-#ifndef KING
-#define KING
+/**
+ * @file King.h
+ * @author Marcin Michalski (marmichalski97@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2020-01-15
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
+#ifndef KING_H
+#define KING_H
 #include "Piece.h"
 #include "Board.h"
 
 class King : public Piece{
 private:
-    bool moved = false;
     bool castled = false;
     bool checked = false;
 
 public:
-    King(const int column,const int row,const PieceColor color,const std::string figure_name) :
-        Piece (column, row, color, figure_name){};
-    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>,const bool) override;
+    King(const int column,const int row,const PieceColor color) :
+    Piece (column, row, color){
+        setFigureName("K");
+        setDirectionOfMove(Position{1,-1});
+        setDirectionOfMove(Position{1,0});
+        setDirectionOfMove(Position{1,1});
+        setDirectionOfMove(Position{0,1});
+        setDirectionOfMove(Position{-1,1});
+        setDirectionOfMove(Position{-1,0});
+        setDirectionOfMove(Position{-1,-1});
+        setDirectionOfMove(Position{0,-1});
+
+        };
+    
 
     double getPositionValue() const override ;
 };
-#endif
+#endif //KING_H
