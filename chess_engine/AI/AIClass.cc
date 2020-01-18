@@ -1,38 +1,28 @@
-//
-// Created by Krzysiek on 29/11/2019.
-//
+/**
+ * @file AIClass.cc
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Class calculating opponent move, using minmax algorithm
+ * @version 1.0
+ * @date 2020-01-15
+ */
 #include "AIClass.h"
 #include "../lib/BaseBoard.h"
-#include "../exceptions/IllegalStateException.h"
 
 double AIClass::evaluateBoard(std::shared_ptr<BaseBoard> board, PieceColor side) {
 
     double result = 0;
 
-    //if(board->isChecking(side == WHITE ? BLACK : WHITE))
-      //  result+=40;
-
-//    auto end_of_game = board->checkForWin();
-//    switch (side){
-//        case WHITE:
-//            if(end_of_game == "win")
-//                result+= 500;
-//            break;
-//        case BLACK:
-//            if(end_of_game == "lose")
-//                result+= 500;
-//    }
-
     for(auto column : board->getBoard())
         for(auto square : column){
             if(square->getOccupied())
-                result += square->getPiece()->getPositionValue();
+                /* Multiply by 3 to encourage AI to attack instead of just rearrange pieces */
+                result += square->getPiece()->getPositionValue() * 3;
         }
 
     return result;
 }
 
-MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> board_obj, PieceColor side){
+MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> board_obj, double alpha, double beta) {
     board_type board = board_obj->getBoard();
     MovePacket best_move;
     /* Impossible value for source column to find the first case in searching */
@@ -47,9 +37,10 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Base
                     std::shared_ptr<BaseBoard> new_board (new BaseBoard(board_obj_string));
                     new_board->updateBoard(pos.column, pos.row, piece->getColumn(), piece->getRow());
                     if(depth == 1) {
-                        int score = evaluateBoard(new_board, side);
-                        switch (side) {
-                            case BLACK:
+                        double score = evaluateBoard(new_board, turn);
+                        switch (turn) {
+                            case BLACK: {
+                                beta = std::min(beta, score);
                                 if (best_move.src_col == -1 || score < best_move.score) {
                                     best_move.src_row = piece->getRow();
                                     best_move.src_col = piece->getColumn();
@@ -58,7 +49,9 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Base
                                     best_move.score = score;
                                 }
                                 break;
-                            case WHITE:
+                            }
+                            case WHITE: {
+                                alpha = std::max(alpha, score);
                                 if (best_move.src_col == -1 || score > best_move.score) {
                                     best_move.src_row = piece->getRow();
                                     best_move.src_col = piece->getColumn();
@@ -67,35 +60,54 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Base
                                     best_move.score = score;
                                 }
                                 break;
+                            }
                         }
+                        if(beta <= alpha)
+                            return best_move;
                     } else{//depth > 1
                         PieceColor next_turn = (turn == BLACK ? WHITE : BLACK);
-                        MovePacket next_score = MiniMaxRoot(depth - 1, next_turn, new_board, side);
-                        switch(side){
-                            case BLACK:
-                                if(next_score.score < best_move.score){
+                        MovePacket next_score = MiniMaxRoot(depth - 1, next_turn, new_board, alpha, beta);
+                        switch(turn){
+                            case BLACK: {
+                                if (best_move.src_col == -1 || next_score.score < best_move.score) {
                                     best_move.src_row = piece->getRow();
                                     best_move.src_col = piece->getColumn();
                                     best_move.dest_row = pos.row;
                                     best_move.dest_col = pos.column;
                                     best_move.score = next_score.score;
                                 }
+                                beta = std::min(beta, next_score.score);
                                 break;
-                            case WHITE:
-                                if(next_score.score > best_move.score){
+                            }
+                            case WHITE: {
+                                if (best_move.src_col == -1 || next_score.score > best_move.score) {
                                     best_move.src_row = piece->getRow();
                                     best_move.src_col = piece->getColumn();
                                     best_move.dest_row = pos.row;
                                     best_move.dest_col = pos.column;
                                     best_move.score = next_score.score;
                                 }
+                                alpha = std::max(alpha, next_score.score);
                                 break;
+                            }
                         }
+                       if(beta <= alpha)
+                           return best_move;
                     }
                 }
             }
         }
-    if(best_move.src_col == -1)
-        throw IllegalStateException();
+    if(best_move.src_col == -1){
+        switch(turn){
+            case BLACK:
+                best_move.score = std::numeric_limits<double>::max();
+                break;
+            case WHITE:
+                best_move.score = std::numeric_limits<double>::max() * -1;
+                break;
+        }
+    }
+
     return best_move;
 }
+

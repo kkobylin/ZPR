@@ -6,8 +6,6 @@
 #include <iostream>
 
 class Pawn : public Piece{
-private:
-    bool moved = false;
 public:
     Pawn(const int column,const int row,const PieceColor color,const std::string figure_name) :
         Piece (column, row, color, figure_name){};

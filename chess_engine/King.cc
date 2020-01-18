@@ -2,27 +2,6 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-bool King::getMoved() const{
-        return this->moved;
-}
-
-bool King::getCastled() const{
-        return this->castled;
-}
-
-void King::setCastled(bool castled){
-        this->castled = castled;
-}
-
-bool King::getChecked() const{
-        return this->checked;
-}
-
-void King::setChecked(bool checked){
-        this->checked = checked;
-}
-
-
 std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool original_evaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
@@ -183,9 +162,6 @@ std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
             
         }
     }
-
-    //todo castle 
-
 
     this->setMoves(possible_position);
 

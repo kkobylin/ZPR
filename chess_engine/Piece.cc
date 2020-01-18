@@ -91,23 +91,6 @@ std::vector<Position> Piece::getMoves() const{
     return this->moves;
 }
 
-Position Piece::getKing(std::shared_ptr<BaseBoard> board, PieceColor piece_color) const{
-
-    for (int column = 0; column < 8; column++){
-        for (int row = 0; row < 8; row++ ){
-            if (board->getBoard()[column][row]->getOccupied()){
-                std::string piece = board->getBoard()[column][row]->getPiece()->getFigureName();
-                if (piece == "K"){
-                    piece_color = board->getBoard()[column][row]->getPiece()->getColor();
-                    if (piece_color == piece_color){
-                        return board->getBoard()[column][row]->getPiece()->getPosition();
-                    }
-                }
-            }
-        }
-    }
-}
-
 bool Piece::isChecking(Position position_piece, Position position_king) const{
     if (position_king.column == position_piece.column && position_king.row == position_piece.row){
         return true;

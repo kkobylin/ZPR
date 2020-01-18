@@ -1,3 +1,11 @@
+/**
+ * @file Connector.cc
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Bridge between frontend and backend using Boost Python
+ * @version 1.0
+ * @date 2020-01-15
+ */
+
 #include "Connector.h"
 #include <boost/python/module.hpp>
 #include <boost/python/def.hpp>
@@ -6,7 +14,6 @@
 #include <string>
 #include "AI/AIClass.h"
 #include "lib/BaseBoard.h"
-#include "exceptions/IllegalStateException.h"
 #include "exceptions/WrongArgException.h"
 
 /**
@@ -141,7 +148,7 @@ std::string const Connector::opponentMove(){
 
     MovePacket move_packet;
     try {
-        move_packet = AIClass::MiniMaxRoot(2, BLACK, min_max_board, BLACK);
+        move_packet = AIClass::MiniMaxRoot(2, BLACK, min_max_board, std::numeric_limits<double>::max()*-1, std::numeric_limits<double>::max());
         board->updateBoard(move_packet.dest_col, move_packet.dest_row, move_packet.src_col, move_packet.src_row);
     }
     catch(std::exception& e){

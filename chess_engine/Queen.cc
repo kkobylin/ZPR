@@ -2,7 +2,6 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-
 std::vector<Position>  Queen::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool original_evaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();

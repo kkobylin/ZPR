@@ -31,7 +31,6 @@ add_executable(tests
         ../AI/PositionValue.h
         ../AI/PositionValue.cc
         ../exceptions/WrongArgException.h
-        ../exceptions/IllegalStateException.h
         FigureLogicTest.cc
         EndOfGameTest.cc
         ExceptionTest.cc)

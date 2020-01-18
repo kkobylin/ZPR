@@ -15,12 +15,5 @@ public:
     std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>,const bool) override;
 
     double getPositionValue() const override ;
-
-    //todo usunac
-    bool getMoved() const;
-    bool getCastled() const;
-    bool getChecked() const;
-    void setCastled(const bool castled);
-    void setChecked(const bool checked);
 };
 #endif

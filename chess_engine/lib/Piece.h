@@ -59,7 +59,6 @@ public:
     void setMoves(const std::vector<Position>); // set possible moves
     void setFigureName(const std::string); // set figure name
     bool isChecking(const Position position_piece,const Position position_king) const;
-    Position getKing(const std::shared_ptr<BaseBoard>,const PieceColor piece_color) const;
 
     std::vector<Position> evaluateCheck(const std::shared_ptr<BaseBoard>,const bool) const;
     virtual std::vector<Position> getPossibleMoves (std::shared_ptr<BaseBoard>,const bool =true) = 0; // get vector of possible moves

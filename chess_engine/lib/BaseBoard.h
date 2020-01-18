@@ -45,8 +45,6 @@ class BaseBoard : public std::enable_shared_from_this<BaseBoard>{
     board_type getBoard() const;
     void updateBoard(const int dest_col,const int dest_row,const int src_col,const int src_row);
     std::vector <std::vector <std::string>> toString() const;
-    //todo usunac
-    void printBoardCout();
 
     Position getKing(const PieceColor king_color) const;
     void setKing(const Position position_king,const PieceColor king_color);

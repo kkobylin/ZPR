@@ -103,7 +103,7 @@
 
         if (snapBack) return 'snapback';
 
-        if (endOfGame === 'none' && !snapBack){
+        if (!snapBack && (endOfGame === 'none' || endOfGame === 'lose') ){
             if(opponentMove != "00-00")
                 board.move(opponentMove);
             else{
