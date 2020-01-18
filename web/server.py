@@ -1,3 +1,13 @@
+'''
+/**
+ * @file server.py
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Server of the application
+ * Communicate frontend with chess logic 
+ * @version 1.0
+ * @date 2020-01-15
+ */
+'''
 #!flask/bin/python
 from flask import Flask, jsonify, request, make_response, abort, render_template, send_file
 import sys

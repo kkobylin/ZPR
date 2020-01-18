@@ -192,7 +192,7 @@ std::vector<Position>  Queen::getPossibleMoves(std::shared_ptr<BaseBoard> board,
     return possible_position;
 }
 
-double Queen::getPositionValue(){
+double Queen::getPositionValue() const{
 
     PieceColor color = this->getColor();
 

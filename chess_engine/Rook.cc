@@ -2,15 +2,6 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-bool Rook::getMoved(){
-    return this->moved;
-}
-
-void Rook::setMoved(bool moved){
-    this->moved = moved;
-}
-
-
 std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool original_evaluation){
     int column_current = this->getColumn();
     int row_current    = this->getRow();
@@ -116,7 +107,7 @@ std::vector<Position>  Rook::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
     return possible_position;
 }
 
-double Rook::getPositionValue(){
+double Rook::getPositionValue() const{
     PieceColor color = this->getColor();
 
     if(color == BLACK)

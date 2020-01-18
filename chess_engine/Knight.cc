@@ -178,7 +178,7 @@ std::vector<Position>  Knight::getPossibleMoves(std::shared_ptr<BaseBoard> board
     return possible_position;
 }
 
-double Knight::getPositionValue(){
+double Knight::getPositionValue() const{
 
     PieceColor color = this->getColor();
     if(color == BLACK)

@@ -1,10 +1,4 @@
-//
-// Created by krzysiek on 11.01.2020.
-//
-
 #include "PositionValue.h"
-
-//max - 515 sr - 185
 
 const double PositionValue::KingEvalWhite [8][8] =
         {

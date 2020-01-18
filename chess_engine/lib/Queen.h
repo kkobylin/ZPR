@@ -6,10 +6,10 @@
 class Queen : public Piece{
 public:
 
-    Queen(int column, int row, PieceColor color, std::string figure_name) :
+    Queen(const int column,const int row,const PieceColor color,const std::string figure_name) :
         Piece (column, row, color, figure_name){};
 
-    std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool) override;
-    double getPositionValue() override ;
+    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>,const bool) override;
+    double getPositionValue() const override ;
 };
 #endif

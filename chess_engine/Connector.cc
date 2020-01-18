@@ -1,7 +1,3 @@
-//
-// Created by krzysiek on 01.12.2019.
-//
-
 #include "Connector.h"
 #include <boost/python/module.hpp>
 #include <boost/python/def.hpp>
@@ -13,6 +9,13 @@
 #include "exceptions/IllegalStateException.h"
 #include "exceptions/WrongArgException.h"
 
+/**
+ * Method use by frontend to check whether white player's move
+ * is correct or not
+ * @param dest - destination of piece
+ * @param src - source, prior position of piece
+ * @return bool - move correct or not
+ */
 bool const Connector::ifMovePossible(std::string dest, std::string src){
 
     if(dest == "offboard")
@@ -21,7 +24,9 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     std::shared_ptr<BaseBoard> board_instance = Board::getInstance();
     board_type board = board_instance->getBoard();
 
-    /* Convert columns from A to H to 0-7*/
+    /**
+     * Convert columns from A to H to 0-7
+     */
     int src_col;
     int dest_col;
     switch (src[0]){
@@ -82,7 +87,9 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
             return false;
     }
 
-    /* Convert rows from 1 to 8 to 0-7*/
+    /**
+     * Convert rows from 1 to 8 to 0-7
+     * */
     int src_row;
     int dest_row;
     try {
@@ -111,14 +118,22 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
 
     return false;
 }
-
+/**
+ * Method use by frontend after each move to check
+ * if it is end of the game
+ * @return string - "none", "draw", "win" or "lose"
+ * win - when white player wins
+ * lose - when black player wins
+ */
 std::string const Connector::checkForWin() {
-    /* none draw win lose*/
-
     auto board = Board::getInstance();
     return board->checkForWin();
 }
 
+/**
+ * Method use by frontend to get opponent move
+ * @return move in format "A1-A2"
+ */
 std::string const Connector::opponentMove(){
         /* Format e2-e4 */
     auto board = Board::getInstance();

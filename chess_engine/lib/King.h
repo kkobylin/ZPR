@@ -10,18 +10,17 @@ private:
     bool checked = false;
 
 public:
-    King(int column, int row, PieceColor color, std::string figure_name) :
+    King(const int column,const int row,const PieceColor color,const std::string figure_name) :
         Piece (column, row, color, figure_name){};
-    std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool) override;
+    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>,const bool) override;
 
-    double getPositionValue() override ;
+    double getPositionValue() const override ;
 
-    bool getMoved();
-    bool getCastled();
-    bool getChecked();
-
-    void setMoved(bool moved);
-    void setCastled(bool castled);
-    void setChecked(bool checked);
+    //todo usunac
+    bool getMoved() const;
+    bool getCastled() const;
+    bool getChecked() const;
+    void setCastled(const bool castled);
+    void setChecked(const bool checked);
 };
 #endif

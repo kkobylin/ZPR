@@ -40,15 +40,17 @@ class BaseBoard : public std::enable_shared_from_this<BaseBoard>{
     Position black_king;
 
     public:
-    BaseBoard(std::vector <std::vector <std::string>>);
-    board_type getBoard();
-    void updateBoard(int dest_col, int dest_row, int src_col, int src_row);
-    std::vector <std::vector <std::string>> toString();
+    BaseBoard(const std::vector <std::vector <std::string>>);
+    BaseBoard(const BaseBoard &base_board);
+    board_type getBoard() const;
+    void updateBoard(const int dest_col,const int dest_row,const int src_col,const int src_row);
+    std::vector <std::vector <std::string>> toString() const;
+    //todo usunac
     void printBoardCout();
 
-    Position getKing(PieceColor king_color);
-    void setKing(Position position_king, PieceColor king_color);
-    bool isChecking(PieceColor opponent_color);
+    Position getKing(const PieceColor king_color) const;
+    void setKing(const Position position_king,const PieceColor king_color);
+    bool isChecking(const PieceColor opponent_color);
     std::string checkForWin();
 
 };

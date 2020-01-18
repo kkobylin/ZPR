@@ -6,10 +6,10 @@
 
 class Knight : public Piece{
     public:
-    Knight(int column, int row, PieceColor color, std::string figure_name) :
+    Knight(const int column,const int row,const PieceColor color,const std::string figure_name) :
         Piece (column, row, color, figure_name){};
-    std::vector<Position> getPossibleMoves(const std::shared_ptr<BaseBoard>, bool) override;
+    std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>,const bool) override;
 
-    double getPositionValue() override ;
+    double getPositionValue() const override ;
 };
 #endif

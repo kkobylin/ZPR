@@ -69,13 +69,86 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> board_string){
             board[column][row]->setRow(row);
 
             if (buffer != INITIAL_BOARD[column][row]){
-                board[column][row]->getPiece()->setMoved();
+                board[column][row]->getPiece()->setMoved(true);
             }
         } 
     }
 }
 
-board_type BaseBoard::getBoard() {
+BaseBoard::BaseBoard(const BaseBoard &base_board) {
+    auto board_ = base_board.getBoard();
+    for(auto column : board_) {
+        board.push_back(std::vector<std::shared_ptr<Square>>());
+        for (auto square : column) {
+
+            auto column_nr = square->getColumn();
+            auto row_nr = square->getRow();
+
+            if (!(square->getOccupied())){
+                board[column_nr].push_back(std::shared_ptr<Square>{new Square(nullptr)});
+                board[column_nr].back()->setColumn(column_nr);
+                board[column_nr].back()->setRow(row_nr);
+                continue;
+            }
+            auto piece = square->getPiece();
+            std::string figure_name = piece->getFigureName();
+            auto color = piece->getColor();
+            std::string name = piece->getFigureName();
+
+            switch(name[0]){
+                case 'N': {
+                    std::shared_ptr<Knight> ptr(new Knight(column_nr, row_nr, color, name));
+                    ptr->setMoved(piece->getMoved());
+                    ptr->setMoves(piece->getMoves());
+                    board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
+                    break;
+                }
+                case 'R': {
+                    std::shared_ptr<Rook> ptr {new Rook(column_nr, row_nr, color, name)};
+                    ptr->setMoved(piece->getMoved());
+                    ptr->setMoves(piece->getMoves());
+                    board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
+                    break;
+                }
+                case 'B':{
+                    std::shared_ptr<Bishop> ptr {new Bishop(column_nr, row_nr, color, name)};
+                    ptr->setMoved(piece->getMoved());
+                    ptr->setMoves(piece->getMoves());
+                    board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
+                    break;
+                }
+                case 'Q':{
+                    std::shared_ptr<Queen> ptr {new Queen(column_nr, row_nr, color, name)};
+                    ptr->setMoved(piece->getMoved());
+                    ptr->setMoves(piece->getMoves());
+                    board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
+                    break;
+                }
+                case 'K':{
+                    std::shared_ptr<King> ptr {new King(column_nr, row_nr, color, name)};
+                    ptr->setMoved(piece->getMoved());
+                    ptr->setMoves(piece->getMoves());
+                    board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
+                    this->setKing(Position{column_nr,row_nr}, color);
+                    break;
+                }
+                case 'P':{
+                    std::shared_ptr<Pawn> ptr {new Pawn(column_nr, row_nr, color, name)};
+                    ptr->setMoved(piece->getMoved());
+                    ptr->setMoves(piece->getMoves());
+                    board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
+                    break;
+                }
+            }
+            board[column_nr][row_nr]->setOccupied(true);
+            board[column_nr][row_nr]->setColumn(column_nr);
+            board[column_nr][row_nr]->setRow(row_nr);
+
+        }
+    }
+}
+
+board_type BaseBoard::getBoard() const {
     return board;
 }
 
@@ -90,7 +163,7 @@ void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row
     board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
     board[dest_col][dest_row]->setOccupied(true);
     board[dest_col][dest_row]->getPiece()->setPosition(position); // aktualizacja pozycji figury
-    board[dest_col][dest_row]->getPiece()->setMoved();
+    board[dest_col][dest_row]->getPiece()->setMoved(true);
 
     if (Position{src_col,src_row} == this->getKing(WHITE)){
         this->setKing(Position{dest_col,dest_row}, WHITE);
@@ -105,7 +178,7 @@ void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row
 }
 
 
-std::vector <std::vector <std::string>> BaseBoard::toString(){
+std::vector <std::vector <std::string>> BaseBoard::toString() const{
     std::vector <std::vector <std::string>> board_return;
     std::string piece = "";
     std::string color = "";
@@ -147,7 +220,7 @@ void BaseBoard::printBoardCout(){
 }
 
 
-Position BaseBoard::getKing(PieceColor king_color){
+Position BaseBoard::getKing (PieceColor king_color) const{
     if (king_color == WHITE){
         return this->white_king;
     }else{

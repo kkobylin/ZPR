@@ -1,6 +1,10 @@
-//
-// Created by root on 16.01.2020.
-//
+/**
+ * @file ExceptionTest.cc
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Boost auto test, testing throwing exceptions by functions
+ * @version 1.0
+ * @date 2020-01-15
+ */
 
 #define BOOST_TEST_DYN_LINK
 #include <boost/test/unit_test.hpp>

@@ -1,6 +1,11 @@
-//
-// Created by Krzysiek on 29/11/2019.
-//
+/**
+ * @file PositionValue.h
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Class holding information how valuable is each piece on each position,
+ * used in minmax algorithm
+ * @version 1.0
+ * @date 2020-01-15
+ */
 
 #ifndef CHESS_POSITIONVALUE_H
 #define CHESS_POSITIONVALUE_H

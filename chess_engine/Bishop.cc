@@ -2,7 +2,7 @@
 #include "lib/Bishop.h"
 
 
-std::vector<Position> Bishop::getPossibleMoves(std::shared_ptr<BaseBoard>board, bool original_evaluation){
+std::vector<Position> Bishop::getPossibleMoves(std::shared_ptr<BaseBoard>board, bool original_evaluation) {
     
     int column_current = this->getColumn();
     int row_current    = this->getRow();
@@ -111,7 +111,7 @@ std::vector<Position> Bishop::getPossibleMoves(std::shared_ptr<BaseBoard>board, 
     return possible_position;
 }
 
-double Bishop::getPositionValue(){
+double Bishop::getPositionValue() const{
     PieceColor color = this->getColor();
 
     if(color == BLACK)

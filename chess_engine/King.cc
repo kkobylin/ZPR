@@ -2,15 +2,11 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
-bool King::getMoved(){
+bool King::getMoved() const{
         return this->moved;
 }
 
-void King::setMoved(bool moved){
-        this->moved = moved;
-}
-
-bool King::getCastled(){
+bool King::getCastled() const{
         return this->castled;
 }
 
@@ -18,7 +14,7 @@ void King::setCastled(bool castled){
         this->castled = castled;
 }
 
-bool King::getChecked(){
+bool King::getChecked() const{
         return this->checked;
 }
 
@@ -200,7 +196,7 @@ std::vector<Position>  King::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
     return possible_position;
 }
 
-double King::getPositionValue(){
+double King::getPositionValue() const{
     PieceColor color = this->getColor();
 
     if(color == BLACK)
