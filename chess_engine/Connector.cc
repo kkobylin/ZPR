@@ -10,6 +10,8 @@
 #include <string>
 #include "AI/AIClass.h"
 #include "lib/BaseBoard.h"
+#include "exceptions/IllegalStateException.h"
+#include "exceptions/WrongArgException.h"
 
 bool const Connector::ifMovePossible(std::string dest, std::string src){
 
@@ -81,16 +83,28 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
     }
 
     /* Convert rows from 1 to 8 to 0-7*/
-    int src_row = std::stoi(src.substr(1,1));
-    src_row --;
-    int dest_row = std::stoi(dest.substr(1,1));
-    dest_row --;
+    int src_row;
+    int dest_row;
+    try {
+        src_row = std::stoi(src.substr(1, 1));
+        src_row--;
+        dest_row = std::stoi(dest.substr(1, 1));
+        dest_row--;
+    }
+    catch (std::exception& e){
+        return false;
+    }
 
     std::vector<Position> possible_positions = board[src_col][src_row]->getPiece()->getPossibleMoves(board_instance);
 
     for(Position p : possible_positions){
         if(p.column == dest_col && p.row == dest_row){
-            board_instance->updateBoard(dest_col, dest_row, src_col, src_row);
+            try {
+                board_instance->updateBoard(dest_col, dest_row, src_col, src_row);
+            }
+            catch(WrongArgException& e){
+                return false;
+            }
             return true;
         }
     }
@@ -110,8 +124,15 @@ std::string const Connector::opponentMove(){
     auto board = Board::getInstance();
     std::shared_ptr<BaseBoard> min_max_board(new BaseBoard(board->toString()));
 
-    MovePacket move_packet = AIClass::MiniMaxRoot(2, BLACK, min_max_board, BLACK);
-    board->updateBoard(move_packet.dest_col, move_packet.dest_row, move_packet.src_col, move_packet.src_row);
+    MovePacket move_packet;
+    try {
+        move_packet = AIClass::MiniMaxRoot(2, BLACK, min_max_board, BLACK);
+        board->updateBoard(move_packet.dest_col, move_packet.dest_row, move_packet.src_col, move_packet.src_row);
+    }
+    catch(std::exception& e){
+        return "00-00";
+    }
+
     std::string chessColumnConvert[8] = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
     std::string src_row = std::to_string(++move_packet.src_row);

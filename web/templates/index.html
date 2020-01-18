@@ -93,7 +93,12 @@
         if (snapBack) return 'snapback';
 
         if (endOfGame === 'none' && !snapBack){
-            board.move(opponentMove);
+            if(opponentMove != "00-00")
+                board.move(opponentMove);
+            else{
+                alert("There was error while computing AI move");
+                endOfGame = "error";
+            }
         }
 
         // Repair bug - opponent moved before white piece ended move

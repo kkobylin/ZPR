@@ -3,6 +3,7 @@
 //
 #include "AIClass.h"
 #include "../lib/BaseBoard.h"
+#include "../exceptions/IllegalStateException.h"
 
 double AIClass::evaluateBoard(std::shared_ptr<BaseBoard> board, PieceColor side) {
 
@@ -94,5 +95,7 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Base
                 }
             }
         }
+    if(best_move.src_col == -1)
+        throw IllegalStateException();
     return best_move;
 }

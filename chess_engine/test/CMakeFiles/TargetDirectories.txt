@@ -1,3 +1,0 @@
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/rebuild_cache.dir
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/chesslib.dir
-/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeFiles/edit_cache.dir

@@ -11,5 +11,7 @@
 using namespace std;
 
 int main(void){
+    std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
+    AIClass::MiniMaxRoot(2, BLACK, board_ptr, BLACK);
     Connector::checkForWin();
 }

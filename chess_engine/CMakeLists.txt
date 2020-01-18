@@ -31,8 +31,10 @@ add_library(chesslib SHARED
         AI/PositionValue.h
         AI/PositionValue.cpp
         exceptions/WrongArgException.h
-        exceptions/WrongArgException.cpp
-        exceptions/IllegalStateException.h)
+        exceptions/IllegalStateException.h
+        test/FigureLogicTest.cpp
+        test/EndOfGameTest.cpp
+        test/ExceptionTest.cpp)
 
 cmake_host_system_information(RESULT name QUERY HOSTNAME)
 set(BOOST_ROOT "/home/$ENV{USER}/Desktop/Boost/boost_1_71_0")
