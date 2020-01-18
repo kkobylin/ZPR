@@ -33,7 +33,7 @@ void compareVectors(std::vector<Position> pos, std::vector<std::string> correct_
 BOOST_AUTO_TEST_CASE(PawnCase) {
 /* --------------------------------------------------------------- Pawn -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
-    Piece *p = new Pawn(0, 1, WHITE, "P");
+    Piece *p = new Pawn(0, 1, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
 
     auto pos = p->getPossibleMoves(board_ptr);
@@ -60,7 +60,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
-    p = new Pawn(2, 3, WHITE, "P");
+    p = new Pawn(2, 3, WHITE);
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 0);
 
@@ -78,7 +78,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
-    p = new Pawn(2, 6, BLACK, "P");
+    p = new Pawn(2, 6, BLACK);
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
     correct_positions.clear();
@@ -100,7 +100,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
-    p = new Pawn(3, 5, BLACK, "P");
+    p = new Pawn(3, 5, BLACK);
     p->setMoved();
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 3);
@@ -125,7 +125,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
-    p = new Pawn(0, 2, WHITE, "P");
+    p = new Pawn(0, 2, WHITE);
     p->setMoved();
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
@@ -148,7 +148,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
-    p = new Pawn(1, 6, BLACK, "P");
+    p = new Pawn(1, 6, BLACK);
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 4);
     correct_positions.clear();
@@ -173,7 +173,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
-    p = new Pawn(1, 7, WHITE, "P");
+    p = new Pawn(1, 7, WHITE);
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 0);
 
@@ -191,7 +191,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
-    p = new Pawn(3, 3, WHITE, "P");
+    p = new Pawn(3, 3, WHITE);
     p->setMoved();
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
@@ -215,7 +215,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete p;
-    p = new Pawn(2, 2, WHITE, "P");
+    p = new Pawn(2, 2, WHITE);
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
 
@@ -229,7 +229,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
 /* --------------------------------------------------------------- Bishop -----------------------------------------------------------------------------------------------*/
 
     /* 1st case - beginning of the game */
-    Piece *b = new Bishop(2, 0, WHITE, "B");
+    Piece *b = new Bishop(2, 0, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
     board_ptr.reset(new BaseBoard(INITIAL_BOARD));
 
@@ -251,7 +251,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete b;
-    b = new Bishop(3, 3, BLACK, "B");
+    b = new Bishop(3, 3, BLACK);
     pos = b->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 13);
 
@@ -269,7 +269,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete b;
-    b = new Bishop(7, 0, WHITE, "B");
+    b = new Bishop(7, 0, WHITE);
     pos = b->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 7);
 
@@ -287,7 +287,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete b;
-    b = new Bishop(1, 1, WHITE, "B");
+    b = new Bishop(1, 1, WHITE);
     pos = b->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 2);
 
@@ -312,7 +312,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete b;
-    b = new Bishop(6, 6, WHITE, "B");
+    b = new Bishop(6, 6, WHITE);
     pos = b->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 5);
 
@@ -330,7 +330,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete b;
-    b = new Bishop(2, 3, BLACK, "B");
+    b = new Bishop(2, 3, BLACK);
     pos = b->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
     correctPositions.clear();
@@ -351,7 +351,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete b;
-    b = new Bishop(3, 2, WHITE, "B");
+    b = new Bishop(3, 2, WHITE);
     pos = b->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
     correctPositions.clear();
@@ -362,7 +362,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
 BOOST_AUTO_TEST_CASE(KnightCase) {
 /* --------------------------------------------------------------- Knight -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
-    Piece *n = new Knight(1, 0, WHITE, "N");
+    Piece *n = new Knight(1, 0, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
     board_ptr.reset(new BaseBoard(INITIAL_BOARD));
 
@@ -384,7 +384,7 @@ BOOST_AUTO_TEST_CASE(KnightCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete n;
-    n = new Knight(3, 3, BLACK, "N");
+    n = new Knight(3, 3, BLACK);
     pos = n->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 8);
 
@@ -402,7 +402,7 @@ BOOST_AUTO_TEST_CASE(KnightCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete n;
-    n = new Knight(7, 1, WHITE, "N");
+    n = new Knight(7, 1, WHITE);
     pos = n->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 3);
 
@@ -417,7 +417,7 @@ BOOST_AUTO_TEST_CASE(KnightCase) {
 BOOST_AUTO_TEST_CASE(QueenCase) {
     /* --------------------------------------------------------------- Queen -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
-    Piece *q = new Queen(3, 0, WHITE, "Q");
+    Piece *q = new Queen(3, 0, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
     board_ptr.reset(new BaseBoard(INITIAL_BOARD));
 
@@ -439,7 +439,7 @@ BOOST_AUTO_TEST_CASE(QueenCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete q;
-    q = new Queen(3, 3, WHITE, "Q");
+    q = new Queen(3, 3, WHITE);
     pos = q->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 8);
 
@@ -457,7 +457,7 @@ BOOST_AUTO_TEST_CASE(QueenCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete q;
-    q = new Queen(0, 6, BLACK, "Q");
+    q = new Queen(0, 6, BLACK);
     pos = q->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 5);
 }
@@ -465,7 +465,7 @@ BOOST_AUTO_TEST_CASE(QueenCase) {
 BOOST_AUTO_TEST_CASE(RookCase) {
     /* --------------------------------------------------------------- Rook -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
-    Piece *r = new Rook(0, 0, WHITE, "R");
+    Piece *r = new Rook(0, 0, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
     board_ptr.reset(new BaseBoard(INITIAL_BOARD));
 
@@ -487,7 +487,7 @@ BOOST_AUTO_TEST_CASE(RookCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete r;
-    r = new Rook(3, 3, BLACK, "R");
+    r = new Rook(3, 3, BLACK);
     pos = r->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 14);
 
@@ -505,7 +505,7 @@ BOOST_AUTO_TEST_CASE(RookCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete r;
-    r = new Rook(3, 0, BLACK, "R");
+    r = new Rook(3, 0, BLACK);
     pos = r->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 9);
 
@@ -523,7 +523,7 @@ BOOST_AUTO_TEST_CASE(RookCase) {
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete r;
-    r = new Rook(0, 7, WHITE, "R");
+    r = new Rook(0, 7, WHITE);
     pos = r->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 0);
 }
@@ -532,7 +532,7 @@ BOOST_AUTO_TEST_CASE(KingCase)
 {
     /* --------------------------------------------------------------- King -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
-    Piece *k = new King(4, 0, WHITE, "K");
+    Piece *k = new King(4, 0, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
     board_ptr.reset(new BaseBoard(INITIAL_BOARD));
 
@@ -554,7 +554,7 @@ BOOST_AUTO_TEST_CASE(KingCase)
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete k;
-    k = new King(0, 7, WHITE, "K");
+    k = new King(0, 7, WHITE);
     pos = k->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 3);
 
@@ -572,7 +572,7 @@ BOOST_AUTO_TEST_CASE(KingCase)
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete k;
-    k = new King(3, 3, WHITE, "K");
+    k = new King(3, 3, WHITE);
     pos = k->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 2);
 
@@ -590,7 +590,7 @@ BOOST_AUTO_TEST_CASE(KingCase)
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete k;
-    k = new King(3, 3, WHITE, "K");
+    k = new King(3, 3, WHITE);
     pos = k->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 0);
 
@@ -608,7 +608,7 @@ BOOST_AUTO_TEST_CASE(KingCase)
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete k;
-    k = new King(7, 3, BLACK, "K");
+    k = new King(7, 3, BLACK);
     pos = k->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
     std::vector<std::string> correctPositions;
@@ -631,7 +631,7 @@ BOOST_AUTO_TEST_CASE(KingCase)
     };
     board_ptr.reset(new BaseBoard(case_board));
     delete k;
-    k = new King(4, 3, WHITE, "K");
+    k = new King(4, 3, WHITE);
     pos = k->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 2);
 

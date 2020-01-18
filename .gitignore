@@ -24,7 +24,6 @@ chess_engine/.vscode/
 /.vscode
 /.VSCodeCounter
 
-<<<<<<< HEAD
 test/CMakeFiles
 test/CMakeFiles/*
 test/CMakeCache.txt
@@ -34,11 +33,9 @@ test/tests
 
 chess_engine/latex/*
 chess_engine/html/*
-=======
 chess_engine/test/CMakeFiles
 chess_engine/test/CMakeFiles/*
 chess_engine/test/CMakeCache.txt
 chess_engine/test/cmake_install.cmake
 chess_engine/test/Makefile
 chess_engine/test/tests
->>>>>>> master
