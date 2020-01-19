@@ -151,12 +151,12 @@ std::vector<Position> Piece::evaluateCheck(std::shared_ptr<BaseBoard> board_init
             opponent_color = WHITE;
         }
 
-        bool safe = true;
+        bool safe = true; // if move unsafe, it means that color move leads to check mate
         //iterate pieces by columns
         for (int column = COLUMN_MIN; column < COLUMN_MAX; column++ ){
             //iterate pieces by rows
             for (int row = ROW_MIN; row < ROW_MAX; row++ ){
-                //check if on Square is piece
+                //check if piece of opponent_color is on square, if so, check it's moves, it's possible, that after color move opponent_color might check mate color King
                 if (board[column][row]->getOccupied()){
                     color = board[column][row]->getPiece()->getColor();
                     if (color == opponent_color){
@@ -196,12 +196,12 @@ PieceColor Piece::isMoveValid(Position const &position, std::shared_ptr<BaseBoar
 
     if (piece->getOccupied()){
         if(piece->getPiece()->getColor() == color){
-            return color;
+            return color; //on the Square stays own piece
         }else{
-            return static_cast<PieceColor>(-1*color);
+            return static_cast<PieceColor>(-1*color); // on Square stays opponent piece
         }
     }else{
-        return NONE;
+        return NONE; // empty Square
     }
 }
 
@@ -218,6 +218,7 @@ bool Piece::getMoveRecursive() const{
 
 std::vector<Position> Piece::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){
     std::vector<Position> possible_position;
+    //if move is recursive, Piece can move as long as position + directionOfMoves*i is on board and not reach own piece
     if(getMoveRecursive()){
         for (auto move_scheme : directionOfMoves){
             Position dest_square = position + move_scheme;
@@ -231,7 +232,7 @@ std::vector<Position> Piece::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
                 dest_square = position + (move_scheme * i);
             }
         }
-    }else{
+    }else{ // move not recursive, moves only on Squares defined by position + directionOfMoves
         for (auto move_scheme : directionOfMoves){
             Position dest_square = position + move_scheme;
             if(moveIsInBoard(dest_square) && isMoveValid(dest_square, board) != color){
@@ -242,6 +243,7 @@ std::vector<Position> Piece::getPossibleMoves(std::shared_ptr<BaseBoard> board, 
 
     setMoves(possible_position);
 
+    //chech if move doesn't lead to check mate
     if (originalEvaluation){
         possible_position = evaluateCheck(board, false);
         setMoves(possible_position);

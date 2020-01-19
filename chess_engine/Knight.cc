@@ -13,13 +13,14 @@ Knight::Knight(const int column,const int row,const PieceColor color) :
         setDirectionOfMove(Position{-2,-1});
         setDirectionOfMove(Position{1,-2});
         setDirectionOfMove(Position{-1,-2});
+        pieceValue = 3; //experimental
     }
 
 double Knight::getPositionValue() const{
 
     PieceColor color = getColor();
     if(color == BLACK)
-        return PositionValue::KnightEval[getRow()][getColumn()] * (-1);
+        return (pieceValue + PositionValue::KnightEval[getRow()][getColumn()]) * (-1);
     else
-        return PositionValue::KnightEval[getRow()][getColumn()];
+        return (pieceValue + PositionValue::KnightEval[getRow()][getColumn()]);
 }

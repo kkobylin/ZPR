@@ -95,6 +95,8 @@ public:
     bool                  getOccupied() const; ///< is Square occupied
     std::vector<Position> getMoves() const; ///< get possible moves of figure
     std::string           getFigureName() const; ///< get figure name
+
+    int pieceValue = 0; //experimental AI change
 };
 
 std::ostream & operator<<(std::ostream &out, const Piece &c); ///< output position and figure name
