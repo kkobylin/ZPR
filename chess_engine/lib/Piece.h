@@ -1,3 +1,14 @@
+/**
+ * @file Piece.h
+ * @author Marcin Michalski (marmichalski97@gmail.com)
+ * @brief Base class for all figures
+ * @version 0.1
+ * @date 2020-01-19
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef PIECE
 #define PIECE
 #include <string>
@@ -37,14 +48,14 @@ const int COLUMN_MAX = 8;
 
 class Piece{
 private:
-    std::string           figure_name; // name of figure to transfer to frontend
-    PieceColor            color = BLACK; // color of figure
-    Position              position; // position on board, consists od column and row
-    int                   column; // vertical position of figure
-    int                   row; // horizontal position of figure
-    bool                  occupied = true; // is square occupied
-    bool                  moved = false; // was figure moved, used to castle and en passant pawn move
-    std::vector<Position> moves; // vector of possible moves
+    std::string           figure_name; ///< name of figure to transfer to frontend
+    PieceColor            color = BLACK; ///< color of figure
+    Position              position; ///< position on board, consists od column and row
+    int                   column; ///< vertical position of figure
+    int                   row; ///< horizontal position of figure
+    bool                  occupied = true; ///< is Square occupied
+    bool                  moved = false; ///< was figure moved, used to castle and en passant pawn move
+    std::vector<Position> moves; ///< vector of possible moves
 
 
     std::vector<Position> directionOfMoves;
@@ -55,17 +66,17 @@ public:
     Piece(const Position,const PieceColor){};
     Piece(const Piece &piece_);
 
-    void setColor(const PieceColor); // set color of figure
-    void setRow(const int); // set figure row
-    void setColumn(const int); // set figure column
-    void setPosition(const Position); // set figure position (column and row)
-    void setMoved(bool moved); // set if piece moved
-    void setOccupied(const bool); // set square occupied
-    void setMoves(const std::vector<Position>); // set possible moves
-    void setFigureName(const std::string); // set figure name
+    void setColor(const PieceColor); ///< set color of figure
+    void setRow(const int); ///< set figure row
+    void setColumn(const int); ///< set figure column
+    void setPosition(const Position); ///< set figure position (column and row)
+    void setMoved(bool moved); ///< set if piece moved
+    void setOccupied(const bool); ///< set Square occupied
+    void setMoves(const std::vector<Position>); ///< set possible moves
+    void setFigureName(const std::string); ///< set figure name
     bool isChecking(const Position position_piece,const Position position_king) const;
     std::vector<Position> evaluateCheck(const std::shared_ptr<BaseBoard>,const bool) const;
-    virtual std::vector<Position> getPossibleMoves (std::shared_ptr<BaseBoard>,const bool =true); // get vector of possible moves
+    virtual std::vector<Position> getPossibleMoves (std::shared_ptr<BaseBoard>,const bool =true); ///< get vector of possible moves
     virtual double getPositionValue() const = 0;
 
     void setRecursive();
@@ -76,17 +87,17 @@ public:
     bool getMoveRecursive() const;
 
 
-    PieceColor            getColor() const; // get color of figure
-    int                   getColumn() const; // get column of figure
-    int                   getRow() const; // get row of piece
-    Position              getPosition() const; // get position of piece (column and row)
-    bool                  getMoved() const; // set figure moved
-    bool                  getOccupied() const; // is square occupied
-    std::vector<Position> getMoves() const; // get possible moves of figure
-    std::string           getFigureName() const; // get figure name
+    PieceColor            getColor() const; ///< get color of figure
+    int                   getColumn() const; ///< get column of figure
+    int                   getRow() const; ///< get row of piece
+    Position              getPosition() const; ///< get position of piece (column and row)
+    bool                  getMoved() const; ///< set figure moved
+    bool                  getOccupied() const; ///< is Square occupied
+    std::vector<Position> getMoves() const; ///< get possible moves of figure
+    std::string           getFigureName() const; ///< get figure name
 };
 
-std::ostream & operator<<(std::ostream &out, const Piece &c); // output position and figure name
+std::ostream & operator<<(std::ostream &out, const Piece &c); ///< output position and figure name
 
 #endif
 

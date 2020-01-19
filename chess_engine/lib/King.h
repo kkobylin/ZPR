@@ -16,8 +16,6 @@
 
 class King : public Piece{
 private:
-    bool castled = false;
-    bool checked = false;
 
 public:
     King(const int column,const int row,const PieceColor color);
