@@ -2,6 +2,10 @@
 #include <memory>
 #include "AI/PositionValue.h"
 
+Pawn::Pawn(int column, int row, PieceColor color) :
+    Piece (column, row, color){
+        setFigureName("P");
+    }
 
 
 std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation){

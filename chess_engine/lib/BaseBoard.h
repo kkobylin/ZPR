@@ -59,7 +59,5 @@ class BaseBoard : public std::enable_shared_from_this<BaseBoard>{
     void setKing(const Position position_king,const PieceColor king_color);
     bool isChecking(const PieceColor opponent_color);
     std::string checkForWin();
-    void const printBoardCout();
-
 };
 #endif // BASEBOARD_H

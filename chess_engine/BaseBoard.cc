@@ -208,19 +208,6 @@ std::vector <std::vector <std::string>> BaseBoard::toString() const{
 
 }
 
-void const BaseBoard::printBoardCout(){
-    std::cout << "Current Board:" << std::endl;
-    for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
-        for (int row = ROW_MIN; row < ROW_MAX; row++ ){
-            std::cout <<(char)(board[column][row]->getColumn() + 65)  << board[column][row]->getRow() + 1  <<this->toString()[column][row] << " " ;
-            if (row == 7){
-                std::cout << std::endl;
-            }
-        }
-    }
-}
-
-
 Position BaseBoard::getKing (PieceColor king_color) const{
     if (king_color == WHITE){
         return this->white_king;

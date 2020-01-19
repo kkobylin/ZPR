@@ -18,10 +18,7 @@
 
 class Pawn : public Piece{
 public:
-    Pawn(int column, int row, PieceColor color) :
-        Piece (column, row, color){
-            setFigureName("P");
-            };
+    Pawn(int column, int row, PieceColor color);
     std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard>, bool = true);
     
     double getPositionValue() const override ;

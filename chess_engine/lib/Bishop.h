@@ -1,6 +1,3 @@
-#ifndef BISHOP_H
-#define BISHOP_H
-
 /**
  * @file Bishop.h
  * @author Marcin Michalski (marmichalski97@gmail.com)
@@ -11,22 +8,16 @@
  * @copyright Copyright (c) 2020
  * 
  */
+
+#ifndef BISHOP_H
+#define BISHOP_H
+
 #include "Piece.h"
 #include "Board.h"
 
 class Bishop: public Piece{
 public:
-    Bishop(int column, int row, PieceColor color) :
-    Piece (column, row, color){
-        setFigureName("B");
-        setRecursive();
-        setDirectionOfMove(Position{1,1});
-        setDirectionOfMove(Position{-1,1});
-        setDirectionOfMove(Position{-1,-1});
-        setDirectionOfMove(Position{1,-1});
-        };
-    
-    //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool originalEvaluation);
+    Bishop(int column, int row, PieceColor color);
     double getPositionValue() const override ;
 };
 #endif // BISHOP_H

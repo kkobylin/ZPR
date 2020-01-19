@@ -179,7 +179,6 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     p = new Pawn(1, 7, WHITE);
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 0);
-    //todo
     /* 7th  case - King Defending - avoid King from check*/
     case_board = {
             /* 1   2    3    4    5     6   7     8 */

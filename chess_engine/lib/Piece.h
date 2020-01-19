@@ -19,16 +19,14 @@ struct Position{
     int column = -1;
     int row = -1;
 
-    bool operator==(const Position pos1){ return pos1.column == column && pos1.row == row;} // override operator to use std::find
-    bool operator!=(const Position pos1){ return pos1.column != column || pos1.row != row;} // override operator to use std::find
-    friend std::ostream & operator<<(std::ostream &out, const Position &c){return out << (char)(c.column + 65) << c.row + 1 << std::endl;}; // output position and figure name
-    Position operator+(Position pos1){ return Position{pos1.column + column, pos1.row + row};} //todo
-    Position operator*(int const &pos1){ return Position{pos1 * column, pos1 * row};} //todo
-
-    std::string toString(){
-        return std::to_string(column) + std::to_string(row);
-    }
+    bool operator==(const Position pos1);
+    bool operator!=(const Position pos1);
+    Position operator+(Position pos1);
+    Position operator*(int const &pos1);
+    std::string toString();
 };
+std::ostream & operator<<(std::ostream &out, const Position &c);
+
 
 
 const int ROW_MIN = 0;
@@ -66,16 +64,16 @@ public:
     void setMoves(const std::vector<Position>); // set possible moves
     void setFigureName(const std::string); // set figure name
     bool isChecking(const Position position_piece,const Position position_king) const;
-    Position getKing(std::shared_ptr<BaseBoard>, PieceColor pieceColor); //todo
     std::vector<Position> evaluateCheck(const std::shared_ptr<BaseBoard>,const bool) const;
     virtual std::vector<Position> getPossibleMoves (std::shared_ptr<BaseBoard>,const bool =true); // get vector of possible moves
     virtual double getPositionValue() const = 0;
 
     void setRecursive();
 
-    PieceColor isMoveValid(Position position, std::shared_ptr<BaseBoard> board); //todo
-    bool moveIsInBoard(Position position); //todo
-    void setDirectionOfMove(Position pos); //todo
+    PieceColor isMoveValid(Position const &position, std::shared_ptr<BaseBoard> const &board) const;
+    bool moveIsInBoard(Position const &position) const;
+    void setDirectionOfMove(Position const &pos);
+    bool getMoveRecursive() const;
 
 
     PieceColor            getColor() const; // get color of figure
@@ -86,8 +84,9 @@ public:
     bool                  getOccupied() const; // is square occupied
     std::vector<Position> getMoves() const; // get possible moves of figure
     std::string           getFigureName() const; // get figure name
-
-    friend std::ostream & operator<<(std::ostream &out, const Piece &c){return out << (char)(c.column + 65) << c.row + 1 << c.figure_name << std::endl;}; // output position and figure name
 };
+
+std::ostream & operator<<(std::ostream &out, const Piece &c); // output position and figure name
+
 #endif
 
