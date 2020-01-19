@@ -26,14 +26,16 @@ std::vector<Position> Pawn::getPossibleMoves(std::shared_ptr<BaseBoard> board, b
     int directionOfMove = getColor();
 
     Position dest_square = position + Position{0, directionOfMove};
+    bool next_empty = false;
     //Move 1 square ahead
     if(moveIsInBoard(dest_square) && isMoveValid(dest_square, board) == NONE){
         possible_position.push_back(dest_square);
+        next_empty = true;
     }
     //Move 2 squares ahrad
     if(!getMoved()){
         dest_square = position + Position{0, directionOfMove * 2};
-        if(moveIsInBoard(dest_square) && isMoveValid(dest_square, board) == NONE){
+        if(next_empty && moveIsInBoard(dest_square) && isMoveValid(dest_square, board) == NONE){
             possible_position.push_back(dest_square);
         }
     }

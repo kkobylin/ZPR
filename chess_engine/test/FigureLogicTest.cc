@@ -46,7 +46,6 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
 
     auto pos = p->getPossibleMoves(board_ptr);
-
     BOOST_CHECK(pos.size() == 2);
 
     std::vector<std::string> correct_positions;
