@@ -56,7 +56,7 @@ BaseBoard::BaseBoard(std::vector <std::vector <std::string>> board_string){
                 board[column].push_back(std::shared_ptr<Square>{
                 new Square(
                 std::shared_ptr<King>{new King(column, row, color)})});
-                this->setKing(Position{column,row}, color);
+                setKing(Position{column,row}, color);
                 break;
             case 'P': 
                 board[column].push_back(std::shared_ptr<Square>{
@@ -129,7 +129,7 @@ BaseBoard::BaseBoard(const BaseBoard &base_board) {
                     ptr->setMoved(piece->getMoved());
                     ptr->setMoves(piece->getMoves());
                     board[column_nr].push_back(std::shared_ptr<Square>{new Square(ptr)});
-                    this->setKing(Position{column_nr,row_nr}, color);
+                    setKing(Position{column_nr,row_nr}, color);
                     break;
                 }
                 case 'P':{
@@ -156,20 +156,22 @@ void BaseBoard::updateBoard(int dest_col, int dest_row, int src_col, int src_row
     //update board
         //update destination Square
     if(dest_col < 0 || dest_col > 7 || dest_row < 0 || dest_row > 7 ||
-            src_col < 0 || src_col > 7 || src_row < 0 || src_row > 7)
+            src_col < 0 || src_col > 7 || src_row < 0 || src_row > 7){
         throw WrongArgException();
+    }
+
 
     Position position {dest_col, dest_row};
     board[dest_col][dest_row]->setPiece(board[src_col][src_row]->getPiece());
     board[dest_col][dest_row]->setOccupied(true);
-    board[dest_col][dest_row]->getPiece()->setPosition(position); // aktualizacja pozycji figury
+    board[dest_col][dest_row]->getPiece()->setPosition(position);
     board[dest_col][dest_row]->getPiece()->setMoved(true);
 
-    if (Position{src_col,src_row} == this->getKing(WHITE)){
-        this->setKing(Position{dest_col,dest_row}, WHITE);
+    if (Position{src_col,src_row} == getKing(WHITE)){
+        setKing(Position{dest_col,dest_row}, WHITE);
     }
-    if (Position{src_col,src_row} == this->getKing(BLACK)){
-        this->setKing(Position{dest_col,dest_row}, BLACK);
+    if (Position{src_col,src_row} == getKing(BLACK)){
+        setKing(Position{dest_col,dest_row}, BLACK);
     }
 
         //update source Square
@@ -210,28 +212,28 @@ std::vector <std::vector <std::string>> BaseBoard::toString() const{
 
 Position BaseBoard::getKing (PieceColor king_color) const{
     if (king_color == WHITE){
-        return this->white_king;
+        return white_king;
     }else{
-        return this->black_king;
+        return black_king;
     }
 }
 void BaseBoard::setKing(Position position_king, PieceColor king_color){
     if (king_color == WHITE){
-        this->white_king = position_king;
+        white_king = position_king;
     }else{
-        this->black_king = position_king;
+        black_king = position_king;
     }
 }
 
 bool BaseBoard::isChecking(PieceColor opponent_color){
     //Check if opponent is checked
 
-    Position opponent_king = this->getKing(static_cast<PieceColor>(-1 * opponent_color));
+    Position opponent_king = getKing(static_cast<PieceColor>(-1 * opponent_color));
     for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
         for (int row = ROW_MIN; row < ROW_MAX; row++ ){
-            if (this->getBoard()[column][row]->getOccupied()){
-                if (this->getBoard()[column][row]->getPiece()->getColor() == opponent_color){
-                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
+            if (getBoard()[column][row]->getOccupied()){
+                if (getBoard()[column][row]->getPiece()->getColor() == opponent_color){
+                    auto possible_moves = getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
                     for (auto pos : possible_moves){
                         if (opponent_king == pos){
                             return true;
@@ -251,15 +253,15 @@ std::string BaseBoard::checkForWin(){
     bool black_lost = true;
     for (int column = COLUMN_MIN; column < COLUMN_MAX; column++){
         for (int row = ROW_MIN; row < ROW_MAX; row++ ){
-            if (this->getBoard()[column][row]->getOccupied()){
-                if (this->getBoard()[column][row]->getPiece()->getColor() == BLACK){
-                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
+            if (getBoard()[column][row]->getOccupied()){
+                if (getBoard()[column][row]->getPiece()->getColor() == BLACK){
+                    auto possible_moves = getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
                     for (auto pos : possible_moves){
                         black_lost = false;
                     }
                 }
-                else if (this->getBoard()[column][row]->getPiece()->getColor() == WHITE){
-                    auto possible_moves = this->getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
+                else if (getBoard()[column][row]->getPiece()->getColor() == WHITE){
+                    auto possible_moves = getBoard()[column][row]->getPiece()->getPossibleMoves(shared_from_this());
                     for (auto pos : possible_moves){
                         white_lost = false;
                     }
