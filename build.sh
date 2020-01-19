@@ -21,6 +21,17 @@ then
 fi
 
 
+
+echo "Checking boost-test version"
+BOOST_TEST_VER=$(dpkg -s libboost-test-dev | grep "Version")
+if [ -z "${BOOST_TEST_VER}" ]
+then
+	echo "boost-test not found"
+	echo "Installing boost-test"
+	sudo apt-get -y install libboost-test-dev
+fi
+
+
 echo "Checking python version"
 PYTHON_VER=$(python3 --version)
 if [ -z "${PYTHON_VER}" ]
