@@ -1,7 +1,7 @@
 /**
  * @file Board.h
  * @author Marcin Michalski (marmichalski97@gmail.com)
- * @brief Class holding main board, construted as Siingleton
+ * @brief Class holding main board, constructed as Singleton
  * @version 0.1
  * @date 2020-01-19
  * 

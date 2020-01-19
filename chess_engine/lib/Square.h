@@ -1,7 +1,7 @@
 /**
  * @file Square.h
  * @author Marcin Michalski (marmichalski97@gmail.com)
- * @brief 
+ * @brief Class holding piece on the board
  * @version 0.1
  * @date 2020-01-19
  * 

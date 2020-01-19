@@ -3,6 +3,9 @@
  * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
  * @brief Boost auto test, testing possible moves of each Piece
  * in many cases
+ * @details For each piece there are tested every generalized cases
+ * including such when piece should defend his king from checking or
+ * avoid his king from checking
  * @version 1.0
  * @date 2020-01-15
  */
@@ -27,7 +30,7 @@
  * Function comparing vector of correct possible positions
  * with positions from GetPossibleMoves method
  */
-void compareVectors(std::vector<Position> pos, std::vector<std::string> correct_positions) {
+void compareVectors(std::vector<Position> pos,std::vector<std::string> correct_positions) {
     std::vector <std::string> positions;
 
     for(auto p : pos){
@@ -40,7 +43,6 @@ void compareVectors(std::vector<Position> pos, std::vector<std::string> correct_
 }
 
 BOOST_AUTO_TEST_CASE(PawnCase) {
-/* --------------------------------------------------------------- Pawn -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
     Piece *p = new Pawn(0, 1, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
@@ -49,8 +51,8 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     BOOST_CHECK(pos.size() == 2);
 
     std::vector<std::string> correct_positions;
-    correct_positions.push_back("02");
-    correct_positions.push_back("03");
+    correct_positions.emplace_back("02");
+    correct_positions.emplace_back("03");
 
     compareVectors(pos, correct_positions);
 
@@ -69,7 +71,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     delete p;
     p = new Pawn(2, 3, WHITE);
     pos = p->getPossibleMoves(board_ptr);
-    BOOST_CHECK(pos.size() == 0);
+    BOOST_CHECK(pos.empty());
 
     case_board = {
             /* 1   2    3    4    5     6   7     8 */
@@ -88,7 +90,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
     correct_positions.clear();
-    correct_positions.push_back("25");
+    correct_positions.emplace_back("25");
 
     compareVectors(pos, correct_positions);
 
@@ -110,9 +112,9 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 3);
     correct_positions.clear();
-    correct_positions.push_back("24");
-    correct_positions.push_back("34");
-    correct_positions.push_back("44");
+    correct_positions.emplace_back("24");
+    correct_positions.emplace_back("34");
+    correct_positions.emplace_back("44");
 
     compareVectors(pos, correct_positions);
 
@@ -134,7 +136,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
     correct_positions.clear();
-    correct_positions.push_back("13");
+    correct_positions.emplace_back("13");
 
     compareVectors(pos, correct_positions);
 
@@ -155,10 +157,10 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     pos = p->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 4);
     correct_positions.clear();
-    correct_positions.push_back("05");
-    correct_positions.push_back("15");
-    correct_positions.push_back("14");
-    correct_positions.push_back("25");
+    correct_positions.emplace_back("05");
+    correct_positions.emplace_back("15");
+    correct_positions.emplace_back("14");
+    correct_positions.emplace_back("25");
 
     compareVectors(pos, correct_positions);
 
@@ -177,7 +179,7 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     delete p;
     p = new Pawn(1, 7, WHITE);
     pos = p->getPossibleMoves(board_ptr);
-    BOOST_CHECK(pos.size() == 0);
+    BOOST_CHECK(pos.empty());
     /* 7th  case - King Defending - avoid King from check*/
     case_board = {
             /* 1   2    3    4    5     6   7     8 */
@@ -195,6 +197,10 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     p = new Pawn(3, 3, WHITE);
     p->setMoved(true);
     pos = p->getPossibleMoves(board_ptr);
+    BOOST_CHECK(pos.size() == 1);
+
+    correct_positions.clear();
+    correct_positions.emplace_back("34");
 
     compareVectors(pos, correct_positions);
 
@@ -217,13 +223,12 @@ BOOST_AUTO_TEST_CASE(PawnCase) {
     BOOST_CHECK(pos.size() == 1);
 
     correct_positions.clear();
-    correct_positions.push_back("33");
+    correct_positions.emplace_back("33");
 
     compareVectors(pos, correct_positions);
 }
 
 BOOST_AUTO_TEST_CASE(BishopCase) {
-/* --------------------------------------------------------------- Bishop -----------------------------------------------------------------------------------------------*/
 
     /* 1st case - beginning of the game */
     Piece *b = new Bishop(2, 0, WHITE);
@@ -232,7 +237,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
 
     auto pos = b->getPossibleMoves(board_ptr);
 
-    BOOST_CHECK(pos.size() == 0);
+    BOOST_CHECK(pos.empty());
 
     /* 2nd  case */
     std::vector<std::vector<std::string>> case_board = {
@@ -290,8 +295,8 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
 
     std::vector<std::string> correctPositions;
     correctPositions.clear();
-    correctPositions.push_back("02");
-    correctPositions.push_back("22");
+    correctPositions.emplace_back("02");
+    correctPositions.emplace_back("22");
 
     compareVectors(pos, correctPositions);
 
@@ -331,7 +336,7 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
     pos = b->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
     correctPositions.clear();
-    correctPositions.push_back("34");
+    correctPositions.emplace_back("34");
     compareVectors(pos, correctPositions);
 
     /* 6th  case - King Defending - stop king checking*/
@@ -352,12 +357,11 @@ BOOST_AUTO_TEST_CASE(BishopCase) {
     pos = b->getPossibleMoves(board_ptr);
     BOOST_CHECK(pos.size() == 1);
     correctPositions.clear();
-    correctPositions.push_back("23");
+    correctPositions.emplace_back("23");
 
     compareVectors(pos, correctPositions);
 }
 BOOST_AUTO_TEST_CASE(KnightCase) {
-/* --------------------------------------------------------------- Knight -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
     Piece *n = new Knight(1, 0, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
@@ -405,14 +409,13 @@ BOOST_AUTO_TEST_CASE(KnightCase) {
 
     std::vector<std::string> correctPositions;
     correctPositions.clear();
-    correctPositions.push_back("50");
-    correctPositions.push_back("52");
-    correctPositions.push_back("63");
+    correctPositions.emplace_back("50");
+    correctPositions.emplace_back("52");
+    correctPositions.emplace_back("63");
 
     compareVectors(pos, correctPositions);
 }
 BOOST_AUTO_TEST_CASE(QueenCase) {
-    /* --------------------------------------------------------------- Queen -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
     Piece *q = new Queen(3, 0, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
@@ -420,7 +423,7 @@ BOOST_AUTO_TEST_CASE(QueenCase) {
 
     auto pos = q->getPossibleMoves(board_ptr);
 
-    BOOST_CHECK(pos.size() == 0);
+    BOOST_CHECK(pos.empty());
 
     /* 2nd case */
     std::vector<std::vector<std::string>> case_board = {
@@ -460,7 +463,6 @@ BOOST_AUTO_TEST_CASE(QueenCase) {
 }
 
 BOOST_AUTO_TEST_CASE(RookCase) {
-    /* --------------------------------------------------------------- Rook -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
     Piece *r = new Rook(0, 0, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
@@ -468,7 +470,7 @@ BOOST_AUTO_TEST_CASE(RookCase) {
 
     auto pos = r->getPossibleMoves(board_ptr);
 
-    BOOST_CHECK(pos.size() == 0);
+    BOOST_CHECK(pos.empty());
 
     /* 2nd case */
     std::vector<std::vector<std::string>> case_board = {
@@ -522,12 +524,11 @@ BOOST_AUTO_TEST_CASE(RookCase) {
     delete r;
     r = new Rook(0, 7, WHITE);
     pos = r->getPossibleMoves(board_ptr);
-    BOOST_CHECK(pos.size() == 0);
+    BOOST_CHECK(pos.empty());
 }
 
 BOOST_AUTO_TEST_CASE(KingCase)
 {
-    /* --------------------------------------------------------------- King -----------------------------------------------------------------------------------------------*/
     /* 1st case - beginning of the game */
     Piece *k = new King(4, 0, WHITE);
     std::shared_ptr<BaseBoard> board_ptr(new BaseBoard(INITIAL_BOARD));
@@ -535,7 +536,7 @@ BOOST_AUTO_TEST_CASE(KingCase)
 
     auto pos = k->getPossibleMoves(board_ptr);
 
-    BOOST_CHECK(pos.size() == 0);
+    BOOST_CHECK(pos.empty());
 
     /* 2nd case*/
     std::vector<std::vector<std::string>> case_board = {
@@ -589,7 +590,7 @@ BOOST_AUTO_TEST_CASE(KingCase)
     delete k;
     k = new King(3, 3, WHITE);
     pos = k->getPossibleMoves(board_ptr);
-    BOOST_CHECK(pos.size() == 0);
+    BOOST_CHECK(pos.empty());
 
     /* 5th case*/
     case_board = {
@@ -610,7 +611,7 @@ BOOST_AUTO_TEST_CASE(KingCase)
     BOOST_CHECK(pos.size() == 1);
     std::vector<std::string> correctPositions;
     correctPositions.clear();
-    correctPositions.push_back("63");
+    correctPositions.emplace_back("63");
 
     compareVectors(pos, correctPositions);
 
@@ -633,8 +634,8 @@ BOOST_AUTO_TEST_CASE(KingCase)
     BOOST_CHECK(pos.size() == 2);
 
     correctPositions.clear();
-    correctPositions.push_back("32");
-    correctPositions.push_back("53");
+    correctPositions.emplace_back("32");
+    correctPositions.emplace_back("53");
 
     compareVectors(pos, correctPositions);
 

@@ -2,7 +2,7 @@
  * @file WrongArgException.h
  * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
  * @brief Exception thrown when wrong arguments are passed to function
- * @version 1.0
+ * @version 0.1
  * @date 2020-01-15
  */
 

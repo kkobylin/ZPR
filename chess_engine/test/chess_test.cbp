@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="chess_test"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tests">
+				<Option output="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0,"/>
+					<Add directory="/usr/include/python3.6"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 tests"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tests/fast">
+				<Option output="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/krzysiek/Documents/ZPR/boost_1_71_0_rc2/boost_1_71_0,"/>
+					<Add directory="/usr/include/python3.6"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 tests/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/AIClass.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/AI/PositionValue.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/BaseBoard.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Bishop.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Board.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Connector.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/King.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Knight.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Pawn.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Piece.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Queen.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Rook.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/Square.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/exceptions/WrongArgException.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/BaseBoard.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Bishop.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Board.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Connector.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/King.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Knight.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Pawn.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Piece.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Queen.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Rook.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/lib/Square.h">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/EndOfGameTest.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/ExceptionTest.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/FigureLogicTest.cc">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/krzysiek/Documents/ZPR/ZPR-master/ZPR/chess_engine/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

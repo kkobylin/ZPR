@@ -1,7 +1,7 @@
 /**
  * @file Rook.h
  * @author Marcin Michalski (marmichalski97@gmail.com)
- * @brief 
+ * @brief Class for rook
  * @version 0.1
  * @date 2020-01-15
  * 

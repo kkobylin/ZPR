@@ -2,7 +2,7 @@
  * @file Connector.cc
  * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
  * @brief Bridge between frontend and backend using Boost Python
- * @version 1.0
+ * @version 0.1
  * @date 2020-01-15
  */
 
@@ -16,13 +16,6 @@
 #include "lib/BaseBoard.h"
 #include "exceptions/WrongArgException.h"
 
-/**
- * Method use by frontend to check whether white player's move
- * is correct or not
- * @param dest - destination of piece
- * @param src - source, prior position of piece
- * @return bool - move correct or not
- */
 bool const Connector::ifMovePossible(std::string dest, std::string src){
 
     if(dest == "offboard")
@@ -125,22 +118,12 @@ bool const Connector::ifMovePossible(std::string dest, std::string src){
 
     return false;
 }
-/**
- * Method use by frontend after each move to check
- * if it is end of the game
- * @return string - "none", "draw", "win" or "lose"
- * win - when white player wins
- * lose - when black player wins
- */
+
 std::string const Connector::checkForWin() {
     auto board = Board::getInstance();
     return board->checkForWin();
 }
 
-/**
- * Method use by frontend to get opponent move
- * @return move in format "A1-A2"
- */
 std::string const Connector::opponentMove(){
         /* Format e2-e4 */
     auto board = Board::getInstance();
@@ -148,7 +131,7 @@ std::string const Connector::opponentMove(){
 
     MovePacket move_packet;
     try {
-        move_packet = AIClass::MiniMaxRoot(3, BLACK, min_max_board, std::numeric_limits<double>::max()*-1, std::numeric_limits<double>::max());
+        move_packet = AIClass::MiniMaxRoot(2, BLACK, min_max_board, std::numeric_limits<double>::max()*-1, std::numeric_limits<double>::max());
         board->updateBoard(move_packet.dest_col, move_packet.dest_row, move_packet.src_col, move_packet.src_row);
     }
     catch(std::exception& e){

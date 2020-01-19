@@ -3,7 +3,7 @@
  * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
  * @brief Class holding information how valuable is each piece on each position,
  * used in minmax algorithm
- * @version 1.0
+ * @version 0.1
  * @date 2020-01-15
  */
 

@@ -2,13 +2,14 @@
  * @file AIClass.cc
  * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
  * @brief Class calculating opponent move, using minmax algorithm
- * @version 1.0
+ * @version 0.1
  * @date 2020-01-15
  */
 #include "AIClass.h"
 #include "../lib/BaseBoard.h"
+#include "../exceptions/WrongArgException.h"
 
-double AIClass::evaluateBoard(std::shared_ptr<BaseBoard> board, PieceColor side) {
+double AIClass::evaluateBoard(std::shared_ptr<BaseBoard> board) {
 
     double result = 0;
 
@@ -23,6 +24,8 @@ double AIClass::evaluateBoard(std::shared_ptr<BaseBoard> board, PieceColor side)
 }
 
 MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<BaseBoard> board_obj, double alpha, double beta) {
+    if(depth < 1 )
+        throw WrongArgException();
     board_type board = board_obj->getBoard();
     MovePacket best_move;
     /* Impossible value for source column to find the first case in searching */
@@ -37,7 +40,7 @@ MovePacket AIClass::MiniMaxRoot(int depth, PieceColor turn, std::shared_ptr<Base
                     std::shared_ptr<BaseBoard> new_board (new BaseBoard(board_obj_string));
                     new_board->updateBoard(pos.column, pos.row, piece->getColumn(), piece->getRow());
                     if(depth == 1) {
-                        double score = evaluateBoard(new_board, turn);
+                        double score = evaluateBoard(new_board);
                         switch (turn) {
                             case BLACK: {
                                 beta = std::min(beta, score);

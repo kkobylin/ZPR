@@ -1,3 +1,13 @@
+/**
+ * @file Bishop.cc
+ * @author Marcin Michalski (marmichalski97@gmail.com)
+ * @brief Class for bishop
+ * @version 0.1
+ * @date 2020-01-15
+ *
+ * @copyright Copyright (c) 2020
+ *
+ */
 #include "AI/PositionValue.h"
 #include "lib/Bishop.h"
 

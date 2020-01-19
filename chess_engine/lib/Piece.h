@@ -56,7 +56,7 @@ private:
     bool                  occupied = true; ///< is Square occupied
     bool                  moved = false; ///< was figure moved, used to castle and en passant pawn move
     std::vector<Position> moves; ///< vector of possible moves
-    int pieceValue = 0; //experimental AI change
+    int pieceValue = 0;
 
 
     std::vector<Position> directionOfMoves;
@@ -66,6 +66,7 @@ public:
     Piece(const int,const int,const PieceColor);
     Piece(const Position,const PieceColor){};
     Piece(const Piece &piece_);
+    virtual ~Piece(){};
 
     void setColor(const PieceColor); ///< set color of figure
     void setRow(const int); ///< set figure row

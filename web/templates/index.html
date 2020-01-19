@@ -97,7 +97,7 @@
                 opponentMove = result.opponentMove;
             },
             error: function (result) {
-                alert("error:" + JSON.stringify(result));
+                alert("Należy zrestartować serwer");
             }
         });
 
@@ -113,8 +113,9 @@
         }
 
         // Repair bug - opponent moved before white piece ended move
-        if(endOfGame === 'none' && !snapBack && opponentMove.substr(3,2) === target)
+        if(endOfGame === 'none' && !snapBack && opponentMove.substr(3,2) === target){
             return 'trash';
+        }
     }
 
     function onChange (oldPos, newPos) {
