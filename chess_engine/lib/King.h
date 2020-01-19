@@ -16,25 +16,9 @@
 
 class King : public Piece{
 private:
-    bool castled = false;
-    bool checked = false;
 
 public:
-    King(const int column,const int row,const PieceColor color) :
-    Piece (column, row, color){
-        setFigureName("K");
-        setDirectionOfMove(Position{1,-1});
-        setDirectionOfMove(Position{1,0});
-        setDirectionOfMove(Position{1,1});
-        setDirectionOfMove(Position{0,1});
-        setDirectionOfMove(Position{-1,1});
-        setDirectionOfMove(Position{-1,0});
-        setDirectionOfMove(Position{-1,-1});
-        setDirectionOfMove(Position{0,-1});
-
-        };
-    
-
+    King(const int column,const int row,const PieceColor color);
     double getPositionValue() const override ;
 };
 #endif //KING_H

@@ -1,9 +1,0 @@
-import os
-
-#DefaultEnvironment(CC = 'C:\Program Files\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin\gcc')
-env = Environment(tools = ['mingw'])
-env['ENV']['PATH'] += ';' + r'C:\Program Files\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin\gcc'
-env.Append(LINKFLAGS = "-static")
-env.Program(['main.cc','Board.cc','Piece.cc', 'Square.cc','Bishop.cc', 'King.cc', 'Knight.cc', 'Pawn.cc', 'Queen.cc', 'Rook.cc',  'Empty_square.cc'])
-#test = Command (target = 'testoutput', source = './main', action = './main > $TARGET' )
-#AlwaysBuild( test )

@@ -1,3 +1,13 @@
+/**
+ * @file Board.cc
+ * @author Marcin Michalski (marmichalski97@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2020-01-19
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
 #include "lib/BaseBoard.h"
 #include "lib/Board.h"
 #include <iostream>

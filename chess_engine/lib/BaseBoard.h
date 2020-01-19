@@ -19,7 +19,7 @@
 #include <memory>
 
 /**
- * @brief 
+ * @brief matrix of Square
  * 
  */
 typedef std::vector <std::vector <std::shared_ptr<Square>>> board_type;
@@ -45,21 +45,20 @@ class BaseBoard : public std::enable_shared_from_this<BaseBoard>{
 
     board_type board;
 
-    Position white_king;
-    Position black_king;
+    Position white_king; ///< Position of white King
+    Position black_king; ///< Position of black King
 
     public:
     BaseBoard(const std::vector <std::vector <std::string>>);
     BaseBoard(const BaseBoard &base_board);
-    board_type getBoard() const;
-    void updateBoard(const int dest_col,const int dest_row,const int src_col,const int src_row);
+    void updateBoard(const int dest_col,const int dest_row,const int src_col,const int src_row); ///< Method invoked after every move, updates Position of Piece on Board
     std::vector <std::vector <std::string>> toString() const;
-
-    Position getKing(const PieceColor king_color) const;
+    
+    board_type getBoard() const;
+    Position getKing(const PieceColor king_color) const;  ///< get King Position of PieceColor king_color color
     void setKing(const Position position_king,const PieceColor king_color);
-    bool isChecking(const PieceColor opponent_color);
-    std::string checkForWin();
-    void const printBoardCout();
 
+    bool isChecking(const PieceColor opponent_color); ///< Is opponent checking
+    std::string checkForWin(); ///< Has game ended, what is the outcome (white won, black won, draw)
 };
 #endif // BASEBOARD_H

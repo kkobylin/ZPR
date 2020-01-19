@@ -12,6 +12,14 @@
 
 class Connector {
 public:
+    /**
+     * @brief method connecting cpp and python, given params check if move possible
+     * 
+     * @param dest destination Square
+     * @param src source Square
+     * @return true 
+     * @return false 
+     */
     static bool const ifMovePossible(const std::string dest,const std::string src);
     static std::string const checkForWin();
     static std::string const opponentMove();

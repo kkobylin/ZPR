@@ -17,20 +17,7 @@
 
 class Knight : public Piece{
     public:
-    Knight(const int column,const int row,const PieceColor color) :
-    Piece (column, row, color){
-        setFigureName("N");
-        setDirectionOfMove(Position{-1,2});
-        setDirectionOfMove(Position{1,2});
-        setDirectionOfMove(Position{2,1});
-        setDirectionOfMove(Position{2,-1});
-        setDirectionOfMove(Position{-2,1});
-        setDirectionOfMove(Position{-2,-1});
-        setDirectionOfMove(Position{1,-2});
-        setDirectionOfMove(Position{-1,-2});
-        };
-    
-    //std::vector<Position> getPossibleMoves(std::shared_ptr<BaseBoard> board, bool initialboard);
+    Knight(const int column,const int row,const PieceColor color);
     double getPositionValue() const override ;
 };
 #endif //KNIGHT_H

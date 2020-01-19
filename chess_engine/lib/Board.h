@@ -1,3 +1,14 @@
+/**
+ * @file Board.h
+ * @author Marcin Michalski (marmichalski97@gmail.com)
+ * @brief Class holding main board, construted as Siingleton
+ * @version 0.1
+ * @date 2020-01-19
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef BOARD_H
 #define BOARD_H
 #include "BaseBoard.h"

@@ -4,7 +4,7 @@
 
 #include "lib/Board.h"
 #include <iostream>
-#include "Connector.h"
+#include "lib/Connector.h"
 #include "AI/AIClass.h"
 #include "lib/BaseBoard.h"
 

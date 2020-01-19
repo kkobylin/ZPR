@@ -1,3 +1,14 @@
+/**
+ * @file Square.h
+ * @author Marcin Michalski (marmichalski97@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2020-01-19
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef SQUARE
 #define SQUARE
 #include "Piece.h"
@@ -15,12 +26,12 @@ public:
     void setPiece(const std::shared_ptr<Piece>);
     void setColumn(const int);
     void setRow(const int);
-    void setOccupied(const bool);
+    void setOccupied(const bool); ///< set Square occupied (Piece on Square)
 
     std::shared_ptr<Piece> getPiece() const;
     int   getRow() const;
     int   getColumn() const;
-    bool getOccupied() const;
+    bool getOccupied() const; ///< is any piece on Square
 
 };
 #endif
