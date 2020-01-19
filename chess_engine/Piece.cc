@@ -54,6 +54,13 @@ PieceColor Piece::getColor() const{
     return color;
 }
 
+void Piece::setPieceValue(const int value){
+    pieceValue = value;
+}
+int Piece::getPieceValue() const{
+    return pieceValue;
+}
+
 
 Piece::Piece(int col, int r, PieceColor col_){
     column = col;

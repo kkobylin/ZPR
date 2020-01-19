@@ -56,6 +56,7 @@ private:
     bool                  occupied = true; ///< is Square occupied
     bool                  moved = false; ///< was figure moved, used to castle and en passant pawn move
     std::vector<Position> moves; ///< vector of possible moves
+    int pieceValue = 0; //experimental AI change
 
 
     std::vector<Position> directionOfMoves;
@@ -74,6 +75,7 @@ public:
     void setOccupied(const bool); ///< set Square occupied
     void setMoves(const std::vector<Position>); ///< set possible moves
     void setFigureName(const std::string); ///< set figure name
+    void setPieceValue(const int value);
     bool isChecking(const Position position_piece,const Position position_king) const;
     std::vector<Position> evaluateCheck(const std::shared_ptr<BaseBoard>,const bool) const;
     virtual std::vector<Position> getPossibleMoves (std::shared_ptr<BaseBoard>,const bool =true); ///< get vector of possible moves
@@ -95,8 +97,10 @@ public:
     bool                  getOccupied() const; ///< is Square occupied
     std::vector<Position> getMoves() const; ///< get possible moves of figure
     std::string           getFigureName() const; ///< get figure name
+    int                   getPieceValue() const;
 
-    int pieceValue = 0; //experimental AI change
+
+
 };
 
 std::ostream & operator<<(std::ostream &out, const Piece &c); ///< output position and figure name

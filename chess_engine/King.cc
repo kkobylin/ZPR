@@ -13,14 +13,14 @@ King::King(const int column,const int row,const PieceColor color) :
         setDirectionOfMove(Position{-1,0});
         setDirectionOfMove(Position{-1,-1});
         setDirectionOfMove(Position{0,-1});
-        pieceValue = 15; //experimental
+        setPieceValue(15); //experimental
     }
 
 double King::getPositionValue() const{
     PieceColor color = getColor();
 
     if(color == BLACK)
-        return (pieceValue + PositionValue::KingEvalBlack[getRow()][getColumn()]) * (-1);
+        return (getPieceValue() + PositionValue::KingEvalBlack[getRow()][getColumn()]) * (-1);
     else
-        return (pieceValue + PositionValue::KingEvalWhite[getRow()][getColumn()]);
+        return (getPieceValue() + PositionValue::KingEvalWhite[getRow()][getColumn()]);
 }

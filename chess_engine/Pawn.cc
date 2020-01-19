@@ -5,7 +5,7 @@
 Pawn::Pawn(int column, int row, PieceColor color) :
     Piece (column, row, color){
         setFigureName("P");
-        pieceValue = 1; //experimental
+        setPieceValue(1); //experimental
     }
 
 
@@ -53,7 +53,7 @@ double Pawn::getPositionValue() const{
     PieceColor color = getColor();
 
     if(color == BLACK)
-        return (pieceValue * (-1)) + PositionValue::PawnEvalBlack[getRow()][getColumn()] ;
+        return (getPieceValue() * (-1)) + PositionValue::PawnEvalBlack[getRow()][getColumn()] ;
     else
-        return (pieceValue + PositionValue::PawnEvalWhite[getRow()][getColumn()]);
+        return (getPieceValue() + PositionValue::PawnEvalWhite[getRow()][getColumn()]);
 }

@@ -10,14 +10,14 @@ Rook::Rook(const int column,const int row,const PieceColor color) :
         setDirectionOfMove(Position{-1,0});
         setDirectionOfMove(Position{0,1});
         setDirectionOfMove(Position{0,-1});
-        pieceValue = 5; //experimental
+        setPieceValue(5); //experimental
     }
 
 double Rook::getPositionValue() const{
     PieceColor color = getColor();
 
     if(color == BLACK)
-        return (pieceValue + PositionValue::RookEvalBlack[getRow()][getColumn()]) * (-1);
+        return (getPieceValue() + PositionValue::RookEvalBlack[getRow()][getColumn()]) * (-1);
     else
-        return (pieceValue + PositionValue::RookEvalWhite[getRow()][getColumn()]);
+        return (getPieceValue() + PositionValue::RookEvalWhite[getRow()][getColumn()]);
 }
