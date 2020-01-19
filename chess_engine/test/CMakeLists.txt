@@ -18,7 +18,7 @@ add_executable(tests
         ../Bishop.cc
         ../Board.cc
         ../Connector.cc
-        ../Connector.h
+        ../lib/Connector.h
         ../King.cc
         ../Knight.cc
         ../Pawn.cc

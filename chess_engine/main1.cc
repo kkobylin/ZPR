@@ -7,7 +7,7 @@
 #include "lib/King.h"
 #include "lib/Queen.h"
 #include "lib/Pawn.h"
-#include "Connector.h"
+#include "lib/Connector.h"
 
 
 int main(void){

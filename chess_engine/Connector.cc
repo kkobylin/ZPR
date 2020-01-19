@@ -6,7 +6,7 @@
  * @date 2020-01-15
  */
 
-#include "Connector.h"
+#include "lib/Connector.h"
 #include <boost/python/module.hpp>
 #include <boost/python/def.hpp>
 #include "lib/Board.h"
