@@ -35,14 +35,9 @@ add_executable(tests
         EndOfGameTest.cc
         ExceptionTest.cc)
 
-cmake_host_system_information(RESULT name QUERY HOSTNAME)
-set(BOOST_ROOT "/home/$ENV{USER}/Desktop/Boost/boost_1_71_0")
-set(BOOSTROOT "/home/$ENV{USER}/Desktop/Boost/boost_1_71_0")
-set(Boost_INCLUDE_DIR "/home/$ENV{USER}/Desktop/Boost/boost_1_71_0")
 set(PYTHON_INCLUDE "/usr/include/python3.6")
-set(Boost_Linker "/home/" $ENV{USER} "/Desktop/Boost/boost_1_71_0/stage/lib")
-target_link_libraries(tests python3.6m boost_system boost_python3 boost_unit_test_framework )
-find_package(Boost 1.71.0 REQUIRED COMPONENTS python3)
+target_link_libraries(tests python3.6m boost_python3 boost_unit_test_framework )
+find_package(Boost 1.65 REQUIRED COMPONENTS python3)
 
 
 if(Boost_FOUND)
