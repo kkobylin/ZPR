@@ -1,1 +1,0 @@
-g++ main1.cc Bishop.cc Board.cc King.cc Knight.cc Pawn.cc Piece.cc Queen.cc Rook.cc Square.cc -I/lib
