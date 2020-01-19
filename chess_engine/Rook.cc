@@ -13,10 +13,10 @@ Rook::Rook(const int column,const int row,const PieceColor color) :
     }
 
 double Rook::getPositionValue() const{
-    PieceColor color = this->getColor();
+    PieceColor color = getColor();
 
     if(color == BLACK)
-        return PositionValue::RookEvalBlack[this->getRow()][this->getColumn()] * (-1);
+        return PositionValue::RookEvalBlack[getRow()][getColumn()] * (-1);
     else
-        return PositionValue::RookEvalWhite[this->getRow()][this->getColumn()];
+        return PositionValue::RookEvalWhite[getRow()][getColumn()];
 }

@@ -16,10 +16,10 @@ King::King(const int column,const int row,const PieceColor color) :
     }
 
 double King::getPositionValue() const{
-    PieceColor color = this->getColor();
+    PieceColor color = getColor();
 
     if(color == BLACK)
-        return PositionValue::KingEvalBlack[this->getRow()][this->getColumn()] * (-1);
+        return PositionValue::KingEvalBlack[getRow()][getColumn()] * (-1);
     else
-        return PositionValue::KingEvalWhite[this->getRow()][this->getColumn()];
+        return PositionValue::KingEvalWhite[getRow()][getColumn()];
 }

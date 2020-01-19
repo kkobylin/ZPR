@@ -18,10 +18,10 @@ Queen::Queen(const int column,const int row,const PieceColor color) :
 
 double Queen::getPositionValue() const{
 
-    PieceColor color = this->getColor();
+    PieceColor color = getColor();
 
     if(color == BLACK)
-        return PositionValue::QueenEval[this->getRow()][this->getColumn()] * (-1);
+        return PositionValue::QueenEval[getRow()][getColumn()] * (-1);
     else
-        return PositionValue::QueenEval[this->getRow()][this->getColumn()];
+        return PositionValue::QueenEval[getRow()][getColumn()];
 }

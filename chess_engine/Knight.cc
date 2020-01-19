@@ -17,9 +17,9 @@ Knight::Knight(const int column,const int row,const PieceColor color) :
 
 double Knight::getPositionValue() const{
 
-    PieceColor color = this->getColor();
+    PieceColor color = getColor();
     if(color == BLACK)
-        return PositionValue::KnightEval[this->getRow()][this->getColumn()] * (-1);
+        return PositionValue::KnightEval[getRow()][getColumn()] * (-1);
     else
-        return PositionValue::KnightEval[this->getRow()][this->getColumn()];
+        return PositionValue::KnightEval[getRow()][getColumn()];
 }

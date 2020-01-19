@@ -12,10 +12,10 @@ Bishop::Bishop(int column, int row, PieceColor color) :
     }
 
 double Bishop::getPositionValue() const{
-    PieceColor color = this->getColor();
+    PieceColor color = getColor();
 
     if(color == BLACK)
-        return PositionValue::BishopEvalBlack[this->getRow()][this->getColumn()] * (-1);
+        return PositionValue::BishopEvalBlack[getRow()][getColumn()] * (-1);
     else
-        return PositionValue::BishopEvalWhite[this->getRow()][this->getColumn()];
+        return PositionValue::BishopEvalWhite[getRow()][getColumn()];
 }
