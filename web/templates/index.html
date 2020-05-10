@@ -1,0 +1,132 @@
+<!--
+/**
+ * @file index.html
+ * @author Krzysztof Kobyliński (k.kobylinski98@gmail.com)
+ * @brief Frontend of application has 2 main tasks
+ * Present view for the user
+ * Get move from the user and send that to the server
+ * @version 1.0
+ * @date 2020-01-15
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+    <!-- viewport from Bootstrap to page scale -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <!-- Ajax - REST -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Chess Board -->
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+            integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+          integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+          crossorigin="anonymous">
+    <!--
+    <script type="text/javascript" src="{{ url_for('static', filename='chess.js') }}"></script>
+    -->
+    <style>
+        .board{
+            margin: auto;
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="#">Szachy online</a>
+    </div>
+</div>
+
+<div id="myBoard" class="board"></div>
+
+<script>
+    postURI = 'http://localhost:5000/api/post';
+
+    /* Global variable to define whether move or not */
+    var snapBack;
+    /* Global variable to define end of game*/
+    var endOfGame = 'none';
+    /* Global variable contains AI move get from server */
+    var opponentMove;
+
+    var chessConfig = {
+        draggable: true,
+        dropOffBoard: 'snapback',
+        position: 'start',
+        /* Communication with server */
+        onDrop: onDrop,
+        /* Prevent from moving black pieces */
+        onDragStart: onDragStart,
+        /* Check for the win */
+        onChange: onChange
+    };
+
+    var board = Chessboard("myBoard", chessConfig);
+
+    function onDragStart (source, piece, position, orientation) {
+        if ((orientation === 'white' && piece.search(/^w/) === -1) ||
+            (orientation === 'black' && piece.search(/^b/) === -1) ||
+            endOfGame != 'none') {
+            return false;
+        }
+    }
+
+    function onDrop (source, target) {
+        var jsonToSend = {
+            "source": source,
+            "target": target
+        };
+
+        $.ajax({
+            type: "POST",
+            async: false,
+            url: postURI,
+            data: jsonToSend,
+            success: function (result) {
+                snapBack = (result.legalMove === false);
+                endOfGame = result.endOfGame;
+                opponentMove = result.opponentMove;
+            },
+            error: function (result) {
+                alert("Należy zrestartować serwer");
+            }
+        });
+
+        if (snapBack) return 'snapback';
+
+        if (!snapBack && (endOfGame === 'none' || endOfGame === 'lose') ){
+            if(opponentMove != "00-00")
+                board.move(opponentMove);
+            else{
+                alert("There was error while computing AI move");
+                endOfGame = "error";
+            }
+        }
+
+        // Repair bug - opponent moved before white piece ended move
+        if(endOfGame === 'none' && !snapBack && opponentMove.substr(3,2) === target){
+            return 'trash';
+        }
+    }
+
+    function onChange (oldPos, newPos) {
+        if(endOfGame == 'win')
+            alert("Wygrałeś!");
+        else if(endOfGame === 'lose')
+            alert("Przegrałeś");
+        else if (endOfGame === 'draw')
+            alert("Remis");
+    }
+
+</script>
+</body>
+</html>
